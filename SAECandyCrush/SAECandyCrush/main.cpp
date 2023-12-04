@@ -54,20 +54,65 @@ void initMat (CMatrice & mat, const size_t & nbLignes = 10,
 
 // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
 void  afficheMatriceV0 (const CMatrice & Mat) {
-    //TODO
+    clearScreen();
+    couleur (KReset);
+    for (size_t i = 0 ; i < Mat.size() ; ++i)
+    {
+        for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
+            cout <<  Mat[i][j]<<' ';
+        }
+        cout << endl ;
+    }
 }
 
 // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond de couleur
 //pour signifier que la case est a KAIgnorer
 void  afficheMatriceV1 (const CMatrice & Mat) {
-    //TODO
+    clearScreen();
+    couleur (44);
+    cout << "* ";
+    for (size_t i = 0 ; i < Mat.size() ; ++i)
+    {
+        couleur(44);
+        cout << "  ";
+    }
+    cout << endl ;
+    for (size_t i = 0 ; i < Mat.size() ; ++i)
+    {
+        couleur(44);
+        cout << "  ";
+        for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
+            couleur(KReset);
+            cout <<  Mat[i][j] << ' ';
+        }
+        cout << endl ;
+    }
 }
-
-
+//.
 // affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur
 //pour signifier que la case est a KAIgnorer
-void  afficheMatriceV2 (const CMatrice & mat) {
-    //TODO
+void  afficheMatriceV2 (const CMatrice & Mat) {
+    clearScreen();
+    couleur (44);
+    cout << "* ";
+    for (size_t i = 0 ; i < Mat.size() ; ++i)
+    {
+        couleur(44);
+        cout << i << ' ';
+    }
+    cout << endl ;
+    for (size_t i = 0 ; i < Mat.size() ; ++i)
+    {
+        couleur(44);
+        cout << i;
+        couleur(KReset);
+        cout << ' ';
+        for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
+            couleur(KReset);
+            cout <<  Mat[i][j] << ' ';
+        }
+        cout << endl ;
+    }
 }
 
 
