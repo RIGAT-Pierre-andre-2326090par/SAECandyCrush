@@ -48,7 +48,7 @@ const contenueDUneCase KPlusGrandNombreDansLaMatrice = 4;
 //initialisation de la grille de jeu
 void initMat (CMatrice & mat, const size_t & nbLignes = 10,
              const size_t & nbColonnes = 10,
-             const unsigned & nbMax= KPlusGrandNombreDansLaMatrice){
+             const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
     //TODO
 }
 
