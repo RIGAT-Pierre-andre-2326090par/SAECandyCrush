@@ -162,12 +162,6 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
 //***********************    R1.01 – Prog#10 Exercice 3   ***************************/
 //***********************************************************************************/
 
-
-//fait descendre toutes les cases d'une unité suite à une explosition
-void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
-                                    const size_t & numColonne, const size_t & combien){
-}
-
 void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & numLigne,
                      const size_t & numCol) {
 
