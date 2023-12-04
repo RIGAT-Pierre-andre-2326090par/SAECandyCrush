@@ -78,28 +78,35 @@ void  afficheMatriceV2 (const CMatrice & mat) {
 
 // on remplira cela plus tard, juste la définition de la fonction
 void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
-                                    const size_t & numColonne, const size_t & combien);
+                                    const size_t & numColonne, const size_t & combien){
+
+}
 
 
 //
 bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
     bool auMoinsUneExplosion (false);
-
-    //on parcours la matrice case / case
-    // si on tombe sur la valeur KAIgnorer, on passe a la case suivante
-    // sinon on compte combien de fois on a la même valeur
-    size_t combienALaSuite (1);
-    //si on a aun moins 3 chiffres identiques a la suite
-    if (combienALaSuite >= 3){
-        auMoinsUneExplosion = true;
-        cout << "on a une suite en position numLigne = " << numLigne
-             << "; colonne = " << numCol
-             << "; sur  " << combienALaSuite << " cases" << endl;
-        cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
-        afficheMatriceV1(mat);
-        /*            explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
-                cout << string (20, '-') << endl << "matrice après suppresion" << endl;
-                afficheMatriceV1(mat);*/
+    for (unsigned numLigne = 0 ; numLigne < mat.size() ; ++numLigne){
+        for (unsigned numCol = 0 ; numCol < mat[numLigne].size() ; ++numCol){
+            size_t combienALaSuite (1);
+            if (numLigne != 0){
+                if (mat[numLigne][numCol] == mat[numLigne-1][numCol]){
+                    ++combienALaSuite;
+                }
+            }
+            //si on a aun moins 3 chiffres identiques a la suite
+            if (combienALaSuite >= 3){
+                auMoinsUneExplosion = true;
+                cout << "on a une suite en position numLigne = " << numLigne
+                     << "; colonne = " << numCol
+                     << "; sur  " << combienALaSuite << " cases" << endl;
+                cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
+                afficheMatriceV1(mat);
+                /*            explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
+                        cout << string (20, '-') << endl << "matrice après suppresion" << endl;
+                        afficheMatriceV1(mat);*/
+            }
+        }
     }
 }
 }
