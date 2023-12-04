@@ -88,7 +88,7 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
         cout << endl ;
     }
 }
-
+//.
 // affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur
 //pour signifier que la case est a KAIgnorer
 void  afficheMatriceV2 (const CMatrice & Mat) {
