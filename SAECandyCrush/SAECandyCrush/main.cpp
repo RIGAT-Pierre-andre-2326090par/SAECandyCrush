@@ -120,10 +120,9 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
 //***********************    R1.01 – Prog#10 Exercice 2   ***************************/
 //***********************************************************************************/
 
-
-// on remplira cela plus tard, juste la définition de la fonction
 void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
                                     const size_t & numColonne, const size_t & combien){
+
     for (unsigned i = 0 ; i < numLigne - combien ; ++i){
         mat[numLigne + i][numColonne] = mat[numLigne + i + 3][numColonne];
     }
@@ -132,8 +131,6 @@ void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
     }
 }
 
-
-//
 bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
     bool auMoinsUneExplosion (false);
     for (unsigned numLigne = 0 ; numLigne < mat.size() ; ++numLigne){
