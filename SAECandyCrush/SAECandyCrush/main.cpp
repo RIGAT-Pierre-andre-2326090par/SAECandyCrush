@@ -108,9 +108,7 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
             }
         }
     }
-}
-}
-return auMoinsUneExplosion;
+    return auMoinsUneExplosion;
 }
 
 //***********************************************************************************/
