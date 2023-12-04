@@ -79,7 +79,9 @@ void  afficheMatriceV2 (const CMatrice & mat) {
 // on remplira cela plus tard, juste la définition de la fonction
 void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
                                     const size_t & numColonne, const size_t & combien){
-
+    for (unsigned i = 0 ; i < numLigne - 3 ; ++i){
+        mat[numLigne + i][numColonne] = mat[numLigne + i + 3][numColonne];
+    }
 }
 
 
