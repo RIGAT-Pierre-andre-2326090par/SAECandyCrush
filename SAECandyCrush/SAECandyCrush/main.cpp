@@ -124,8 +124,11 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
 // on remplira cela plus tard, juste la définition de la fonction
 void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
                                     const size_t & numColonne, const size_t & combien){
-    for (unsigned i = 0 ; i < numLigne - 3 ; ++i){
+    for (unsigned i = 0 ; i < numLigne - combien ; ++i){
         mat[numLigne + i][numColonne] = mat[numLigne + i + 3][numColonne];
+    }
+    for (unsigned i = 0 ; i < combien ; ++i){
+        mat[numLigne + i][numColonne] = KAIgnorer;
     }
 }
 
