@@ -235,12 +235,27 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     switch (tolower(deplacment)) {
     case 'a':
-        //TODO
+        if (numLigne != 0) ++nouvellePositionLigne;
+        if (numCol != 0) --nouvellePositionColonne;
         break;
     case 'z':
-        //TODO
+        if (numLigne != 0) ++nouvellePositionLigne;
         break;
-        //TODO : completer les autres mouvements
+    case 'e':
+        if (numLigne != 0) ++nouvellePositionLigne;
+        break;
+    case 'd':
+        break;
+    case 'c':
+        break;
+    case 'x':
+        break;
+    case 'w':
+        if (numCol != 0) --nouvellePositionColonne;
+        break;
+    case 'q':
+        if (numCol != 0) --nouvellePositionColonne;
+        break;
     default:
         cout<<"Tu choisis A ou Z ou E  ou Q ou D ou X ou C ou V"<<endl;
         break;
@@ -316,7 +331,7 @@ int main() {
     //    mat [mat.size()-1][0] = kTokenPlayer2;
     //    showMatrix(mat);
     //-------------------------------------//
-    //return 0;704008
+    //return 0;
 
     // ---------Exercice 2 -----------------//
     //return ppalExo02();
