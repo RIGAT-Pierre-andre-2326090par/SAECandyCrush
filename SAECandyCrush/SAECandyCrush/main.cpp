@@ -54,7 +54,7 @@ void initMat (CMatrice & mat, const size_t & nbLignes = 10,
     for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes);
     for (unsigned i = 0 ; i < nbLignes ; ++i){
         for (unsigned j = 0 ; j < nbColonnes ; ++j){
-            mat[i][j] = rand()%(nbMax + 1);
+            mat[i][j] = (rand()%nbMax) + 1;
         }
     }
 }
@@ -201,6 +201,14 @@ bool detectionExplositionUneBombeVertical (CMatrice & mat){
         }
     }
     return auMoinsUneExplosion;
+}
+
+void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+    for (unsigned i = 0 ; i < mat.size() ; ++i){
+        for (unsigned j = 0 ; j < mat[i].size() ; ++j){
+            if (mat[i][j] == vid) mat[i][j] = (rand()%nbMax) + 1;
+        }
+    }
 }
 //***********************************************************************************/
 //***********************    R1.01 – Prog#10 Exercice 3   ***************************/
