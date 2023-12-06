@@ -317,9 +317,7 @@ int main() {
     CMatrice mat;
     initMat(mat);
     afficheMatriceV2(mat);
-    if (detectionExplositionUneBombeHorizontale(mat)){
-
-    }
+    if (detectionExplositionUneBombeHorizontale(mat)) remplaceVideParRdm(mat);
 
     return 0;
 }
