@@ -202,7 +202,7 @@ bool detectionExplositionUneBombeVertical (CMatrice & mat){
     return auMoinsUneExplosion;
 }
 
-void remplaceVideParRdm(CMatrice)
+void remplaceVideParRdm(CMatrice);
 
 //***********************************************************************************/
 //***********************    R1.01 – Prog#10 Exercice 3   ***************************/
