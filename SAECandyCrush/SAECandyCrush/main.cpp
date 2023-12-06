@@ -202,7 +202,13 @@ bool detectionExplositionUneBombeVertical (CMatrice & mat){
     return auMoinsUneExplosion;
 }
 
-void remplaceVideParRdm(CMatrice);
+void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+    for (unsigned i = 0 ; i < mat.size() ; ++i){
+        for (unsigned j = 0 ; j < mat[i].size() ; ++j){
+            if (mat[i][j] == vid) mat[i][j] = (rand()%nbMax)+1;
+        }
+    }
+}
 
 //***********************************************************************************/
 //***********************    R1.01 – Prog#10 Exercice 3   ***************************/
@@ -312,7 +318,7 @@ int main() {
     CMatrice mat;
     initMat(mat);
     afficheMatriceV2(mat);
-    if (detectionExplositionUneBombeHorizontale(mat))
+    if (detectionExplositionUneBombeHorizontale(mat)) remplaceVideParRdm(mat);
 
     return 0;
 }
