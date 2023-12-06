@@ -309,7 +309,9 @@ int main() {
     CMatrice mat;
     initMat(mat);
     afficheMatriceV2(mat);
-    if (detectionExplositionUneBombeHorizontale(mat) > 0);
+    if (detectionExplositionUneBombeHorizontale(mat)){
+
+    }
 
     return 0;
 }
