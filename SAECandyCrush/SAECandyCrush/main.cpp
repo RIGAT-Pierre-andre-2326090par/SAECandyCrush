@@ -202,6 +202,8 @@ bool detectionExplositionUneBombeVertical (CMatrice & mat){
     return auMoinsUneExplosion;
 }
 
+void remplaceVideParRdm(CMatrice)
+
 //***********************************************************************************/
 //***********************    R1.01 – Prog#10 Exercice 3   ***************************/
 //***********************************************************************************/
@@ -310,5 +312,7 @@ int main() {
     CMatrice mat;
     initMat(mat);
     afficheMatriceV2(mat);
+    if (detectionExplositionUneBombeHorizontale(mat))
+
     return 0;
 }
