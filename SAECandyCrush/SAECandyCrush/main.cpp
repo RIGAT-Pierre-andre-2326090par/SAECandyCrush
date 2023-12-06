@@ -66,6 +66,10 @@ void  afficheMatriceV0 (const CMatrice & Mat) {
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
+            if (Mat[i][j]==1) couleur(KCyan);
+            if (Mat[i][j]==2) couleur (KRouge);
+            if (Mat[i][j]==3) couleur (KVert);
+            if (Mat[i][j]==4)couleur (KJaune);
             cout <<  Mat[i][j]<<' '; // Affiche la matrice élément par élément
         }
         cout << endl ;
