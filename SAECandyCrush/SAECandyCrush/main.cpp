@@ -49,8 +49,16 @@ const contenueDUneCase KPlusGrandNombreDansLaMatrice = 4;
 void initMat (CMatrice & mat, const size_t & nbLignes = 10,
              const size_t & nbColonnes = 10,
              const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
-    //TODO
-}8
+
+    mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
+    for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
+    for (unsigned i = 0 ; i < nbLignes ; ++i){
+        for (unsigned j = 0 ; j < nbColonnes ; ++j){
+            mat[i][j] = (rand()%nbMax)+1; //L'élément de la matrice sera une valeur comprise entre 1 et le nbMax
+        }
+    }
+}
+
 // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
 void  afficheMatriceV0 (const CMatrice & Mat) {
     clearScreen();
@@ -58,8 +66,13 @@ void  afficheMatriceV0 (const CMatrice & Mat) {
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
-            cout <<  Mat[i][j]<<' ';
+            if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
+            if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 1, alors la couleur sera rouge
+            if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 1, alors la couleur sera verte
+            if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 1, alors la couleur sera jaune
+            cout <<  Mat[i][j]<<' '; // Affiche la matrice élément par élément
         }
+        couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
         cout << endl ;
     }
 }
@@ -68,8 +81,7 @@ void  afficheMatriceV0 (const CMatrice & Mat) {
 //pour signifier que la case est a KAIgnorer
 void  afficheMatriceV1 (const CMatrice & Mat) {
     clearScreen();
-    couleur (44);
-    cout << "* ";
+    couleur (44); // Affiche la couleur bleue
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
@@ -81,9 +93,14 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
         couleur(44);
         cout << "  ";
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
-            couleur(KReset);
+            couleur(KReset); // Enlève la couleur bleue pour l'affiche d'un élément
+            if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
+            if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 1, alors la couleur sera rouge
+            if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 1, alors la couleur sera verte
+            if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 1, alors la couleur sera jaune
             cout <<  Mat[i][j] << ' ';
         }
+        couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
         cout << endl ;
     }
 }
@@ -92,8 +109,8 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
 //pour signifier que la case est a KAIgnorer
 void  afficheMatriceV2 (const CMatrice & Mat) {
     clearScreen();
-    couleur (44);
-    cout << "* ";
+    couleur (44); // Affiche la couleur bleue
+    cout << "  ";
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
@@ -107,9 +124,14 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
         couleur(KReset);
         cout << ' ';
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
-            couleur(KReset);
+            couleur(KReset); // Enlève la couleur bleue pour afficher un élément
+            if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
+            if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 1, alors la couleur sera rouge
+            if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 1, alors la couleur sera verte
+            if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 1, alors la couleur sera jaune
             cout <<  Mat[i][j] << ' ';
         }
+        couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
         cout << endl ;
     }
 }
@@ -119,15 +141,17 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
 //***********************    R1.01 – Prog#10 Exercice 2   ***************************/
 //***********************************************************************************/
 
-
-// on remplira cela plus tard, juste la définition de la fonction
 void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
                                     const size_t & numColonne, const size_t & combien){
 
+    for (unsigned i = 0 ; i < numLigne - combien ; ++i){
+        mat[numLigne + i][numColonne] = mat[numLigne + i + 3][numColonne];
+    }
+    for (unsigned i = 0 ; i < combien ; ++i){
+        mat[numLigne + i][numColonne] = KAIgnorer;
+    }
 }
 
-
-//
 bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
     bool auMoinsUneExplosion (false);
     for (unsigned numLigne = 0 ; numLigne < mat.size() ; ++numLigne){
@@ -155,15 +179,49 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
     return auMoinsUneExplosion;
 }
 
+void explositionUneBombeVertical    (CMatrice & mat, const size_t & numLigne,
+                                    const size_t & numColonne, const size_t & combien){
+
+    for (unsigned i = 0 ; i < numLigne - combien ; ++i){
+        mat[numColonne + i][numLigne] = mat[numColonne + i + 3][numLigne];
+    }
+    for (unsigned i = 0 ; i < combien ; ++i){
+        mat[numColonne + i][numLigne] = KAIgnorer;
+    }
+}
+
+bool detectionExplositionUneBombeVertical (CMatrice & mat){
+    bool auMoinsUneExplosion (false);
+    for (unsigned numCol= 0 ; numCol < mat.size() ; ++numCol){
+        for (unsigned numLigne = 0 ; numLigne < mat[numCol].size() ; ++numLigne){
+            size_t combienALaSuite (1);
+            if (numLigne != 0){
+                if (mat[numCol][numLigne] == mat[numCol-1][numLigne]){
+                    ++combienALaSuite;
+                }
+            }
+            //si on a aun moins 3 chiffres identiques a la suite
+            if (combienALaSuite >= 3){
+                auMoinsUneExplosion = true;
+                cout << "on a une suite en position numLigne = " << numLigne
+                     << "; colonne = " << numCol
+                     << "; sur  " << combienALaSuite << " cases" << endl;
+                cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
+                afficheMatriceV1(mat);
+                explositionUneBombeVertical (mat, numCol, numLigne, combienALaSuite);
+                cout << string (20, '-') << endl << "matrice après suppresion" << endl;
+                            afficheMatriceV1(mat);
+            }
+        }
+    }
+    return auMoinsUneExplosion;
+}
+
+void remplaceVideParRdm(CMatrice);
+
 //***********************************************************************************/
 //***********************    R1.01 – Prog#10 Exercice 3   ***************************/
 //***********************************************************************************/
-
-
-//fait descendre toutes les cases d'une unité suite à une explosition
-void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
-                                    const size_t & numColonne, const size_t & combien){
-}
 
 void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & numLigne,
                      const size_t & numCol) {
@@ -247,7 +305,7 @@ int main() {
     // ---------Exercice 2 -----------------//
     //    clearScreen();
 
-    //    CMatrix mat (10, CVLine (10, kEmpty));
+    //    CMatrice mat (10, CVLine (10, kEmpty));
     //    mat [0][mat.size()-1] = kTokenPlayer1;
     //    mat [mat.size()-1][0] = kTokenPlayer2;
     //    showMatrix(mat);
@@ -263,6 +321,13 @@ int main() {
     //-------------------------------------//
 
     // ---------Exercice 3 -----------------//
-    return ppalExo04();
+    //return ppalExo04();
     //-------------------------------------//
+
+    CMatrice mat;
+    initMat(mat);
+    afficheMatriceV2(mat);
+    if (detectionExplositionUneBombeHorizontale(mat))
+
+    return 0;
 }
