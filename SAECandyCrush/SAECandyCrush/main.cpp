@@ -50,11 +50,11 @@ void initMat (CMatrice & mat, const size_t & nbLignes = 10,
              const size_t & nbColonnes = 10,
              const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
 
-    mat.resize(nbLignes);
-    for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes);
+    mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
+    for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i){
         for (unsigned j = 0 ; j < nbColonnes ; ++j){
-            mat[i][j] = (rand()%nbMax) + 1;
+            mat[i][j] = (rand()%nbMax)+1; //L'élément de la matrice sera une valeur comprise entre 1 et le nbMax
         }
     }
 }
@@ -66,7 +66,7 @@ void  afficheMatriceV0 (const CMatrice & Mat) {
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
-            cout <<  Mat[i][j]<<' ';
+            cout <<  Mat[i][j]<<' '; // Affiche la matrice élément par élément
         }
         cout << endl ;
     }
@@ -76,8 +76,7 @@ void  afficheMatriceV0 (const CMatrice & Mat) {
 //pour signifier que la case est a KAIgnorer
 void  afficheMatriceV1 (const CMatrice & Mat) {
     clearScreen();
-    couleur (44);
-    cout << "* ";
+    couleur (44); // Affiche la couleur bleue
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
@@ -89,7 +88,7 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
         couleur(44);
         cout << "  ";
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
-            couleur(KReset);
+            couleur(KReset); // Enlève la couleur bleue pour l'affiche d'un élément
             cout <<  Mat[i][j] << ' ';
         }
         cout << endl ;
@@ -100,8 +99,8 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
 //pour signifier que la case est a KAIgnorer
 void  afficheMatriceV2 (const CMatrice & Mat) {
     clearScreen();
-    couleur (44);
-    cout << "* ";
+    couleur (44); // Affiche la couleur bleue
+    cout << "  ";
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
@@ -115,7 +114,7 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
         couleur(KReset);
         cout << ' ';
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
-            couleur(KReset);
+            couleur(KReset); // Enlève la couleur bleue pour afficher un élément
             cout <<  Mat[i][j] << ' ';
         }
         cout << endl ;
@@ -156,9 +155,9 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
                      << "; sur  " << combienALaSuite << " cases" << endl;
                 cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
                 afficheMatriceV1(mat);
-                        explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
+                /*            explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
                         cout << string (20, '-') << endl << "matrice après suppresion" << endl;
-                        afficheMatriceV1(mat);
+                        afficheMatriceV1(mat);*/
             }
         }
     }
@@ -203,13 +202,6 @@ bool detectionExplositionUneBombeVertical (CMatrice & mat){
     return auMoinsUneExplosion;
 }
 
-void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
-    for (unsigned i = 0 ; i < mat.size() ; ++i){
-        for (unsigned j = 0 ; j < mat[i].size() ; ++j){
-            if (mat[i][j] == vid) mat[i][j] = (rand()%nbMax) + 1;
-        }
-    }
-}
 //***********************************************************************************/
 //***********************    R1.01 – Prog#10 Exercice 3   ***************************/
 //***********************************************************************************/
@@ -232,6 +224,7 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
     }
     //faire la permutaion entre les 2 cases
 }
+
 
 int ppalExo01 (){
     CMatrice mat;
@@ -317,7 +310,5 @@ int main() {
     CMatrice mat;
     initMat(mat);
     afficheMatriceV2(mat);
-    if (detectionExplositionUneBombeHorizontale(mat)) remplaceVideParRdm(mat);
-
     return 0;
 }
