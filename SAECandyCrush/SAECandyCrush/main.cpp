@@ -165,6 +165,16 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
     return auMoinsUneExplosion;
 }
 
+void explositionUneBombeVertical    (CMatrice & mat, const size_t & numLigne,
+                                    const size_t & numColonne, const size_t & combien){
+
+    for (unsigned i = 0 ; i < numLigne - combien ; ++i){
+        mat[numColonne + i][numLigne] = mat[numColonne + i + 3][numLigne];
+    }
+    for (unsigned i = 0 ; i < combien ; ++i){
+        mat[numColonne + i][numLigne] = KAIgnorer;
+    }
+}
 //***********************************************************************************/
 //***********************    R1.01 – Prog#10 Exercice 3   ***************************/
 //***********************************************************************************/
