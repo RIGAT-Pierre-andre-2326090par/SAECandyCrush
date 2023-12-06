@@ -175,6 +175,33 @@ void explositionUneBombeVertical    (CMatrice & mat, const size_t & numLigne,
         mat[numColonne + i][numLigne] = KAIgnorer;
     }
 }
+
+bool detectionExplositionUneBombeVertical (CMatrice & mat){
+    bool auMoinsUneExplosion (false);
+    for (unsigned numCol= 0 ; numCol < mat.size() ; ++numCol){
+        for (unsigned numLigne = 0 ; numLigne < mat[numCol].size() ; ++numLigne){
+            size_t combienALaSuite (1);
+            if (numLigne != 0){
+                if (mat[numCol][numLigne] == mat[numCol-1][numLigne]){
+                    ++combienALaSuite;
+                }
+            }
+            //si on a aun moins 3 chiffres identiques a la suite
+            if (combienALaSuite >= 3){
+                auMoinsUneExplosion = true;
+                cout << "on a une suite en position numLigne = " << numLigne
+                     << "; colonne = " << numCol
+                     << "; sur  " << combienALaSuite << " cases" << endl;
+                cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
+                afficheMatriceV1(mat);
+                explositionUneBombeVertical (mat, numCol, numLigne, combienALaSuite);
+                cout << string (20, '-') << endl << "matrice après suppresion" << endl;
+                            afficheMatriceV1(mat);
+            }
+        }
+    }
+    return auMoinsUneExplosion;
+}
 //***********************************************************************************/
 //***********************    R1.01 – Prog#10 Exercice 3   ***************************/
 //***********************************************************************************/
