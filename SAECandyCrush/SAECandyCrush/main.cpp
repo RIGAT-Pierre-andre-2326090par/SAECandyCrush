@@ -156,9 +156,9 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
                      << "; sur  " << combienALaSuite << " cases" << endl;
                 cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
                 afficheMatriceV1(mat);
-                /*            explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
+                        explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
                         cout << string (20, '-') << endl << "matrice après suppresion" << endl;
-                        afficheMatriceV1(mat);*/
+                        afficheMatriceV1(mat);
             }
         }
     }
@@ -187,7 +187,6 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
     }
     //faire la permutaion entre les 2 cases
 }
-
 
 int ppalExo01 (){
     CMatrice mat;
@@ -272,6 +271,8 @@ int main() {
 
     CMatrice mat;
     initMat(mat);
-    afficheMatriceV1(mat);
+    afficheMatriceV2(mat);
+    if (detectionExplositionUneBombeHorizontale(mat) > 0);
+
     return 0;
 }
