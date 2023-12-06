@@ -49,7 +49,15 @@ const contenueDUneCase KPlusGrandNombreDansLaMatrice = 4;
 void initMat (CMatrice & mat, const size_t & nbLignes = 10,
              const size_t & nbColonnes = 10,
              const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
-    //TODO
+    for (size_t i = 0; i < nbLignes; ++i){
+        mat[i].resize(nbColonnes);
+    }
+    for (size_t i = 0; i < nbLignes; ++i)
+    {
+        for (size_t k = 0; k < nbColonnes; ++k){
+
+        }
+    }
 }
 
 // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
