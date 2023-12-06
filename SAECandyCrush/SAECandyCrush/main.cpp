@@ -49,7 +49,14 @@ const contenueDUneCase KPlusGrandNombreDansLaMatrice = 4;
 void initMat (CMatrice & mat, const size_t & nbLignes = 10,
              const size_t & nbColonnes = 10,
              const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
-    //TODO
+
+    mat.resize(nbLignes);
+    for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes);
+    for (unsigned i = 0 ; i < nbLignes ; ++i){
+        for (unsigned j = 0 ; j < nbColonnes ; ++j){
+            mat[i][j] = rand()%(nbMax + 1);
+        }
+    }
 }
 
 // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
@@ -244,7 +251,7 @@ int main() {
     // ---------Exercice 2 -----------------//
     //    clearScreen();
 
-    //    CMatrix mat (10, CVLine (10, kEmpty));
+    //    CMatrice mat (10, CVLine (10, kEmpty));
     //    mat [0][mat.size()-1] = kTokenPlayer1;
     //    mat [mat.size()-1][0] = kTokenPlayer2;
     //    showMatrix(mat);
@@ -260,6 +267,11 @@ int main() {
     //-------------------------------------//
 
     // ---------Exercice 3 -----------------//
-    return ppalExo04();
+    //return ppalExo04();
     //-------------------------------------//
+
+    CMatrice mat;
+    initMat(mat);
+    afficheMatriceV1(mat);
+    return 0;
 }
