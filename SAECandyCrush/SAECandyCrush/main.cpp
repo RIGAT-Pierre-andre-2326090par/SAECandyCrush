@@ -243,14 +243,20 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
         break;
     case 'e':
         if (numLigne != 0) ++nouvellePositionLigne;
+        if (numCol != mat[0].size() - 1) ++nouvellePositionColonne;
         break;
     case 'd':
+        if (numCol != mat[0].size() - 1) ++nouvellePositionColonne;
         break;
     case 'c':
+        if (numLigne != mat.size() - 1) --nouvellePositionLigne;
+        if (numCol != mat[0].size() - 1) ++nouvellePositionColonne;
         break;
     case 'x':
+        if (numLigne != mat.size() - 1) --nouvellePositionLigne;
         break;
     case 'w':
+        if (numLigne != mat.size() - 1) --nouvellePositionLigne;
         if (numCol != 0) --nouvellePositionColonne;
         break;
     case 'q':
