@@ -8,7 +8,6 @@ using namespace std;
 //***********************    R1.01 – Prog#10 Exercice 1   ***************************/
 //***********************************************************************************/
 
-
 void clearScreen () {
     cout << "\033[H\033[2J";
 }
@@ -19,7 +18,7 @@ const unsigned KRouge   (31);
 const unsigned KVert    (32);
 const unsigned KJaune   (33);
 const unsigned KBleu    (34);
-const unsigned KMAgenta (35);
+const unsigned KMagenta (35);
 const unsigned KCyan    (36);
 const unsigned KBGNoir    (40);
 const unsigned KBGRouge   (41);
@@ -33,9 +32,6 @@ void couleur (const unsigned & coul) {
 //***********************************************************************************/
 //***********************    R1.01 – Prog#10 Exercice 2   ***************************/
 //***********************************************************************************/
-/*
- *
-*/
 
 typedef ushort contenueDUneCase;
 typedef vector <contenueDUneCase> CVLigne; // un type représentant une ligne de la grille
@@ -65,10 +61,14 @@ void  afficheMatriceV0 (const CMatrice & Mat) {
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
+            if (Mat[i][j]==0) couleur(KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
-            if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 1, alors la couleur sera rouge
-            if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 1, alors la couleur sera verte
-            if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 1, alors la couleur sera jaune
+            if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
+            if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
+            if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 4, alors la couleur sera jaune
+            if (Mat[i][j]==5) couleur(KMagenta); // Si l'élément = 5, alors la couleur sera magenta
+            if (Mat[i][j]==6) couleur (KBleu); // Si l'élément = 6, alors la couleur sera bleu
+            if (Mat[i][j]==7) couleur (KNoir); // Si l'élément = 7, alors la couleur sera noir
             cout <<  Mat[i][j]<<' '; // Affiche la matrice élément par élément
         }
         couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
@@ -93,17 +93,21 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
         cout << "  ";
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
             couleur(KReset); // Enlève la couleur bleue pour l'affiche d'un élément
+            if (Mat[i][j]==0) couleur(KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
-            if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 1, alors la couleur sera rouge
-            if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 1, alors la couleur sera verte
-            if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 1, alors la couleur sera jaune
+            if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
+            if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
+            if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 4, alors la couleur sera jaune
+            if (Mat[i][j]==5) couleur(KMagenta); // Si l'élément = 5, alors la couleur sera magenta
+            if (Mat[i][j]==6) couleur (KBleu); // Si l'élément = 6, alors la couleur sera bleu
+            if (Mat[i][j]==7) couleur (KNoir); // Si l'élément = 7, alors la couleur sera noir
             cout <<  Mat[i][j] << ' ';
         }
         couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
         cout << endl ;
     }
 }
-//.
+
 // affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur
 //pour signifier que la case est a KAIgnorer
 void  afficheMatriceV2 (const CMatrice & Mat) {
@@ -113,21 +117,25 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
-        cout << i << ' ';
+        cout << i + 1 << ' ';
     }
     cout << endl ;
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
-        cout << i;
+        cout << i + 1;
         couleur(KReset);
         cout << ' ';
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
             couleur(KReset); // Enlève la couleur bleue pour afficher un élément
+            if (Mat[i][j]==0) couleur(KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
-            if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 1, alors la couleur sera rouge
-            if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 1, alors la couleur sera verte
-            if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 1, alors la couleur sera jaune
+            if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
+            if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
+            if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 4, alors la couleur sera jaune
+            if (Mat[i][j]==5) couleur(KMagenta); // Si l'élément = 5, alors la couleur sera magenta
+            if (Mat[i][j]==6) couleur (KBleu); // Si l'élément = 6, alors la couleur sera bleu
+            if (Mat[i][j]==7) couleur (KNoir); // Si l'élément = 7, alors la couleur sera noir
             cout <<  Mat[i][j] << ' ';
         }
         couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
@@ -168,9 +176,9 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
                      << "; sur  " << combienALaSuite << " cases" << endl;
                 cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
                 afficheMatriceV1(mat);
-                /*            explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
-                        cout << string (20, '-') << endl << "matrice après suppresion" << endl;
-                        afficheMatriceV1(mat);*/
+                explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
+                cout << string (20, '-') << endl << "matrice après suppresion" << endl;
+                afficheMatriceV1(mat);
             }
         }
     }
@@ -208,7 +216,7 @@ bool detectionExplositionUneBombeVertical (CMatrice & mat){
                 afficheMatriceV1(mat);
                 explositionUneBombeVertical (mat, numCol, numLigne, combienALaSuite);
                 cout << string (20, '-') << endl << "matrice après suppresion" << endl;
-                            afficheMatriceV1(mat);
+                afficheMatriceV1(mat);
             }
         }
     }
@@ -271,10 +279,10 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
             if (numCol != mat[0].size() - 1) swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
             break;
         case 'x':
-            if (numLigne != mat.size() - 1) --nouvellePositionLigne;
+            if (numLigne != mat.size() - 1) swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
             break;
         case 'q':
-            if (numCol != 0) --nouvellePositionColonne;
+            if (numCol != 0) swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
             break;
         default:
             cout<<"Tu choisis Z ou Q ou D ou X"<<endl;
@@ -367,13 +375,13 @@ int main() {
     //-------------------------------------//
 
     // ---------Exercice 3 -----------------//
-    //return ppalExo04();
+    return ppalExo04();
     //-------------------------------------//
 
-    CMatrice mat;
+    /*CMatrice mat;
     initMat(mat);
     afficheMatriceV2(mat);
-    if (detectionExplositionUneBombeHorizontale(mat)) remplaceVideParRdm(mat);
+    if (detectionExplositionUneBombeHorizontale(mat)) remplaceVideParRdm(mat);*/
 
     return 0;
 }
