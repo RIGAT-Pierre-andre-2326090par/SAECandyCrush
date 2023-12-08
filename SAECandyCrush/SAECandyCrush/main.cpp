@@ -30,7 +30,6 @@ void couleur (const unsigned & coul) {
     cout << "\033[" << coul <<"m";
 }
 
-
 //***********************************************************************************/
 //***********************    R1.01 – Prog#10 Exercice 2   ***************************/
 //***********************************************************************************/
@@ -135,7 +134,6 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
         cout << endl ;
     }
 }
-
 
 //***********************************************************************************/
 //***********************    R1.01 – Prog#10 Exercice 2   ***************************/
@@ -262,8 +260,29 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
     case 'q':
         if (numCol != 0) --nouvellePositionColonne;
         break;
+    case 's':
+        char inp;
+        cin >> inp;
+        switch(tolower(inp)){
+        case 'z':
+            if (numLigne != 0) swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
+            break;
+        case 'd':
+            if (numCol != mat[0].size() - 1) swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
+            break;
+        case 'x':
+            if (numLigne != mat.size() - 1) --nouvellePositionLigne;
+            break;
+        case 'q':
+            if (numCol != 0) --nouvellePositionColonne;
+            break;
+        default:
+            cout<<"Tu choisis Z ou Q ou D ou X"<<endl;
+            break;
+        }
+        break;
     default:
-        cout<<"Tu choisis A ou Z ou E  ou Q ou D ou X ou C ou V"<<endl;
+        cout<<"Tu choisis A ou Z ou E ou Q ou D ou X ou C ou V"<<endl;
         break;
     }
     //faire la permutaion entre les 2 cases
