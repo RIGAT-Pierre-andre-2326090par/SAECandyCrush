@@ -54,6 +54,30 @@ void initMat (CMatrice & mat, const size_t & nbLignes = 10,
     }
 }
 
+
+//renvoie un nombre random différent de celui passer en paramètre
+unsigned nouvRdm(unsigned & nb, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+    unsigned rdm = 0;
+    while(rdm == nb) rdm = (rand()%nbMax)+1;
+}
+
+//initialisation de la grille de jeu avec moins de 3 symboles alignés
+void initMatV2 (CMatrice & mat, const size_t & nbLignes = 10,
+             const size_t & nbColonnes = 10,
+             const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+
+    mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
+    for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
+    for (unsigned i = 0 ; i < nbLignes ; ++i){
+        for (unsigned j = 0 ; j < nbColonnes ; ++j){
+            unsigned rdm = (rand()%nbMax)+1; //L'élément de la matrice sera une valeur comprise entre 1 et le nbMax
+            if (i > 1 && j > 1 && (mat[i-1][j] == mat[i-2][j] || mat[i][j-1] == mat[i][j-2])
+                && (rdm == mat[i-1][j] || rdm == mat[i][j-1])) mat[i][j] = rdm;
+            else mat[i][j] = rdm;
+        }
+    }
+}
+
 // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
 void  afficheMatriceV0 (const CMatrice & Mat) {
     clearScreen();
@@ -140,6 +164,46 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
     }
 }
 
+// affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur
+// pour signifier que la case est a KAIgnorer et la case sélectionner a un fond de couleur différent
+void  afficheMatriceV3 (const CMatrice & Mat, const size_t numLigne, const size_t numCol) {
+    clearScreen();
+    couleur (44); // Affiche la couleur bleue
+    cout << "  ";
+    for (size_t i = 0 ; i < Mat.size() ; ++i) cout << ' ' << i + 1;
+    cout << endl ;
+    for (size_t i = 0 ; i < Mat.size() ; ++i)
+    {
+        couleur(44);
+        if (i + 1 != Mat.size()) cout << ' ' << i + 1;
+        else cout << i + 1;
+        couleur(KReset);
+        cout << ' ';
+        for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
+            // Enlève la couleur bleue pour afficher un élément
+            if (i == numLigne && j == numCol){
+                couleur(KNoir);
+                couleur(KBGCyan);
+            }
+            else{
+                if (Mat[i][j]==0) couleur (KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
+                if (Mat[i][j]==1) couleur (KCyan); // Si l'élément = 1, alors la couleur sera cyan
+                if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
+                if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
+                if (Mat[i][j]==4) couleur (KJaune); // Si l'élément = 4, alors la couleur sera jaune
+                if (Mat[i][j]==5) couleur (KMagenta); // Si l'élément = 5, alors la couleur sera magenta
+                if (Mat[i][j]==6) couleur (KBleu); // Si l'élément = 6, alors la couleur sera bleu
+            }
+            cout <<  Mat[i][j] ;
+            couleur(KReset);
+            cout << ' ';
+        }
+
+        couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
+        cout << endl ;
+    }
+}
+
 //***********************************************************************************/
 //***********************    R1.01 – Prog#10 Exercice 2   ***************************/
 //***********************************************************************************/
@@ -220,6 +284,11 @@ bool detectionExplositionUneBombeVertical (CMatrice & mat){
     return auMoinsUneExplosion;
 }
 
+void detectionExplositionBombe (CMatrice & mat){
+    detectionExplositionUneBombeHorizontale(mat);
+    detectionExplositionUneBombeVertical(mat);
+}
+
 void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
     for (unsigned i = 0 ; i < mat.size() ; ++i){
         for (unsigned j = 0 ; j < mat[i].size() ; ++j){
@@ -239,31 +308,31 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
     switch (tolower(deplacment)) {
     case 'a':
         if (numLigne != 0) ++nouvellePositionLigne;
-        if (numCol != 0) --nouvellePositionColonne;
+        if (numCol != 0) ++nouvellePositionColonne;
         break;
     case 'z':
         if (numLigne != 0) ++nouvellePositionLigne;
         break;
     case 'e':
         if (numLigne != 0) ++nouvellePositionLigne;
-        if (numCol != mat[0].size() - 1) ++nouvellePositionColonne;
+        if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
         break;
     case 'd':
-        if (numCol != mat[0].size() - 1) ++nouvellePositionColonne;
+        if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
         break;
     case 'c':
         if (numLigne != mat.size() - 1) --nouvellePositionLigne;
-        if (numCol != mat[0].size() - 1) ++nouvellePositionColonne;
+        if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
         break;
     case 'x':
         if (numLigne != mat.size() - 1) --nouvellePositionLigne;
         break;
     case 'w':
         if (numLigne != mat.size() - 1) --nouvellePositionLigne;
-        if (numCol != 0) --nouvellePositionColonne;
+        if (numCol != 0) ++nouvellePositionColonne;
         break;
     case 'q':
-        if (numCol != 0) --nouvellePositionColonne;
+        if (numCol != 0) ++nouvellePositionColonne;
         break;
     case 's':
         char inp;
@@ -287,12 +356,72 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
         }
         break;
     default:
-        cout<<"Tu choisis A ou Z ou E ou Q ou D ou X ou C ou V"<<endl;
-        break;
+        cout<<"Tu choisis A ou Z ou E ou Q ou D ou X ou C ou V pour déplacer le curseur ou S pour échanger 2 cases"<<endl;
+            break;
     }
-    //faire la permutaion entre les 2 cases
 }
 
+void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLigne,
+                      size_t & numCol) {
+
+    size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
+    switch (tolower(deplacment)) {
+    case 'a':
+        if (numLigne != 0) ++nouvellePositionLigne;
+        if (numCol != 0) ++nouvellePositionColonne;
+        break;
+    case 'z':
+        if (numLigne != 0) ++nouvellePositionLigne;
+        break;
+    case 'e':
+        if (numLigne != 0) ++nouvellePositionLigne;
+        if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
+        break;
+    case 'd':
+        if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
+        break;
+    case 'c':
+        if (numLigne != mat.size() - 1) --nouvellePositionLigne;
+        if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
+        break;
+    case 'x':
+        if (numLigne != mat.size() - 1) --nouvellePositionLigne;
+        break;
+    case 'w':
+        if (numLigne != mat.size() - 1) --nouvellePositionLigne;
+        if (numCol != 0) ++nouvellePositionColonne;
+        break;
+    case 'q':
+        if (numCol != 0) ++nouvellePositionColonne;
+        break;
+    case 's':
+        char inp;
+        cin >> inp;
+        switch(tolower(inp)){
+        case 'z':
+            if (numLigne != 0) swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
+            break;
+        case 'd':
+            if (numCol != mat[0].size() - 1) swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
+            break;
+        case 'x':
+            if (numLigne != mat.size() - 1) swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
+            break;
+        case 'q':
+            if (numCol != 0) swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
+            break;
+        default:
+            cout<<"Tu choisis Z ou Q ou D ou X"<<endl;
+            break;
+        }
+        break;
+    default:
+        cout<<"Tu choisis A ou Z ou E ou Q ou D ou X ou C ou V pour déplacer le curseur ou S pour dé"<<endl;
+        break;
+    }
+    numCol = nouvellePositionColonne;
+    numLigne = nouvellePositionLigne;
+}
 
 int ppalExo01 (){
     CMatrice mat;
@@ -335,12 +464,12 @@ int ppalExo04 (){
     while (true) {
         cout << "Fait un mouvement ";
         cout << "numero de ligne : ";
-        size_t numLigne;
+        size_t numLigne = 0;
         cout << numLigne;
-        cout << "numero de colonne : ";
-        size_t numCol;
+        cout << ", numero de colonne : ";
+        size_t numCol = 0;
         cout << numCol;
-        cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
+        cout << ", Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
         char deplacement;
         cin >> deplacement;
         faitUnMouvement (mat, deplacement, numLigne, numCol);
@@ -350,6 +479,25 @@ int ppalExo04 (){
     return 0;
 }
 
+int partiNumberCrush(){
+    CMatrice mat;
+    initMatV2(mat);
+    size_t numCol = 0;
+    size_t numLigne = 0;
+    while(true){
+        detectionExplositionUneBombeHorizontale (mat);
+        afficheMatriceV3 (mat, numLigne, numCol);
+        cout << "Fait un mouvement ";
+        cout << "numero de ligne : ";
+        cout << numLigne + 1;
+        cout << ", numero de colonne : ";
+        cout << numCol + 1 << endl;
+        cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
+        char deplacement;
+        cin >> deplacement;
+        faitUnMouvementV2 (mat, deplacement, numLigne, numCol);
+    }
+}
 
 int main() {
 
@@ -372,13 +520,10 @@ int main() {
     //-------------------------------------//
 
     // ---------Exercice 3 -----------------//
-    return ppalExo04();
+    //return ppalExo04();
     //-------------------------------------//
 
-    /*CMatrice mat;
-    initMat(mat);
-    afficheMatriceV2(mat);
-    if (detectionExplositionUneBombeHorizontale(mat)) remplaceVideParRdm(mat);*/
+    return partiNumberCrush();
 
     return 0;
 }
