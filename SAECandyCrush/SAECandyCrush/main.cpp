@@ -114,16 +114,13 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
     clearScreen();
     couleur (44); // Affiche la couleur bleue
     cout << "  ";
-    for (size_t i = 0 ; i < Mat.size() ; ++i)
-    {
-        couleur(44);
-        cout << i + 1 << ' ';
-    }
+    for (size_t i = 0 ; i < Mat.size() ; ++i) cout << ' ' << i + 1;
     cout << endl ;
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
-        cout << i + 1;
+        if (i + 1 != Mat.size()) cout << ' ' << i + 1;
+        else cout << i + 1;
         couleur(KReset);
         cout << ' ';
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
