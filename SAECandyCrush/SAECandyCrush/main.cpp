@@ -221,13 +221,12 @@ void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
 
 bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
     bool auMoinsUneExplosion (false);
-    for (unsigned numLigne = 0 ; numLigne < mat.size() ; ++numLigne){
+    //analyse case par case
+    for (unsigned numLigne = 1 ; numLigne < mat.size() ; ++numLigne){
         for (unsigned numCol = 0 ; numCol < mat[numLigne].size() ; ++numCol){
             size_t combienALaSuite (1);
-            if (numLigne != 0){
-                if (mat[numLigne][numCol] == mat[numLigne-1][numCol]){
-                    ++combienALaSuite;
-                }
+            if (mat[numLigne][numCol] == mat[numLigne-1][numCol]){
+                ++combienALaSuite;
             }
             //si on a au moins 3 chiffres identiques a la suite
             if (combienALaSuite >= 3){
