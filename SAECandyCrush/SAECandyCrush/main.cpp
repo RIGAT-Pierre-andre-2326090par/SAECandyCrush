@@ -267,7 +267,7 @@ bool detectionExplositionUneBombeVertical (CMatrice & mat){
                     ++combienALaSuite;
                 }
             }
-            //si on a aun moins 3 chiffres identiques a la suite
+            //si on a aun moins 3 chiffres identiques a la suite.
             if (combienALaSuite >= 3){
                 auMoinsUneExplosion = true;
                 cout << "on a une suite en position numLigne = " << numLigne
