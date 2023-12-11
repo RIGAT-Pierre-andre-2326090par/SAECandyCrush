@@ -57,8 +57,9 @@ void initMat (CMatrice & mat, const size_t & nbLignes = 10,
 
 //renvoie un nombre random différent de celui passer en paramètre
 unsigned nouvRdm(unsigned & nb, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
-    unsigned rdm = 0;
+    unsigned rdm = (rand()%nbMax)+1;
     while(rdm == nb) rdm = (rand()%nbMax)+1;
+    return rdm;
 }
 
 //initialisation de la grille de jeu avec moins de 3 symboles alignés
@@ -72,7 +73,7 @@ void initMatV2 (CMatrice & mat, const size_t & nbLignes = 10,
         for (unsigned j = 0 ; j < nbColonnes ; ++j){
             unsigned rdm = (rand()%nbMax)+1; //L'élément de la matrice sera une valeur comprise entre 1 et le nbMax
             if (i > 1 && j > 1 && (mat[i-1][j] == mat[i-2][j] || mat[i][j-1] == mat[i][j-2])
-                && (rdm == mat[i-1][j] || rdm == mat[i][j-1])) mat[i][j] = rdm;
+                && (rdm == mat[i-1][j] || rdm == mat[i][j-1])) mat[i][j] = nouvRdm(rdm);
             else mat[i][j] = rdm;
         }
     }
@@ -366,32 +367,32 @@ void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLig
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     switch (tolower(deplacment)) {
-    case 'a':
+    case 'c':
         if (numLigne != 0) ++nouvellePositionLigne;
         if (numCol != 0) ++nouvellePositionColonne;
-        break;
-    case 'z':
-        if (numLigne != 0) ++nouvellePositionLigne;
-        break;
-    case 'e':
-        if (numLigne != 0) ++nouvellePositionLigne;
-        if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
-        break;
-    case 'd':
-        if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
-        break;
-    case 'c':
-        if (numLigne != mat.size() - 1) --nouvellePositionLigne;
-        if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
         break;
     case 'x':
-        if (numLigne != mat.size() - 1) --nouvellePositionLigne;
+        if (numLigne != 0) ++nouvellePositionLigne;
         break;
     case 'w':
+        if (numLigne != 0) ++nouvellePositionLigne;
+        if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
+        break;
+    case 'q':
+        if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
+        break;
+    case 'a':
+        if (numLigne != mat.size() - 1) --nouvellePositionLigne;
+        if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
+        break;
+    case 'z':
+        if (numLigne != mat.size() - 1) --nouvellePositionLigne;
+        break;
+    case 'e':
         if (numLigne != mat.size() - 1) --nouvellePositionLigne;
         if (numCol != 0) ++nouvellePositionColonne;
         break;
-    case 'q':
+    case 'd':
         if (numCol != 0) ++nouvellePositionColonne;
         break;
     case 's':
@@ -497,6 +498,7 @@ int partiNumberCrush(){
         cin >> deplacement;
         faitUnMouvementV2 (mat, deplacement, numLigne, numCol);
     }
+    return 0;
 }
 
 int main() {
@@ -525,5 +527,5 @@ int main() {
 
     return partiNumberCrush();
 
-    return 0;
+    //return 0;
 }
