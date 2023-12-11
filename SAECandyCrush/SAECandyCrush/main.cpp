@@ -524,8 +524,8 @@ int main() {
     //return ppalExo03();
     //-------------------------------------//
 
-    // ---------Exercice 3 -----------------//
-    return ppalExo04();
+    // ---------Exercice 4 -----------------//
+    //return ppalExo04();
     //-------------------------------------//
 
     //return partiNumberCrush();
