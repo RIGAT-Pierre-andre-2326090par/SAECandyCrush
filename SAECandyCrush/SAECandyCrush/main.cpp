@@ -71,14 +71,16 @@ void  afficheMatriceV0 (const CMatrice & Mat) {
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
-            if (Mat[i][j]==0) couleur(KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
+            if (Mat[i][j]==0) couleur(KNoir); // Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
             if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
             if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
             if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 4, alors la couleur sera jaune
             if (Mat[i][j]==5) couleur(KMagenta); // Si l'élément = 5, alors la couleur sera magenta
             if (Mat[i][j]==6) couleur (KBleu); // Si l'élément = 6, alors la couleur sera bleu
-            cout <<  Mat[i][j]<<' '; // Affiche la matrice élément par élément
+            cout <<  Mat[i][j]; // Affiche la matrice élément par élément
+            couleur(KReset);
+            cout << " | ";
         }
         couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
         cout << endl ;
@@ -93,25 +95,26 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
-        cout << "  ";
+        cout << " ";
     }
-    cout << ' ' << endl ;
+    cout << " " <<endl;
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
         cout << "  ";
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
             couleur(KReset); // Enlève la couleur bleue pour l'affiche d'un élément
-            if (Mat[i][j]==0) couleur(KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
+            if (Mat[i][j]==0) couleur(KNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
             if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
             if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
             if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 4, alors la couleur sera jaune
             if (Mat[i][j]==5) couleur(KMagenta); // Si l'élément = 5, alors la couleur sera magenta
             if (Mat[i][j]==6) couleur (KBleu); // Si l'élément = 6, alors la couleur sera bleu
-            cout <<  Mat[i][j] << ' ';
+            cout <<  Mat[i][j];
+            couleur(KReset);
+            cout << " | ";
         }
-        couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
         cout << endl ;
     }
 }
@@ -121,26 +124,28 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
 void  afficheMatriceV2 (const CMatrice & Mat) {
     clearScreen();
     couleur (44); // Affiche la couleur bleue
-    cout << "  ";
-    for (size_t i = 0 ; i < Mat.size() ; ++i) cout << ' ' << i + 1;
-    cout << endl ;
+    cout << " ";
+    for (size_t i = 0 ; i < Mat.size() ; ++i) cout << "  |" << i + 1;
+    cout << " | " << endl;
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
         if (i + 1 != Mat.size()) cout << ' ' << i + 1;
         else cout << i + 1;
         couleur(KReset);
-        cout << ' ';
+        cout << " | ";
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
             couleur(KReset); // Enlève la couleur bleue pour afficher un élément
-            if (Mat[i][j]==0) couleur(KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
+            if (Mat[i][j]==0) couleur(KNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
             if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
             if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
             if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 4, alors la couleur sera jaune
             if (Mat[i][j]==5) couleur(KMagenta); // Si l'élément = 5, alors la couleur sera magenta
             if (Mat[i][j]==6) couleur (KBleu); // Si l'élément = 6, alors la couleur sera bleu
-            cout <<  Mat[i][j] << ' ';
+            cout <<  Mat[i][j];
+            couleur(KReset);
+            cout << " | ";
         }
         couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
         cout << endl ;
@@ -169,7 +174,7 @@ void  afficheMatriceV3 (const CMatrice & Mat, const size_t numLigne, const size_
                 couleur(KBGGrisClair);
             }
             else{
-                if (Mat[i][j]==0) couleur (KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
+                if (Mat[i][j]==0) couleur (KReset); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
                 if (Mat[i][j]==1) couleur (KCyan); // Si l'élément = 1, alors la couleur sera cyan
                 if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
                 if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
@@ -486,7 +491,8 @@ int partiNumberCrush(){
 }
 
 int main() {
-
+    unsigned score=0;
+    unsigned deplacement=0;
     // ---------Exercice 2 -----------------//
     //    clearScreen();
 
