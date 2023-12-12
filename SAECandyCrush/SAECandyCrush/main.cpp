@@ -11,7 +11,7 @@ using namespace std;
 void clearScreen () {
     cout << "\033[H\033[2J";
 }
-
+// On définit les couleurs sous des valeurs constantes tout en haut de notre programme
 const unsigned KReset   (0);
 const unsigned KNoir    (30);
 const unsigned KRouge   (31);
@@ -26,6 +26,7 @@ const unsigned KGBBleu    (44);
 const unsigned KBGCyan    (46);
 const unsigned KBGGrisClair(47);
 
+//Affiche le texte en couleur par l'ajout de \033[ dans le terminal
 void couleur (const unsigned & coul) {
     cout << "\033[" << coul <<"m";
 }
@@ -34,10 +35,12 @@ void couleur (const unsigned & coul) {
 //***********************    R1.01 – Prog#10 Exercice 2   ***************************/
 //***********************************************************************************/
 
+//On renomme des types de vecteurs, permettant de gagner du temps à l'écriture du code
 typedef ushort contenueDUneCase;
 typedef vector <contenueDUneCase> CVLigne; // un type représentant une ligne de la grille
 typedef vector <CVLigne> CMatrice; // un type représentant la grille
 
+//On définit le plus grand nombre présent dans la matrice, et dans l'interface graphique
 const contenueDUneCase KAIgnorer = 0;
 const contenueDUneCase KPlusGrandNombreDansLaMatrice = 4;
 const contenueDUneCase KPlusGrandNombreDansLaMatricePourCasaliCrush = 5;
@@ -304,7 +307,7 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
                      const size_t & numCol) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
-    switch (tolower(deplacment)) {
+    switch (tolower(deplacment)) { //On initialise un choix avec switch, avec les différentes touches, en MINUSCULE
     case 'a':
         if (numLigne != 0) ++nouvellePositionLigne;
         if (numCol != 0) ++nouvellePositionColonne;
