@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
+#include <type.h>
+#include <cst.h>
 
 using namespace std;
 
@@ -11,22 +13,9 @@ using namespace std;
 void clearScreen () {
     cout << "\033[H\033[2J";
 }
-// On définit les couleurs sous des valeurs constantes tout en haut de notre programme
-const unsigned KReset   (0);
-const unsigned KNoir    (30);
-const unsigned KRouge   (31);
-const unsigned KVert    (32);
-const unsigned KJaune   (33);
-const unsigned KBleu    (34);
-const unsigned KMagenta (35);
-const unsigned KCyan    (36);
-const unsigned KBGNoir    (40);
-const unsigned KBGRouge   (41);
-const unsigned KGBBleu    (44);
-const unsigned KBGCyan    (46);
-const unsigned KBGGrisClair(47);
 
-//Affiche le texte en couleur par l'ajout de \033[ dans le terminal
+
+
 void couleur (const unsigned & coul) {
     cout << "\033[" << coul <<"m";
 }
@@ -35,21 +24,12 @@ void couleur (const unsigned & coul) {
 //***********************    R1.01 – Prog#10 Exercice 2   ***************************/
 //***********************************************************************************/
 
-//On renomme des types de vecteurs, permettant de gagner du temps à l'écriture du code
-typedef ushort contenueDUneCase;
-typedef vector <contenueDUneCase> CVLigne; // un type représentant une ligne de la grille
-typedef vector <CVLigne> CMatrice; // un type représentant la grille
-
-//On définit le plus grand nombre présent dans la matrice, et dans l'interface graphique
-const contenueDUneCase KAIgnorer = 0;
-const contenueDUneCase KPlusGrandNombreDansLaMatrice = 4;
-const contenueDUneCase KPlusGrandNombreDansLaMatricePourCasaliCrush = 5;
 
 //initialisation de la grille de jeu
 void initMat (CMatrice & mat, const size_t & nbLignes = 10,
-             const size_t & nbColonnes = 10,
-             const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
-
+              const size_t & nbColonnes = 10,
+              const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+    
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i){
@@ -69,16 +49,16 @@ unsigned nouvRdm(unsigned & nb, const unsigned & nbMax = KPlusGrandNombreDansLaM
 
 //initialisation de la grille de jeu avec maximum 2 nombre aligné
 void initMatV2 (CMatrice & mat, const size_t & nbLignes = 10,
-             const size_t & nbColonnes = 10,
-             const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
-
+                const size_t & nbColonnes = 10,
+                const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+    
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i){
         for (unsigned j = 0 ; j < nbColonnes ; ++j){
             unsigned rdm = (rand()%nbMax)+1; //L'élément de la matrice sera une valeur comprise entre 1 et le nbMax
             if (i > 1 && j > 1 && (mat[i-1][j] == mat[i-2][j] || mat[i][j-1] == mat[i][j-2])
-                && (rdm == mat[i-1][j] || rdm == mat[i][j-1])) mat[i][j] = nouvRdm(rdm);
+                    && (rdm == mat[i-1][j] || rdm == mat[i][j-1])) mat[i][j] = nouvRdm(rdm);
             else mat[i][j] = rdm;
         }
     }
@@ -201,7 +181,7 @@ void  afficheMatriceV3 (const CMatrice & Mat, const size_t numLigne, const size_
             couleur(KReset);
             cout << ' ';
         }
-
+        
         couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
         cout << endl ;
     }
@@ -212,8 +192,8 @@ void  afficheMatriceV3 (const CMatrice & Mat, const size_t numLigne, const size_
 //***********************************************************************************/
 
 void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
-                                    const size_t & numColonne, const size_t & combien){
-
+                                     const size_t & numColonne, const size_t & combien){
+    
     for (unsigned i = 0 ; i < numLigne - combien ; ++i){
         mat[numLigne + i][numColonne] = mat[numLigne + i + 3][numColonne];
     }
@@ -249,8 +229,8 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
 }
 
 void explositionUneBombeVertical    (CMatrice & mat, const size_t & numLigne,
-                                    const size_t & numColonne, const size_t & combien){
-
+                                     const size_t & numColonne, const size_t & combien){
+    
     for (unsigned i = 0 ; i < numLigne - combien ; ++i){
         mat[numColonne + i][numLigne] = mat[numColonne + i + 3][numLigne];
     }
@@ -304,10 +284,10 @@ void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer, const 
 //***********************************************************************************/
 
 void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & numLigne,
-                     const size_t & numCol) {
-
+                      const size_t & numCol) {
+    
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
-    switch (tolower(deplacment)) { //On initialise un choix avec switch, avec les différentes touches, en MINUSCULE
+    switch (tolower(deplacment)) {
     case 'a':
         if (numLigne != 0) ++nouvellePositionLigne;
         if (numCol != 0) ++nouvellePositionColonne;
@@ -359,13 +339,13 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
         break;
     default:
         cout<<"Tu choisis A ou Z ou E ou Q ou D ou X ou C ou V pour déplacer le curseur ou S pour échanger 2 cases"<<endl;
-            break;
+        break;
     }
 }
 
 void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLigne,
-                      size_t & numCol) {
-
+                        size_t & numCol) {
+    
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     switch (tolower(deplacment)) {
     case 'c':
@@ -503,34 +483,34 @@ int partiNumberCrush(){
 }
 
 int main() {
-
+    
     // ---------Exercice 2 -----------------//
     //    clearScreen();
-
+    
     //    CMatrice mat (10, CVLine (10, kEmpty));
     //    mat [0][mat.size()-1] = kTokenPlayer1;
     //    mat [mat.size()-1][0] = kTokenPlayer2;
     //    showMatrix(mat);
     //-------------------------------------//
     //return 0;
-
+    
     // ---------Exercice 1 -----------------//
     //return ppalExo01();
     //--------------------------------------//
-
+    
     // ---------Exercice 2 -----------------//
     //return ppalExo02();
     //-------------------------------------//
-
+    
     // ---------Exercice 3 -----------------//
     //return ppalExo03();
     //-------------------------------------//
-
+    
     // ---------Exercice 4 -----------------//
-    //return ppalExo04();
+    return ppalExo04();
     //-------------------------------------//
-
+    
     //return partiNumberCrush();
-
+    
     //return 0;
 }
