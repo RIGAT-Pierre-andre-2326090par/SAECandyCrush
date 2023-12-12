@@ -29,7 +29,7 @@ void couleur (const unsigned & coul) {
 void initMat (CMatrice & mat, const size_t & nbLignes = 10,
               const size_t & nbColonnes = 10,
               const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
-    
+
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i){
@@ -51,7 +51,7 @@ unsigned nouvRdm(unsigned & nb, const unsigned & nbMax = KPlusGrandNombreDansLaM
 void initMatV2 (CMatrice & mat, const size_t & nbLignes = 10,
                 const size_t & nbColonnes = 10,
                 const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
-    
+
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i){
@@ -181,7 +181,7 @@ void  afficheMatriceV3 (const CMatrice & Mat, const size_t numLigne, const size_
             couleur(KReset);
             cout << ' ';
         }
-        
+
         couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
         cout << endl ;
     }
@@ -191,84 +191,87 @@ void  afficheMatriceV3 (const CMatrice & Mat, const size_t numLigne, const size_
 //***********************    R1.01 – Prog#10 Exercice 2   ***************************/
 //***********************************************************************************/
 
+
 void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
-                                     const size_t & numColonne, const size_t & combien){
-    
-    for (unsigned i = 0 ; i < numLigne - combien ; ++i){
-        mat[numLigne + i][numColonne] = mat[numLigne + i + 3][numColonne];
-    }
-    for (unsigned i = 0 ; i < combien ; ++i){
-        mat[numLigne + i][numColonne] = KAIgnorer;
+                                    const size_t & numColonne, const size_t & combien){
+    for (size_t j (numColonne); j < numColonne + combien; ++j){
+        for (size_t i (numLigne); i>0; --i){
+            mat [i][j] = mat[i-1][j];
+        }
+        mat [0][j] =  KAIgnorer;
     }
 }
 
 bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
     bool auMoinsUneExplosion (false);
-    //analyse case par case
-    for (unsigned numLigne = 1 ; numLigne < mat.size() ; ++numLigne){
-        for (unsigned numCol = 0 ; numCol < mat[numLigne].size() ; ++numCol){
+
+    for (size_t numLigne (0); numLigne < mat.size(); ++numLigne){
+        for (size_t numCol (0); numCol < mat[numLigne].size(); ++numCol){
+            if (KAIgnorer == mat [numLigne][numCol]) continue;
             size_t combienALaSuite (1);
-            if (mat[numLigne][numCol] == mat[numLigne-1][numCol]){
+            while (numCol < mat[numLigne].size() &&
+                   mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
                 ++combienALaSuite;
-            }
-            //si on a au moins 3 chiffres identiques a la suite
             if (combienALaSuite >= 3){
                 auMoinsUneExplosion = true;
                 cout << "on a une suite en position numLigne = " << numLigne
                      << "; colonne = " << numCol
                      << "; sur  " << combienALaSuite << " cases" << endl;
                 cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
-                afficheMatriceV1(mat);
+                afficheMatriceV2(mat);
                 explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
                 cout << string (20, '-') << endl << "matrice après suppresion" << endl;
-                afficheMatriceV1(mat);
+                afficheMatriceV2(mat);
             }
         }
     }
     return auMoinsUneExplosion;
 }
-
-void explositionUneBombeVertical    (CMatrice & mat, const size_t & numLigne,
-                                     const size_t & numColonne, const size_t & combien){
-    
-    for (unsigned i = 0 ; i < numLigne - combien ; ++i){
-        mat[numColonne + i][numLigne] = mat[numColonne + i + 3][numLigne];
-    }
-    for (unsigned i = 0 ; i < combien ; ++i){
-        mat[numColonne + i][numLigne] = KAIgnorer;
+/*
+void explositionUneBombeVertical (CMatrice & mat, const size_t & numLigne,
+                                    const size_t & numColonne, const size_t & combien){
+    for (size_t j (numColonne); j < numColonne + combien; ++j){
+        for (size_t i (numLigne); i>0; --i){
+            mat [i][j] = mat[i-1][j];
+        }
+        mat [0][j] =  KAIgnorer;
     }
 }
 
 bool detectionExplositionUneBombeVertical (CMatrice & mat){
     bool auMoinsUneExplosion (false);
-    for (unsigned numCol= 0 ; numCol < mat.size() ; ++numCol){
-        for (unsigned numLigne = 0 ; numLigne < mat[numCol].size() ; ++numLigne){
+
+    for (size_t numLigne (0); numLigne < mat.size(); ++numLigne){
+        for (size_t numCol (0); numCol < mat[numLigne].size(); ++numCol){
+            if (KAIgnorer == mat [numLigne][numCol]) continue;
             size_t combienALaSuite (1);
-            if (numLigne != 0){
-                if (mat[numCol][numLigne] == mat[numCol-1][numLigne]){
-                    ++combienALaSuite;
-                }
-            }
-            //si on a aun moins 3 chiffres identiques a la suite.
+            while (numCol < mat[numLigne].size() &&
+                   mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
+                ++combienALaSuite;
             if (combienALaSuite >= 3){
                 auMoinsUneExplosion = true;
                 cout << "on a une suite en position numLigne = " << numLigne
                      << "; colonne = " << numCol
                      << "; sur  " << combienALaSuite << " cases" << endl;
                 cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
-                afficheMatriceV1(mat);
-                explositionUneBombeVertical (mat, numCol, numLigne, combienALaSuite);
+                afficheMatriceV2(mat);
+                explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
                 cout << string (20, '-') << endl << "matrice après suppresion" << endl;
-                afficheMatriceV1(mat);
+                afficheMatriceV2(mat);
             }
         }
     }
     return auMoinsUneExplosion;
 }
 
+                        NUMLIGNE ET NUMCOL A INVERSER POUR CES FONCTIONS
+*/
+
+
+
 void detectionExplositionBombe (CMatrice & mat){
     detectionExplositionUneBombeHorizontale(mat);
-    detectionExplositionUneBombeVertical(mat);
+    //detectionExplositionUneBombeVertical(mat);
 }
 
 void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
@@ -285,7 +288,7 @@ void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer, const 
 
 void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & numLigne,
                       const size_t & numCol) {
-    
+
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     switch (tolower(deplacment)) {
     case 'a':
@@ -345,7 +348,7 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
 
 void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLigne,
                         size_t & numCol) {
-    
+
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     switch (tolower(deplacment)) {
     case 'c':
@@ -483,34 +486,34 @@ int partiNumberCrush(){
 }
 
 int main() {
-    
+
     // ---------Exercice 2 -----------------//
     //    clearScreen();
-    
+
     //    CMatrice mat (10, CVLine (10, kEmpty));
     //    mat [0][mat.size()-1] = kTokenPlayer1;
     //    mat [mat.size()-1][0] = kTokenPlayer2;
     //    showMatrix(mat);
     //-------------------------------------//
     //return 0;
-    
+
     // ---------Exercice 1 -----------------//
     //return ppalExo01();
     //--------------------------------------//
-    
+
     // ---------Exercice 2 -----------------//
     //return ppalExo02();
     //-------------------------------------//
-    
+
     // ---------Exercice 3 -----------------//
     //return ppalExo03();
     //-------------------------------------//
-    
+
     // ---------Exercice 4 -----------------//
     return ppalExo04();
     //-------------------------------------//
-    
+
     //return partiNumberCrush();
-    
+
     //return 0;
 }
