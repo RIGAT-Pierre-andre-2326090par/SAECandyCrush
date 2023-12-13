@@ -88,17 +88,18 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
     return auMoinsUneExplosion;
 }
 
-void detectionExplositionBombe (CMatrice & mat, unsigned & score){
-    detectionExplositionUneBombeHorizontale(mat, score);
-    //detectionExplositionUneBombeVertical(mat);
-}
-
 void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
     for (unsigned i = 0 ; i < mat.size() ; ++i){
         for (unsigned j = 0 ; j < mat[i].size() ; ++j){
             if (mat[i][j] == vid) mat[i][j] = (rand()%nbMax)+1;
         }
     }
+}
+
+void detectionExplositionBombe (CMatrice & mat, unsigned & score){
+    bool act = detectionExplositionUneBombeHorizontale(mat, score);
+    //act = detectionExplositionUneBombeVertical(mat, score);
+    if (act) remplaceVideParRdm(mat);
 }
 
 //***********************************************************************************/
@@ -289,7 +290,7 @@ int partiNumberCrush(unsigned & score){
     size_t numCol = 4;
     size_t numLigne = 4;
     while(true){
-        detectionExplositionUneBombeHorizontale (mat, score);
+        detectionExplositionBombe(mat, score);
         afficheMatriceV3 (mat, numLigne, numCol);
         cout << "Fait un mouvement ";
         cout << "numero de ligne : ";
