@@ -71,7 +71,7 @@ void  afficheMatriceV0 (const CMatrice & Mat) {
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
-            if (Mat[i][j]==0) couleur(KNoir); // Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
+            if (Mat[i][j]==0) couleur(KBGNoir); // Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
             if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
             if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
@@ -104,7 +104,7 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
         cout << "  ";
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
             couleur(KReset); // Enlève la couleur bleue pour l'affiche d'un élément
-            if (Mat[i][j]==0) couleur(KNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
+            if (Mat[i][j]==0) couleur(KBGNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
             if (Mat[i][j]==2) couleur(KRouge); // Si l'élément = 2, alors la couleur sera rouge
             if (Mat[i][j]==3) couleur(KVert); // Si l'élément = 3, alors la couleur sera verte
@@ -136,7 +136,7 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
         cout << " | ";
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
             couleur(KReset); // Enlève la couleur bleue pour afficher un élément
-            if (Mat[i][j]==0) couleur(KNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
+            if (Mat[i][j]==0) couleur(KBGNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
             if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
             if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
@@ -509,7 +509,7 @@ int main() {
     //--------------------------------------//
 
     // ---------Exercice 2 -----------------//
-    return ppalExo02();
+    //return ppalExo02();
     //-------------------------------------//
 
     // ---------Exercice 3 -----------------//
