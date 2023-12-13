@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< Updated upstream
 <!-- Written by QtCreator 12.0.0, 2023-12-13T11:28:18. -->
+=======
+<!-- Written by QtCreator 12.0.0, 2023-12-12T11:24:59. -->
+>>>>>>> Stashed changes
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -243,11 +247,18 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/arnaud/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/SAECandyCrush.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/arnaud/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/SAECandyCrush.pro</value>
+<<<<<<< Updated upstream
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseTerminal">true</value>
+=======
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
+    <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
+    <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+>>>>>>> Stashed changes
     <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/arnaud/Documents/GitHub/SAECandyCrush/SAECandyCrush/build-SAECandyCrush-Desktop_Qt_6_6_0_GCC_64bit-Debug</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
