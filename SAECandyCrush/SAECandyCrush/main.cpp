@@ -209,6 +209,7 @@ void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
 
 bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
     bool auMoinsUneExplosion (false);
+<<<<<<< Updated upstream
 
     for (size_t numLigne (0); numLigne < mat.size(); ++numLigne){
         for (size_t numCol (0); numCol < mat[numLigne].size(); ++numCol){
@@ -217,6 +218,20 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
             while (numCol < mat[numLigne].size() &&
                    mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
                 ++combienALaSuite;
+=======
+    //analyse case par case
+    for (unsigned numLigne = 0 ; numLigne < mat.size() ; ++numLigne){
+        for (unsigned numCol = 0 ; numCol < mat[numLigne].size() ; ++numCol){
+            size_t combienALaSuite (1);
+            while (mat[numLigne][numCol] == mat[numLigne+combienALaSuite][numCol]
+                   && numCol + combienALaSuite < mat[numLigne].size()
+                   && mat[numLigne][numCol] != 0){
+                ++combienALaSuite;
+                cout << combienALaSuite << endl;
+
+            }
+            //si on a au moins 3 chiffres identiques a la suite
+>>>>>>> Stashed changes
             if (combienALaSuite >= 3){
                 auMoinsUneExplosion = true;
                 cout << "on a une suite en position numLigne = " << numLigne
@@ -508,7 +523,7 @@ int main() {
     //--------------------------------------//
 
     // ---------Exercice 2 -----------------//
-    //return ppalExo02();
+    return ppalExo02();
     //-------------------------------------//
 
     // ---------Exercice 3 -----------------//
