@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< Updated upstream
 <!-- Written by QtCreator 11.0.3, 2023-12-13T11:33:10. -->
+=======
+<!-- Written by QtCreator 12.0.0, 2023-12-13T11:38:41. -->
+>>>>>>> Stashed changes
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -238,12 +242,23 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
+<<<<<<< Updated upstream
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/m24/cpp/SAECandyCrush/SAECandyCrush/SAECandyCrush/SAECandyCrush.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/m24/cpp/SAECandyCrush/SAECandyCrush/SAECandyCrush/SAECandyCrush.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseTerminal">true</value>
+=======
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/arnaud/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/SAECandyCrush.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/arnaud/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/SAECandyCrush.pro</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
+    <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
+    <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/arnaud/Documents/GitHub/SAECandyCrush/SAECandyCrush/build-SAECandyCrush-Desktop_Qt_6_6_0_GCC_64bit-Debug</value>
+>>>>>>> Stashed changes
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
