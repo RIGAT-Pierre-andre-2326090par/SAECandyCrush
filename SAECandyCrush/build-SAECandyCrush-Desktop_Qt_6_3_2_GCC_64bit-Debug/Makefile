@@ -304,6 +304,7 @@ DIST          = ../../../../Qt/6.3.2/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.3.2/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/6.3.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../../Qt/6.3.2/gcc_64/mkspecs/features/spec_post.prf \
+		../SAECandyCrush/.qmake.stash \
 		../../../../Qt/6.3.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/6.3.2/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../Qt/6.3.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -317,7 +318,8 @@ DIST          = ../../../../Qt/6.3.2/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.3.2/gcc_64/mkspecs/features/exceptions.prf \
 		../../../../Qt/6.3.2/gcc_64/mkspecs/features/yacc.prf \
 		../../../../Qt/6.3.2/gcc_64/mkspecs/features/lex.prf \
-		../SAECandyCrush/SAECandyCrush.pro  ../SAECandyCrush/main.cpp
+		../SAECandyCrush/SAECandyCrush.pro cst.h \
+		type.h ../SAECandyCrush/main.cpp
 QMAKE_TARGET  = SAECandyCrush
 DESTDIR       = 
 TARGET        = SAECandyCrush
@@ -579,6 +581,7 @@ Makefile: ../SAECandyCrush/SAECandyCrush.pro ../../../../Qt/6.3.2/gcc_64/mkspecs
 		../../../../Qt/6.3.2/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/6.3.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../../Qt/6.3.2/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt/6.3.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/6.3.2/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../Qt/6.3.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -844,6 +847,7 @@ Makefile: ../SAECandyCrush/SAECandyCrush.pro ../../../../Qt/6.3.2/gcc_64/mkspecs
 ../../../../Qt/6.3.2/gcc_64/mkspecs/features/qt_config.prf:
 ../../../../Qt/6.3.2/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../../Qt/6.3.2/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt/6.3.2/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/6.3.2/gcc_64/mkspecs/features/toolchain.prf:
 ../../../../Qt/6.3.2/gcc_64/mkspecs/features/default_pre.prf:
@@ -901,7 +905,8 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../SAECandyCrush/main.cpp 
+main.o: ../SAECandyCrush/main.cpp ../SAECandyCrush/type.h \
+		../SAECandyCrush/cst.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../SAECandyCrush/main.cpp
 
 ####### Install

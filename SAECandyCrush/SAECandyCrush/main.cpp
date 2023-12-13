@@ -27,8 +27,8 @@ void couleur (const unsigned & coul) {
 
 //initialisation de la grille de jeu
 void initMat (CMatrice & mat, const size_t & nbLignes = 10,
-              const size_t & nbColonnes = 10,
-              const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+             const size_t & nbColonnes = 10,
+             const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
 
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
@@ -49,8 +49,8 @@ unsigned nouvRdm(unsigned & nb, const unsigned & nbMax = KPlusGrandNombreDansLaM
 
 //initialisation de la grille de jeu avec maximum 2 nombre aligné
 void initMatV2 (CMatrice & mat, const size_t & nbLignes = 10,
-                const size_t & nbColonnes = 10,
-                const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+               const size_t & nbColonnes = 10,
+               const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
 
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
@@ -58,7 +58,7 @@ void initMatV2 (CMatrice & mat, const size_t & nbLignes = 10,
         for (unsigned j = 0 ; j < nbColonnes ; ++j){
             unsigned rdm = (rand()%nbMax)+1; //L'élément de la matrice sera une valeur comprise entre 1 et le nbMax
             if (i > 1 && j > 1 && (mat[i-1][j] == mat[i-2][j] || mat[i][j-1] == mat[i][j-2])
-                    && (rdm == mat[i-1][j] || rdm == mat[i][j-1])) mat[i][j] = nouvRdm(rdm);
+                && (rdm == mat[i-1][j] || rdm == mat[i][j-1])) mat[i][j] = nouvRdm(rdm);
             else mat[i][j] = rdm;
         }
     }
@@ -71,14 +71,16 @@ void  afficheMatriceV0 (const CMatrice & Mat) {
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
-            if (Mat[i][j]==0) couleur(KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
+            if (Mat[i][j]==KAIgnorer) couleur(KBGNoir); // Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
             if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
             if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
             if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 4, alors la couleur sera jaune
             if (Mat[i][j]==5) couleur(KMagenta); // Si l'élément = 5, alors la couleur sera magenta
             if (Mat[i][j]==6) couleur (KBleu); // Si l'élément = 6, alors la couleur sera bleu
-            cout <<  Mat[i][j]<<' '; // Affiche la matrice élément par élément
+            cout <<  Mat[i][j]; // Affiche la matrice élément par élément
+            couleur(KReset);
+            cout << " | ";
         }
         couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
         cout << endl ;
@@ -93,25 +95,26 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
-        cout << "  ";
+        cout << " ";
     }
-    cout << ' ' << endl ;
+    cout << " " <<endl;
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
         cout << "  ";
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
             couleur(KReset); // Enlève la couleur bleue pour l'affiche d'un élément
-            if (Mat[i][j]==0) couleur(KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
+            if (Mat[i][j]==KAIgnorer) couleur(KBGNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
-            if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
-            if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
-            if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 4, alors la couleur sera jaune
+            if (Mat[i][j]==2) couleur(KRouge); // Si l'élément = 2, alors la couleur sera rouge
+            if (Mat[i][j]==3) couleur(KVert); // Si l'élément = 3, alors la couleur sera verte
+            if (Mat[i][j]==4) couleur(KJaune); // Si l'élément = 4, alors la couleur sera jaune
             if (Mat[i][j]==5) couleur(KMagenta); // Si l'élément = 5, alors la couleur sera magenta
-            if (Mat[i][j]==6) couleur (KBleu); // Si l'élément = 6, alors la couleur sera bleu
-            cout <<  Mat[i][j] << ' ';
+            if (Mat[i][j]==6) couleur(KBleu); // Si l'élément = 6, alors la couleur sera bleu
+            cout <<  Mat[i][j];
+            couleur(KReset);
+            cout << " | ";
         }
-        couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
         cout << endl ;
     }
 }
@@ -121,26 +124,28 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
 void  afficheMatriceV2 (const CMatrice & Mat) {
     clearScreen();
     couleur (44); // Affiche la couleur bleue
-    cout << "  ";
-    for (size_t i = 0 ; i < Mat.size() ; ++i) cout << ' ' << i + 1;
-    cout << endl ;
+    cout << " ";
+    for (size_t i = 0 ; i < Mat.size() ; ++i) cout << "  |" << i + 1;
+    cout << " | " << endl;
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
         if (i + 1 != Mat.size()) cout << ' ' << i + 1;
         else cout << i + 1;
         couleur(KReset);
-        cout << ' ';
+        cout << " | ";
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
             couleur(KReset); // Enlève la couleur bleue pour afficher un élément
-            if (Mat[i][j]==0) couleur(KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
+            if (Mat[i][j]==KAIgnorer) couleur(KBGNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
             if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
             if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
             if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 4, alors la couleur sera jaune
             if (Mat[i][j]==5) couleur(KMagenta); // Si l'élément = 5, alors la couleur sera magenta
             if (Mat[i][j]==6) couleur (KBleu); // Si l'élément = 6, alors la couleur sera bleu
-            cout <<  Mat[i][j] << ' ';
+            cout <<  Mat[i][j];
+            couleur(KReset);
+            cout << " | ";
         }
         couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
         cout << endl ;
@@ -169,7 +174,7 @@ void  afficheMatriceV3 (const CMatrice & Mat, const size_t numLigne, const size_
                 couleur(KBGGrisClair);
             }
             else{
-                if (Mat[i][j]==0) couleur (KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
+                if (Mat[i][j]==KAIgnorer) couleur (KBGNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
                 if (Mat[i][j]==1) couleur (KCyan); // Si l'élément = 1, alors la couleur sera cyan
                 if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
                 if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
@@ -204,7 +209,6 @@ void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
 
 bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
     bool auMoinsUneExplosion (false);
-
     for (size_t numLigne (0); numLigne < mat.size(); ++numLigne){
         for (size_t numCol (0); numCol < mat[numLigne].size(); ++numCol){
             if (KAIgnorer == mat [numLigne][numCol]) continue;
@@ -212,62 +216,22 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
             while (numCol < mat[numLigne].size() &&
                    mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
                 ++combienALaSuite;
-            if (combienALaSuite >= 3){
-                auMoinsUneExplosion = true;
-                cout << "on a une suite en position numLigne = " << numLigne
-                     << "; colonne = " << numCol
-                     << "; sur  " << combienALaSuite << " cases" << endl;
-                cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
-                afficheMatriceV2(mat);
-                explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
-                cout << string (20, '-') << endl << "matrice après suppresion" << endl;
-                afficheMatriceV2(mat);
-            }
+        //si on a au moins 3 chiffres identiques a la suite
+        if (combienALaSuite >= 3){
+            auMoinsUneExplosion = true;
+            cout << "on a une suite en position numLigne = " << numLigne
+                 << "; colonne = " << numCol
+                 << "; sur  " << combienALaSuite << " cases" << endl;
+            cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
+            afficheMatriceV2(mat);
+            explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
+            cout << string (20, '-') << endl << "matrice après suppresion" << endl;
+                        afficheMatriceV2(mat);
         }
     }
-    return auMoinsUneExplosion;
 }
-/*
-void explositionUneBombeVertical (CMatrice & mat, const size_t & numLigne,
-                                    const size_t & numColonne, const size_t & combien){
-    for (size_t j (numColonne); j < numColonne + combien; ++j){
-        for (size_t i (numLigne); i>0; --i){
-            mat [i][j] = mat[i-1][j];
-        }
-        mat [0][j] =  KAIgnorer;
-    }
+return auMoinsUneExplosion;
 }
-
-bool detectionExplositionUneBombeVertical (CMatrice & mat){
-    bool auMoinsUneExplosion (false);
-
-    for (size_t numLigne (0); numLigne < mat.size(); ++numLigne){
-        for (size_t numCol (0); numCol < mat[numLigne].size(); ++numCol){
-            if (KAIgnorer == mat [numLigne][numCol]) continue;
-            size_t combienALaSuite (1);
-            while (numCol < mat[numLigne].size() &&
-                   mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
-                ++combienALaSuite;
-            if (combienALaSuite >= 3){
-                auMoinsUneExplosion = true;
-                cout << "on a une suite en position numLigne = " << numLigne
-                     << "; colonne = " << numCol
-                     << "; sur  " << combienALaSuite << " cases" << endl;
-                cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
-                afficheMatriceV2(mat);
-                explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
-                cout << string (20, '-') << endl << "matrice après suppresion" << endl;
-                afficheMatriceV2(mat);
-            }
-        }
-    }
-    return auMoinsUneExplosion;
-}
-
-                        NUMLIGNE ET NUMCOL A INVERSER POUR CES FONCTIONS
-*/
-
-
 
 void detectionExplositionBombe (CMatrice & mat){
     detectionExplositionUneBombeHorizontale(mat);
@@ -287,7 +251,7 @@ void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer, const 
 //***********************************************************************************/
 
 void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & numLigne,
-                      const size_t & numCol) {
+                     const size_t & numCol) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     switch (tolower(deplacment)) {
@@ -342,12 +306,12 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
         break;
     default:
         cout<<"Tu choisis A ou Z ou E ou Q ou D ou X ou C ou V pour déplacer le curseur ou S pour échanger 2 cases"<<endl;
-        break;
+            break;
     }
 }
 
 void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLigne,
-                        size_t & numCol) {
+                       size_t & numCol) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     switch (tolower(deplacment)) {
@@ -402,7 +366,7 @@ void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLig
         break;
     default:
         cout<<"Tu choisis A ou Z ou E ou Q ou D ou X ou C ou V pour déplacer le curseur ou S pour dé"<<endl;
-        break;
+            break;
     }
     numCol = nouvellePositionColonne;
     numLigne = nouvellePositionLigne;
@@ -486,7 +450,8 @@ int partiNumberCrush(){
 }
 
 int main() {
-
+    unsigned score=0;
+    unsigned deplacement=0;
     // ---------Exercice 2 -----------------//
     //    clearScreen();
 
@@ -502,7 +467,7 @@ int main() {
     //--------------------------------------//
 
     // ---------Exercice 2 -----------------//
-    //return ppalExo02();
+    return ppalExo02();
     //-------------------------------------//
 
     // ---------Exercice 3 -----------------//
