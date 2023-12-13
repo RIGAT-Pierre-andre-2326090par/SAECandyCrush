@@ -95,6 +95,16 @@ void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
     }
 }
 
+void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
+                                    const size_t & numColonne, const size_t & combien){
+    for (size_t i (numLigne); i < numLigne + combien; ++i){
+        for (size_t j (numColonne); j>0; --j){
+            mat [j][i] = mat[j-1][i];
+        }
+        mat [0][i] =  KAIgnorer;
+    }
+}
+
 bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
     bool auMoinsUneExplosion (false);
     for (size_t numLigne (0); numLigne < mat.size(); ++numLigne){
@@ -121,6 +131,40 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
 return auMoinsUneExplosion;
 }
 
+<<<<<<< Updated upstream
+=======
+bool detectionExplositionUneBombeVertiale (CMatrice & mat){
+    bool auMoinsUneExplosion (false);
+    for (size_t numCol (0); numCol < mat.size(); ++numCol){
+        for (size_t numLigne (0); numLigne < mat[numCol].size(); ++numLigne){
+            if (KAIgnorer == mat [numLigne][numCol]) continue;
+            size_t combienALaSuite (1);
+            while (numLigne < mat[numCol].size() &&
+                   mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
+                ++combienALaSuite;
+            //si on a au moins 3 chiffres identiques a la suite
+            if (combienALaSuite >= 3){
+                auMoinsUneExplosion = true;
+                cout << "on a une suite en position numLigne = " << numLigne
+                     << "; colonne = " << numCol
+                     << "; sur  " << combienALaSuite << " cases" << endl;
+                cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
+                afficheMatriceV2(mat);
+                explositionUneBombeVerticale (mat, numLigne, numCol, combienALaSuite);
+                cout << string (20, '-') << endl << "matrice après suppresion" << endl;
+                            afficheMatriceV2(mat);
+            }
+        }
+    }
+    return auMoinsUneExplosion;
+}
+
+void detectionExplositionBombe (CMatrice & mat){
+    detectionExplositionUneBombeHorizontale(mat);
+    detectionExplositionUneBombeVertiale(mat);
+}
+
+>>>>>>> Stashed changes
 void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
     for (unsigned i = 0 ; i < mat.size() ; ++i){
         for (unsigned j = 0 ; j < mat[i].size() ; ++j){
@@ -324,6 +368,7 @@ int partiNumberCrush(){
     size_t numLigne = 4;
     while(true){
         detectionExplositionUneBombeHorizontale (mat);
+        detectionExplositionUneBombeVertiale (mat);
         afficheMatriceV3 (mat, numLigne, numCol);
         cout << "Fait un mouvement ";
         cout << "numero de ligne : ";
