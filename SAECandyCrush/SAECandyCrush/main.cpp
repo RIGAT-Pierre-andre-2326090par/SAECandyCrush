@@ -174,7 +174,7 @@ void  afficheMatriceV3 (const CMatrice & Mat, const size_t numLigne, const size_
                 couleur(KBGGrisClair);
             }
             else{
-                if (Mat[i][j]==0) couleur (KReset); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
+                if (Mat[i][j]==0) couleur (KBGNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
                 if (Mat[i][j]==1) couleur (KCyan); // Si l'élément = 1, alors la couleur sera cyan
                 if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
                 if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
