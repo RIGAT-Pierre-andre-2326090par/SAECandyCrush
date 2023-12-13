@@ -106,11 +106,11 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
             couleur(KReset); // Enlève la couleur bleue pour l'affiche d'un élément
             if (Mat[i][j]==0) couleur(KNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
-            if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
-            if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
-            if (Mat[i][j]==4)couleur (KJaune); // Si l'élément = 4, alors la couleur sera jaune
+            if (Mat[i][j]==2) couleur(KRouge); // Si l'élément = 2, alors la couleur sera rouge
+            if (Mat[i][j]==3) couleur(KVert); // Si l'élément = 3, alors la couleur sera verte
+            if (Mat[i][j]==4) couleur(KJaune); // Si l'élément = 4, alors la couleur sera jaune
             if (Mat[i][j]==5) couleur(KMagenta); // Si l'élément = 5, alors la couleur sera magenta
-            if (Mat[i][j]==6) couleur (KBleu); // Si l'élément = 6, alors la couleur sera bleu
+            if (Mat[i][j]==6) couleur(KBleu); // Si l'élément = 6, alors la couleur sera bleu
             cout <<  Mat[i][j];
             couleur(KReset);
             cout << " | ";
@@ -209,8 +209,6 @@ void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
 
 bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
     bool auMoinsUneExplosion (false);
-<<<<<<< Updated upstream
-
     for (size_t numLigne (0); numLigne < mat.size(); ++numLigne){
         for (size_t numCol (0); numCol < mat[numLigne].size(); ++numCol){
             if (KAIgnorer == mat [numLigne][numCol]) continue;
@@ -218,20 +216,8 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
             while (numCol < mat[numLigne].size() &&
                    mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
                 ++combienALaSuite;
-=======
-    //analyse case par case
-    for (unsigned numLigne = 0 ; numLigne < mat.size() ; ++numLigne){
-        for (unsigned numCol = 0 ; numCol < mat[numLigne].size() ; ++numCol){
-            size_t combienALaSuite (1);
-            while (mat[numLigne][numCol] == mat[numLigne+combienALaSuite][numCol]
-                   && numCol + combienALaSuite < mat[numLigne].size()
-                   && mat[numLigne][numCol] != 0){
-                ++combienALaSuite;
-                cout << combienALaSuite << endl;
-
             }
             //si on a au moins 3 chiffres identiques a la suite
->>>>>>> Stashed changes
             if (combienALaSuite >= 3){
                 auMoinsUneExplosion = true;
                 cout << "on a une suite en position numLigne = " << numLigne
