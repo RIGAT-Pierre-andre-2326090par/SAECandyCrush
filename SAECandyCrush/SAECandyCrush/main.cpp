@@ -174,11 +174,7 @@ void  afficheMatriceV3 (const CMatrice & Mat, const size_t numLigne, const size_
                 couleur(KBGGrisClair);
             }
             else{
-<<<<<<< Updated upstream
                 if (Mat[i][j]==KAIgnorer) couleur (KBGNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
-=======
-                if (Mat[i][j]==0) couleur (KReset); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
->>>>>>> Stashed changes
                 if (Mat[i][j]==1) couleur (KCyan); // Si l'élément = 1, alors la couleur sera cyan
                 if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
                 if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
@@ -220,7 +216,6 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
             while (numCol < mat[numLigne].size() &&
                    mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
                 ++combienALaSuite;
-<<<<<<< Updated upstream
         //si on a au moins 3 chiffres identiques a la suite
         if (combienALaSuite >= 3){
             auMoinsUneExplosion = true;
@@ -232,20 +227,6 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
             explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
             cout << string (20, '-') << endl << "matrice après suppresion" << endl;
                         afficheMatriceV2(mat);
-=======
-            //si on a au moins 3 chiffres identiques a la suite
-            if (combienALaSuite >= 3){
-                auMoinsUneExplosion = true;
-                cout << "on a une suite en position numLigne = " << numLigne
-                     << "; colonne = " << numCol
-                     << "; sur  " << combienALaSuite << " cases" << endl;
-                cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
-                afficheMatriceV2(mat);
-                explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
-                cout << string (20, '-') << endl << "matrice après suppresion" << endl;
-                afficheMatriceV2(mat);
-            }
->>>>>>> Stashed changes
         }
     }
 }
