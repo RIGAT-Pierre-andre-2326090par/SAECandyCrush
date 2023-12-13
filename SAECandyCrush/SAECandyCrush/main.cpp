@@ -386,13 +386,13 @@ void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLig
         case 'x':
             if (numLigne != 0) swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
             break;
-        case 'q':
+        case 'd':
             if (numCol != mat[0].size() - 1) swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
             break;
         case 'z':
             if (numLigne != mat.size() - 1) swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
             break;
-        case 'd':
+        case 'q':
             if (numCol != 0) swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
             break;
         default:
@@ -449,15 +449,15 @@ int ppalExo04 (){
     while (true) {
         cout << "Fait un mouvement ";
         cout << "numero de ligne : ";
-        size_t numLigne = 0;
+        size_t numLigne = 1;
         cout << numLigne;
         cout << ", numero de colonne : ";
-        size_t numCol = 0;
+        size_t numCol = 1;
         cout << numCol;
         cout << ", Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
         char deplacement;
         cin >> deplacement;
-        faitUnMouvement (mat, deplacement, numLigne, numCol);
+        faitUnMouvementV2 (mat, deplacement, numLigne, numCol);
         detectionExplositionUneBombeHorizontale (mat);
         afficheMatriceV2 (mat);
     }
@@ -510,10 +510,10 @@ int main() {
     //-------------------------------------//
 
     // ---------Exercice 4 -----------------//
-    return ppalExo04();
+    //return ppalExo04();
     //-------------------------------------//
 
-    //return partiNumberCrush();
+    return partiNumberCrush();
 
     //return 0;
 }
