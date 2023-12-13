@@ -331,7 +331,7 @@ int main() {
     //-------------------------------------//
 
     // ---------Exercice 4 -----------------//
-    return ppalExo04(score);
+    //return ppalExo04(score);
     //-------------------------------------//
 
     return partiNumberCrush(score);
