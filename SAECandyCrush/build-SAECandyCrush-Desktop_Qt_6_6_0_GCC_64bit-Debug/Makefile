@@ -188,6 +188,7 @@ DIST          = /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/qt_config.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/spec_post.prf \
+		../SAECandyCrush/.qmake.stash \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/toolchain.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -201,7 +202,8 @@ DIST          = /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/exceptions.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/yacc.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/lex.prf \
-		../SAECandyCrush/SAECandyCrush.pro  ../SAECandyCrush/main.cpp
+		../SAECandyCrush/SAECandyCrush.pro cst.h \
+		type.h ../SAECandyCrush/main.cpp
 QMAKE_TARGET  = SAECandyCrush
 DESTDIR       = 
 TARGET        = SAECandyCrush
@@ -347,6 +349,7 @@ Makefile: ../SAECandyCrush/SAECandyCrush.pro /home/alex/Qt/6.6.0/gcc_64/mkspecs/
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/qt_config.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/toolchain.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -496,6 +499,7 @@ Makefile: ../SAECandyCrush/SAECandyCrush.pro /home/alex/Qt/6.6.0/gcc_64/mkspecs/
 /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/qt_config.prf:
 /home/alex/Qt/6.6.0/gcc_64/mkspecs/linux-g++/qmake.conf:
 /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/toolchain.prf:
 /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/default_pre.prf:
@@ -553,7 +557,8 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../SAECandyCrush/main.cpp 
+main.o: ../SAECandyCrush/main.cpp ../SAECandyCrush/type.h \
+		../SAECandyCrush/cst.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../SAECandyCrush/main.cpp
 
 ####### Install
