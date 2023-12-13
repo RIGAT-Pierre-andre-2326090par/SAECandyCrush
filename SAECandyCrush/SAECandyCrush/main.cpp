@@ -27,8 +27,8 @@ void couleur (const unsigned & coul) {
 
 //initialisation de la grille de jeu
 void initMat (CMatrice & mat, const size_t & nbLignes = 10,
-              const size_t & nbColonnes = 10,
-              const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+             const size_t & nbColonnes = 10,
+             const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
 
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
@@ -49,8 +49,8 @@ unsigned nouvRdm(unsigned & nb, const unsigned & nbMax = KPlusGrandNombreDansLaM
 
 //initialisation de la grille de jeu avec maximum 2 nombre aligné
 void initMatV2 (CMatrice & mat, const size_t & nbLignes = 10,
-                const size_t & nbColonnes = 10,
-                const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+               const size_t & nbColonnes = 10,
+               const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
 
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
@@ -58,7 +58,7 @@ void initMatV2 (CMatrice & mat, const size_t & nbLignes = 10,
         for (unsigned j = 0 ; j < nbColonnes ; ++j){
             unsigned rdm = (rand()%nbMax)+1; //L'élément de la matrice sera une valeur comprise entre 1 et le nbMax
             if (i > 1 && j > 1 && (mat[i-1][j] == mat[i-2][j] || mat[i][j-1] == mat[i][j-2])
-                    && (rdm == mat[i-1][j] || rdm == mat[i][j-1])) mat[i][j] = nouvRdm(rdm);
+                && (rdm == mat[i-1][j] || rdm == mat[i][j-1])) mat[i][j] = nouvRdm(rdm);
             else mat[i][j] = rdm;
         }
     }
@@ -71,7 +71,7 @@ void  afficheMatriceV0 (const CMatrice & Mat) {
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
-            if (Mat[i][j]==0) couleur(KBGNoir); // Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
+            if (Mat[i][j]==KAIgnorer) couleur(KBGNoir); // Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
             if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
             if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
@@ -104,7 +104,7 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
         cout << "  ";
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
             couleur(KReset); // Enlève la couleur bleue pour l'affiche d'un élément
-            if (Mat[i][j]==0) couleur(KBGNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
+            if (Mat[i][j]==KAIgnorer) couleur(KBGNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
             if (Mat[i][j]==2) couleur(KRouge); // Si l'élément = 2, alors la couleur sera rouge
             if (Mat[i][j]==3) couleur(KVert); // Si l'élément = 3, alors la couleur sera verte
@@ -136,7 +136,7 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
         cout << " | ";
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
             couleur(KReset); // Enlève la couleur bleue pour afficher un élément
-            if (Mat[i][j]==0) couleur(KBGNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
+            if (Mat[i][j]==KAIgnorer) couleur(KBGNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
             if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
             if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
@@ -174,7 +174,7 @@ void  afficheMatriceV3 (const CMatrice & Mat, const size_t numLigne, const size_
                 couleur(KBGGrisClair);
             }
             else{
-                if (Mat[i][j]==0) couleur (KBGNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
+                if (Mat[i][j]==KAIgnorer) couleur (KBGNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
                 if (Mat[i][j]==1) couleur (KCyan); // Si l'élément = 1, alors la couleur sera cyan
                 if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
                 if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
@@ -216,22 +216,21 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
             while (numCol < mat[numLigne].size() &&
                    mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
                 ++combienALaSuite;
-            }
-            //si on a au moins 3 chiffres identiques a la suite
-            if (combienALaSuite >= 3){
-                auMoinsUneExplosion = true;
-                cout << "on a une suite en position numLigne = " << numLigne
-                     << "; colonne = " << numCol
-                     << "; sur  " << combienALaSuite << " cases" << endl;
-                cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
-                afficheMatriceV2(mat);
-                explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
-                cout << string (20, '-') << endl << "matrice après suppresion" << endl;
-                afficheMatriceV2(mat);
-            }
+        //si on a au moins 3 chiffres identiques a la suite
+        if (combienALaSuite >= 3){
+            auMoinsUneExplosion = true;
+            cout << "on a une suite en position numLigne = " << numLigne
+                 << "; colonne = " << numCol
+                 << "; sur  " << combienALaSuite << " cases" << endl;
+            cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
+            afficheMatriceV2(mat);
+            explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
+            cout << string (20, '-') << endl << "matrice après suppresion" << endl;
+                        afficheMatriceV2(mat);
         }
     }
-    return auMoinsUneExplosion;
+}
+return auMoinsUneExplosion;
 }
 /*
 void explositionUneBombeVertical (CMatrice & mat, const size_t & numLigne,
@@ -293,7 +292,7 @@ void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer, const 
 //***********************************************************************************/
 
 void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & numLigne,
-                      const size_t & numCol) {
+                     const size_t & numCol) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     switch (tolower(deplacment)) {
@@ -348,12 +347,12 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
         break;
     default:
         cout<<"Tu choisis A ou Z ou E ou Q ou D ou X ou C ou V pour déplacer le curseur ou S pour échanger 2 cases"<<endl;
-        break;
+            break;
     }
 }
 
 void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLigne,
-                        size_t & numCol) {
+                       size_t & numCol) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     switch (tolower(deplacment)) {
@@ -408,7 +407,7 @@ void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLig
         break;
     default:
         cout<<"Tu choisis A ou Z ou E ou Q ou D ou X ou C ou V pour déplacer le curseur ou S pour dé"<<endl;
-        break;
+            break;
     }
     numCol = nouvellePositionColonne;
     numLigne = nouvellePositionLigne;
