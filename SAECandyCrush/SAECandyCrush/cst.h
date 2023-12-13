@@ -1,6 +1,10 @@
-#include <type.h>
 #ifndef CST_H
 #define CST_H
+
+#include <type.h>
+// Ce document contient les constantes utilisées dans main et affichage
+
+
 const unsigned KReset   (0);
 const unsigned KNoir    (30);
 const unsigned KRouge   (31);
@@ -19,3 +23,4 @@ const contenueDUneCase KAIgnorer = 0;
 const contenueDUneCase KPlusGrandNombreDansLaMatrice = 4;
 
 #endif // CST_H
+
