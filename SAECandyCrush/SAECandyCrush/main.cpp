@@ -251,47 +251,6 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
 }
 return auMoinsUneExplosion;
 }
-/*
-void explositionUneBombeVertical (CMatrice & mat, const size_t & numLigne,
-                                    const size_t & numColonne, const size_t & combien){
-    for (size_t j (numColonne); j < numColonne + combien; ++j){
-        for (size_t i (numLigne); i>0; --i){
-            mat [i][j] = mat[i-1][j];
-        }
-        mat [0][j] =  KAIgnorer;
-    }
-}
-
-bool detectionExplositionUneBombeVertical (CMatrice & mat){
-    bool auMoinsUneExplosion (false);
-
-    for (size_t numLigne (0); numLigne < mat.size(); ++numLigne){
-        for (size_t numCol (0); numCol < mat[numLigne].size(); ++numCol){
-            if (KAIgnorer == mat [numLigne][numCol]) continue;
-            size_t combienALaSuite (1);
-            while (numCol < mat[numLigne].size() &&
-                   mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
-                ++combienALaSuite;
-            if (combienALaSuite >= 3){
-                auMoinsUneExplosion = true;
-                cout << "on a une suite en position numLigne = " << numLigne
-                     << "; colonne = " << numCol
-                     << "; sur  " << combienALaSuite << " cases" << endl;
-                cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
-                afficheMatriceV2(mat);
-                explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
-                cout << string (20, '-') << endl << "matrice après suppresion" << endl;
-                afficheMatriceV2(mat);
-            }
-        }
-    }
-    return auMoinsUneExplosion;
-}
-
-                        NUMLIGNE ET NUMCOL A INVERSER POUR CES FONCTIONS
-*/
-
-
 
 void detectionExplositionBombe (CMatrice & mat){
     detectionExplositionUneBombeHorizontale(mat);
