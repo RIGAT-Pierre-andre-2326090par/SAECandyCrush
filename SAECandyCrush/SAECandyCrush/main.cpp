@@ -15,9 +15,9 @@ void initMat (CMatrice & mat, const size_t & nbLignes = 10,
               const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
 
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
-    for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
-    for (unsigned i = 0 ; i < nbLignes ; ++i){
-        for (unsigned j = 0 ; j < nbColonnes ; ++j){
+    for (size_t i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
+    for (size_t i = 0 ; i < nbLignes ; ++i){
+        for (size_t j = 0 ; j < nbColonnes ; ++j){
             mat[i][j] = (rand()%nbMax)+1; //L'élément de la matrice sera une valeur comprise entre 1 et le nbMax
         }
     }
@@ -32,36 +32,18 @@ unsigned nouvRdm(unsigned & nb, const unsigned & nbMax = KPlusGrandNombreDansLaM
 }
 
 //initialisation de la grille de jeu avec maximum 2 nombre aligné
-void initMatV2 (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
-    initMat(mat);
-    afficheMatriceV2(mat);
-    for (size_t numLigne (0); numLigne < mat.size(); ++numLigne){
-        for (size_t numCol (0); numCol < mat[numLigne].size(); ++numCol){
-            if (KAIgnorer == mat [numLigne][numCol]) continue;
-            size_t combienALaSuite (1);
-            while (numCol < mat[numLigne].size() &&
-                   mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
-                ++combienALaSuite;
-            if (combienALaSuite >= 3) {
-                unsigned rdm = (rand()%nbMax)+1;
-                if (rdm != mat[numLigne][numCol]) mat[numLigne][numCol] = rdm;
-                else mat[numLigne][numCol] = nouvRdm(rdm);
-            }
-        }
-    }
-    afficheMatriceV2(mat);
-    for (size_t numCol (0); numCol < mat.size(); ++numCol){
-        for (size_t numLigne (0); numLigne < mat[numCol].size(); ++numLigne){
-            if (KAIgnorer == mat [numLigne][numCol]) continue;
-            size_t combienALaSuite (1);
-            while (numLigne < mat[numCol].size() &&
-                   mat[numLigne][numCol] == mat[numLigne + combienALaSuite][numCol])
-                ++combienALaSuite;
-            if (combienALaSuite >= 3){
-                unsigned rdm = (rand()%nbMax)+1;
-                if (rdm != mat[numLigne][numCol]) mat[numLigne][numCol] = rdm;
-                else mat[numLigne][numCol] = nouvRdm(rdm);
-            }
+void initMatV2 (CMatrice & mat, const size_t & nbLignes = 10,
+               const size_t & nbColonnes = 10,
+               const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+    mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
+    for (size_t i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
+    for (size_t i = 0 ; i < nbLignes ; ++i){
+        for (size_t j = 0 ; j < nbColonnes ; ++j){
+            unsigned rdm = (rand()%nbMax)+1; //L'élément de la matrice sera une valeur comprise entre 1 et le nbMax
+            bool doitChanger = false;
+            unsigned ind = 0;
+            while (!doitChanger) {
+                if (mat[i + ind][j] == )
         }
     }
 }
