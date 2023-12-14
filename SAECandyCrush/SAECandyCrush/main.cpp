@@ -41,8 +41,8 @@ void initMatV2 (CMatrice & mat, const size_t & nbLignes = 10,
     for (unsigned i = 0 ; i < nbLignes ; ++i){
         for (unsigned j = 0 ; j < nbColonnes ; ++j){
             unsigned rdm = (rand()%nbMax)+1; //L'élément de la matrice sera une valeur comprise entre 1 et le nbMax
-            if (i > 1 && j > 1 && (mat[i-1][j] == mat[i-2][j] || mat[i][j-1] == mat[i][j-2])
-                    && (rdm == mat[i-1][j] || rdm == mat[i][j-1])) mat[i][j] = nouvRdm(rdm);
+            if (i > 2 && rdm == mat[i-1][j] && mat[i-1][j] == mat[i-2][j]) mat[i][j] = nouvRdm(rdm);
+            else if (j > 2 && rdm == mat[i][j-1] && mat[i][j-1] == mat[i][j-2]) mat[i][j] = nouvRdm(rdm);
             else mat[i][j] = rdm;
         }
     }
@@ -136,7 +136,7 @@ void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer, const 
 
 void detectionExplositionBombe (CMatrice & mat, unsigned & score){
     bool act = detectionExplositionUneBombeHorizontale(mat, score);
-    bool act = detectionExplositionUneBombeVerticale(mat, score);
+    act = detectionExplositionUneBombeVerticale(mat, score);
     if (act) remplaceVideParRdm(mat);
 }
 
