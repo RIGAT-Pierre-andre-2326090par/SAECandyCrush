@@ -43,7 +43,7 @@ void initMatV2 (CMatrice & mat, const size_t & nbLignes = 10,
             bool doitChanger = false;
             unsigned ind = 0;
             while (!doitChanger) {
-                if (mat[i + ind][j] == )
+                if (mat[i + ind][j] == ) //A COMPLETER 
         }
     }
 }
@@ -359,7 +359,7 @@ int main() {
     //return 0;
 
     // ---------Exercice 1 -----------------//
-    return ppalExo01(score);
+    //return ppalExo01(score);
     //--------------------------------------//
 
     // ---------Exercice 2 -----------------//
@@ -374,7 +374,7 @@ int main() {
     //return ppalExo04(score);
     //-------------------------------------//
 
-    //return partiNumberCrush(score);
+    return partiNumberCrush(score);
 
     //return 0;
 }
