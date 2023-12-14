@@ -321,6 +321,7 @@ int partiNumberCrush(unsigned & score){
     while(score < 100){
         detectionExplositionBombe(mat, score);
         afficheMatriceV3 (mat, numLigne, numCol);
+        cout << "Score : " << score << endl;
         cout << "Fait un mouvement ";
         cout << "numero de ligne : ";
         cout << numLigne + 1;

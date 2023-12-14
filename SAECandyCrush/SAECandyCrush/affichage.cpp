@@ -6,8 +6,6 @@
 #include <fstream>
 #include <affichage.h>
 
-
-
 using namespace std;
 
 //Ce document cpp est un document regroupant toutes les fonctions/procédures d'affichage de la matrice, permettant de réduire le code du main
@@ -17,11 +15,9 @@ void clearScreen () {
 }
 
 
-
 void couleur (const unsigned & coul) {
     cout << "\033[" << coul <<"m";
 }
-
 
 // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
 void  afficheMatriceV0 (const CMatrice & Mat) {

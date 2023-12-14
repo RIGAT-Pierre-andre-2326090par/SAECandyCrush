@@ -4,7 +4,6 @@
 #include <type.h>
 // Ce document contient les constantes utilisées dans main et affichage
 
-
 const unsigned KReset   (0);
 const unsigned KNoir    (30);
 const unsigned KRouge   (31);
