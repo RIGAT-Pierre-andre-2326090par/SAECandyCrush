@@ -32,23 +32,39 @@ unsigned nouvRdm(unsigned & nb, const unsigned & nbMax = KPlusGrandNombreDansLaM
 }
 
 //initialisation de la grille de jeu avec maximum 2 nombre aligné
-void initMatV2 (CMatrice & mat, const size_t & nbLignes = 10,
-                const size_t & nbColonnes = 10,
-                const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
-
-    mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
-    for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
-    for (unsigned i = 0 ; i < nbLignes ; ++i){
-        for (unsigned j = 0 ; j < nbColonnes ; ++j){
-            unsigned rdm = (rand()%nbMax)+1; //L'élément de la matrice sera une valeur comprise entre 1 et le nbMax
-            if (i > 2 && rdm == mat[i-1][j] && mat[i-1][j] == mat[i-2][j]) mat[i][j] = nouvRdm(rdm);
-            else if (j > 2 && rdm == mat[i][j-1] && mat[i][j-1] == mat[i][j-2]) mat[i][j] = nouvRdm(rdm);
-            else mat[i][j] = rdm;
+void initMatV2 (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+    initMat(mat);
+    afficheMatriceV2(mat);
+    for (size_t numLigne (0); numLigne < mat.size(); ++numLigne){
+        for (size_t numCol (0); numCol < mat[numLigne].size(); ++numCol){
+            if (KAIgnorer == mat [numLigne][numCol]) continue;
+            size_t combienALaSuite (1);
+            while (numCol < mat[numLigne].size() &&
+                   mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
+                ++combienALaSuite;
+            if (combienALaSuite >= 3) {
+                unsigned rdm = (rand()%nbMax)+1;
+                if (rdm != mat[numLigne][numCol]) mat[numLigne][numCol] = rdm;
+                else mat[numLigne][numCol] = nouvRdm(rdm);
+            }
+        }
+    }
+    afficheMatriceV2(mat);
+    for (size_t numCol (0); numCol < mat.size(); ++numCol){
+        for (size_t numLigne (0); numLigne < mat[numCol].size(); ++numLigne){
+            if (KAIgnorer == mat [numLigne][numCol]) continue;
+            size_t combienALaSuite (1);
+            while (numLigne < mat[numCol].size() &&
+                   mat[numLigne][numCol] == mat[numLigne + combienALaSuite][numCol])
+                ++combienALaSuite;
+            if (combienALaSuite >= 3){
+                unsigned rdm = (rand()%nbMax)+1;
+                if (rdm != mat[numLigne][numCol]) mat[numLigne][numCol] = rdm;
+                else mat[numLigne][numCol] = nouvRdm(rdm);
+            }
         }
     }
 }
-
-
 
 void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
                                      const size_t & numColonne, const size_t & combien){
@@ -80,7 +96,7 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
                 explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
                 cout << string (20, '-') << endl << "matrice après suppresion" << endl;
                 afficheMatriceV2(mat);
-                score=score+10;
+                score+=10;
                 cout << "Score : " << score;
             }
         }
@@ -118,7 +134,7 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
                 explositionUneBombeVerticale(mat, numLigne, numCol, combienALaSuite);
                 cout << string (20, '-') << endl << "matrice après suppresion" << endl;
                             afficheMatriceV2(mat);
-                score=score+10;
+                score+=10;
                 cout << "Score : " << score;
             }
         }
@@ -361,7 +377,7 @@ int main() {
     //return 0;
 
     // ---------Exercice 1 -----------------//
-    //return ppalExo01(score);
+    return ppalExo01(score);
     //--------------------------------------//
 
     // ---------Exercice 2 -----------------//
@@ -376,7 +392,7 @@ int main() {
     //return ppalExo04(score);
     //-------------------------------------//
 
-    return partiNumberCrush(score);
+    //return partiNumberCrush(score);
 
     //return 0;
 }
