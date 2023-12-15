@@ -24,10 +24,11 @@ void initMat (CMatrice & mat, const size_t & nbLignes = 10,
 }
 
 
-//renvoie un nombre random différent de celui passer en paramètre
-unsigned nouvRdm(unsigned & nb, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+//renvoie un nombre random différent de ceux passer en paramètre
+unsigned nouvRdm(unsigned & nb1, unsigned & nb2, const unsigned & nbMax){
     unsigned rdm = (rand()%nbMax)+1;
-    while(rdm == nb) rdm = (rand()%nbMax)+1;
+    while(rdm == nb1 || rdm == nb2)
+        rdm = (rand()%nbMax)+1; // tant que rdm est égal à nb1 ou nb2, rdm "change" de valeur
     return rdm;
 }
 
@@ -38,16 +39,15 @@ void initMatV2 (CMatrice & mat, const size_t & nbLignes = 10,
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i){
-        unsigned rdmMoinsUn = 0;
-        unsigned rdmMoinsDeux = 0;
         for (unsigned j = 0 ; j < nbColonnes ; ++j){
-            unsigned rdm = (rand()%nbMax)+1; //L'élément de la matrice sera une valeur comprise entre 1 et le nbMax
-            if (rdm == rdmMoinsUn && rdmMoinsUn == rdmMoinsDeux) rdm = nouvRdm(rdm);
-            rdmMoinsDeux = rdmMoinsUn;
-            rdmMoinsUn = rdm;
-            mat[i][j] = rdm;
+            unsigned comboHaut = 0;
+            unsigned comboCote = 0;
+            if (i > 1 && mat[i - 1][j] == mat[i - 2][j]) comboHaut = mat[i - 1][j];
+            // comboHaut vaut 0 si les 2 nombres au dessus sont différent ou sinon le contenu de la case au dessus
+            if (j > 1 && mat[i][j - 1] == mat[i][j - 2]) comboCote = mat[i][j - 1];
+            // comboCote vaut 0 si les 2 nombres à côté sont différent ou sinon le contenu de la case à côté
+            mat[i][j] = nouvRdm(comboCote, comboHaut, nbMax); // le contenu de la case est différent de comboHaut et comboCote
         }
-
     }
 }
 
@@ -74,7 +74,7 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
             if (combienALaSuite >= 3){
                 auMoinsUneExplosion = true;
                 explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
-                score += 10;
+                score += 10 * (combienALaSuite - 2);
                 cout << "Score : " << score << endl;
             }
         }
@@ -96,16 +96,16 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
     bool auMoinsUneExplosion (false);
     for (size_t numCol (0); numCol < mat.size(); ++numCol){
         for (size_t numLigne (0); numLigne < mat[numCol].size(); ++numLigne){
-            if (KAIgnorer == mat [numLigne][numCol]) continue;
+            if (KAIgnorer == mat [numCol][numLigne]) continue;
             size_t combienALaSuite (1);
-            while (numLigne < mat[numCol].size() &&
-                   mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
+            while (numLigne < mat.size() &&
+                   mat[numCol][numLigne] == mat[numCol][numLigne + combienALaSuite])
                 ++combienALaSuite;
             //si on a au moins 3 chiffres identiques a la suite
             if (combienALaSuite >= 3){
                 auMoinsUneExplosion = true;
                 explositionUneBombeVerticale(mat, numLigne, numCol, combienALaSuite);
-                score += 10;
+                score += 10 * (combienALaSuite - 2);
                 cout << "Score : " << score << endl;
             }
         }
@@ -115,17 +115,27 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
 
 void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
                         const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+
+    unsigned dernierRdm = 0;
     for (unsigned i = 0 ; i < mat.size() ; ++i){
         for (unsigned j = 0 ; j < mat[i].size() ; ++j){
-            if (mat[i][j] == vid) mat[i][j] = (rand()%nbMax)+1;
+            if (mat[i][j] == vid) {
+                unsigned comboHaut = 0;
+                unsigned comboCote = 0;
+                if (i > 1 && mat[i - 1][j] == mat[i - 2][j]) comboHaut = mat[i - 1][j];
+                if (j > 1 && mat[i][j - 1] == mat[i][j - 2]) comboCote = mat[i][j - 1];
+                mat[i][j] = nouvRdm(comboCote, comboHaut, nbMax); // le contenu de la case est différent de comboHaut et comboCote
+            }
         }
     }
 }
 
-void detectionExplositionBombe (CMatrice & mat, unsigned & score){
+void detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
+                               const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
+
     bool act (detectionExplositionUneBombeHorizontale(mat, score) or
               detectionExplositionUneBombeVerticale(mat, score));
-    if (act) remplaceVideParRdm(mat);
+    if (act) remplaceVideParRdm(mat, vid, plusGrandNb);
 }
 
 //***********************************************************************************/
@@ -165,31 +175,11 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
     case 'q':
         if (numCol != 0) ++nouvellePositionColonne;
         break;
-    case 's':
-        char inp;
-        cin >> inp;
-        switch(tolower(inp)){
-        case 'z':
-            if (numLigne != 0) swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
-            break;
-        case 'd':
-            if (numCol != mat[0].size() - 1) swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
-            break;
-        case 'x':
-            if (numLigne != mat.size() - 1) swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
-            break;
-        case 'q':
-            if (numCol != 0) swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
-            break;
-        default:
-            cout<<"Tu choisis Z ou Q ou D ou X"<<endl;
-            break;
-        }
-        break;
     default:
         cout<<"Tu choisis A ou Z ou E ou Q ou D ou X ou C ou V pour déplacer le curseur ou S pour échanger 2 cases"<<endl;
         break;
     }
+    swap(mat[numLigne][numCol],mat[numLigne+nouvellePositionLigne][numCol+nouvellePositionColonne]);
 }
 
 void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLigne,
@@ -254,7 +244,7 @@ void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLig
     numLigne = nouvellePositionLigne;
 }
 
-int ppalExo01 (unsigned & score){
+int ppalExo01 (){
     CMatrice mat;
     initMat(mat);
     // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
@@ -316,6 +306,30 @@ int ppalExo04 (unsigned & score){
 int partiNumberCrush(unsigned & score){
     CMatrice mat;
     initMatV2(mat);
+    size_t numCol = 4;
+    size_t numLigne = 4;
+    while(score < 100){
+        detectionExplositionBombe(mat, score);
+        afficheMatriceV3 (mat, numLigne, numCol);
+        cout << "Score : " << score << endl;
+        cout << "Fait un mouvement ";
+        cout << "numero de ligne : ";
+        cout << numLigne + 1;
+        cout << ", numero de colonne : ";
+        cout << numCol + 1 << endl;
+        cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
+        char deplacement;
+        cin >> deplacement;
+        faitUnMouvementV2 (mat, deplacement, numLigne, numCol);
+    }
+    return 0;
+}
+
+int partiCasaliCrush(unsigned & score){
+    CMatrice mat;
+    unsigned nbL = 10;
+    unsigned nbC = 10;
+    initMatV2(mat, nbL, nbC, KPlusGrandNombreDansLaMatriceCasaliCrush);
     size_t numCol = 4;
     size_t numLigne = 4;
     while(score < 100){
