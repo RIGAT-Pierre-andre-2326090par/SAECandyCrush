@@ -1,6 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <iomanip>
 #include <type.h>
 #include <cst.h>
 #include <affichage.h>
@@ -116,26 +114,24 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
 void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
                         const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
 
-    unsigned dernierRdm = 0;
     for (unsigned i = 0 ; i < mat.size() ; ++i){
         for (unsigned j = 0 ; j < mat[i].size() ; ++j){
             if (mat[i][j] == vid) {
-                unsigned comboHaut = 0;
-                unsigned comboCote = 0;
-                if (i > 1 && mat[i - 1][j] == mat[i - 2][j]) comboHaut = mat[i - 1][j];
-                if (j > 1 && mat[i][j - 1] == mat[i][j - 2]) comboCote = mat[i][j - 1];
-                mat[i][j] = nouvRdm(comboCote, comboHaut, nbMax); // le contenu de la case est différent de comboHaut et comboCote
+                unsigned Haut = mat[i + 1][j];
+                unsigned Cote = mat[i][j + 1];
+                mat[i][j] = nouvRdm(Haut, Cote, nbMax); // le contenu de la case est différent de Haut et Cote
             }
         }
     }
 }
 
-void detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
+bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
                                const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
 
     bool act (detectionExplositionUneBombeHorizontale(mat, score) or
               detectionExplositionUneBombeVerticale(mat, score));
     if (act) remplaceVideParRdm(mat, vid, plusGrandNb);
+    return act;
 }
 
 //***********************************************************************************/
@@ -309,7 +305,7 @@ int partiNumberCrush(unsigned & score){
     size_t numCol = 4;
     size_t numLigne = 4;
     while(score < 100){
-        detectionExplositionBombe(mat, score);
+        while (detectionExplositionBombe(mat, score)) continue;
         afficheMatriceV3 (mat, numLigne, numCol);
         cout << "Score : " << score << endl;
         cout << "Fait un mouvement ";
@@ -332,8 +328,9 @@ int partiCasaliCrush(unsigned & score){
     initMatV2(mat, nbL, nbC, KPlusGrandNombreDansLaMatriceCasaliCrush);
     size_t numCol = 4;
     size_t numLigne = 4;
-    while(score < 100){
+    while(true){
         detectionExplositionBombe(mat, score);
+        if (score > 100) break;
         afficheMatriceV3 (mat, numLigne, numCol);
         cout << "Score : " << score << endl;
         cout << "Fait un mouvement ";
@@ -380,7 +377,9 @@ int main() {
     //return ppalExo04(score);
     //-------------------------------------//
 
-    return partiNumberCrush(score);
+    //return partiNumberCrush(score);
+
+    return partiCasaliCrush(score);
 
     //return 0;
 }
