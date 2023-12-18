@@ -2,8 +2,8 @@
 #include <type.h>
 #include <cst.h>
 #include <affichage.h>
-//#include <mingl/mingl.h>
-
+#include <mingl/mingl.h>
+#include <fstream>
 using namespace std;
 
 //initialisation de la grille de jeu
