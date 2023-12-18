@@ -81,19 +81,22 @@ void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
                                    const size_t & numColonne, const size_t & combien){
     for (size_t j (numLigne); j < numLigne + combien; ++j)
         mat [j][numColonne] = mat[j - combien][numColonne];
+    afficheMatriceV2(mat);
     for (size_t i (0) ; i < combien ; ++i)
         mat [i][numColonne] =  KAIgnorer;
+    afficheMatriceV2(mat);
 }
 
 bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
     bool auMoinsUneExplosion (false);
-    for (size_t numLigne (0); numLigne < mat.size(); ++numLigne){
-        for (size_t numCol (0); numCol < mat[numLigne].size(); ++numCol){
+    for (size_t numCol (0); numCol < mat[0].size(); ++numCol) {
+        for (size_t numLigne (1); numLigne < mat.size(); ++numLigne) {
             if (KAIgnorer == mat [numLigne][numCol]) continue;
             size_t combienALaSuite (1);
             while (numLigne < mat.size() &&
-                   mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
+                   mat[numLigne][numCol] == mat[numLigne + combienALaSuite][numCol])
                 ++combienALaSuite;
+            cout << combienALaSuite << endl;
             //si on a au moins 3 chiffres identiques a la suite
             if (combienALaSuite >= 3){
                 auMoinsUneExplosion = true;
@@ -106,14 +109,15 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
     return auMoinsUneExplosion;
 }
 
+// remplace toutes les cases vides par des nombres aléatoires
 void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
                         const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
 
     for (unsigned i = 0 ; i < mat.size() ; ++i){
-        for (unsigned j = 0 ; j < mat[i].size() ; ++j){
-            if (mat[i][j] == vid) {
-                unsigned Haut = mat[i + 1][j];
-                unsigned Cote = mat[i][j + 1];
+        for (unsigned j = 0 ; j < mat[i].size() ; ++j){ // pour chaque case de chaque ligne de la matrice
+            if (mat[i][j] == vid) { // si la case est pleine,
+                unsigned Haut = mat[i + 1][j]; // le contenu de la case du haut
+                unsigned Cote = mat[i][j + 1]; // le contenu de la case sur le côté
                 mat[i][j] = nouvRdm(Haut, Cote, nbMax); // le contenu de la case est différent de Haut et Cote
             }
         }
@@ -122,7 +126,7 @@ void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
 
 bool detectionExplositionBombe (CMatrice & mat, unsigned & score) {
 
-    bool act (/*detectionExplositionUneBombeVerticale(mat, score) or*/
+    bool act (detectionExplositionUneBombeVerticale(mat, score) or
               detectionExplositionUneBombeHorizontale(mat, score));
     return act;
 }
@@ -130,7 +134,7 @@ bool detectionExplositionBombe (CMatrice & mat, unsigned & score) {
 bool detectionExplositionBombeV2 (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
                                   const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
 
-    bool act (/*detectionExplositionUneBombeVerticale(mat, score) or*/
+    bool act (//detectionExplositionUneBombeVerticale(mat, score) or
               detectionExplositionUneBombeHorizontale(mat, score));
     if (act) remplaceVideParRdm(mat, vid, plusGrandNb);
     return act;
