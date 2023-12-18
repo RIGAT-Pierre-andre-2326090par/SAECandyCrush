@@ -195,7 +195,7 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
 }
 
 void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLigne,
-                        size_t & numCol) {
+                        size_t & numCol, unsigned & deplacement) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     switch (tolower(deplacment)) {
@@ -232,16 +232,25 @@ void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLig
         cin >> inp;
         switch(tolower(inp)){
         case 'x':
-            if (numLigne != 0) swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
+            if (numLigne != 0) {
+              swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
+                nbDeplacement-=1
             break;
         case 'd':
-            if (numCol != mat[0].size() - 1) swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
+            if (numCol != mat[0].size() - 1){
+              swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
+                nbDeplacement-=1;}
             break;
         case 'z':
-            if (numLigne != mat.size() - 1) swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
+            if (numLigne != mat.size() - 1){
+              swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
+                nbDeplacement-=1;
+                }
             break;
         case 'q':
-            if (numCol != 0) swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
+            if (numCol != 0) {swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
+                nbDeplacement-=1;
+                             }
             break;
         default:
             cout<<"Tu choisis Z ou Q ou D ou X"<<endl;
@@ -339,7 +348,7 @@ int partiNumberCrush(unsigned & score){
     return 0;
 }
 
-int partiCasaliCrush(unsigned & score){
+int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     CMatrice mat;
     unsigned nbL = 10;
     unsigned nbC = 5;
@@ -360,7 +369,7 @@ int partiCasaliCrush(unsigned & score){
         cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
         char deplacement;
         cin >> deplacement;
-        faitUnMouvementV2 (mat, deplacement, numLigne, numCol);
+        faitUnMouvementV2 (mat, deplacement, numLigne, numCol, nbDeplacement);
     }
     return 0;
 }
@@ -368,6 +377,7 @@ int partiCasaliCrush(unsigned & score){
 int main() {
     srand(time(NULL));
     unsigned score=0;
+    unsigned nbDeplacement=15;
     //unsigned deplacement=0;
 
     // ---------Exercice 2 -----------------//
