@@ -3,7 +3,6 @@
 #include <cst.h>
 #include <affichage.h>
 #include <mingl/mingl.h>
-#include <fstream>
 using namespace std;
 
 //initialisation de la grille de jeu
@@ -80,11 +79,10 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
 
 void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
                                    const size_t & numColonne, const size_t & combien){
-    for (size_t j (numLigne); j < numLigne + combien; ++j){
-            mat [i][j] = mat[i - combien][j]
-    for (size_t i (0) ; i < combien ; ++i)  
-        mat [i][numCol] =  KAIgnorer;
-    }
+    for (size_t j (numLigne); j < numLigne + combien; ++j)
+        mat [j][numColonne] = mat[j - combien][numColonne];
+    for (size_t i (0) ; i < combien ; ++i)
+        mat [i][numColonne] =  KAIgnorer;
 }
 
 bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
@@ -192,7 +190,7 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
 }
 
 void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLigne,
-                        size_t & numCol, unsigned & nbDeplacement) {
+                        size_t & numCol/*, unsigned & nbDeplacement*/) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     switch (tolower(deplacment)) {
@@ -231,27 +229,27 @@ void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLig
         case 'x':
             if (numLigne != 0){
                 swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
-                nbDeplacement-=1;
+                //nbDeplacement-=1;
 
             }
             break;
         case 'd':
             if (numCol != mat[0].size() - 1){
                 swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
-                nbDeplacement-=1;
+                //nbDeplacement-=1;
 
             }
             break;
         case 'z':
             if (numLigne != mat.size() - 1){
-                nbDeplacement-=1;
+                //nbDeplacement-=1;
                 swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
             }
             break;
         case 'q':
             if (numCol != 0) {
                 swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
-                nbDeplacement-=1;
+                //nbDeplacement-=1;
 
             }
             break;
@@ -327,9 +325,9 @@ int ppalExo02 (unsigned & score){
     return 0;
 }*/
 
-/*int partiNumberCrush(unsigned & score){
+int partiNumberCrush(unsigned & score){
     CMatrice mat;
-    initMat(mat);
+    initMatV2(mat);
     size_t numCol = 4;
     size_t numLigne = 4;
     while(true){
@@ -349,7 +347,7 @@ int ppalExo02 (unsigned & score){
         faitUnMouvementV2 (mat, deplacement, numLigne, numCol);
     }
     return 0;
-}*/
+}
 
 int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     CMatrice mat;
@@ -361,7 +359,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     while(true){
         zeroVidSousNb(mat);
         while (detectionExplositionBombeV2(mat, score)) continue;
-        afficheMatriceV3 (mat, numLigne, numCol, nbDeplacement);
+        afficheMatriceV3 (mat, numLigne, numCol);
         cout << "Score : " << score << endl;
         if (score >= 100){
             cout << "Tu as gagné !" << endl;
@@ -379,7 +377,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
         cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
         char deplacement;
         cin >> deplacement;
-        faitUnMouvementV2 (mat, deplacement, numLigne, numCol, nbDeplacement);
+        faitUnMouvementV2 (mat, deplacement, numLigne, numCol);
 
     }
     return 0;
@@ -388,7 +386,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
 int main() {
     srand(time(NULL));
     unsigned score=0;
-    unsigned nbDeplacement=15;
+    //unsigned nbDeplacement=15;
     //unsigned deplacement=0;
 
     // ---------Exercice 2 -----------------//
@@ -417,9 +415,9 @@ int main() {
     //return ppalExo04(score);
     //-------------------------------------//
 
-    //return partiNumberCrush(score);
+    return partiNumberCrush(score);
 
-    return partiCasaliCrush(score, nbDeplacement);
+    //return partiCasaliCrush(score, nbDeplacement);
 
     //return 0;
 }
