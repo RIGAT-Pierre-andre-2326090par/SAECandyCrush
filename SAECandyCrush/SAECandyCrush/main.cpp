@@ -127,16 +127,16 @@ void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
 
 bool detectionExplositionBombe (CMatrice & mat, unsigned & score) {
 
-    bool act (/*detectionExplositionUneBombeHorizontale(mat, score) or*/
-              detectionExplositionUneBombeVerticale(mat, score));
+    bool act (/*detectionExplositionUneBombeVerticale(mat, score) or*/
+              detectionExplositionUneBombeHorizontale(mat, score));
     return act;
 }
 
 bool detectionExplositionBombeV2 (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
                                const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
 
-    bool act (/*detectionExplositionUneBombeHorizontale(mat, score) or*/
-             detectionExplositionUneBombeVerticale(mat, score));
+    bool act (/*detectionExplositionUneBombeVerticale(mat, score) or*/
+             detectionExplositionUneBombeHorizontale(mat, score));
     if (act) remplaceVideParRdm(mat, vid, plusGrandNb);
     return act;
 }
