@@ -195,7 +195,7 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
 }
 
 void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLigne,
-                        size_t & numCol, unsigned & deplacement) {
+                        size_t & numCol) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     switch (tolower(deplacment)) {
@@ -232,25 +232,16 @@ void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLig
         cin >> inp;
         switch(tolower(inp)){
         case 'x':
-            if (numLigne != 0) {
-              swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
-                nbDeplacement-=1
+            if (numLigne != 0) swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
             break;
         case 'd':
-            if (numCol != mat[0].size() - 1){
-              swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
-                nbDeplacement-=1;}
+            if (numCol != mat[0].size() - 1) swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
             break;
         case 'z':
-            if (numLigne != mat.size() - 1){
-              swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
-                nbDeplacement-=1;
-                }
+            if (numLigne != mat.size() - 1) swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
             break;
         case 'q':
-            if (numCol != 0) {swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
-                nbDeplacement-=1;
-                             }
+            if (numCol != 0) swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
             break;
         default:
             cout<<"Tu choisis Z ou Q ou D ou X"<<endl;
