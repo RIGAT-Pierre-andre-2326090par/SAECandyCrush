@@ -80,22 +80,21 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
 
 void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
                                    const size_t & numColonne, const size_t & combien){
-    for (size_t i (numLigne); i < numLigne + combien; ++i){
-        for (size_t j (numColonne); j > combien - 1; --j){
-            mat [i][j] = mat[i][j - combien];
-        }
-        mat [i][0] =  KAIgnorer;
+    for (size_t j (numLigne); j < numLigne + combien; ++j){
+            mat [i][j] = mat[i - combien][j]
+    for (size_t i (0) ; i < combien ; ++i)  
+        mat [i][numCol] =  KAIgnorer;
     }
 }
 
 bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
     bool auMoinsUneExplosion (false);
     for (size_t numLigne (0); numLigne < mat.size(); ++numLigne){
-        for (size_t numCol (0); numLigne < mat[numLigne].size(); ++numCol){
+        for (size_t numCol (0); numCol < mat[numLigne].size(); ++numCol){
             if (KAIgnorer == mat [numLigne][numCol]) continue;
             size_t combienALaSuite (1);
             while (numLigne < mat.size() &&
-                   mat[numLigne][numCol] == mat[numLigne + combienALaSuite][numCol])
+                   mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
                 ++combienALaSuite;
             //si on a au moins 3 chiffres identiques a la suite
             if (combienALaSuite >= 3){
@@ -103,9 +102,7 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
                 explositionUneBombeVerticale (mat, numLigne, numCol, combienALaSuite);
                 cout << "une explosion vertical, une !" << endl;
                 score += 10 * (combienALaSuite - 2);
-                afficheMatriceV1(mat);
             }
-
         }
     }
     return auMoinsUneExplosion;
