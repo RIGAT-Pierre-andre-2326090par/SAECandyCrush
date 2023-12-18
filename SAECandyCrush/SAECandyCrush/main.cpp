@@ -2,7 +2,7 @@
 #include <type.h>
 #include <cst.h>
 #include <affichage.h>
-#include <mingl/mingl.h>
+//#include <mingl/mingl.h>
 
 using namespace std;
 
@@ -30,8 +30,8 @@ unsigned nouvRdm(unsigned & nb1, unsigned & nb2, const unsigned & nbMax){
 
 //initialisation de la grille de jeu avec maximum 2 nombre aligné
 void initMatV2 (CMatrice & mat, const size_t & nbLignes = 10,
-               const size_t & nbColonnes = 10,
-               const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+                const size_t & nbColonnes = 10,
+                const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i){
@@ -79,7 +79,7 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
 }
 
 void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
-                                    const size_t & numColonne, const size_t & combien){
+                                   const size_t & numColonne, const size_t & combien){
     for (size_t i (numLigne); i < numLigne + combien; ++i){
         for (size_t j (numColonne); j > combien - 1; --j){
             mat [i][j] = mat[i][j - combien];
@@ -133,10 +133,10 @@ bool detectionExplositionBombe (CMatrice & mat, unsigned & score) {
 }
 
 bool detectionExplositionBombeV2 (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
-                               const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
+                                  const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
 
     bool act (/*detectionExplositionUneBombeVerticale(mat, score) or*/
-             detectionExplositionUneBombeHorizontale(mat, score));
+              detectionExplositionUneBombeHorizontale(mat, score));
     if (act) remplaceVideParRdm(mat, vid, plusGrandNb);
     return act;
 }
@@ -195,7 +195,7 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
 }
 
 void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLigne,
-                        size_t & numCol) {
+                        size_t & numCol, unsigned & nbDeplacement) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     switch (tolower(deplacment)) {
@@ -232,16 +232,31 @@ void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLig
         cin >> inp;
         switch(tolower(inp)){
         case 'x':
-            if (numLigne != 0) swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
+            if (numLigne != 0){
+                swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
+                nbDeplacement-=1;
+
+            }
             break;
         case 'd':
-            if (numCol != mat[0].size() - 1) swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
+            if (numCol != mat[0].size() - 1){
+                swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
+                nbDeplacement-=1;
+
+            }
             break;
         case 'z':
-            if (numLigne != mat.size() - 1) swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
+            if (numLigne != mat.size() - 1){
+                nbDeplacement-=1;
+                swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
+            }
             break;
         case 'q':
-            if (numCol != 0) swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
+            if (numCol != 0) {
+                swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
+                nbDeplacement-=1;
+
+            }
             break;
         default:
             cout<<"Tu choisis Z ou Q ou D ou X"<<endl;
@@ -276,7 +291,7 @@ int ppalExo02 (unsigned & score){
     return 0;
 }
 
-int ppalExo03 (unsigned & score){
+/*int ppalExo03 (unsigned & score){
     CMatrice mat;
     initMat(mat);
     // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
@@ -286,16 +301,16 @@ int ppalExo03 (unsigned & score){
         afficheMatriceV1 (mat);
     }
     return 0;
-}
+}*/
 
-int ppalExo04 (unsigned & score){
+/*int ppalExo04 (unsigned & score){
     CMatrice mat;
     initMat(mat);
     // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
     detectionExplositionUneBombeHorizontale (mat, score);
     detectionExplositionUneBombeVerticale (mat, score);
     afficheMatriceV2 (mat);
-    //condition de victoire a trouver
+    //condition de victoire a trouverue
     while (true) {
         cout << "Fait un mouvement ";
         cout << "numero de ligne : ";
@@ -313,9 +328,9 @@ int ppalExo04 (unsigned & score){
         afficheMatriceV2 (mat);
     }
     return 0;
-}
+}*/
 
-int partiNumberCrush(unsigned & score){
+/*int partiNumberCrush(unsigned & score){
     CMatrice mat;
     initMat(mat);
     size_t numCol = 4;
@@ -337,7 +352,7 @@ int partiNumberCrush(unsigned & score){
         faitUnMouvementV2 (mat, deplacement, numLigne, numCol);
     }
     return 0;
-}
+}*/
 
 int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     CMatrice mat;
@@ -349,9 +364,16 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     while(true){
         zeroVidSousNb(mat);
         while (detectionExplositionBombeV2(mat, score)) continue;
-        afficheMatriceV3 (mat, numLigne, numCol);
+        afficheMatriceV3 (mat, numLigne, numCol, nbDeplacement);
         cout << "Score : " << score << endl;
-        if (score >= 100) break;
+        if (score >= 100){
+            cout << "Tu as gagné !" << endl;
+            break;
+        }
+        if (nbDeplacement ==0){
+            cout << "Tu n'as plus de déplacements, payer 5€ pour 5 déplacements supplémentaires ?" << endl;
+            break;
+        }
         cout << "Fait un mouvement ";
         cout << "numero de ligne : ";
         cout << numLigne + 1;
@@ -361,6 +383,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
         char deplacement;
         cin >> deplacement;
         faitUnMouvementV2 (mat, deplacement, numLigne, numCol, nbDeplacement);
+
     }
     return 0;
 }
