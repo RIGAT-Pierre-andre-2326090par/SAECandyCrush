@@ -357,7 +357,7 @@ int ppalExo02 (unsigned & score){
 int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     CMatrice mat;
     unsigned nbL = 10;
-    unsigned nbC = 5;
+    unsigned nbC = 10;
     initMatV2(mat, nbL, nbC, KPlusGrandNombreDansLaMatriceCasaliCrush);
     size_t numCol = 4;
     size_t numLigne = 4;
