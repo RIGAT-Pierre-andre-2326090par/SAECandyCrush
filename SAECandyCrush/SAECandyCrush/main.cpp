@@ -3,8 +3,23 @@
 #include <cst.h>
 #include <affichage.h>
 #include <mingl/mingl.h>
-
+#include <fstream>
 using namespace std;
+
+
+void initParams (CMyParam & param)
+{
+//touche du joueur
+param.mapParamChar["toucheHaut"] = 'z';
+param.mapParamChar["toucheGauche"] = 'q';
+param.mapParamChar["toucheBas"] = 'x';
+param.mapParamChar["toucheDroite"] = 'd';
+
+//taille de la grille - on suppose que c'est un rectangle
+param.mapParamUnsigned["nbColonnes"] = 7;
+param.mapParamUnsigned["nbLignes"] = 7;
+
+}
 
 //initialisation de la grille de jeu
 void initMat (CMatrice & mat, const size_t & nbLignes = 10,
