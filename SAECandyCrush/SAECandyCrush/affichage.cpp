@@ -110,7 +110,7 @@ void  afficheMatriceV3 (const CMatrice & Mat, const size_t numLigne, const size_
     clearScreen();
     couleur (44); // Affiche la couleur bleue
     cout << "  ";
-    for (size_t i = 0 ; i < Mat.size() ; ++i) cout << ' ' << i + 1;
+    for (size_t i = 0 ; i < Mat[0].size() ; ++i) cout << ' ' << i + 1;
     cout << endl ;
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
