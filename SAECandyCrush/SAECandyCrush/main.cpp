@@ -408,7 +408,7 @@ int main() {
 
     //return partiNumberCrush(score);
 
-    return partiCasaliCrush(score);
+    return partiCasaliCrush(score, nbDeplacement);
 
     //return 0;
 }
