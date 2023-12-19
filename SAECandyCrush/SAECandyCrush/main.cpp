@@ -406,8 +406,32 @@ int main() {
 
     unsigned score=0;
     unsigned nbDeplacement=15;
+    unsigned mode ;
+    cout << " Sur quel mode de jeu voulez vous jouer ? :" << endl << endl << "1 : mode avec MinGl" << '\t' << "2 : mode avec les nombres" << endl ;
+    cin >> mode ;
+    bool test = false ;
+    if (mode ==1 || mode==2)
+    {
+        test = true ;
+    }
+    if (test == false)
+    {
+        while (test == false)
+        {
+            cout << "Ce mode de jeu n'existe pas rééssayez !" << endl << endl <<" Sur quel mode de jeu voulez vous jouer ? :" << endl << endl << "1 : mode avec MinGl" << '\t' << "2 : mode avec les nombres" << endl ;
+            cin >> mode ;
+            if (mode ==1 || mode==2)
+            {
+                test = true ;
+            }
+        }
+    }
+    if (mode == 1)
+    {
 
+    }
+    else if (mode == 2)
+    {
     return partiCasaliCrush(score, nbDeplacement);
-
-    //return 0;
+    }
 }
