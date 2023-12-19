@@ -1,11 +1,11 @@
 <map id="main" name="main">
 <area shape="rect" id="node1" title="main" alt="" coords="5,157,60,184"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="partiCasaliCrush" alt="" coords="108,157,237,184"/>
-<area shape="rect" id="node3" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="afficheMatriceV1" alt="" coords="329,5,461,32"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a84f6ce81485253e1ddad16d51f965f62" title="chargerParametre" alt="" coords="325,56,464,83"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#af19c68e075eee67e410e239f09fdffd6" title="detectionExplositionBombeV2" alt="" coords="285,107,504,133"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#a7e51d2ae68b742a2bece5ba396d23eef" title="faitUnMouvementV2" alt="" coords="316,157,473,184"/>
-<area shape="rect" id="node7" href="$main_8cpp.html#af634cc08b732b0789cce520a8bc46af2" title="initMatV2" alt="" coords="352,208,437,235"/>
-<area shape="rect" id="node8" href="$main_8cpp.html#a04499e810295a8506131a7b912017990" title="initParams" alt="" coords="349,259,440,285"/>
-<area shape="rect" id="node9" href="$main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="zeroVidSousNb" alt="" coords="335,309,455,336"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="108,157,237,184"/>
+<area shape="rect" id="node3" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="afficheMatriceV1" alt="" coords="320,5,452,32"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a84f6ce81485253e1ddad16d51f965f62" title="procédure permettant de charger les paramètres de jeu d&#39;un joueur depuis un fichier yaml" alt="" coords="317,56,455,83"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="285,107,487,133"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#ab9141e218cd2f57bcc0b48989c6a21d0" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="316,157,456,184"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="352,208,420,235"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#a04499e810295a8506131a7b912017990" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="341,259,431,285"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="326,309,446,336"/>
 </map>
