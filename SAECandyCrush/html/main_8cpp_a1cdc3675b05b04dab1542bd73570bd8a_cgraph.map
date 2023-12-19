@@ -20,6 +20,6 @@
 <area shape="rect" id="node13" href="$cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="517,512,574,539"/>
 <area shape="rect" id="node16" href="$main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="432,563,659,605"/>
 <area shape="rect" id="node17" href="$main_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="432,629,659,670"/>
-<area shape="rect" id="node18" href="$main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="procédure remplacant toutes les cases vides par de nouveaux éléments aléatoires" alt="" coords="464,695,627,721"/>
+<area shape="rect" id="node18" href="$main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="464,695,627,721"/>
 <area shape="rect" id="node19" href="$main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="707,720,791,747"/>
 </map>

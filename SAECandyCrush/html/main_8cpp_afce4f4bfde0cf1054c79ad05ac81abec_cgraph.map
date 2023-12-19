@@ -1,10 +1,9 @@
 <map id="detectionExplositionBombe" name="detectionExplositionBombe">
-<area shape="rect" id="node1" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,82,207,109"/>
+<area shape="rect" id="node1" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,78,207,105"/>
 <area shape="rect" id="node2" href="$main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="255,5,481,47"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="255,75,481,116"/>
-<area shape="rect" id="node7" href="$main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="procédure remplacant toutes les cases vides par de nouveaux éléments aléatoires" alt="" coords="287,147,449,174"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3" title="procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nomb..." alt="" coords="529,9,771,35"/>
-<area shape="rect" id="node5" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="afficheMatriceV2" alt="" coords="584,59,716,86"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#a8bd751d220569d601afc2200b0378423" title="procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre..." alt="" coords="539,110,761,137"/>
-<area shape="rect" id="node8" href="$main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="608,161,692,187"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="255,71,481,112"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="287,137,449,163"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3" title="procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nomb..." alt="" coords="529,13,771,39"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a8bd751d220569d601afc2200b0378423" title="procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre..." alt="" coords="539,78,761,105"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="608,137,692,163"/>
 </map>

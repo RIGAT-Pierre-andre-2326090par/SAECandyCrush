@@ -13,11 +13,20 @@ using namespace std;
 
 //Ce document cpp est un document regroupant toutes les fonctions/procédures d'affichage de la matrice, permettant de réduire le code du main
 
+
+/**
+ * @brief clearScreen
+ * @author A.Casali
+ */
 void clearScreen () {
     cout << "\033[H\033[2J";
 }
 
-
+/**
+ * @brief couleur
+ * @param coul
+ * @author A.Casali
+ */
 void couleur (const unsigned & coul) {
     cout << "\033[" << coul <<"m";
 }

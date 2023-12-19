@@ -9,6 +9,7 @@ using namespace std;
 /**
  * @brief procédure initialisant les paramètres du joueur au sein du jeu
  * @param param
+ * @authors A.Casali, P-A.Rigat
  */
 void initParams (CMyParam & param)
 {
@@ -17,16 +18,27 @@ void initParams (CMyParam & param)
     param.mapParamChar["toucheGauche"] = 'q';
     param.mapParamChar["toucheBas"] = 'x';
     param.mapParamChar["toucheDroite"] = 'd';
+    param.mapParamChar["toucheHautGauche"] = 'a';
+    param.mapParamChar["toucheGaucheBas"] = 'w';
+    param.mapParamChar["toucheBasDroite"] = 'c';
+    param.mapParamChar["toucheDroiteHaut"] = 'e';
+    param.mapParamChar["toucheSelect"] = 's';
 
     //taille de la grille - on suppose que c'est un rectangle
     param.mapParamUnsigned["nbColonnes"] = 10;
     param.mapParamUnsigned["nbLignes"] = 10;
+
+    //
+    param.mapParamUnsigned["nbMax"] = 5;
+    param.mapParamUnsigned["scoreMax"] = 350;
+    param.mapParamUnsigned["deplacementMax"] = 15;
 }
 
 /**
  * @brief procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml
  * @param params
  * @param fichier
+ * @author A.Casali
  */
 void chargerParametre(CMyParam & params, const string & fichier){
     ifstream ifs (fichier);
@@ -98,6 +110,7 @@ void initMat (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMat
  * @param numLigne
  * @param numColonne
  * @param combien
+ * @author A.Casali
  */
 void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
                                     const size_t & numColonne, const size_t & combien){
@@ -114,6 +127,7 @@ void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
  * @param mat
  * @param score
  * @return
+ * @author A.Casali
  */
 bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
     bool auMoinsUneExplosion (false);
@@ -177,12 +191,11 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
 }
 
 /**
- * @brief procédure remplacant toutes les cases vides par de nouveaux éléments aléatoires
+ * @brief remplace toutes les cases vides par des nombres aléatoires
  * @param mat
  * @param vid
  * @param nbMax
  */
-// remplace toutes les cases vides par des nombres aléatoires
 void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
                         const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
 
@@ -203,7 +216,7 @@ void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
  * @param score
  * @param vid
  * @param plusGrandNb
- * @return
+ * @return act
  */
 bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
                                const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
@@ -218,7 +231,7 @@ bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned
  * @brief fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu'à être côte à côte d'un élément juste en dessous d'eux ou au fond de la matrice si il n'y a pas d'éléments en dessous
  * @param mat
  * @param vid
- * @return
+ * @return auMoinsUnMov
  */
 bool zeroVidSousNb (CMatrice & mat, const unsigned & vid = KAIgnorer) {
     bool auMoinsUnMov = false;
@@ -242,76 +255,68 @@ bool zeroVidSousNb (CMatrice & mat, const unsigned & vid = KAIgnorer) {
  * @param nbDeplacement
  */
 void faitUnMouvement (CMatrice & mat, const char & deplacment, size_t & numLigne,
-                     size_t & numCol, unsigned & nbDeplacement) {
+                     size_t & numCol, unsigned & nbDeplacement, CMyParam & param) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
-    switch (tolower(deplacment)) {
-    case 'c':
+    if (tolower(deplacment) == param.mapParamChar["toucheBasDroite"]) {
         if (numLigne != 0) ++nouvellePositionLigne;
         if (numCol < mat[0].size() - 1) ++nouvellePositionColonne;
-        break;
-    case 'x':
+    }
+    else if (tolower(deplacment) == param.mapParamChar["toucheBas"]) {
         if (numLigne < mat.size() - 1) ++nouvellePositionLigne;
-        break;
-    case 'w':
+    }
+    else if (tolower(deplacment) == param.mapParamChar["toucheGaucheBas"]) {
         if (numLigne != 0) ++nouvellePositionLigne;
         if (numCol != 0) --nouvellePositionColonne;
-        break;
-    case 'q':
+    }
+    else if (tolower(deplacment) == param.mapParamChar["toucheGauche"]) {
         if (numCol != 0) --nouvellePositionColonne;
-        break;
-    case 'a':
+    }
+    else if (tolower(deplacment) == param.mapParamChar["toucheHautGauche"]) {
         if (numLigne != 0) --nouvellePositionLigne;
         if (numCol != 0) --nouvellePositionColonne;
-        break;
-    case 'z':
+    }
+    else if (tolower(deplacment) == param.mapParamChar["toucheHaut"]) {
         if (numLigne != 0) --nouvellePositionLigne;
-        break;
-    case 'e':
+    }
+    else if (tolower(deplacment) == param.mapParamChar["toucheDroiteHaut"]) {
         if (numLigne != 0) --nouvellePositionLigne;
         if (numCol < mat[0].size() - 1) ++nouvellePositionColonne;
-        break;
-    case 'd':
+    }
+    else if (tolower(deplacment) == param.mapParamChar["toucheDroite"]) {
         if (numCol < mat[0].size() - 1) ++nouvellePositionColonne;
-        break;
-    case 's':
+    }
+    else if (tolower(deplacment) == param.mapParamChar["toucheSelect"]) {
         char inp;
         cin >> inp;
-        switch(tolower(inp)){
-        case 'x':
+        if (tolower(inp) == param.mapParamChar["toucheBas"]) {
             if (numLigne != 0){
                 swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
                 --nbDeplacement;
             }
-            break;
-        case 'd':
+        }
+        if (tolower(inp) == param.mapParamChar["toucheDroite"]) {
             if (numCol != mat[0].size() - 1){
                 swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
                 --nbDeplacement;
             }
-            break;
-        case 'z':
+        }
+        if (tolower(inp) == param.mapParamChar["toucheHaut"]) {
             if (numLigne != mat.size() - 1){
-
                 swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
                 --nbDeplacement;
             }
-            break;
-        case 'q':
+        }
+        if (tolower(inp) == param.mapParamChar["toucheGauche"]) {
             if (numCol != 0) {
                 swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
                 --nbDeplacement;
             }
-            break;
-        default:
-            cout<<"Tu choisis Z ou Q ou D ou X"<<endl;
-            break;
         }
-        break;
-    default:
-        cout<<"Tu choisis A ou Z ou E ou Q ou D ou X ou C ou V pour déplacer le curseur ou S pour dé"<<endl;
-            break;
+        else cout<<"Tu dois choisir entre Z ou Q ou D ou X"<<endl;
     }
+    else cout<<"Tu dois choisir entre A ou Z ou E ou Q ou D ou X ou C ou W ou S pour déplacer le curseur"<<endl;
+
     numCol = nouvellePositionColonne;
     numLigne = nouvellePositionLigne;
 }
@@ -321,20 +326,22 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, size_t & numLigne
  * @brief fonction lançant une version lite du candy crush pour les tests
  * @param score
  * @param nbDeplacement
- * @return
+ * @return 0
  */
-int partiNumberCrush(unsigned & score, unsigned & nbDeplacement){
+int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & param){
     CMatrice mat;
-    initMat(mat);
-    size_t numCol = 4;
-    size_t numLigne = 4;
+    initMat(mat, param.mapParamUnsigned["nbMax"],
+            param.mapParamUnsigned["nbLignes"],
+            param.mapParamUnsigned["nbColonnes"]);
+    size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
+    size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
     while(true){
         while (detectionExplositionBombe(mat, score) || zeroVidSousNb(mat))
             continue;
         afficheMatriceV2 (mat);
         cout << "Score : " << score << endl;
         cout << "Nombre de déplacement restant : " <<  nbDeplacement << endl;
-            if (score >= 100){
+        if (score >= param.mapParamUnsigned["scoreMax"]){
             cout << "Tu as gagné !" << endl;
                 break;
         }
@@ -350,7 +357,7 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement){
         cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
         char deplacement;
         cin >> deplacement;
-        faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement);
+        faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
     }
     return 0;
 }
@@ -359,23 +366,22 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement){
  * @brief fonction de lancement du jeu du candy crush
  * @param score
  * @param nbDeplacement
- * @return
+ * @return 0
  */
-int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
+int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & param){
     CMatrice mat;
-    CMyParam params;
-    initParams(params);
-    chargerParametre(params, "../SAECandyCrush/build.yaml");
-    initMat(mat);
-    size_t numCol = 4;
-    size_t numLigne = 4;
+    initMat(mat, param.mapParamUnsigned["nbMax"],
+            param.mapParamUnsigned["nbLignes"],
+            param.mapParamUnsigned["nbColonnes"]);
+    size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
+    size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
     while(true){
         while (detectionExplositionBombe(mat, score) || zeroVidSousNb(mat))
             continue;
         afficheMatriceV3 (mat, numLigne, numCol);
         cout << "Score : " << score << endl;
        cout << "Nombre de déplacement restant : " <<  nbDeplacement << endl;
-        if (score >= 350){
+        if (score >= param.mapParamUnsigned["scoreMax"]){
             cout << "Tu as gagné !" << endl;
                 break;
         }
@@ -391,19 +397,23 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
         cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
         char deplacement;
         cin >> deplacement;
-        faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement);
+        faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
     }
     return 0;
 }
 /**
- * @brief main
- * @return
+ * @brief main.cpp
+ * @return 0
  */
 int main() {
     srand(time(NULL));
 
+    CMyParam param;
+    initParams(param);
+    chargerParametre(param, "../SAECandyCrush/build.yaml");
+
     unsigned score=0;
-    unsigned nbDeplacement=15;
+    unsigned nbDeplacement=param.mapParamUnsigned["deplacementMax"];
     unsigned mode ; // Initialisation du mode de jeu, soit avec MinGl, soit avec le terminal
     bool test = false;
     while (test == false)
@@ -414,7 +424,7 @@ int main() {
         else cout << "Ce mode de jeu n'existe pas rééssayez !" << endl;
     }
     if (mode == 1) return 0;
-    else if (mode == 2) return partiCasaliCrush(score, nbDeplacement); //Lance la partie sur le terminal
-    else if (mode == 3) return partiNumberCrush(score, nbDeplacement); //Lance une partie "classic" sur le terminal
+    else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance la partie sur le terminal
+    else if (mode == 3) return partiNumberCrush(score, nbDeplacement, param); //Lance une partie "classic" sur le terminal
     else return 0;
 }
