@@ -255,24 +255,21 @@ bool zeroVidSousNb (CMatrice & mat, const unsigned & vid = KAIgnorer) {
  * @param nbDeplacement
  */
 void faitUnMouvement (CMatrice & mat, const char & deplacment, size_t & numLigne,
-                     size_t & numCol, unsigned & nbDeplacement, unsigned & param) {
+                     size_t & numCol, unsigned & nbDeplacement, CMyParam & param) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
-    switch (tolower(deplacment)) {
-    case 'c'://param.mapParamChar["toucheBasDroite"]
+    if (tolower(deplacment) == param.mapParamChar["toucheBasDroite"]) {
         if (numLigne != 0) ++nouvellePositionLigne;
         if (numCol < mat[0].size() - 1) ++nouvellePositionColonne;
-        break;
-    case 'x'://param.mapParamChar["toucheBas"]
+    }
+    if (tolower(deplacment) == param.mapParamChar["toucheBas"])
         if (numLigne < mat.size() - 1) ++nouvellePositionLigne;
-        break;
-    case 'w'://param.mapParamChar["toucheGaucheBas"]
+    if (tolower(deplacment) == param.mapParamChar["toucheGaucheBas"]) {
         if (numLigne != 0) ++nouvellePositionLigne;
         if (numCol != 0) --nouvellePositionColonne;
-        break;
-    case 'q'://param.mapParamChar["toucheGauche"]
+    }
+    if (tolower(deplacment) == param.mapParamChar["toucheGauche"])
         if (numCol != 0) --nouvellePositionColonne;
-        break;
     case 'a'://param.mapParamChar["toucheHautGauche"]
         if (numLigne != 0) --nouvellePositionLigne;
         if (numCol != 0) --nouvellePositionColonne;
