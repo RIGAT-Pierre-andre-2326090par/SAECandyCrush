@@ -409,6 +409,7 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement){
             continue;
         afficheMatriceV2 (mat);
         cout << "Score : " << score << endl;
+       cout << "Nombre de déplacement restant : " <<  nbDeplacement << endl;
         if (score >= 100){
             cout << "Tu as gagné !" << endl;
             break;
