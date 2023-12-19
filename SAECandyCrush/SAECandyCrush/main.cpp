@@ -5,9 +5,10 @@
 #include <fstream>
 #include <mingl/mingl.h>
 using namespace std;
-/* @author Alain Casali
-*/
-
+/**
+ * @brief initParams
+ * @param param
+ */
 void initParams (CMyParam & param)
 {
 //touche du joueur
@@ -36,6 +37,14 @@ param.mapParamUnsigned["nbLignes"] = 10;
         }
     }
 }*/
+
+/**
+ * @brief initMat
+ * @param mat
+ * @param nbLignes
+ * @param nbColonnes
+ * @param nbMax
+ */
 void initMat (CMatrice & mat, const size_t & nbLignes = 8,
               const size_t & nbColonnes = 8,
               const unsigned & nbMax= KPlusGrandNombreDansLaMatrice){
@@ -47,6 +56,11 @@ void initMat (CMatrice & mat, const size_t & nbLignes = 8,
             mat [numLigne][numCol] = 1+ rand()%(nbMax);
 }
 
+/**
+ * @brief initMat
+ * @param mat
+ * @param params
+ */
 void initMat(CMatrice & mat, const CMyParam & params){
     auto it = params.mapParamUnsigned.find("nbLignes");
     if (it == params.mapParamUnsigned.end())
@@ -59,7 +73,12 @@ void initMat(CMatrice & mat, const CMyParam & params){
     initMat(mat, nbLignes, nbColonnes);
 }
 
-
+/**
+ * @brief nouvRdm
+ * @param nb1
+ * @param nb2
+ * @param nbMax
+ */
 //renvoie un nombre random différent de ceux passer en paramètre
 unsigned nouvRdm(unsigned & nb1, unsigned & nb2, const unsigned & nbMax){
     unsigned rdm = (rand()%nbMax)+1;
@@ -68,6 +87,11 @@ unsigned nouvRdm(unsigned & nb1, unsigned & nb2, const unsigned & nbMax){
     return rdm;
 }
 
+/**
+ * @brief initMatV2
+ * @param mat
+ * @param nbMax
+ */
 //initialisation de la grille de jeu avec maximum 2 nombre aligné
 void initMatV2 (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice,
                 const size_t & nbLignes = 10,
@@ -87,6 +111,13 @@ void initMatV2 (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaM
     }
 }
 
+/**
+ * @brief explositionUneBombeHorizontale
+ * @param mat
+ * @param numLigne
+ * @param numColonne
+ * @param combien
+ */
 void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
                                      const size_t & numColonne, const size_t & combien){
     for (size_t j (numColonne); j < numColonne + combien; ++j){
@@ -97,6 +128,12 @@ void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
     }
 }
 
+/**
+ * @brief detectionExplositionUneBombeHorizontale
+ * @param mat
+ * @param score
+ * @return
+ */
 bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
     bool auMoinsUneExplosion (false);
     for (size_t numLigne (0); numLigne < mat.size(); ++numLigne){
@@ -117,6 +154,13 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
     return auMoinsUneExplosion;
 }
 
+/**
+ * @brief explositionUneBombeVerticale
+ * @param mat
+ * @param numLigne
+ * @param numColonne
+ * @param combien
+ */
 void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
                                    const size_t & numColonne, const size_t & combien){
     for (size_t j (numLigne); j < numLigne + combien; ++j)
@@ -125,6 +169,12 @@ void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
         mat [i][numColonne] =  KAIgnorer;
 }
 
+/**
+ * @brief detectionExplositionUneBombeVerticale
+ * @param mat
+ * @param score
+ * @return
+ */
 bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
     bool auMoinsUneExplosion (false);
     for (size_t numCol (0); numCol < mat[0].size(); ++numCol) {
@@ -151,6 +201,12 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
     return auMoinsUneExplosion;
 }
 
+/**
+ * @brief remplaceVideParRdm
+ * @param mat
+ * @param vid
+ * @param nbMax
+ */
 // remplace toutes les cases vides par des nombres aléatoires
 void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
                         const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
@@ -166,6 +222,12 @@ void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
     }
 }
 
+/**
+ * @brief detectionExplositionBombe
+ * @param mat
+ * @param score
+ * @return
+ */
 bool detectionExplositionBombe (CMatrice & mat, unsigned & score) {
 
     bool act (detectionExplositionUneBombeVerticale(mat, score) or
@@ -173,6 +235,14 @@ bool detectionExplositionBombe (CMatrice & mat, unsigned & score) {
     return act;
 }
 
+/**
+ * @brief detectionExplositionBombeV2
+ * @param mat
+ * @param score
+ * @param vid
+ * @param plusGrandNb
+ * @return
+ */
 bool detectionExplositionBombeV2 (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
                                   const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
 
@@ -182,6 +252,12 @@ bool detectionExplositionBombeV2 (CMatrice & mat, unsigned & score, const unsign
     return act;
 }
 
+/**
+ * @brief zeroVidSousNb
+ * @param mat
+ * @param vid
+ * @return
+ */
 bool zeroVidSousNb (CMatrice & mat, const unsigned & vid = KAIgnorer) {
     bool auMoinsUnMov = false;
     for (unsigned i = 0 ; i < mat.size() - 1 ; ++i) {
@@ -195,10 +271,13 @@ bool zeroVidSousNb (CMatrice & mat, const unsigned & vid = KAIgnorer) {
     return auMoinsUnMov;
 }
 
-//***********************************************************************************/
-//***********************    R1.01 – Prog#10 Exercice 3   ***************************/
-//***********************************************************************************/
-
+/**
+ * @brief faitUnMouvement
+ * @param mat
+ * @param deplacment
+ * @param numLigne
+ * @param numCol
+ */
 void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & numLigne,
                       const size_t & numCol) {
 
@@ -239,6 +318,14 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
     swap(mat[numLigne][numCol],mat[numLigne+nouvellePositionLigne][numCol+nouvellePositionColonne]);
 }
 
+/**
+ * @brief faitUnMouvementV2
+ * @param mat
+ * @param deplacment
+ * @param numLigne
+ * @param numCol
+ * @param nbDeplacement
+ */
 void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLigne,
                         size_t & numCol, unsigned & nbDeplacement) {
 
@@ -314,6 +401,11 @@ void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLig
     numLigne = nouvellePositionLigne;
 }
 
+/**
+ * @brief chargerParametre
+ * @param params
+ * @param fichier
+ */
 void chargerParametre(CMyParam & params, const string & fichier){
     ifstream ifs (fichier);
     if (!ifs) return;
@@ -399,6 +491,12 @@ int ppalExo04 (unsigned & score){
     return 0;
 }*/
 
+/**
+ * @brief partiNumberCrush
+ * @param score
+ * @param nbDeplacement
+ * @return
+ */
 int partiNumberCrush(unsigned & score, unsigned & nbDeplacement){
     CMatrice mat;
     initMat(mat);
@@ -431,6 +529,12 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement){
     return 0;
 }
 
+/**
+ * @brief partiCasaliCrush
+ * @param score
+ * @param nbDeplacement
+ * @return
+ */
 int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     CMatrice mat;
     CMyParam params;
@@ -464,7 +568,10 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     }
     return 0;
 }
-
+/**
+ * @brief main
+ * @return
+ */
 int main() {
     srand(time(NULL));
 
