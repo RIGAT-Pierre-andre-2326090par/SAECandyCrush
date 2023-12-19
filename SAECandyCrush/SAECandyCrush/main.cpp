@@ -329,7 +329,7 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement){
     size_t numCol = 4;
     size_t numLigne = 4;
     while(true){
-        while (detectionExplositionBombe(mat, score) or zeroVidSousNb(mat))
+        while (detectionExplositionBombe(mat, score) || zeroVidSousNb(mat))
             continue;
         afficheMatriceV2 (mat);
         cout << "Score : " << score << endl;
@@ -370,7 +370,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     size_t numCol = 4;
     size_t numLigne = 4;
     while(true){
-        while (detectionExplositionBombe(mat, score) or zeroVidSousNb(mat))
+        while (detectionExplositionBombe(mat, score) || zeroVidSousNb(mat))
             continue;
         afficheMatriceV3 (mat, numLigne, numCol);
         cout << "Score : " << score << endl;
