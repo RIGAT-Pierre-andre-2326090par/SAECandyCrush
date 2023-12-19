@@ -17,7 +17,7 @@ CXX           = g++
 DEFINES       = -DQT_QML_DEBUG
 CFLAGS        = -pipe -g -Wall -Wextra $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++1z -Wall -Wextra $(DEFINES)
-INCPATH       = -I../SAECandyCrush -I. -I/home/alex/Qt/6.6.0/gcc_64/mkspecs/linux-g++
+INCPATH       = -I../SAECandyCrush -I. -I../MinGL2_IUT_AIX-master/include -I/home/alex/Qt/6.6.0/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/alex/Qt/6.6.0/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = SAECandyCrush1.0.0
 DISTDIR = /home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/build-SAECandyCrush-Desktop_Qt_6_6_0_GCC_64bit-Debug/.tmp/SAECandyCrush1.0.0
 LINK          = g++
 LFLAGS        = 
-LIBS          = $(SUBLIBS)    
+LIBS          = $(SUBLIBS) -lglut -lsfml-audio -lGLU -lGL   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -52,8 +52,44 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../SAECandyCrush/main.cpp 
-OBJECTS       = main.o
+SOURCES       = ../SAECandyCrush/affichage.cpp \
+		../SAECandyCrush/main.cpp \
+		../MinGL2_IUT_AIX-master/src/audio/audioengine.cpp \
+		../MinGL2_IUT_AIX-master/src/exception/cexception.cpp \
+		../MinGL2_IUT_AIX-master/src/mingl.cpp \
+		../MinGL2_IUT_AIX-master/src/event/event_manager.cpp \
+		../MinGL2_IUT_AIX-master/src/shape/circle.cpp \
+		../MinGL2_IUT_AIX-master/src/shape/line.cpp \
+		../MinGL2_IUT_AIX-master/src/shape/rectangle.cpp \
+		../MinGL2_IUT_AIX-master/src/shape/triangle.cpp \
+		../MinGL2_IUT_AIX-master/src/shape/shape.cpp \
+		../MinGL2_IUT_AIX-master/src/graphics/rgbacolor.cpp \
+		../MinGL2_IUT_AIX-master/src/graphics/vec2d.cpp \
+		../MinGL2_IUT_AIX-master/src/gui/glut_font.cpp \
+		../MinGL2_IUT_AIX-master/src/gui/sprite.cpp \
+		../MinGL2_IUT_AIX-master/src/gui/text.cpp \
+		../MinGL2_IUT_AIX-master/src/transition/transition.cpp \
+		../MinGL2_IUT_AIX-master/src/transition/transition_contract.cpp \
+		../MinGL2_IUT_AIX-master/src/transition/transition_engine.cpp 
+OBJECTS       = affichage.o \
+		main.o \
+		audioengine.o \
+		cexception.o \
+		mingl.o \
+		event_manager.o \
+		circle.o \
+		line.o \
+		rectangle.o \
+		triangle.o \
+		shape.o \
+		rgbacolor.o \
+		vec2d.o \
+		glut_font.o \
+		sprite.o \
+		text.o \
+		transition.o \
+		transition_contract.o \
+		transition_engine.o
 DIST          = /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/common/unix.conf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/common/linux.conf \
@@ -192,6 +228,7 @@ DIST          = /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/toolchain.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/default_pre.prf \
+		../MinGL2_IUT_AIX-master/mingl.pri \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/resolve_config.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/default_post.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/qml_debug.prf \
@@ -202,8 +239,54 @@ DIST          = /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/exceptions.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/yacc.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/lex.prf \
-		../SAECandyCrush/SAECandyCrush.pro cst.h \
-		type.h ../SAECandyCrush/main.cpp
+		../SAECandyCrush/SAECandyCrush.pro /home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/audio/audioengine.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/exception/cexception.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/exception/cexception.hpp \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/exception/errcode.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/macros.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/mingl.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/event/event.hpp \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/event/event_manager.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/shape/circle.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/shape/line.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/shape/rectangle.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/shape/triangle.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/shape/shape.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/graphics/vec2d.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/gui/glut_font.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/gui/sprite.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/gui/text.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/tools/ifonctorunaire.hpp \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/transition/itransitionable.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/transition/transition.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/transition/transition_contract.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/transition/transition_engine.h \
+		/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/transition/transition_types.h \
+		affichage.h \
+		cst.h \
+		type.h ../SAECandyCrush/affichage.cpp \
+		../SAECandyCrush/main.cpp \
+		../MinGL2_IUT_AIX-master/src/audio/audioengine.cpp \
+		../MinGL2_IUT_AIX-master/src/exception/cexception.cpp \
+		../MinGL2_IUT_AIX-master/src/mingl.cpp \
+		../MinGL2_IUT_AIX-master/src/event/event_manager.cpp \
+		../MinGL2_IUT_AIX-master/src/shape/circle.cpp \
+		../MinGL2_IUT_AIX-master/src/shape/line.cpp \
+		../MinGL2_IUT_AIX-master/src/shape/rectangle.cpp \
+		../MinGL2_IUT_AIX-master/src/shape/triangle.cpp \
+		../MinGL2_IUT_AIX-master/src/shape/shape.cpp \
+		../MinGL2_IUT_AIX-master/src/graphics/rgbacolor.cpp \
+		../MinGL2_IUT_AIX-master/src/graphics/vec2d.cpp \
+		../MinGL2_IUT_AIX-master/src/gui/glut_font.cpp \
+		../MinGL2_IUT_AIX-master/src/gui/sprite.cpp \
+		../MinGL2_IUT_AIX-master/src/gui/text.cpp \
+		../MinGL2_IUT_AIX-master/src/transition/transition.cpp \
+		../MinGL2_IUT_AIX-master/src/transition/transition_contract.cpp \
+		../MinGL2_IUT_AIX-master/src/transition/transition_engine.cpp
 QMAKE_TARGET  = SAECandyCrush
 DESTDIR       = 
 TARGET        = SAECandyCrush
@@ -353,6 +436,7 @@ Makefile: ../SAECandyCrush/SAECandyCrush.pro /home/alex/Qt/6.6.0/gcc_64/mkspecs/
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/toolchain.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/default_pre.prf \
+		../MinGL2_IUT_AIX-master/mingl.pri \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/resolve_config.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/default_post.prf \
 		/home/alex/Qt/6.6.0/gcc_64/mkspecs/features/qml_debug.prf \
@@ -503,6 +587,7 @@ Makefile: ../SAECandyCrush/SAECandyCrush.pro /home/alex/Qt/6.6.0/gcc_64/mkspecs/
 /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/toolchain.prf:
 /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/default_pre.prf:
+../MinGL2_IUT_AIX-master/mingl.pri:
 /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/resolve_config.prf:
 /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/default_post.prf:
 /home/alex/Qt/6.6.0/gcc_64/mkspecs/features/qml_debug.prf:
@@ -557,9 +642,159 @@ compiler_clean:
 
 ####### Compile
 
+affichage.o: ../SAECandyCrush/affichage.cpp ../SAECandyCrush/type.h \
+		../SAECandyCrush/cst.h \
+		../SAECandyCrush/affichage.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o affichage.o ../SAECandyCrush/affichage.cpp
+
 main.o: ../SAECandyCrush/main.cpp ../SAECandyCrush/type.h \
-		../SAECandyCrush/cst.h
+		../SAECandyCrush/cst.h \
+		../SAECandyCrush/affichage.h \
+		../MinGL2_IUT_AIX-master/include/mingl/mingl.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/vec2d.h \
+		../MinGL2_IUT_AIX-master/include/mingl/event/event_manager.h \
+		../MinGL2_IUT_AIX-master/include/mingl/event/event.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../SAECandyCrush/main.cpp
+
+audioengine.o: ../MinGL2_IUT_AIX-master/src/audio/audioengine.cpp ../MinGL2_IUT_AIX-master/include/mingl/audio/audioengine.h \
+		../MinGL2_IUT_AIX-master/include/mingl/exception/cexception.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
+		../MinGL2_IUT_AIX-master/include/mingl/exception/errcode.h \
+		../MinGL2_IUT_AIX-master/include/mingl/exception/cexception.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o audioengine.o ../MinGL2_IUT_AIX-master/src/audio/audioengine.cpp
+
+cexception.o: ../MinGL2_IUT_AIX-master/src/exception/cexception.cpp ../MinGL2_IUT_AIX-master/include/mingl/exception/cexception.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
+		../MinGL2_IUT_AIX-master/include/mingl/exception/errcode.h \
+		../MinGL2_IUT_AIX-master/include/mingl/exception/cexception.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o cexception.o ../MinGL2_IUT_AIX-master/src/exception/cexception.cpp
+
+mingl.o: ../MinGL2_IUT_AIX-master/src/mingl.cpp ../MinGL2_IUT_AIX-master/include/mingl/mingl.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/vec2d.h \
+		../MinGL2_IUT_AIX-master/include/mingl/event/event_manager.h \
+		../MinGL2_IUT_AIX-master/include/mingl/event/event.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mingl.o ../MinGL2_IUT_AIX-master/src/mingl.cpp
+
+event_manager.o: ../MinGL2_IUT_AIX-master/src/event/event_manager.cpp ../MinGL2_IUT_AIX-master/include/mingl/event/event_manager.h \
+		../MinGL2_IUT_AIX-master/include/mingl/event/event.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o event_manager.o ../MinGL2_IUT_AIX-master/src/event/event_manager.cpp
+
+circle.o: ../MinGL2_IUT_AIX-master/src/shape/circle.cpp ../MinGL2_IUT_AIX-master/include/mingl/shape/circle.h \
+		../MinGL2_IUT_AIX-master/include/mingl/shape/shape.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/vec2d.h \
+		../MinGL2_IUT_AIX-master/include/mingl/transition/itransitionable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/macros.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o circle.o ../MinGL2_IUT_AIX-master/src/shape/circle.cpp
+
+line.o: ../MinGL2_IUT_AIX-master/src/shape/line.cpp ../MinGL2_IUT_AIX-master/include/mingl/shape/line.h \
+		../MinGL2_IUT_AIX-master/include/mingl/shape/shape.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/vec2d.h \
+		../MinGL2_IUT_AIX-master/include/mingl/transition/itransitionable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/macros.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o line.o ../MinGL2_IUT_AIX-master/src/shape/line.cpp
+
+rectangle.o: ../MinGL2_IUT_AIX-master/src/shape/rectangle.cpp ../MinGL2_IUT_AIX-master/include/mingl/shape/rectangle.h \
+		../MinGL2_IUT_AIX-master/include/mingl/shape/shape.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/vec2d.h \
+		../MinGL2_IUT_AIX-master/include/mingl/transition/itransitionable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/macros.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o rectangle.o ../MinGL2_IUT_AIX-master/src/shape/rectangle.cpp
+
+triangle.o: ../MinGL2_IUT_AIX-master/src/shape/triangle.cpp ../MinGL2_IUT_AIX-master/include/mingl/shape/triangle.h \
+		../MinGL2_IUT_AIX-master/include/mingl/shape/shape.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/vec2d.h \
+		../MinGL2_IUT_AIX-master/include/mingl/transition/itransitionable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/macros.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o triangle.o ../MinGL2_IUT_AIX-master/src/shape/triangle.cpp
+
+shape.o: ../MinGL2_IUT_AIX-master/src/shape/shape.cpp ../MinGL2_IUT_AIX-master/include/mingl/shape/shape.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/vec2d.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o shape.o ../MinGL2_IUT_AIX-master/src/shape/shape.cpp
+
+rgbacolor.o: ../MinGL2_IUT_AIX-master/src/graphics/rgbacolor.cpp ../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o rgbacolor.o ../MinGL2_IUT_AIX-master/src/graphics/rgbacolor.cpp
+
+vec2d.o: ../MinGL2_IUT_AIX-master/src/graphics/vec2d.cpp ../MinGL2_IUT_AIX-master/include/mingl/graphics/vec2d.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o vec2d.o ../MinGL2_IUT_AIX-master/src/graphics/vec2d.cpp
+
+glut_font.o: ../MinGL2_IUT_AIX-master/src/gui/glut_font.cpp ../MinGL2_IUT_AIX-master/include/mingl/gui/glut_font.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o glut_font.o ../MinGL2_IUT_AIX-master/src/gui/glut_font.cpp
+
+sprite.o: ../MinGL2_IUT_AIX-master/src/gui/sprite.cpp ../MinGL2_IUT_AIX-master/include/mingl/gui/sprite.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/vec2d.h \
+		../MinGL2_IUT_AIX-master/include/mingl/transition/itransitionable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/macros.h \
+		../MinGL2_IUT_AIX-master/include/mingl/exception/cexception.h \
+		../MinGL2_IUT_AIX-master/include/mingl/exception/errcode.h \
+		../MinGL2_IUT_AIX-master/include/mingl/exception/cexception.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sprite.o ../MinGL2_IUT_AIX-master/src/gui/sprite.cpp
+
+text.o: ../MinGL2_IUT_AIX-master/src/gui/text.cpp ../MinGL2_IUT_AIX-master/include/mingl/gui/text.h \
+		../MinGL2_IUT_AIX-master/include/mingl/gui/glut_font.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/vec2d.h \
+		../MinGL2_IUT_AIX-master/include/mingl/transition/itransitionable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/macros.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o text.o ../MinGL2_IUT_AIX-master/src/gui/text.cpp
+
+transition.o: ../MinGL2_IUT_AIX-master/src/transition/transition.cpp ../MinGL2_IUT_AIX-master/include/mingl/transition/transition.h \
+		../MinGL2_IUT_AIX-master/include/mingl/transition/transition_contract.h \
+		../MinGL2_IUT_AIX-master/include/mingl/transition/itransitionable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/transition/transition_types.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o transition.o ../MinGL2_IUT_AIX-master/src/transition/transition.cpp
+
+transition_contract.o: ../MinGL2_IUT_AIX-master/src/transition/transition_contract.cpp ../MinGL2_IUT_AIX-master/include/mingl/transition/transition_contract.h \
+		../MinGL2_IUT_AIX-master/include/mingl/transition/itransitionable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/transition/transition_types.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o transition_contract.o ../MinGL2_IUT_AIX-master/src/transition/transition_contract.cpp
+
+transition_engine.o: ../MinGL2_IUT_AIX-master/src/transition/transition_engine.cpp ../MinGL2_IUT_AIX-master/include/mingl/transition/transition_engine.h \
+		../MinGL2_IUT_AIX-master/include/mingl/transition/transition.h \
+		../MinGL2_IUT_AIX-master/include/mingl/transition/transition_contract.h \
+		../MinGL2_IUT_AIX-master/include/mingl/transition/itransitionable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/transition/transition_types.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o transition_engine.o ../MinGL2_IUT_AIX-master/src/transition/transition_engine.cpp
 
 ####### Install
 
