@@ -1,10 +1,10 @@
 <map id="partiNumberCrush" name="partiNumberCrush">
-<area shape="rect" id="node1" title="partiNumberCrush" alt="" coords="5,280,147,307"/>
+<area shape="rect" id="node1" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,345,147,372"/>
 <area shape="rect" id="node2" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="afficheMatriceV2" alt="" coords="719,233,851,260"/>
-<area shape="rect" id="node13" href="$main_8cpp.html#a1e5480cd3d6f193189db3662d5d1a9b1" title="detectionExplositionBombe" alt="" coords="195,229,396,256"/>
-<area shape="rect" id="node16" href="$main_8cpp.html#a7e51d2ae68b742a2bece5ba396d23eef" title="faitUnMouvementV2" alt="" coords="217,280,374,307"/>
-<area shape="rect" id="node17" href="$main_8cpp.html#a8456e9b3f1658cc66617a6a06ae1da0f" title="initMat" alt="" coords="261,331,329,357"/>
-<area shape="rect" id="node18" href="$main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="zeroVidSousNb" alt="" coords="235,381,355,408"/>
+<area shape="rect" id="node13" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,295,396,321"/>
+<area shape="rect" id="node18" href="$main_8cpp.html#ab9141e218cd2f57bcc0b48989c6a21d0" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="225,345,365,372"/>
+<area shape="rect" id="node19" href="$main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="523,404,591,431"/>
+<area shape="rect" id="node20" href="$main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="235,447,355,473"/>
 <area shape="rect" id="node3" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="899,5,997,32"/>
 <area shape="rect" id="node4" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="913,56,983,83"/>
 <area shape="rect" id="node5" href="$cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="918,107,978,133"/>
@@ -15,6 +15,8 @@
 <area shape="rect" id="node10" href="$cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title=" " alt="" coords="914,360,982,387"/>
 <area shape="rect" id="node11" href="$cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title=" " alt="" coords="912,411,984,437"/>
 <area shape="rect" id="node12" href="$cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="919,461,977,488"/>
-<area shape="rect" id="node14" href="$main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="detectionExplositionUneBombeHorizontale" alt="" coords="444,222,671,263"/>
-<area shape="rect" id="node15" href="$main_8cpp.html#a48f37957843802008c092eaff0851068" title="detectionExplositionUneBombeVerticale" alt="" coords="444,287,671,329"/>
+<area shape="rect" id="node14" href="$main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="444,222,671,263"/>
+<area shape="rect" id="node15" href="$main_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="444,287,671,329"/>
+<area shape="rect" id="node16" href="$main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="procédure remplacant toutes les cases vides par de nouveaux éléments aléatoires" alt="" coords="476,353,639,380"/>
+<area shape="rect" id="node17" href="$main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="743,379,827,405"/>
 </map>

@@ -1,7 +1,6 @@
 <map id="detectionExplositionUneBombeHorizontale" name="detectionExplositionUneBombeHorizontale">
-<area shape="rect" id="node1" title="detectionExplositionUneBombeHorizontale" alt="" coords="461,23,688,65"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#a1e5480cd3d6f193189db3662d5d1a9b1" title="detectionExplositionBombe" alt="" coords="203,5,405,32"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#af19c68e075eee67e410e239f09fdffd6" title="detectionExplositionBombeV2" alt="" coords="195,56,413,83"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="partiNumberCrush" alt="" coords="5,5,147,32"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="partiCasaliCrush" alt="" coords="11,56,141,83"/>
+<area shape="rect" id="node1" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="444,23,671,65"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,31,396,57"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,56,147,83"/>
 </map>

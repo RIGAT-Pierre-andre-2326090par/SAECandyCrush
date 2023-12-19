@@ -1,7 +1,8 @@
 <map id="nouvRdm" name="nouvRdm">
-<area shape="rect" id="node1" title="nouvRdm" alt="" coords="660,31,744,57"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#af634cc08b732b0789cce520a8bc46af2" title="initMatV2" alt="" coords="249,5,335,32"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplaceVideParRdm" alt="" coords="449,56,612,83"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="partiCasaliCrush" alt="" coords="5,31,135,57"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#af19c68e075eee67e410e239f09fdffd6" title="detectionExplositionBombeV2" alt="" coords="183,56,401,83"/>
+<area shape="rect" id="node1" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="655,31,739,57"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="261,5,329,32"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="procédure remplacant toutes les cases vides par de nouveaux éléments aléatoires" alt="" coords="444,56,607,83"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,56,147,83"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,56,396,83"/>
 </map>
