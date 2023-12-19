@@ -262,66 +262,61 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, size_t & numLigne
         if (numLigne != 0) ++nouvellePositionLigne;
         if (numCol < mat[0].size() - 1) ++nouvellePositionColonne;
     }
-    if (tolower(deplacment) == param.mapParamChar["toucheBas"])
+    else if (tolower(deplacment) == param.mapParamChar["toucheBas"]) {
         if (numLigne < mat.size() - 1) ++nouvellePositionLigne;
-    if (tolower(deplacment) == param.mapParamChar["toucheGaucheBas"]) {
+    }
+    else if (tolower(deplacment) == param.mapParamChar["toucheGaucheBas"]) {
         if (numLigne != 0) ++nouvellePositionLigne;
         if (numCol != 0) --nouvellePositionColonne;
     }
-    if (tolower(deplacment) == param.mapParamChar["toucheGauche"])
+    else if (tolower(deplacment) == param.mapParamChar["toucheGauche"]) {
         if (numCol != 0) --nouvellePositionColonne;
-    case 'a'://param.mapParamChar["toucheHautGauche"]
+    }
+    else if (tolower(deplacment) == param.mapParamChar["toucheHautGauche"]) {
         if (numLigne != 0) --nouvellePositionLigne;
         if (numCol != 0) --nouvellePositionColonne;
-        break;
-    case 'z'://param.mapParamChar["toucheHaut"]
+    }
+    else if (tolower(deplacment) == param.mapParamChar["toucheHaut"]) {
         if (numLigne != 0) --nouvellePositionLigne;
-        break;
-    case 'e'://param.mapParamChar["toucheDroiteHaut"]
+    }
+    else if (tolower(deplacment) == param.mapParamChar["toucheDroiteHaut"]) {
         if (numLigne != 0) --nouvellePositionLigne;
         if (numCol < mat[0].size() - 1) ++nouvellePositionColonne;
-        break;
-    case 'd'://param.mapParamChar["toucheDroite"]
+    }
+    else if (tolower(deplacment) == param.mapParamChar["toucheDroite"]) {
         if (numCol < mat[0].size() - 1) ++nouvellePositionColonne;
-        break;
-    case 's'://param.mapParamChar["toucheSelect"]
+    }
+    else if (tolower(deplacment) == param.mapParamChar["toucheSelect"]) {
         char inp;
         cin >> inp;
-        switch(tolower(inp)){
-        case 'x':
+        if (tolower(inp) == param.mapParamChar["toucheBas"]) {
             if (numLigne != 0){
                 swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
                 --nbDeplacement;
             }
-            break;
-        case 'd':
+        }
+        if (tolower(inp) == param.mapParamChar["toucheDroite"]) {
             if (numCol != mat[0].size() - 1){
                 swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
                 --nbDeplacement;
             }
-            break;
-        case 'z':
+        }
+        if (tolower(inp) == param.mapParamChar["toucheHaut"]) {
             if (numLigne != mat.size() - 1){
-
                 swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
                 --nbDeplacement;
             }
-            break;
-        case 'q':
+        }
+        if (tolower(inp) == param.mapParamChar["toucheGauche"]) {
             if (numCol != 0) {
                 swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
                 --nbDeplacement;
             }
-            break;
-        default:
-            cout<<"Tu choisis Z ou Q ou D ou X"<<endl;
-            break;
         }
-        break;
-    default:
-        cout<<"Tu choisis A ou Z ou E ou Q ou D ou X ou C ou V pour déplacer le curseur ou S pour dé"<<endl;
-            break;
+        else cout<<"Tu dois choisir entre Z ou Q ou D ou X"<<endl;
     }
+    else cout<<"Tu dois choisir entre A ou Z ou E ou Q ou D ou X ou C ou W ou S pour déplacer le curseur"<<endl;
+
     numCol = nouvellePositionColonne;
     numLigne = nouvellePositionLigne;
 }
@@ -362,7 +357,7 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
         cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
         char deplacement;
         cin >> deplacement;
-        faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement);
+        faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
     }
     return 0;
 }
