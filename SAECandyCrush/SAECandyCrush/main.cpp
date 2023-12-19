@@ -3,9 +3,10 @@
 #include <cst.h>
 #include <affichage.h>
 #include <fstream>
-//#include <mingl/mingl.h>
+#include <mingl/mingl.h>
 using namespace std;
-
+/* @author Alain Casali
+*/
 
 void initParams (CMyParam & param)
 {
