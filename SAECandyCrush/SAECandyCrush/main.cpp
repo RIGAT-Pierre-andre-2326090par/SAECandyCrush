@@ -470,35 +470,6 @@ int main() {
 
     unsigned score=0;
     unsigned nbDeplacement=15;
-    //unsigned deplacement=0;
-
-    // ---------Exercice 2 -----------------//
-    //    clearScreen();
-
-    //    CMatrice mat (10, CVLine (10, kEmpty));
-    //    mat [0][mat.size()-1] = kTokenPlayer1;
-    //    mat [mat.size()-1][0] = kTokenPlayer2;
-    //    showMatrix(mat);
-    //-------------------------------------//
-    //return 0;
-
-    // ---------Exercice 1 -----------------//
-    //return ppalExo01(score);
-    //--------------------------------------//
-
-    // ---------Exercice 2 -----------------//
-    //return ppalExo02(score);
-    //-------------------------------------//
-
-    // ---------Exercice 3 -----------------//
-    //return ppalExo03(score);
-    //-------------------------------------//
-
-    // ---------Exercice 4 -----------------//
-    //return ppalExo04(score);
-    //-------------------------------------//
-
-    //return partiNumberCrush(score, nbDeplacement);
 
     return partiCasaliCrush(score, nbDeplacement);
 
