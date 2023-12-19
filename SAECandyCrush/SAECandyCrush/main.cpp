@@ -4,6 +4,11 @@
 #include <affichage.h>
 #include <mingl/mingl.h>
 using namespace std;
+/* @author Alain Casali
+
+
+
+*/
 
 //initialisation de la grille de jeu
 void initMat (CMatrice & mat, const size_t & nbLignes = 10,
