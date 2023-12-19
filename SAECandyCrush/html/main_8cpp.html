@@ -1,0 +1,1311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SAECandyCrush: Référence du fichier SAECandyCrush/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SAECandyCrush
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e37bb96bd9fccb878c1d62062fc8f7a5.html">SAECandyCrush</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier main.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;<a class="el" href="type_8h_source.html">type.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cst_8h_source.html">cst.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="affichage_8h_source.html">affichage.h</a>&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;mingl/mingl.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de main.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#a_s_a_e_candy_crush_2main_8cpp" alt=""/></div>
+<map name="a_s_a_e_candy_crush_2main_8cpp" id="a_s_a_e_candy_crush_2main_8cpp">
+<area shape="rect" title=" " alt="" coords="121,5,311,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,85,107"/>
+<area shape="rect" href="type_8h.html" title=" " alt="" coords="159,229,222,256"/>
+<area shape="rect" href="cst_8h.html" title=" " alt="" coords="164,155,217,181"/>
+<area shape="rect" href="affichage_8h.html" title=" " alt="" coords="211,80,306,107"/>
+<area shape="rect" title=" " alt="" coords="330,80,403,107"/>
+<area shape="rect" title=" " alt="" coords="428,80,540,107"/>
+<area shape="rect" title=" " alt="" coords="76,304,135,331"/>
+<area shape="rect" title=" " alt="" coords="159,304,222,331"/>
+<area shape="rect" title=" " alt="" coords="247,304,297,331"/>
+</map>
+</div>
+</div>
+<p><a href="main_8cpp_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a04499e810295a8506131a7b912017990"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a04499e810295a8506131a7b912017990">initParams</a> (<a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;param)</td></tr>
+<tr class="memdesc:a04499e810295a8506131a7b912017990"><td class="mdescLeft">&#160;</td><td class="mdescRight">initParams  <a href="main_8cpp.html#a04499e810295a8506131a7b912017990">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a04499e810295a8506131a7b912017990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8456e9b3f1658cc66617a6a06ae1da0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8456e9b3f1658cc66617a6a06ae1da0f">initMat</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const size_t &amp;nbLignes=8, const size_t &amp;nbColonnes=8, const unsigned &amp;nbMax=<a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a>)</td></tr>
+<tr class="memdesc:a8456e9b3f1658cc66617a6a06ae1da0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">initMat  <a href="main_8cpp.html#a8456e9b3f1658cc66617a6a06ae1da0f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8456e9b3f1658cc66617a6a06ae1da0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38967683a0320dbe945a72149e02a651"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a38967683a0320dbe945a72149e02a651">initMat</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const <a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;params)</td></tr>
+<tr class="memdesc:a38967683a0320dbe945a72149e02a651"><td class="mdescLeft">&#160;</td><td class="mdescRight">initMat  <a href="main_8cpp.html#a38967683a0320dbe945a72149e02a651">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a38967683a0320dbe945a72149e02a651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ee2be2606da0dfc9951f36b245a88b8"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8">nouvRdm</a> (unsigned &amp;nb1, unsigned &amp;nb2, const unsigned &amp;nbMax)</td></tr>
+<tr class="memdesc:a3ee2be2606da0dfc9951f36b245a88b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">nouvRdm  <a href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3ee2be2606da0dfc9951f36b245a88b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af634cc08b732b0789cce520a8bc46af2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af634cc08b732b0789cce520a8bc46af2">initMatV2</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const unsigned &amp;nbMax=<a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a>, const size_t &amp;nbLignes=10, const size_t &amp;nbColonnes=10)</td></tr>
+<tr class="memdesc:af634cc08b732b0789cce520a8bc46af2"><td class="mdescLeft">&#160;</td><td class="mdescRight">initMatV2  <a href="main_8cpp.html#af634cc08b732b0789cce520a8bc46af2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af634cc08b732b0789cce520a8bc46af2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca5a1d2987f121b68d2e209aff2d5f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3">explositionUneBombeHorizontale</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const size_t &amp;numLigne, const size_t &amp;numColonne, const size_t &amp;combien)</td></tr>
+<tr class="memdesc:a5ca5a1d2987f121b68d2e209aff2d5f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">explositionUneBombeHorizontale  <a href="main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5ca5a1d2987f121b68d2e209aff2d5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a455e37b8945ae908caeee9bd5744c9b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5">detectionExplositionUneBombeHorizontale</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, unsigned &amp;score)</td></tr>
+<tr class="memdesc:a455e37b8945ae908caeee9bd5744c9b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">detectionExplositionUneBombeHorizontale  <a href="main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a455e37b8945ae908caeee9bd5744c9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bd751d220569d601afc2200b0378423"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8bd751d220569d601afc2200b0378423">explositionUneBombeVerticale</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const size_t &amp;numLigne, const size_t &amp;numColonne, const size_t &amp;combien)</td></tr>
+<tr class="memdesc:a8bd751d220569d601afc2200b0378423"><td class="mdescLeft">&#160;</td><td class="mdescRight">explositionUneBombeVerticale  <a href="main_8cpp.html#a8bd751d220569d601afc2200b0378423">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8bd751d220569d601afc2200b0378423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48f37957843802008c092eaff0851068"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a48f37957843802008c092eaff0851068">detectionExplositionUneBombeVerticale</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, unsigned &amp;score)</td></tr>
+<tr class="memdesc:a48f37957843802008c092eaff0851068"><td class="mdescLeft">&#160;</td><td class="mdescRight">detectionExplositionUneBombeVerticale  <a href="main_8cpp.html#a48f37957843802008c092eaff0851068">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a48f37957843802008c092eaff0851068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65a5b8aff7e4e8f0899bd278f28d97b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4">remplaceVideParRdm</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const unsigned &amp;vid=<a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a>, const unsigned &amp;nbMax=<a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a>)</td></tr>
+<tr class="memdesc:a65a5b8aff7e4e8f0899bd278f28d97b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">remplaceVideParRdm  <a href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a65a5b8aff7e4e8f0899bd278f28d97b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e5480cd3d6f193189db3662d5d1a9b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1e5480cd3d6f193189db3662d5d1a9b1">detectionExplositionBombe</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, unsigned &amp;score)</td></tr>
+<tr class="memdesc:a1e5480cd3d6f193189db3662d5d1a9b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">detectionExplositionBombe  <a href="main_8cpp.html#a1e5480cd3d6f193189db3662d5d1a9b1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1e5480cd3d6f193189db3662d5d1a9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af19c68e075eee67e410e239f09fdffd6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af19c68e075eee67e410e239f09fdffd6">detectionExplositionBombeV2</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, unsigned &amp;score, const unsigned &amp;vid=<a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a>, const unsigned &amp;plusGrandNb=<a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a>)</td></tr>
+<tr class="memdesc:af19c68e075eee67e410e239f09fdffd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">detectionExplositionBombeV2  <a href="main_8cpp.html#af19c68e075eee67e410e239f09fdffd6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af19c68e075eee67e410e239f09fdffd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3c472825f8e1704d249cae90b350d54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54">zeroVidSousNb</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const unsigned &amp;vid=<a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a>)</td></tr>
+<tr class="memdesc:ae3c472825f8e1704d249cae90b350d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">zeroVidSousNb  <a href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae3c472825f8e1704d249cae90b350d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95ae5c4b2659efb4b51d7764384c9a5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a95ae5c4b2659efb4b51d7764384c9a5d">faitUnMouvement</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const char &amp;deplacment, const size_t &amp;numLigne, const size_t &amp;numCol)</td></tr>
+<tr class="memdesc:a95ae5c4b2659efb4b51d7764384c9a5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">faitUnMouvement  <a href="main_8cpp.html#a95ae5c4b2659efb4b51d7764384c9a5d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a95ae5c4b2659efb4b51d7764384c9a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e51d2ae68b742a2bece5ba396d23eef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a7e51d2ae68b742a2bece5ba396d23eef">faitUnMouvementV2</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const char &amp;deplacment, size_t &amp;numLigne, size_t &amp;numCol, unsigned &amp;nbDeplacement)</td></tr>
+<tr class="memdesc:a7e51d2ae68b742a2bece5ba396d23eef"><td class="mdescLeft">&#160;</td><td class="mdescRight">faitUnMouvementV2  <a href="main_8cpp.html#a7e51d2ae68b742a2bece5ba396d23eef">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7e51d2ae68b742a2bece5ba396d23eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84f6ce81485253e1ddad16d51f965f62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a84f6ce81485253e1ddad16d51f965f62">chargerParametre</a> (<a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;params, const string &amp;fichier)</td></tr>
+<tr class="memdesc:a84f6ce81485253e1ddad16d51f965f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">chargerParametre  <a href="main_8cpp.html#a84f6ce81485253e1ddad16d51f965f62">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a84f6ce81485253e1ddad16d51f965f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f1a4bb0a238f073132882c1ed6cfcf4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4">partiNumberCrush</a> (unsigned &amp;score, unsigned &amp;nbDeplacement)</td></tr>
+<tr class="memdesc:a6f1a4bb0a238f073132882c1ed6cfcf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">partiNumberCrush  <a href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6f1a4bb0a238f073132882c1ed6cfcf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cdc3675b05b04dab1542bd73570bd8a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a">partiCasaliCrush</a> (unsigned &amp;score, unsigned &amp;nbDeplacement)</td></tr>
+<tr class="memdesc:a1cdc3675b05b04dab1542bd73570bd8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">partiCasaliCrush  <a href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1cdc3675b05b04dab1542bd73570bd8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">main  <a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a84f6ce81485253e1ddad16d51f965f62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84f6ce81485253e1ddad16d51f965f62">&#9670;&nbsp;</a></span>chargerParametre()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chargerParametre </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;&#160;</td>
+          <td class="paramname"><em>params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>fichier</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>chargerParametre </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">params</td><td></td></tr>
+    <tr><td class="paramname">fichier</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00409">409</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a84f6ce81485253e1ddad16d51f965f62_icgraph.png" border="0" usemap="#amain_8cpp_a84f6ce81485253e1ddad16d51f965f62_icgraph" alt=""/></div>
+<map name="amain_8cpp_a84f6ce81485253e1ddad16d51f965f62_icgraph" id="amain_8cpp_a84f6ce81485253e1ddad16d51f965f62_icgraph">
+<area shape="rect" title="chargerParametre" alt="" coords="285,5,424,32"/>
+<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="partiCasaliCrush" alt="" coords="108,5,237,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1e5480cd3d6f193189db3662d5d1a9b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e5480cd3d6f193189db3662d5d1a9b1">&#9670;&nbsp;</a></span>detectionExplositionBombe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool detectionExplositionBombe </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned &amp;&#160;</td>
+          <td class="paramname"><em>score</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>detectionExplositionBombe </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td></td></tr>
+    <tr><td class="paramname">score</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00231">231</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a1e5480cd3d6f193189db3662d5d1a9b1_cgraph.png" border="0" usemap="#amain_8cpp_a1e5480cd3d6f193189db3662d5d1a9b1_cgraph" alt=""/></div>
+<map name="amain_8cpp_a1e5480cd3d6f193189db3662d5d1a9b1_cgraph" id="amain_8cpp_a1e5480cd3d6f193189db3662d5d1a9b1_cgraph">
+<area shape="rect" title="detectionExplositionBombe" alt="" coords="5,46,207,73"/>
+<area shape="rect" href="main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="detectionExplositionUneBombeHorizontale" alt="" coords="255,5,481,47"/>
+<area shape="rect" href="main_8cpp.html#a48f37957843802008c092eaff0851068" title="detectionExplositionUneBombeVerticale" alt="" coords="255,71,481,112"/>
+<area shape="rect" href="main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3" title="explositionUneBombeHorizontale" alt="" coords="529,13,771,39"/>
+<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="afficheMatriceV2" alt="" coords="584,70,716,97"/>
+<area shape="rect" href="main_8cpp.html#a8bd751d220569d601afc2200b0378423" title="explositionUneBombeVerticale" alt="" coords="539,121,761,147"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a1e5480cd3d6f193189db3662d5d1a9b1_icgraph.png" border="0" usemap="#amain_8cpp_a1e5480cd3d6f193189db3662d5d1a9b1_icgraph" alt=""/></div>
+<map name="amain_8cpp_a1e5480cd3d6f193189db3662d5d1a9b1_icgraph" id="amain_8cpp_a1e5480cd3d6f193189db3662d5d1a9b1_icgraph">
+<area shape="rect" title="detectionExplositionBombe" alt="" coords="195,5,396,32"/>
+<area shape="rect" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="partiNumberCrush" alt="" coords="5,5,147,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af19c68e075eee67e410e239f09fdffd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af19c68e075eee67e410e239f09fdffd6">&#9670;&nbsp;</a></span>detectionExplositionBombeV2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool detectionExplositionBombeV2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned &amp;&#160;</td>
+          <td class="paramname"><em>score</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>vid</em> = <code><a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>plusGrandNb</em> = <code><a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>detectionExplositionBombeV2 </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td></td></tr>
+    <tr><td class="paramname">score</td><td></td></tr>
+    <tr><td class="paramname">vid</td><td></td></tr>
+    <tr><td class="paramname">plusGrandNb</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00246">246</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_af19c68e075eee67e410e239f09fdffd6_cgraph.png" border="0" usemap="#amain_8cpp_af19c68e075eee67e410e239f09fdffd6_cgraph" alt=""/></div>
+<map name="amain_8cpp_af19c68e075eee67e410e239f09fdffd6_cgraph" id="amain_8cpp_af19c68e075eee67e410e239f09fdffd6_cgraph">
+<area shape="rect" title="detectionExplositionBombeV2" alt="" coords="5,42,224,69"/>
+<area shape="rect" href="main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="detectionExplositionUneBombeHorizontale" alt="" coords="272,5,499,47"/>
+<area shape="rect" href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplaceVideParRdm" alt="" coords="304,71,467,98"/>
+<area shape="rect" href="main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3" title="explositionUneBombeHorizontale" alt="" coords="547,13,788,39"/>
+<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="nouvRdm" alt="" coords="625,71,709,98"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_af19c68e075eee67e410e239f09fdffd6_icgraph.png" border="0" usemap="#amain_8cpp_af19c68e075eee67e410e239f09fdffd6_icgraph" alt=""/></div>
+<map name="amain_8cpp_af19c68e075eee67e410e239f09fdffd6_icgraph" id="amain_8cpp_af19c68e075eee67e410e239f09fdffd6_icgraph">
+<area shape="rect" title="detectionExplositionBombeV2" alt="" coords="285,5,504,32"/>
+<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="partiCasaliCrush" alt="" coords="108,5,237,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a455e37b8945ae908caeee9bd5744c9b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a455e37b8945ae908caeee9bd5744c9b5">&#9670;&nbsp;</a></span>detectionExplositionUneBombeHorizontale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool detectionExplositionUneBombeHorizontale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned &amp;&#160;</td>
+          <td class="paramname"><em>score</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>detectionExplositionUneBombeHorizontale </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td></td></tr>
+    <tr><td class="paramname">score</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00137">137</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a455e37b8945ae908caeee9bd5744c9b5_cgraph.png" border="0" usemap="#amain_8cpp_a455e37b8945ae908caeee9bd5744c9b5_cgraph" alt=""/></div>
+<map name="amain_8cpp_a455e37b8945ae908caeee9bd5744c9b5_cgraph" id="amain_8cpp_a455e37b8945ae908caeee9bd5744c9b5_cgraph">
+<area shape="rect" title="detectionExplositionUneBombeHorizontale" alt="" coords="5,5,232,47"/>
+<area shape="rect" href="main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3" title="explositionUneBombeHorizontale" alt="" coords="280,13,521,39"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a455e37b8945ae908caeee9bd5744c9b5_icgraph.png" border="0" usemap="#amain_8cpp_a455e37b8945ae908caeee9bd5744c9b5_icgraph" alt=""/></div>
+<map name="amain_8cpp_a455e37b8945ae908caeee9bd5744c9b5_icgraph" id="amain_8cpp_a455e37b8945ae908caeee9bd5744c9b5_icgraph">
+<area shape="rect" title="detectionExplositionUneBombeHorizontale" alt="" coords="461,23,688,65"/>
+<area shape="rect" href="main_8cpp.html#a1e5480cd3d6f193189db3662d5d1a9b1" title="detectionExplositionBombe" alt="" coords="203,5,405,32"/>
+<area shape="rect" href="main_8cpp.html#af19c68e075eee67e410e239f09fdffd6" title="detectionExplositionBombeV2" alt="" coords="195,56,413,83"/>
+<area shape="rect" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="partiNumberCrush" alt="" coords="5,5,147,32"/>
+<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="partiCasaliCrush" alt="" coords="11,56,141,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a48f37957843802008c092eaff0851068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48f37957843802008c092eaff0851068">&#9670;&nbsp;</a></span>detectionExplositionUneBombeVerticale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool detectionExplositionUneBombeVerticale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned &amp;&#160;</td>
+          <td class="paramname"><em>score</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>detectionExplositionUneBombeVerticale </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td></td></tr>
+    <tr><td class="paramname">score</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00178">178</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a48f37957843802008c092eaff0851068_cgraph.png" border="0" usemap="#amain_8cpp_a48f37957843802008c092eaff0851068_cgraph" alt=""/></div>
+<map name="amain_8cpp_a48f37957843802008c092eaff0851068_cgraph" id="amain_8cpp_a48f37957843802008c092eaff0851068_cgraph">
+<area shape="rect" title="detectionExplositionUneBombeVerticale" alt="" coords="5,251,232,293"/>
+<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="afficheMatriceV2" alt="" coords="325,233,457,260"/>
+<area shape="rect" href="main_8cpp.html#a8bd751d220569d601afc2200b0378423" title="explositionUneBombeVerticale" alt="" coords="280,284,503,311"/>
+<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="551,5,649,32"/>
+<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="565,56,635,83"/>
+<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="570,107,630,133"/>
+<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title=" " alt="" coords="569,157,631,184"/>
+<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title=" " alt="" coords="567,208,633,235"/>
+<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title=" " alt="" coords="556,259,644,285"/>
+<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title=" " alt="" coords="571,309,629,336"/>
+<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title=" " alt="" coords="566,360,634,387"/>
+<area shape="rect" href="cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title=" " alt="" coords="564,411,636,437"/>
+<area shape="rect" href="cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="571,461,629,488"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a48f37957843802008c092eaff0851068_icgraph.png" border="0" usemap="#amain_8cpp_a48f37957843802008c092eaff0851068_icgraph" alt=""/></div>
+<map name="amain_8cpp_a48f37957843802008c092eaff0851068_icgraph" id="amain_8cpp_a48f37957843802008c092eaff0851068_icgraph">
+<area shape="rect" title="detectionExplositionUneBombeVerticale" alt="" coords="444,5,671,47"/>
+<area shape="rect" href="main_8cpp.html#a1e5480cd3d6f193189db3662d5d1a9b1" title="detectionExplositionBombe" alt="" coords="195,13,396,39"/>
+<area shape="rect" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="partiNumberCrush" alt="" coords="5,13,147,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5ca5a1d2987f121b68d2e209aff2d5f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ca5a1d2987f121b68d2e209aff2d5f3">&#9670;&nbsp;</a></span>explositionUneBombeHorizontale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void explositionUneBombeHorizontale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>numLigne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>numColonne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>combien</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>explositionUneBombeHorizontale </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td></td></tr>
+    <tr><td class="paramname">numLigne</td><td></td></tr>
+    <tr><td class="paramname">numColonne</td><td></td></tr>
+    <tr><td class="paramname">combien</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00121">121</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a5ca5a1d2987f121b68d2e209aff2d5f3_icgraph.png" border="0" usemap="#amain_8cpp_a5ca5a1d2987f121b68d2e209aff2d5f3_icgraph" alt=""/></div>
+<map name="amain_8cpp_a5ca5a1d2987f121b68d2e209aff2d5f3_icgraph" id="amain_8cpp_a5ca5a1d2987f121b68d2e209aff2d5f3_icgraph">
+<area shape="rect" title="explositionUneBombeHorizontale" alt="" coords="547,31,788,57"/>
+<area shape="rect" href="main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="detectionExplositionUneBombeHorizontale" alt="" coords="272,23,499,65"/>
+<area shape="rect" href="main_8cpp.html#a1e5480cd3d6f193189db3662d5d1a9b1" title="detectionExplositionBombe" alt="" coords="14,5,215,32"/>
+<area shape="rect" href="main_8cpp.html#af19c68e075eee67e410e239f09fdffd6" title="detectionExplositionBombeV2" alt="" coords="5,56,224,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8bd751d220569d601afc2200b0378423"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bd751d220569d601afc2200b0378423">&#9670;&nbsp;</a></span>explositionUneBombeVerticale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void explositionUneBombeVerticale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>numLigne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>numColonne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>combien</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>explositionUneBombeVerticale </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td></td></tr>
+    <tr><td class="paramname">numLigne</td><td></td></tr>
+    <tr><td class="paramname">numColonne</td><td></td></tr>
+    <tr><td class="paramname">combien</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00164">164</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a8bd751d220569d601afc2200b0378423_icgraph.png" border="0" usemap="#amain_8cpp_a8bd751d220569d601afc2200b0378423_icgraph" alt=""/></div>
+<map name="amain_8cpp_a8bd751d220569d601afc2200b0378423_icgraph" id="amain_8cpp_a8bd751d220569d601afc2200b0378423_icgraph">
+<area shape="rect" title="explositionUneBombeVerticale" alt="" coords="529,13,752,39"/>
+<area shape="rect" href="main_8cpp.html#a48f37957843802008c092eaff0851068" title="detectionExplositionUneBombeVerticale" alt="" coords="255,5,481,47"/>
+<area shape="rect" href="main_8cpp.html#a1e5480cd3d6f193189db3662d5d1a9b1" title="detectionExplositionBombe" alt="" coords="5,13,207,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a95ae5c4b2659efb4b51d7764384c9a5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95ae5c4b2659efb4b51d7764384c9a5d">&#9670;&nbsp;</a></span>faitUnMouvement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void faitUnMouvement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char &amp;&#160;</td>
+          <td class="paramname"><em>deplacment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>numLigne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>numCol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>faitUnMouvement </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td></td></tr>
+    <tr><td class="paramname">deplacment</td><td></td></tr>
+    <tr><td class="paramname">numLigne</td><td></td></tr>
+    <tr><td class="paramname">numCol</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00281">281</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7e51d2ae68b742a2bece5ba396d23eef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e51d2ae68b742a2bece5ba396d23eef">&#9670;&nbsp;</a></span>faitUnMouvementV2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void faitUnMouvementV2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char &amp;&#160;</td>
+          <td class="paramname"><em>deplacment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&#160;</td>
+          <td class="paramname"><em>numLigne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&#160;</td>
+          <td class="paramname"><em>numCol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned &amp;&#160;</td>
+          <td class="paramname"><em>nbDeplacement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>faitUnMouvementV2 </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td></td></tr>
+    <tr><td class="paramname">deplacment</td><td></td></tr>
+    <tr><td class="paramname">numLigne</td><td></td></tr>
+    <tr><td class="paramname">numCol</td><td></td></tr>
+    <tr><td class="paramname">nbDeplacement</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00329">329</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a7e51d2ae68b742a2bece5ba396d23eef_icgraph.png" border="0" usemap="#amain_8cpp_a7e51d2ae68b742a2bece5ba396d23eef_icgraph" alt=""/></div>
+<map name="amain_8cpp_a7e51d2ae68b742a2bece5ba396d23eef_icgraph" id="amain_8cpp_a7e51d2ae68b742a2bece5ba396d23eef_icgraph">
+<area shape="rect" title="faitUnMouvementV2" alt="" coords="297,31,455,57"/>
+<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="partiCasaliCrush" alt="" coords="114,5,243,32"/>
+<area shape="rect" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="partiNumberCrush" alt="" coords="108,56,249,83"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a38967683a0320dbe945a72149e02a651"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38967683a0320dbe945a72149e02a651">&#9670;&nbsp;</a></span>initMat() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initMat </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;&#160;</td>
+          <td class="paramname"><em>params</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>initMat </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td></td></tr>
+    <tr><td class="paramname">params</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00064">64</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a38967683a0320dbe945a72149e02a651_cgraph.png" border="0" usemap="#amain_8cpp_a38967683a0320dbe945a72149e02a651_cgraph" alt=""/></div>
+<map name="amain_8cpp_a38967683a0320dbe945a72149e02a651_cgraph" id="amain_8cpp_a38967683a0320dbe945a72149e02a651_cgraph">
+<area shape="rect" title="initMat" alt="" coords="5,5,73,32"/>
+<area shape="rect" href="main_8cpp.html#a8456e9b3f1658cc66617a6a06ae1da0f" title="initMat" alt="" coords="121,5,189,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8456e9b3f1658cc66617a6a06ae1da0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8456e9b3f1658cc66617a6a06ae1da0f">&#9670;&nbsp;</a></span>initMat() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initMat </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>nbLignes</em> = <code>8</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>nbColonnes</em> = <code>8</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>nbMax</em> = <code><a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>initMat </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td></td></tr>
+    <tr><td class="paramname">nbLignes</td><td></td></tr>
+    <tr><td class="paramname">nbColonnes</td><td></td></tr>
+    <tr><td class="paramname">nbMax</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00048">48</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a8456e9b3f1658cc66617a6a06ae1da0f_icgraph.png" border="0" usemap="#amain_8cpp_a8456e9b3f1658cc66617a6a06ae1da0f_icgraph" alt=""/></div>
+<map name="amain_8cpp_a8456e9b3f1658cc66617a6a06ae1da0f_icgraph" id="amain_8cpp_a8456e9b3f1658cc66617a6a06ae1da0f_icgraph">
+<area shape="rect" title="initMat" alt="" coords="195,31,263,57"/>
+<area shape="rect" href="main_8cpp.html#a38967683a0320dbe945a72149e02a651" title="initMat" alt="" coords="42,5,110,32"/>
+<area shape="rect" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="partiNumberCrush" alt="" coords="5,56,147,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af634cc08b732b0789cce520a8bc46af2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af634cc08b732b0789cce520a8bc46af2">&#9670;&nbsp;</a></span>initMatV2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initMatV2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>nbMax</em> = <code><a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>nbLignes</em> = <code>10</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>nbColonnes</em> = <code>10</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>initMatV2 </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td></td></tr>
+    <tr><td class="paramname">nbMax</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00096">96</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_af634cc08b732b0789cce520a8bc46af2_cgraph.png" border="0" usemap="#amain_8cpp_af634cc08b732b0789cce520a8bc46af2_cgraph" alt=""/></div>
+<map name="amain_8cpp_af634cc08b732b0789cce520a8bc46af2_cgraph" id="amain_8cpp_af634cc08b732b0789cce520a8bc46af2_cgraph">
+<area shape="rect" title="initMatV2" alt="" coords="5,5,91,32"/>
+<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="nouvRdm" alt="" coords="139,5,223,32"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_af634cc08b732b0789cce520a8bc46af2_icgraph.png" border="0" usemap="#amain_8cpp_af634cc08b732b0789cce520a8bc46af2_icgraph" alt=""/></div>
+<map name="amain_8cpp_af634cc08b732b0789cce520a8bc46af2_icgraph" id="amain_8cpp_af634cc08b732b0789cce520a8bc46af2_icgraph">
+<area shape="rect" title="initMatV2" alt="" coords="285,5,371,32"/>
+<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="partiCasaliCrush" alt="" coords="108,5,237,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a04499e810295a8506131a7b912017990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04499e810295a8506131a7b912017990">&#9670;&nbsp;</a></span>initParams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initParams </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;&#160;</td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>initParams </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00012">12</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a04499e810295a8506131a7b912017990_icgraph.png" border="0" usemap="#amain_8cpp_a04499e810295a8506131a7b912017990_icgraph" alt=""/></div>
+<map name="amain_8cpp_a04499e810295a8506131a7b912017990_icgraph" id="amain_8cpp_a04499e810295a8506131a7b912017990_icgraph">
+<area shape="rect" title="initParams" alt="" coords="285,5,376,32"/>
+<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="partiCasaliCrush" alt="" coords="108,5,237,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>main </p>
+<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00575">575</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
+<map name="amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
+<area shape="rect" title="main" alt="" coords="5,157,60,184"/>
+<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="partiCasaliCrush" alt="" coords="108,157,237,184"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="afficheMatriceV1" alt="" coords="329,5,461,32"/>
+<area shape="rect" href="main_8cpp.html#a84f6ce81485253e1ddad16d51f965f62" title="chargerParametre" alt="" coords="325,56,464,83"/>
+<area shape="rect" href="main_8cpp.html#af19c68e075eee67e410e239f09fdffd6" title="detectionExplositionBombeV2" alt="" coords="285,107,504,133"/>
+<area shape="rect" href="main_8cpp.html#a7e51d2ae68b742a2bece5ba396d23eef" title="faitUnMouvementV2" alt="" coords="316,157,473,184"/>
+<area shape="rect" href="main_8cpp.html#af634cc08b732b0789cce520a8bc46af2" title="initMatV2" alt="" coords="352,208,437,235"/>
+<area shape="rect" href="main_8cpp.html#a04499e810295a8506131a7b912017990" title="initParams" alt="" coords="349,259,440,285"/>
+<area shape="rect" href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="zeroVidSousNb" alt="" coords="335,309,455,336"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3ee2be2606da0dfc9951f36b245a88b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ee2be2606da0dfc9951f36b245a88b8">&#9670;&nbsp;</a></span>nouvRdm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned nouvRdm </td>
+          <td>(</td>
+          <td class="paramtype">unsigned &amp;&#160;</td>
+          <td class="paramname"><em>nb1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned &amp;&#160;</td>
+          <td class="paramname"><em>nb2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>nbMax</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>nouvRdm </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nb1</td><td></td></tr>
+    <tr><td class="paramname">nb2</td><td></td></tr>
+    <tr><td class="paramname">nbMax</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00083">83</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph.png" border="0" usemap="#amain_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph" alt=""/></div>
+<map name="amain_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph" id="amain_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph">
+<area shape="rect" title="nouvRdm" alt="" coords="660,31,744,57"/>
+<area shape="rect" href="main_8cpp.html#af634cc08b732b0789cce520a8bc46af2" title="initMatV2" alt="" coords="249,5,335,32"/>
+<area shape="rect" href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplaceVideParRdm" alt="" coords="449,56,612,83"/>
+<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="partiCasaliCrush" alt="" coords="5,31,135,57"/>
+<area shape="rect" href="main_8cpp.html#af19c68e075eee67e410e239f09fdffd6" title="detectionExplositionBombeV2" alt="" coords="183,56,401,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1cdc3675b05b04dab1542bd73570bd8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cdc3675b05b04dab1542bd73570bd8a">&#9670;&nbsp;</a></span>partiCasaliCrush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int partiCasaliCrush </td>
+          <td>(</td>
+          <td class="paramtype">unsigned &amp;&#160;</td>
+          <td class="paramname"><em>score</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned &amp;&#160;</td>
+          <td class="paramname"><em>nbDeplacement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>partiCasaliCrush </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">score</td><td></td></tr>
+    <tr><td class="paramname">nbDeplacement</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00538">538</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_cgraph.png" border="0" usemap="#amain_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_cgraph" alt=""/></div>
+<map name="amain_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_cgraph" id="amain_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_cgraph">
+<area shape="rect" title="partiCasaliCrush" alt="" coords="5,625,135,652"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="afficheMatriceV1" alt="" coords="226,284,358,311"/>
+<area shape="rect" href="main_8cpp.html#a84f6ce81485253e1ddad16d51f965f62" title="chargerParametre" alt="" coords="223,524,361,551"/>
+<area shape="rect" href="main_8cpp.html#af19c68e075eee67e410e239f09fdffd6" title="detectionExplositionBombeV2" alt="" coords="183,575,401,601"/>
+<area shape="rect" href="main_8cpp.html#a7e51d2ae68b742a2bece5ba396d23eef" title="faitUnMouvementV2" alt="" coords="213,625,371,652"/>
+<area shape="rect" href="main_8cpp.html#af634cc08b732b0789cce520a8bc46af2" title="initMatV2" alt="" coords="249,676,335,703"/>
+<area shape="rect" href="main_8cpp.html#a04499e810295a8506131a7b912017990" title="initParams" alt="" coords="247,727,337,753"/>
+<area shape="rect" href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="zeroVidSousNb" alt="" coords="232,777,352,804"/>
+<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="513,5,612,32"/>
+<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="527,56,598,83"/>
+<area shape="rect" href="cst_8h.html#af81c8f45a494c8b75bb2623c7a57737f" title=" " alt="" coords="509,107,616,133"/>
+<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="533,157,593,184"/>
+<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title=" " alt="" coords="531,208,594,235"/>
+<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title=" " alt="" coords="529,259,596,285"/>
+<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title=" " alt="" coords="519,309,607,336"/>
+<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title=" " alt="" coords="533,360,592,387"/>
+<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title=" " alt="" coords="529,411,597,437"/>
+<area shape="rect" href="cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title=" " alt="" coords="527,461,599,488"/>
+<area shape="rect" href="cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="534,512,591,539"/>
+<area shape="rect" href="main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="detectionExplositionUneBombeHorizontale" alt="" coords="449,563,676,605"/>
+<area shape="rect" href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplaceVideParRdm" alt="" coords="481,629,644,656"/>
+<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="nouvRdm" alt="" coords="724,655,808,681"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_icgraph.png" border="0" usemap="#amain_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_icgraph" alt=""/></div>
+<map name="amain_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_icgraph" id="amain_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_icgraph">
+<area shape="rect" title="partiCasaliCrush" alt="" coords="108,5,237,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6f1a4bb0a238f073132882c1ed6cfcf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f1a4bb0a238f073132882c1ed6cfcf4">&#9670;&nbsp;</a></span>partiNumberCrush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int partiNumberCrush </td>
+          <td>(</td>
+          <td class="paramtype">unsigned &amp;&#160;</td>
+          <td class="paramname"><em>score</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned &amp;&#160;</td>
+          <td class="paramname"><em>nbDeplacement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>partiNumberCrush </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">score</td><td></td></tr>
+    <tr><td class="paramname">nbDeplacement</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00500">500</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a6f1a4bb0a238f073132882c1ed6cfcf4_cgraph.png" border="0" usemap="#amain_8cpp_a6f1a4bb0a238f073132882c1ed6cfcf4_cgraph" alt=""/></div>
+<map name="amain_8cpp_a6f1a4bb0a238f073132882c1ed6cfcf4_cgraph" id="amain_8cpp_a6f1a4bb0a238f073132882c1ed6cfcf4_cgraph">
+<area shape="rect" title="partiNumberCrush" alt="" coords="5,280,147,307"/>
+<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="afficheMatriceV2" alt="" coords="719,233,851,260"/>
+<area shape="rect" href="main_8cpp.html#a1e5480cd3d6f193189db3662d5d1a9b1" title="detectionExplositionBombe" alt="" coords="195,229,396,256"/>
+<area shape="rect" href="main_8cpp.html#a7e51d2ae68b742a2bece5ba396d23eef" title="faitUnMouvementV2" alt="" coords="217,280,374,307"/>
+<area shape="rect" href="main_8cpp.html#a8456e9b3f1658cc66617a6a06ae1da0f" title="initMat" alt="" coords="261,331,329,357"/>
+<area shape="rect" href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="zeroVidSousNb" alt="" coords="235,381,355,408"/>
+<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="899,5,997,32"/>
+<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="913,56,983,83"/>
+<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="918,107,978,133"/>
+<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title=" " alt="" coords="917,157,979,184"/>
+<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title=" " alt="" coords="915,208,981,235"/>
+<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title=" " alt="" coords="904,259,992,285"/>
+<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title=" " alt="" coords="919,309,977,336"/>
+<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title=" " alt="" coords="914,360,982,387"/>
+<area shape="rect" href="cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title=" " alt="" coords="912,411,984,437"/>
+<area shape="rect" href="cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="919,461,977,488"/>
+<area shape="rect" href="main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="detectionExplositionUneBombeHorizontale" alt="" coords="444,222,671,263"/>
+<area shape="rect" href="main_8cpp.html#a48f37957843802008c092eaff0851068" title="detectionExplositionUneBombeVerticale" alt="" coords="444,287,671,329"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a65a5b8aff7e4e8f0899bd278f28d97b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65a5b8aff7e4e8f0899bd278f28d97b4">&#9670;&nbsp;</a></span>remplaceVideParRdm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void remplaceVideParRdm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>vid</em> = <code><a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>nbMax</em> = <code><a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>remplaceVideParRdm </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td></td></tr>
+    <tr><td class="paramname">vid</td><td></td></tr>
+    <tr><td class="paramname">nbMax</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00211">211</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph.png" border="0" usemap="#amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph" alt=""/></div>
+<map name="amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph" id="amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph">
+<area shape="rect" title="remplaceVideParRdm" alt="" coords="5,5,168,32"/>
+<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="nouvRdm" alt="" coords="216,5,300,32"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_icgraph.png" border="0" usemap="#amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_icgraph" alt=""/></div>
+<map name="amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_icgraph" id="amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_icgraph">
+<area shape="rect" title="remplaceVideParRdm" alt="" coords="449,5,612,32"/>
+<area shape="rect" href="main_8cpp.html#af19c68e075eee67e410e239f09fdffd6" title="detectionExplositionBombeV2" alt="" coords="183,5,401,32"/>
+<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="partiCasaliCrush" alt="" coords="5,5,135,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae3c472825f8e1704d249cae90b350d54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3c472825f8e1704d249cae90b350d54">&#9670;&nbsp;</a></span>zeroVidSousNb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool zeroVidSousNb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>vid</em> = <code><a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>zeroVidSousNb </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td></td></tr>
+    <tr><td class="paramname">vid</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00261">261</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph.png" border="0" usemap="#amain_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph" alt=""/></div>
+<map name="amain_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph" id="amain_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph">
+<area shape="rect" title="zeroVidSousNb" alt="" coords="297,31,417,57"/>
+<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="partiCasaliCrush" alt="" coords="114,5,243,32"/>
+<area shape="rect" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="partiNumberCrush" alt="" coords="108,56,249,83"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

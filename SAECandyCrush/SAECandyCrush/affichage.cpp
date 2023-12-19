@@ -7,15 +7,25 @@ using namespace std;
 
 //Ce document cpp est un document regroupant toutes les fonctions/procédures d'affichage de la matrice, permettant de réduire le code du main
 
+/**
+ * @brief clearScreen
+ */
 void clearScreen () {
     cout << "\033[H\033[2J";
 }
 
-
+/**
+ * @brief couleur
+ * @param coul
+ */
 void couleur (const unsigned & coul) {
     cout << "\033[" << coul <<"m";
 }
 
+/**
+ * @brief afficheMatriceV0
+ * @param mat
+ */
 // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
 void  afficheMatriceV0 (const CMatrice & Mat) {
     clearScreen();
@@ -38,6 +48,11 @@ void  afficheMatriceV0 (const CMatrice & Mat) {
         cout << endl ;
     }
 }
+
+/**
+ * @brief afficheMatriceV1
+ * @param mat
+ */
 
 // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond de couleur
 //pour signifier que la case est a KAIgnorer
@@ -71,6 +86,11 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
     }
 }
 
+/**
+ * @brief afficheMatriceV2
+ * @param mat
+ */
+
 // affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur
 //pour signifier que la case est a KAIgnorer
 void  afficheMatriceV2 (const CMatrice & Mat) {
@@ -103,6 +123,13 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
         cout << endl ;
     }
 }
+
+/**
+ * @brief afficheMatriceV1
+ * @param mat
+ * @param numLigne
+ * @param numCol
+ */
 
 // affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur
 // pour signifier que la case est a KAIgnorer et la case sélectionner a un fond de couleur différent
