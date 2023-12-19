@@ -69,7 +69,7 @@ unsigned nouvRdm(unsigned & nb1, unsigned & nb2, const unsigned & nbMax){
 }
 
 //initialisation de la grille de jeu avec maximum 2 nombre aligné
-/*void initMatV2 (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice,
+void initMatV2 (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice,
                 const size_t & nbLignes = 10,
                 const size_t & nbColonnes = 10){
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
@@ -85,7 +85,7 @@ unsigned nouvRdm(unsigned & nb1, unsigned & nb2, const unsigned & nbMax){
             mat[i][j] = nouvRdm(comboCote, comboHaut, nbMax); // le contenu de la case est différent de comboHaut et comboCote
         }
     }
-}*/
+}
 
 void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
                                      const size_t & numColonne, const size_t & combien){
@@ -436,7 +436,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     CMyParam params;
     initParams(params);
     chargerParametre(params, "./build.yaml");
-    initMat(mat,params);
+    initMatV2(mat);
     size_t numCol = 4;
     size_t numLigne = 4;
     while(true){
@@ -461,7 +461,6 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
         char deplacement;
         cin >> deplacement;
         faitUnMouvementV2 (mat, deplacement, numLigne, numCol, nbDeplacement);
-
     }
     return 0;
 }
