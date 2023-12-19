@@ -18,6 +18,11 @@ void initParams (CMyParam & param)
     param.mapParamChar["toucheGauche"] = 'q';
     param.mapParamChar["toucheBas"] = 'x';
     param.mapParamChar["toucheDroite"] = 'd';
+    param.mapParamChar["toucheHautGauche"] = 'a';
+    param.mapParamChar["toucheGaucheBas"] = 'w';
+    param.mapParamChar["toucheBasDroite"] = 'c';
+    param.mapParamChar["toucheDroiteHaut"] = 'e';
+    param.mapParamChar["toucheSelect"] = 's';
 
     //taille de la grille - on suppose que c'est un rectangle
     param.mapParamUnsigned["nbColonnes"] = 10;
@@ -250,39 +255,39 @@ bool zeroVidSousNb (CMatrice & mat, const unsigned & vid = KAIgnorer) {
  * @param nbDeplacement
  */
 void faitUnMouvement (CMatrice & mat, const char & deplacment, size_t & numLigne,
-                     size_t & numCol, unsigned & nbDeplacement) {
+                     size_t & numCol, unsigned & nbDeplacement, unsigned & param) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     switch (tolower(deplacment)) {
-    case 'c':
+    case 'c'://param.mapParamChar["toucheBasDroite"]
         if (numLigne != 0) ++nouvellePositionLigne;
         if (numCol < mat[0].size() - 1) ++nouvellePositionColonne;
         break;
-    case 'x':
+    case 'x'://param.mapParamChar["toucheBas"]
         if (numLigne < mat.size() - 1) ++nouvellePositionLigne;
         break;
-    case 'w':
+    case 'w'://param.mapParamChar["toucheGaucheBas"]
         if (numLigne != 0) ++nouvellePositionLigne;
         if (numCol != 0) --nouvellePositionColonne;
         break;
-    case 'q':
+    case 'q'://param.mapParamChar["toucheGauche"]
         if (numCol != 0) --nouvellePositionColonne;
         break;
-    case 'a':
+    case 'a'://param.mapParamChar["toucheHautGauche"]
         if (numLigne != 0) --nouvellePositionLigne;
         if (numCol != 0) --nouvellePositionColonne;
         break;
-    case 'z':
+    case 'z'://param.mapParamChar["toucheHaut"]
         if (numLigne != 0) --nouvellePositionLigne;
         break;
-    case 'e':
+    case 'e'://param.mapParamChar["toucheDroiteHaut"]
         if (numLigne != 0) --nouvellePositionLigne;
         if (numCol < mat[0].size() - 1) ++nouvellePositionColonne;
         break;
-    case 'd':
+    case 'd'://param.mapParamChar["toucheDroite"]
         if (numCol < mat[0].size() - 1) ++nouvellePositionColonne;
         break;
-    case 's':
+    case 's'://param.mapParamChar["toucheSelect"]
         char inp;
         cin >> inp;
         switch(tolower(inp)){
@@ -384,7 +389,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
         afficheMatriceV3 (mat, numLigne, numCol);
         cout << "Score : " << score << endl;
        cout << "Nombre de déplacement restant : " <<  nbDeplacement << endl;
-        if (score >= 350){
+        if (score >= param.mapParamUnsigned["scoreMax"]){
             cout << "Tu as gagné !" << endl;
                 break;
         }
@@ -400,7 +405,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
         cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
         char deplacement;
         cin >> deplacement;
-        faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement);
+        faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
     }
     return 0;
 }
