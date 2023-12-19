@@ -26,6 +26,7 @@ void initParams (CMyParam & param)
     //
     param.mapParamUnsigned["nbMax"] = 5;
     param.mapParamUnsigned["scoreMax"] = 350;
+    param.mapParamUnsigned["deplacementMax"] = 15;
 }
 
 /**
@@ -343,7 +344,7 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
         afficheMatriceV2 (mat);
         cout << "Score : " << score << endl;
         cout << "Nombre de déplacement restant : " <<  nbDeplacement << endl;
-            if (score >= 100){
+        if (score >= param.mapParamUnsigned["scoreMax"]){
             cout << "Tu as gagné !" << endl;
                 break;
         }
@@ -415,7 +416,7 @@ int main() {
     chargerParametre(param, "../SAECandyCrush/build.yaml");
 
     unsigned score=0;
-    unsigned nbDeplacement=15;
+    unsigned nbDeplacement=param.mapParamUnsigned["deplacementMax"];
     unsigned mode ; // Initialisation du mode de jeu, soit avec MinGl, soit avec le terminal
     bool test = false;
     while (test == false)
