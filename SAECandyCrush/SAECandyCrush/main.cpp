@@ -56,7 +56,21 @@ void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
     }
 }
 
+<<<<<<< Updated upstream
 bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
+=======
+void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
+                                    const size_t & numColonne, const size_t & combien){
+    for (size_t i (numLigne); i < numLigne + combien; ++i){
+        for (size_t j (numColonne); j>0; --j){
+            mat [j][i] = mat[j-1][i];
+        }
+        mat [0][i] =  KAIgnorer;
+    }
+}
+
+bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
+>>>>>>> Stashed changes
     bool auMoinsUneExplosion (false);
     for (size_t numLigne (0); numLigne < mat.size(); ++numLigne){
         for (size_t numCol (0); numCol < mat[numLigne].size(); ++numCol){
@@ -87,6 +101,7 @@ void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
         mat [i][numColonne] =  KAIgnorer;
 }
 
+<<<<<<< Updated upstream
 bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
     bool auMoinsUneExplosion (false);
     for (size_t numCol (0); numCol < mat[0].size(); ++numCol) {
@@ -107,10 +122,40 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
                 cout << "une explosion vertical, une !" << endl;
                 afficheMatriceV2(mat);
                 score += 10 * (combienALaSuite - 2);
+=======
+bool detectionExplositionUneBombeVertiale (CMatrice & mat){
+    bool auMoinsUneExplosion (false);
+    for (size_t numCol (0); numCol < mat.size(); ++numCol){
+        for (size_t numLigne (0); numLigne < mat[numCol].size(); ++numLigne){
+            if (KAIgnorer == mat [numLigne][numCol]) continue;
+            size_t combienALaSuite (1);
+            while (numLigne < mat[numCol].size() &&
+                   mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
+                ++combienALaSuite;
+            //si on a au moins 3 chiffres identiques a la suite
+            if (combienALaSuite >= 3){
+                auMoinsUneExplosion = true;
+                cout << "on a une suite en position numLigne = " << numLigne
+                     << "; colonne = " << numCol
+                     << "; sur  " << combienALaSuite << " cases" << endl;
+                cout << string (20, '-') << endl << "matrice avant suppresion" << endl;
+                afficheMatriceV2(mat);
+                explositionUneBombeVerticale (mat, numLigne, numCol, combienALaSuite);
+                cout << string (20, '-') << endl << "matrice après suppresion" << endl;
+                            afficheMatriceV2(mat);
+>>>>>>> Stashed changes
             }
         }
     }
     return auMoinsUneExplosion;
+<<<<<<< Updated upstream
+=======
+}
+
+void detectionExplositionBombe (CMatrice & mat){
+    detectionExplositionUneBombeHorizontale(mat);
+    detectionExplositionUneBombeVertiale(mat);
+>>>>>>> Stashed changes
 }
 
 // remplace toutes les cases vides par des nombres aléatoires
@@ -372,8 +417,13 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     size_t numCol = 4;
     size_t numLigne = 4;
     while(true){
+<<<<<<< Updated upstream
         zeroVidSousNb(mat);
         while (detectionExplositionBombeV2(mat, score)) continue;
+=======
+        detectionExplositionUneBombeHorizontale (mat);
+        detectionExplositionUneBombeVertiale (mat);
+>>>>>>> Stashed changes
         afficheMatriceV3 (mat, numLigne, numCol);
         cout << "Score : " << score << endl;
         if (score >= 100){
@@ -427,12 +477,19 @@ int main() {
     //-------------------------------------//
 
     // ---------Exercice 4 -----------------//
+<<<<<<< Updated upstream
     //return ppalExo04(score);
     //-------------------------------------//
 
     return partiNumberCrush(score, nbDeplacement);
 
     //return partiCasaliCrush(score, nbDeplacement);
+=======
+    //return ppalExo04();
+    //-------------------------------------//
+
+    return partiNumberCrush();
+>>>>>>> Stashed changes
 
     //return 0;
 }
