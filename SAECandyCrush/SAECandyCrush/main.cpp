@@ -366,7 +366,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     CMatrice mat;
     CMyParam params;
     initParams(params);
-    chargerParametre(params, "./build.yaml");
+    chargerParametre(params, "../SAECandyCrush/build.yaml");
     initMat(mat);
     size_t numCol = 4;
     size_t numLigne = 4;
@@ -404,8 +404,8 @@ int main() {
 
     unsigned score=0;
     unsigned nbDeplacement=15;
-    unsigned mode ;
-    cout << " Sur quel mode de jeu voulez vous jouer ? :" << endl << endl << "1 : mode avec MinGl" << '\t' << "2 : mode avec les nombres" << endl ;
+    unsigned mode ; // Initialisation du mode de jeu, soit avec MinGl, soit avec le terminal
+    cout << " Sur quel mode de jeu voulez-vous jouer ? :" << endl << endl << "1 : Mode avec MinGl" << '\t' << "2 : Mode avec les nombres" << endl ;
     cin >> mode ;
     bool test = false ;
     if (mode ==1 || mode==2)
@@ -430,6 +430,6 @@ int main() {
     }
     else if (mode == 2)
     {
-    return partiCasaliCrush(score, nbDeplacement);
+    return partiCasaliCrush(score, nbDeplacement); //Lance la partie sur le terminal
     }
 }
