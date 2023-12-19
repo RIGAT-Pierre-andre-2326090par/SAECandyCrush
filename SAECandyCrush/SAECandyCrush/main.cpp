@@ -5,26 +5,58 @@
 #include <fstream>
 #include <mingl/mingl.h>
 using namespace std;
+
 /**
- * @brief initParams
+ * @brief procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml
+ * @param params
+ * @param fichier
+ */
+void chargerParametre(CMyParam & params, const string & fichier){
+    ifstream ifs (fichier);
+    if (!ifs) return;
+    string cle;
+    while (ifs>>cle){
+        if(params.mapParamUnsigned.find(cle) != params.mapParamUnsigned.end()){
+            char deuxPts;
+            ifs >> deuxPts;
+            unsigned val;
+            ifs >> val;
+            params.mapParamUnsigned[cle]=val;
+        }
+        else if (params.mapParamChar.find(cle) != params.mapParamChar.end()){
+            char deuxPts;
+            ifs >> deuxPts;
+            char val;
+            ifs >> val;
+            params.mapParamChar[cle]=val;
+        }
+        else {
+            string tmp;
+            getline(ifs, tmp);
+        }
+    }
+}
+
+/**
+ * @brief procédure initialisant les paramètres du joueur au sein du jeu
  * @param param
  */
 void initParams (CMyParam & param)
 {
-//touche du joueur
-param.mapParamChar["toucheHaut"] = 'z';
-param.mapParamChar["toucheGauche"] = 'q';
-param.mapParamChar["toucheBas"] = 'x';
-param.mapParamChar["toucheDroite"] = 'd';
+    //touche du joueur
+    param.mapParamChar["toucheHaut"] = 'z';
+    param.mapParamChar["toucheGauche"] = 'q';
+    param.mapParamChar["toucheBas"] = 'x';
+    param.mapParamChar["toucheDroite"] = 'd';
 
-//taille de la grille - on suppose que c'est un rectangle
-param.mapParamUnsigned["nbColonnes"] = 10;
-param.mapParamUnsigned["nbLignes"] = 10;
+    //taille de la grille - on suppose que c'est un rectangle
+    param.mapParamUnsigned["nbColonnes"] = 10;
+    param.mapParamUnsigned["nbLignes"] = 10;
 
 }
 
 /**
- * @brief nouvRdm
+ * @brief fonction permettant de génerer un nouveau nombre aléatoire
  * @param nb1
  * @param nb2
  * @param nbMax
@@ -38,14 +70,14 @@ unsigned nouvRdm(unsigned & nb1, unsigned & nb2, const unsigned & nbMax){
 }
 
 /**
- * @brief initMat
+ * @brief procédure générant une matrice carrée remplie de nombre aléatoire
  * @param mat
  * @param nbMax
  */
 //initialisation de la grille de jeu avec maximum 2 nombre aligné
 void initMat (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice,
-                const size_t & nbLignes = 10,
-                const size_t & nbColonnes = 10){
+             const size_t & nbLignes = 10,
+             const size_t & nbColonnes = 10){
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i){
@@ -62,14 +94,14 @@ void initMat (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMat
 }
 
 /**
- * @brief explositionUneBombeHorizontale
+ * @brief procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nombre de 3 à 5
  * @param mat
  * @param numLigne
  * @param numColonne
  * @param combien
  */
 void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
-                                     const size_t & numColonne, const size_t & combien){
+                                    const size_t & numColonne, const size_t & combien){
     for (size_t j (numColonne); j < numColonne + combien; ++j){
         for (size_t i (numLigne); i > 0; --i){
             mat [i][j] = mat[i-1][j];
@@ -79,7 +111,7 @@ void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
 }
 
 /**
- * @brief detectionExplositionUneBombeHorizontale
+ * @brief fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice
  * @param mat
  * @param score
  * @return
@@ -105,14 +137,14 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
 }
 
 /**
- * @brief explositionUneBombeVerticale
+ * @brief procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre de 3 à 5
  * @param mat
  * @param numLigne
  * @param numColonne
  * @param combien
  */
 void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
-                                   const size_t & numColonne, const size_t & combien){
+                                  const size_t & numColonne, const size_t & combien){
     for (size_t j (numLigne); j < numLigne + combien; ++j){
         for (size_t i (numLigne); i > 0; --i){
             mat [i][j] = mat[i][j-1];}
@@ -120,7 +152,7 @@ void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
 }
 
 /**
- * @brief detectionExplositionUneBombeVerticale
+ * @brief fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice
  * @param mat
  * @param score
  * @return
@@ -148,7 +180,7 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
 }
 
 /**
- * @brief remplaceVideParRdm
+ * @brief procédure remplacant toutes les cases vides par de nouveaux éléments aléatoires
  * @param mat
  * @param vid
  * @param nbMax
@@ -169,7 +201,7 @@ void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
 }
 
 /**
- * @brief detectionExplositionBombe
+ * @brief fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l'aide des deux autres fonctions de détection
  * @param mat
  * @param score
  * @param vid
@@ -177,16 +209,16 @@ void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
  * @return
  */
 bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
-                                  const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
+                               const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
 
     bool act (detectionExplositionUneBombeVerticale(mat, score) or
-              detectionExplositionUneBombeHorizontale(mat, score));
+             detectionExplositionUneBombeHorizontale(mat, score));
     if (act) remplaceVideParRdm(mat, vid, plusGrandNb);
     return act;
 }
 
 /**
- * @brief zeroVidSousNb
+ * @brief fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu'à être côte à côte d'un élément juste en dessous d'eux ou au fond de la matrice si il n'y a pas d'éléments en dessous
  * @param mat
  * @param vid
  * @return
@@ -205,7 +237,7 @@ bool zeroVidSousNb (CMatrice & mat, const unsigned & vid = KAIgnorer) {
 }
 
 /**
- * @brief faitUnMouvement
+ * @brief procédure permettant au joueur de se déplacer dans la grille et de déplacer l'élément qu'il a séléctionné
  * @param mat
  * @param deplacment
  * @param numLigne
@@ -213,7 +245,7 @@ bool zeroVidSousNb (CMatrice & mat, const unsigned & vid = KAIgnorer) {
  * @param nbDeplacement
  */
 void faitUnMouvement (CMatrice & mat, const char & deplacment, size_t & numLigne,
-                        size_t & numCol, unsigned & nbDeplacement) {
+                     size_t & numCol, unsigned & nbDeplacement) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     switch (tolower(deplacment)) {
@@ -281,46 +313,15 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, size_t & numLigne
         break;
     default:
         cout<<"Tu choisis A ou Z ou E ou Q ou D ou X ou C ou V pour déplacer le curseur ou S pour dé"<<endl;
-        break;
+            break;
     }
     numCol = nouvellePositionColonne;
     numLigne = nouvellePositionLigne;
 }
 
-/**
- * @brief chargerParametre
- * @param params
- * @param fichier
- */
-void chargerParametre(CMyParam & params, const string & fichier){
-    ifstream ifs (fichier);
-    if (!ifs) return;
-    string cle;
-    while (ifs>>cle){
-        if(params.mapParamUnsigned.find(cle) != params.mapParamUnsigned.end()){
-            char deuxPts;
-            ifs >> deuxPts;
-            unsigned val;
-            ifs >> val;
-            params.mapParamUnsigned[cle]=val;
-        }
-        else if (params.mapParamChar.find(cle) != params.mapParamChar.end()){
-            char deuxPts;
-            ifs >> deuxPts;
-            char val;
-            ifs >> val;
-            params.mapParamChar[cle]=val;
-        }
-        else {
-            string tmp;
-            getline(ifs, tmp);
-        }
-    }
-}
-
 
 /**
- * @brief partiNumberCrush
+ * @brief fonction lançant une version lite du candy crush pour les tests
  * @param score
  * @param nbDeplacement
  * @return
@@ -335,14 +336,14 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement){
             continue;
         afficheMatriceV2 (mat);
         cout << "Score : " << score << endl;
-       cout << "Nombre de déplacement restant : " <<  nbDeplacement << endl;
-        if (score >= 100){
+        cout << "Nombre de déplacement restant : " <<  nbDeplacement << endl;
+            if (score >= 100){
             cout << "Tu as gagné !" << endl;
-            break;
+                break;
         }
         if (nbDeplacement ==0){
             cout << "Tu n'as plus de déplacements, payer 5€ pour 5 déplacements supplémentaires ?(signé EA)" << endl;
-            break;
+                break;
         }
         cout << "Fait un mouvement ";
         cout << "numero de ligne : ";
@@ -358,7 +359,7 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement){
 }
 
 /**
- * @brief partiCasaliCrush
+ * @brief fonction de lancement du jeu du candy crush
  * @param score
  * @param nbDeplacement
  * @return
@@ -378,11 +379,11 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
         cout << "Score : " << score << endl;
         if (score >= 350){
             cout << "Tu as gagné !" << endl;
-            break;
+                break;
         }
         if (nbDeplacement ==0){
             cout << "Tu n'as plus de déplacements, payer 5€ pour 5 déplacements supplémentaires ?(signé EA)" << endl;
-            break;
+                break;
         }
         cout << "Fait un mouvement ";
         cout << "numero de ligne : ";
