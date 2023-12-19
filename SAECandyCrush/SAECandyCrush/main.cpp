@@ -169,9 +169,7 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
             //si on a au moins 3 chiffres identiques a la suite
             if (combienALaSuite >= 3){
                 auMoinsUneExplosion = true;
-                afficheMatriceV2(mat);
                 explositionUneBombeVerticale (mat, numLigne, numCol, combienALaSuite);
-                afficheMatriceV2(mat);
                 score += 10 * (combienALaSuite - 2);
             }
         }
