@@ -9,6 +9,7 @@ using namespace std;
 /**
  * @brief procédure initialisant les paramètres du joueur au sein du jeu
  * @param param
+ * @authors A.Casali, P-A.Rigat
  */
 void initParams (CMyParam & param)
 {
@@ -21,12 +22,17 @@ void initParams (CMyParam & param)
     //taille de la grille - on suppose que c'est un rectangle
     param.mapParamUnsigned["nbColonnes"] = 10;
     param.mapParamUnsigned["nbLignes"] = 10;
+
+    //
+    param.mapParamUnsigned["nbMax"] = 5;
+    param.mapParamUnsigned["scoreMax"] = 350;
 }
 
 /**
  * @brief procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml
  * @param params
  * @param fichier
+ * @author A.Casali
  */
 void chargerParametre(CMyParam & params, const string & fichier){
     ifstream ifs (fichier);
@@ -98,6 +104,7 @@ void initMat (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMat
  * @param numLigne
  * @param numColonne
  * @param combien
+ * @author A.Casali
  */
 void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
                                     const size_t & numColonne, const size_t & combien){
@@ -114,6 +121,7 @@ void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
  * @param mat
  * @param score
  * @return
+ * @author A.Casali
  */
 bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
     bool auMoinsUneExplosion (false);
@@ -177,12 +185,11 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
 }
 
 /**
- * @brief procédure remplacant toutes les cases vides par de nouveaux éléments aléatoires
+ * @brief remplace toutes les cases vides par des nombres aléatoires
  * @param mat
  * @param vid
  * @param nbMax
  */
-// remplace toutes les cases vides par des nombres aléatoires
 void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
                         const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
 
@@ -203,7 +210,7 @@ void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
  * @param score
  * @param vid
  * @param plusGrandNb
- * @return
+ * @return act
  */
 bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
                                const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
@@ -218,7 +225,7 @@ bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned
  * @brief fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu'à être côte à côte d'un élément juste en dessous d'eux ou au fond de la matrice si il n'y a pas d'éléments en dessous
  * @param mat
  * @param vid
- * @return
+ * @return auMoinsUnMov
  */
 bool zeroVidSousNb (CMatrice & mat, const unsigned & vid = KAIgnorer) {
     bool auMoinsUnMov = false;
@@ -321,13 +328,15 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, size_t & numLigne
  * @brief fonction lançant une version lite du candy crush pour les tests
  * @param score
  * @param nbDeplacement
- * @return
+ * @return 0
  */
-int partiNumberCrush(unsigned & score, unsigned & nbDeplacement){
+int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & param){
     CMatrice mat;
-    initMat(mat);
-    size_t numCol = 4;
-    size_t numLigne = 4;
+    initMat(mat, param.mapParamUnsigned["nbMax"],
+            param.mapParamUnsigned["nbLignes"],
+            param.mapParamUnsigned["nbColonnes"]);
+    size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
+    size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
     while(true){
         while (detectionExplositionBombe(mat, score) || zeroVidSousNb(mat))
             continue;
@@ -359,16 +368,15 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement){
  * @brief fonction de lancement du jeu du candy crush
  * @param score
  * @param nbDeplacement
- * @return
+ * @return 0
  */
-int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
+int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & param){
     CMatrice mat;
-    CMyParam params;
-    initParams(params);
-    chargerParametre(params, "../SAECandyCrush/build.yaml");
-    initMat(mat);
-    size_t numCol = 4;
-    size_t numLigne = 4;
+    initMat(mat, param.mapParamUnsigned["nbMax"],
+            param.mapParamUnsigned["nbLignes"],
+            param.mapParamUnsigned["nbColonnes"]);
+    size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
+    size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
     while(true){
         while (detectionExplositionBombe(mat, score) || zeroVidSousNb(mat))
             continue;
@@ -396,11 +404,15 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     return 0;
 }
 /**
- * @brief main
- * @return
+ * @brief main.cpp
+ * @return 0
  */
 int main() {
     srand(time(NULL));
+
+    CMyParam param;
+    initParams(param);
+    chargerParametre(param, "../SAECandyCrush/build.yaml");
 
     unsigned score=0;
     unsigned nbDeplacement=15;
@@ -414,7 +426,7 @@ int main() {
         else cout << "Ce mode de jeu n'existe pas rééssayez !" << endl;
     }
     if (mode == 1) return 0;
-    else if (mode == 2) return partiCasaliCrush(score, nbDeplacement); //Lance la partie sur le terminal
-    else if (mode == 3) return partiNumberCrush(score, nbDeplacement); //Lance une partie "classic" sur le terminal
+    else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance la partie sur le terminal
+    else if (mode == 3) return partiNumberCrush(score, nbDeplacement, param); //Lance une partie "classic" sur le terminal
     else return 0;
 }

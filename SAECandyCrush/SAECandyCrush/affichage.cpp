@@ -9,6 +9,7 @@ using namespace std;
 
 /**
  * @brief clearScreen
+ * @author A.Casali
  */
 void clearScreen () {
     cout << "\033[H\033[2J";
@@ -17,6 +18,7 @@ void clearScreen () {
 /**
  * @brief couleur
  * @param coul
+ * @author A.Casali
  */
 void couleur (const unsigned & coul) {
     cout << "\033[" << coul <<"m";

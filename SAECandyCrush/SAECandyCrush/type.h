@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include <map>
 #ifndef TYPE_H
 #define TYPE_H
 
@@ -15,7 +16,7 @@ struct position{
     std::size_t _colonne;
 };
 
-#include <map>
+
 struct CMyParam {
 std::map <std::string, char> mapParamChar;
 std::map <std::string, unsigned> mapParamUnsigned;
