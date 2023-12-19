@@ -368,7 +368,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     CMatrice mat;
     CMyParam params;
     initParams(params);
-    chargerParametre(params, "./build.yaml");
+    chargerParametre(params, "../SAECandyCrush/build.yaml");
     initMat(mat);
     size_t numCol = 4;
     size_t numLigne = 4;
