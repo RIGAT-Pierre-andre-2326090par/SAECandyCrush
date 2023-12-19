@@ -375,6 +375,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
             continue;
         afficheMatriceV3 (mat, numLigne, numCol);
         cout << "Score : " << score << endl;
+       cout << "Nombre de déplacement restant : " <<  nbDeplacement << endl;
         if (score >= 350){
             cout << "Tu as gagné !" << endl;
                 break;
