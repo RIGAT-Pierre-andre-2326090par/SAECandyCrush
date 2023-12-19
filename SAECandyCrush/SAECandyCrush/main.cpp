@@ -163,10 +163,10 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
  */
 void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
                                    const size_t & numColonne, const size_t & combien){
-    for (size_t j (numLigne); j < numLigne + combien; ++j)
-        mat [j][numColonne] = mat[j - combien][numColonne];
-    for (size_t i (0) ; i < combien ; ++i)
-        mat [i][numColonne] =  KAIgnorer;
+    for (size_t j (numLigne); j < numLigne + combien; ++j){
+        for (size_t i (numLigne); i > 0; --i){
+            mat [i][j] = mat[i][j-1];}
+        mat [j][numColonne] =  KAIgnorer;}
 }
 
 /**
@@ -184,15 +184,11 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
             while (numLigne + combienALaSuite < mat.size() &&
                    mat[numLigne][numCol] == mat[numLigne + combienALaSuite][numCol])
                 ++combienALaSuite;
-            cout << "coo : ligne " << numLigne + 1 << ", colonne " << numCol + 1 << ", "
-                 << "case : " << mat[numLigne][numCol] << ", "
-                 << "combienALaSuite : " << combienALaSuite << endl;
             //si on a au moins 3 chiffres identiques a la suite
             if (combienALaSuite >= 3){
                 auMoinsUneExplosion = true;
                 afficheMatriceV2(mat);
                 explositionUneBombeVerticale (mat, numLigne, numCol, combienALaSuite);
-                cout << "une explosion vertical, une !" << endl;
                 afficheMatriceV2(mat);
                 score += 10 * (combienALaSuite - 2);
             }
@@ -226,27 +222,14 @@ void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
  * @brief detectionExplositionBombe
  * @param mat
  * @param score
- * @return
- */
-bool detectionExplositionBombe (CMatrice & mat, unsigned & score) {
-
-    bool act (detectionExplositionUneBombeVerticale(mat, score) or
-              detectionExplositionUneBombeHorizontale(mat, score));
-    return act;
-}
-
-/**
- * @brief detectionExplositionBombeV2
- * @param mat
- * @param score
  * @param vid
  * @param plusGrandNb
  * @return
  */
-bool detectionExplositionBombeV2 (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
+bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
                                   const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
 
-    bool act (//detectionExplositionUneBombeVerticale(mat, score) or
+    bool act (detectionExplositionUneBombeVerticale(mat, score) or
               detectionExplositionUneBombeHorizontale(mat, score));
     if (act) remplaceVideParRdm(mat, vid, plusGrandNb);
     return act;
@@ -298,7 +281,7 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
         if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
         break;
     case 'c':
-        if (numLigne != mat.size() - 1) --nouvellePositionLigne;
+        if (numLigne != mat.size() - 1) -numCol-nouvellePositionLigne;
         if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
         break;
     case 'x':
@@ -432,64 +415,6 @@ void chargerParametre(CMyParam & params, const string & fichier){
     }
 }
 
-/*int ppalExo01 (){
-    CMatrice mat;
-    initMat(mat);
-    // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
-    afficheMatriceV0 (mat);
-    //detectionExplositionUneBombeHorizontale (mat);
-    return 0;
-}
-
-int ppalExo02 (unsigned & score){
-    CMatrice mat;
-    initMat(mat);
-    // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
-    afficheMatriceV1 (mat);
-    detectionExplositionUneBombeHorizontale (mat, score);
-    detectionExplositionUneBombeVerticale (mat, score);
-    afficheMatriceV1 (mat);
-    return 0;
-}
-
-int ppalExo03 (unsigned & score){
-    CMatrice mat;
-    initMat(mat);
-    // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
-    afficheMatriceV1 (mat);
-    while (detectionExplositionUneBombeHorizontale (mat, score)) {
-        mat[5][8] = 4;
-        afficheMatriceV1 (mat);
-    }
-    return 0;
-}
-
-int ppalExo04 (unsigned & score){
-    CMatrice mat;
-    initMat(mat);
-    // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
-    detectionExplositionUneBombeHorizontale (mat, score);
-    detectionExplositionUneBombeVerticale (mat, score);
-    afficheMatriceV2 (mat);
-    //condition de victoire a trouverue
-    while (true) {
-        cout << "Fait un mouvement ";
-        cout << "numero de ligne : ";
-        size_t numLigne = 1;
-        cout << numLigne;
-        cout << ", numero de colonne : ";
-        size_t numCol = 1;
-        cout << numCol;
-        cout << ", Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
-        char deplacement;
-        cin >> deplacement;
-        faitUnMouvementV2 (mat, deplacement, numLigne, numCol);
-        detectionExplositionUneBombeHorizontale (mat, score);
-        detectionExplositionUneBombeVerticale (mat, score);
-        afficheMatriceV2 (mat);
-    }
-    return 0;
-}*/
 
 /**
  * @brief partiNumberCrush
@@ -544,7 +469,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     size_t numCol = 4;
     size_t numLigne = 4;
     while(true){
-        while (detectionExplositionBombeV2(mat, score) or zeroVidSousNb(mat))
+        while (detectionExplositionBombe(mat, score) or zeroVidSousNb(mat))
             continue;
         afficheMatriceV3 (mat, numLigne, numCol);
         cout << "Score : " << score << endl;
