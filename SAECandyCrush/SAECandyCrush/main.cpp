@@ -23,56 +23,6 @@ param.mapParamUnsigned["nbLignes"] = 10;
 
 }
 
-
-//initialisation de la grille de jeu
-/*void initMat (CMatrice & mat, const size_t & nbLignes = 10,
-              const size_t & nbColonnes = 10,
-              const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
-
-    mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
-    for (size_t i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
-    for (size_t i = 0 ; i < nbLignes ; ++i){
-        for (size_t j = 0 ; j < nbColonnes ; ++j){
-            mat[i][j] = (rand()%nbMax)+1; //L'élément de la matrice sera une valeur comprise entre 1 et le nbMax
-        }
-    }
-}*/
-
-/**
- * @brief initMat
- * @param mat
- * @param nbLignes
- * @param nbColonnes
- * @param nbMax
- */
-void initMat (CMatrice & mat, const size_t & nbLignes = 8,
-              const size_t & nbColonnes = 8,
-              const unsigned & nbMax= KPlusGrandNombreDansLaMatrice){
-    mat.resize(nbLignes);
-    for (CVLigne & uneLigne : mat)
-        uneLigne.resize(nbColonnes);
-    for (size_t numLigne (0); numLigne < mat.size(); ++numLigne)
-        for (size_t numCol (0); numCol < mat[numLigne].size(); ++numCol)
-            mat [numLigne][numCol] = 1+ rand()%(nbMax);
-}
-
-/**
- * @brief initMat
- * @param mat
- * @param params
- */
-void initMat(CMatrice & mat, const CMyParam & params){
-    auto it = params.mapParamUnsigned.find("nbLignes");
-    if (it == params.mapParamUnsigned.end())
-        exit(1);
-    size_t nbLignes = it->second;
-    it = params.mapParamUnsigned.find("nbColonnes");
-    if (it == params.mapParamUnsigned.end())
-        exit(2);
-    size_t nbColonnes = it->second;
-    initMat(mat, nbLignes, nbColonnes);
-}
-
 /**
  * @brief nouvRdm
  * @param nb1
@@ -88,12 +38,12 @@ unsigned nouvRdm(unsigned & nb1, unsigned & nb2, const unsigned & nbMax){
 }
 
 /**
- * @brief initMatV2
+ * @brief initMat
  * @param mat
  * @param nbMax
  */
 //initialisation de la grille de jeu avec maximum 2 nombre aligné
-void initMatV2 (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice,
+void initMat (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice,
                 const size_t & nbLignes = 10,
                 const size_t & nbColonnes = 10){
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
@@ -260,56 +210,9 @@ bool zeroVidSousNb (CMatrice & mat, const unsigned & vid = KAIgnorer) {
  * @param deplacment
  * @param numLigne
  * @param numCol
- */
-void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & numLigne,
-                      const size_t & numCol) {
-
-    size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
-    switch (tolower(deplacment)) {
-    case 'a':
-        if (numLigne != 0) ++nouvellePositionLigne;
-        if (numCol != 0) ++nouvellePositionColonne;
-        break;
-    case 'z':
-        if (numLigne != 0) ++nouvellePositionLigne;
-        break;
-    case 'e':
-        if (numLigne != 0) ++nouvellePositionLigne;
-        if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
-        break;
-    case 'd':
-        if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
-        break;
-    case 'c':
-        if (numLigne != mat.size() - 1) -numCol-nouvellePositionLigne;
-        if (numCol != mat[0].size() - 1) --nouvellePositionColonne;
-        break;
-    case 'x':
-        if (numLigne != mat.size() - 1) --nouvellePositionLigne;
-        break;
-    case 'w':
-        if (numLigne != mat.size() - 1) --nouvellePositionLigne;
-        if (numCol != 0) ++nouvellePositionColonne;
-        break;
-    case 'q':
-        if (numCol != 0) ++nouvellePositionColonne;
-        break;
-    default:
-        cout<<"Tu choisis A ou Z ou E ou Q ou D ou X ou C ou V pour déplacer le curseur"<<endl;
-        break;
-    }
-    swap(mat[numLigne][numCol],mat[numLigne+nouvellePositionLigne][numCol+nouvellePositionColonne]);
-}
-
-/**
- * @brief faitUnMouvementV2
- * @param mat
- * @param deplacment
- * @param numLigne
- * @param numCol
  * @param nbDeplacement
  */
-void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLigne,
+void faitUnMouvement (CMatrice & mat, const char & deplacment, size_t & numLigne,
                         size_t & numCol, unsigned & nbDeplacement) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
@@ -449,7 +352,7 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement){
         cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
         char deplacement;
         cin >> deplacement;
-        faitUnMouvementV2 (mat, deplacement, numLigne, numCol, nbDeplacement);
+        faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement);
     }
     return 0;
 }
@@ -465,7 +368,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     CMyParam params;
     initParams(params);
     chargerParametre(params, "./build.yaml");
-    initMatV2(mat);
+    initMat(mat);
     size_t numCol = 4;
     size_t numLigne = 4;
     while(true){
@@ -489,7 +392,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
         cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
         char deplacement;
         cin >> deplacement;
-        faitUnMouvementV2 (mat, deplacement, numLigne, numCol, nbDeplacement);
+        faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement);
     }
     return 0;
 }
