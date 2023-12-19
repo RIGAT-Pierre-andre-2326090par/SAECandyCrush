@@ -438,9 +438,14 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
     initMat(mat,params);
     size_t numCol = 4;
     size_t numLigne = 4;
+    size_t cpt = 0 ;
     while(true){
         zeroVidSousNb(mat);
         while (detectionExplositionBombeV2(mat, score)) continue;
+        if (cpt == 0 )
+        {
+            score = 0 ;
+        }
         afficheMatriceV3 (mat, numLigne, numCol);
         cout << "Score : " << score << endl;
         if (score >= 350){
@@ -460,7 +465,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement){
         char deplacement;
         cin >> deplacement;
         faitUnMouvementV2 (mat, deplacement, numLigne, numCol, nbDeplacement);
-
+        cpt = cpt + 1 ;
     }
     return 0;
 }
