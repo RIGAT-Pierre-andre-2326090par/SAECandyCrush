@@ -1,11 +1,18 @@
+#define FPS_LIMIT 60
+
 #include <iostream>
 #include <type.h>
 #include <cst.h>
 #include <affichage.h>
+#include <MinGL2/include/mingl/mingl.h>
+#include <thread>
+#include <MinGL2/include/mingl/shape/circle.h>
+
 
 using namespace std;
 
 //Ce document cpp est un document regroupant toutes les fonctions/procédures d'affichage de la matrice, permettant de réduire le code du main
+
 
 /**
  * @brief clearScreen
@@ -24,12 +31,8 @@ void couleur (const unsigned & coul) {
     cout << "\033[" << coul <<"m";
 }
 
-/**
- * @brief afficheMatriceV0
- * @param mat
- */
 // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
-void  afficheMatriceV0 (const CMatrice & Mat) {
+/*void  afficheMatriceV0 (const CMatrice & Mat) {
     clearScreen();
     couleur (KReset);
     for (size_t i = 0 ; i < Mat.size() ; ++i)
@@ -49,12 +52,38 @@ void  afficheMatriceV0 (const CMatrice & Mat) {
         couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
         cout << endl ;
     }
+}*/
+void  afficheMatriceV0 (const CMatrice & Mat /*, MinGL & window*/) {
+    MinGL window("Des ronds", nsGraphics::Vec2D(640, 640), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
+    window.initGlut();
+    window.initGraphic();
+    while (window.isOpen()){
+        window.clearScreen();
+        for (size_t i = 0 ; i < Mat.size() ; ++i)
+        {
+            for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
+                if (Mat[i][j]==KAIgnorer){ couleur(KNoir);} // Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
+                else if (Mat[i][j]==1){
+                    window << nsShape::Circle(nsGraphics::Vec2D(100,200), 50, nsGraphics::KCyan);} // Si l'élément = 1, alors la couleur sera cyan
+                else if (Mat[i][j]==2){
+                    window << nsShape::Circle(nsGraphics::Vec2D(100,200), 50, nsGraphics::KRed);} // Si l'élément = 2, alors la couleur sera rouge
+                else if (Mat[i][j]==3){
+                    window << nsShape::Circle(nsGraphics::Vec2D(100,200), 50, nsGraphics::KGreen);} // Si l'élément = 3, alors la couleur sera verte
+                else if (Mat[i][j]==4){
+                    window << nsShape::Circle(nsGraphics::Vec2D(100,200), 50, nsGraphics::KYellow);} // Si l'élément = 4, alors la couleur sera jaune
+                else if (Mat[i][j]==5){
+                    window << nsShape::Circle(nsGraphics::Vec2D(100,200), 50, nsGraphics::KMagenta);} // Si l'élément = 5, alors la couleur sera magenta
+                else if (Mat[i][j]==6){
+                    window << nsShape::Circle(nsGraphics::Vec2D(100,200), 50, nsGraphics::KBlue);
+                } // Si l'élément = 6, alors la couleur sera bleu
+            }
+            couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
+            cout << endl ;
+        }
+        window.finishFrame();
+        window.getEventManager().clearEvents();
+    }
 }
-
-/**
- * @brief afficheMatriceV1
- * @param mat
- */
 
 // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond de couleur
 //pour signifier que la case est a KAIgnorer
@@ -88,11 +117,6 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
     }
 }
 
-/**
- * @brief afficheMatriceV2
- * @param mat
- */
-
 // affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur
 //pour signifier que la case est a KAIgnorer
 void  afficheMatriceV2 (const CMatrice & Mat) {
@@ -125,13 +149,6 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
         cout << endl ;
     }
 }
-
-/**
- * @brief afficheMatriceV1
- * @param mat
- * @param numLigne
- * @param numCol
- */
 
 // affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur
 // pour signifier que la case est a KAIgnorer et la case sélectionner a un fond de couleur différent
