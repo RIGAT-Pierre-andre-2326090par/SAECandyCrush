@@ -7,6 +7,23 @@
 using namespace std;
 
 /**
+ * @brief procédure initialisant les paramètres du joueur au sein du jeu
+ * @param param
+ */
+void initParams (CMyParam & param)
+{
+    //touche du joueur
+    param.mapParamChar["toucheHaut"] = 'z';
+    param.mapParamChar["toucheGauche"] = 'q';
+    param.mapParamChar["toucheBas"] = 'x';
+    param.mapParamChar["toucheDroite"] = 'd';
+
+    //taille de la grille - on suppose que c'est un rectangle
+    param.mapParamUnsigned["nbColonnes"] = 10;
+    param.mapParamUnsigned["nbLignes"] = 10;
+}
+
+/**
  * @brief procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml
  * @param params
  * @param fichier
@@ -35,24 +52,6 @@ void chargerParametre(CMyParam & params, const string & fichier){
             getline(ifs, tmp);
         }
     }
-}
-
-/**
- * @brief procédure initialisant les paramètres du joueur au sein du jeu
- * @param param
- */
-void initParams (CMyParam & param)
-{
-    //touche du joueur
-    param.mapParamChar["toucheHaut"] = 'z';
-    param.mapParamChar["toucheGauche"] = 'q';
-    param.mapParamChar["toucheBas"] = 'x';
-    param.mapParamChar["toucheDroite"] = 'd';
-
-    //taille de la grille - on suppose que c'est un rectangle
-    param.mapParamUnsigned["nbColonnes"] = 10;
-    param.mapParamUnsigned["nbLignes"] = 10;
-
 }
 
 /**
@@ -405,31 +404,16 @@ int main() {
     unsigned score=0;
     unsigned nbDeplacement=15;
     unsigned mode ; // Initialisation du mode de jeu, soit avec MinGl, soit avec le terminal
-    cout << " Sur quel mode de jeu voulez-vous jouer ? :" << endl << endl << "1 : Mode avec MinGl" << '\t' << "2 : Mode avec les nombres" << endl ;
-    cin >> mode ;
-    bool test = false ;
-    if (mode ==1 || mode==2)
+    bool test = false;
+    while (test == false)
     {
-        test = true ;
+        cout <<" Sur quel mode de jeu voulez vous jouer ? :" << endl << endl << "1 : mode avec MinGl" << '\t' << "2 : mode avec les nombres" << endl ;
+        cin >> mode ;
+        if (mode ==1 || mode==2 || mode==3) test = true ;
+        else cout << "Ce mode de jeu n'existe pas rééssayez !" << endl;
     }
-    if (test == false)
-    {
-        while (test == false)
-        {
-            cout << "Ce mode de jeu n'existe pas rééssayez !" << endl << endl <<" Sur quel mode de jeu voulez vous jouer ? :" << endl << endl << "1 : mode avec MinGl" << '\t' << "2 : mode avec les nombres" << endl ;
-            cin >> mode ;
-            if (mode ==1 || mode==2)
-            {
-                test = true ;
-            }
-        }
-    }
-    if (mode == 1)
-    {
-
-    }
-    else if (mode == 2)
-    {
-    return partiCasaliCrush(score, nbDeplacement); //Lance la partie sur le terminal
-    }
+    if (mode == 1) return 0;
+    else if (mode == 2) return partiCasaliCrush(score, nbDeplacement); //Lance la partie sur le terminal
+    else if (mode == 3) return partiNumberCrush(score, nbDeplacement); //Lance une partie "classic" sur le terminal
+    else return 0;
 }
