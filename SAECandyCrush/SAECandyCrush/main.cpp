@@ -405,7 +405,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
     return 0;
 }
 /**
- * @brief main.cpp
+ * @brief fonction principal permetant de choisir le mode de jeu
  * @return 0
  */
 int main() {
@@ -413,7 +413,7 @@ int main() {
 
     CMyParam param;
     initParams(param);
-    chargerParametre(param, "../SAECandyCrush/build.yaml");
+    chargerParametre(param, "./build.yaml");
 
     unsigned score=0;
     unsigned nbDeplacement=param.mapParamUnsigned["deplacementMax"];
@@ -427,7 +427,7 @@ int main() {
         else cout << "Ce mode de jeu n'existe pas rééssayez !" << endl;
     }
     if (mode == 1) return 0;
-    else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance la partie sur le terminal
+    else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance une partie sur le terminal
     else if (mode == 3) return partiNumberCrush(score, nbDeplacement, param); //Lance une partie "classic" sur le terminal
     else return 0;
 }
