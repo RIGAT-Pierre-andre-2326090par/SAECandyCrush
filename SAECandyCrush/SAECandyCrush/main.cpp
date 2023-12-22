@@ -42,7 +42,10 @@ void initParams (CMyParam & param)
  */
 void chargerParametre(CMyParam & params, const string & fichier){
     ifstream ifs (fichier);
-    if (!ifs) return;
+    if (!ifs) {
+        cout << "le fichier ne peut pas être lu...";
+        return;
+    }
     string cle;
     while (ifs>>cle){
         if(params.mapParamUnsigned.find(cle) != params.mapParamUnsigned.end()){

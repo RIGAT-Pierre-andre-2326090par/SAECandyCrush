@@ -1,0 +1,6 @@
+toucheHaut = Z
+toucheBas = X
+toucheGauche = Q
+toucheDroite = D
+nbLignes = 10
+nbColonnes = 10
