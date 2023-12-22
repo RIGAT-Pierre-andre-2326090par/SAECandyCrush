@@ -70,7 +70,7 @@ void chargerParametre(CMyParam & params, const string & fichier){
 }
 
 /**
- * @brief fonction permettant de génerer un nouveau nombre aléatoire
+ * @brief fonction permettant de génerer un nouveau nombre aléatoire différent de nb1 et nb2
  * @param nb1
  * @param nb2
  * @param nbMax
