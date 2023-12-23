@@ -4,6 +4,7 @@
 #include <affichage.h>
 #include <fstream>
 #include <mingl/mingl.h>
+
 using namespace std;
 
 /**
@@ -35,38 +36,53 @@ void initParams (CMyParam & param)
 }
 
 /**
+ * @brief procédure permettande d'enlever le caractère ':' d'une chaine de caractère passer en paramètre
+ * @param str: chaine de caractère à traiter
+ * @return la chaine de caractère sans le caractère ':'
+ * @author P-A.Rigat
+ */
+string strSansDeuxPts (const string & str) {
+    string tmp;
+    for (unsigned i = 0 ; i < str.size() ; ++i)
+        if (str[i] != ':') tmp.push_back(str[i]);
+    return tmp;
+}
+
+/**
  * @brief procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml
  * @param params
  * @param fichier
- * @author A.Casali
+ * @return nouveau paramètre
+ * @authors A.Casali, P-A.Rigat
  */
-void chargerParametre(CMyParam & params, const string & fichier){
+CMyParam chargerParametre(CMyParam & params, const string & fichier){
     ifstream ifs (fichier);
     if (!ifs) {
         cout << "le fichier ne peut pas être lu...";
-        return;
+        return params;
     }
     string cle;
     while (ifs>>cle){
-        if(params.mapParamUnsigned.find(cle) != params.mapParamUnsigned.end()){
-            char deuxPts;
-            ifs >> deuxPts;
+        cle = strSansDeuxPts(cle);
+        if (params.mapParamUnsigned.find(cle) != params.mapParamUnsigned.end()){
             unsigned val;
             ifs >> val;
             params.mapParamUnsigned[cle]=val;
+            //cout << cle << " : " << params.mapParamUnsigned[cle] << endl;
         }
         else if (params.mapParamChar.find(cle) != params.mapParamChar.end()){
-            char deuxPts;
-            ifs >> deuxPts;
             char val;
             ifs >> val;
             params.mapParamChar[cle]=val;
+            //cout << cle << " : " << params.mapParamChar[cle] << endl;
         }
         else {
             string tmp;
             getline(ifs, tmp);
+            //cout << cle << " : " << tmp << endl;
         }
     }
+    return params;
 }
 
 /**
@@ -404,6 +420,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
     }
     return 0;
 }
+
 /**
  * @brief fonction principal permetant de choisir le mode de jeu
  * @return 0
@@ -413,7 +430,7 @@ int main() {
 
     CMyParam param;
     initParams(param);
-    chargerParametre(param, "./build.yaml"); //"../SAECandyCrush/build.yaml"
+    param = chargerParametre(param, "../SAECandyCrush/build.yaml");
 
     unsigned score=0;
     unsigned nbDeplacement=param.mapParamUnsigned["deplacementMax"];

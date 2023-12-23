@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_e37bb96bd9fccb878c1d62062fc8f7a5.html">SAECandyCrush</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Fonctions</a>  </div>
@@ -107,7 +123,7 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a84f6ce81485253e1ddad16d51f965f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml  <a href="main_8cpp.html#a84f6ce81485253e1ddad16d51f965f62">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a84f6ce81485253e1ddad16d51f965f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ee2be2606da0dfc9951f36b245a88b8"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8">nouvRdm</a> (unsigned &amp;nb1, unsigned &amp;nb2, const unsigned &amp;nbMax)</td></tr>
-<tr class="memdesc:a3ee2be2606da0dfc9951f36b245a88b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction permettant de génerer un nouveau nombre aléatoire  <a href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a3ee2be2606da0dfc9951f36b245a88b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction permettant de génerer un nouveau nombre aléatoire différent de nb1 et nb2  <a href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a3ee2be2606da0dfc9951f36b245a88b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97e00921cf09bf25414e22954db96866"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866">initMat</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const unsigned &amp;nbMax=<a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a>, const size_t &amp;nbLignes=10, const size_t &amp;nbColonnes=10)</td></tr>
 <tr class="memdesc:a97e00921cf09bf25414e22954db96866"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure générant une matrice carrée remplie de nombre aléatoire  <a href="main_8cpp.html#a97e00921cf09bf25414e22954db96866">Plus de détails...</a><br /></td></tr>
@@ -133,17 +149,17 @@ Fonctions</h2></td></tr>
 <tr class="memitem:ae3c472825f8e1704d249cae90b350d54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54">zeroVidSousNb</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const unsigned &amp;vid=<a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a>)</td></tr>
 <tr class="memdesc:ae3c472825f8e1704d249cae90b350d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu'à être côte à côte d'un élément juste en dessous d'eux ou au fond de la matrice si il n'y a pas d'éléments en dessous  <a href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae3c472825f8e1704d249cae90b350d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9141e218cd2f57bcc0b48989c6a21d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab9141e218cd2f57bcc0b48989c6a21d0">faitUnMouvement</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const char &amp;deplacment, size_t &amp;numLigne, size_t &amp;numCol, unsigned &amp;nbDeplacement)</td></tr>
-<tr class="memdesc:ab9141e218cd2f57bcc0b48989c6a21d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure permettant au joueur de se déplacer dans la grille et de déplacer l'élément qu'il a séléctionné  <a href="main_8cpp.html#ab9141e218cd2f57bcc0b48989c6a21d0">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ab9141e218cd2f57bcc0b48989c6a21d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f1a4bb0a238f073132882c1ed6cfcf4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4">partiNumberCrush</a> (unsigned &amp;score, unsigned &amp;nbDeplacement)</td></tr>
-<tr class="memdesc:a6f1a4bb0a238f073132882c1ed6cfcf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction lançant une version lite du candy crush pour les tests  <a href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a6f1a4bb0a238f073132882c1ed6cfcf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cdc3675b05b04dab1542bd73570bd8a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a">partiCasaliCrush</a> (unsigned &amp;score, unsigned &amp;nbDeplacement)</td></tr>
-<tr class="memdesc:a1cdc3675b05b04dab1542bd73570bd8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction de lancement du jeu du candy crush  <a href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a1cdc3675b05b04dab1542bd73570bd8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57ec81d127d4e7a2924c033bf3ddc617"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617">faitUnMouvement</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const char &amp;deplacment, size_t &amp;numLigne, size_t &amp;numCol, unsigned &amp;nbDeplacement, <a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;param)</td></tr>
+<tr class="memdesc:a57ec81d127d4e7a2924c033bf3ddc617"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure permettant au joueur de se déplacer dans la grille et de déplacer l'élément qu'il a séléctionné  <a href="main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a57ec81d127d4e7a2924c033bf3ddc617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab791841bb941a1f2a2db2024320d7e88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88">partiNumberCrush</a> (unsigned &amp;score, unsigned &amp;nbDeplacement, <a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;param)</td></tr>
+<tr class="memdesc:ab791841bb941a1f2a2db2024320d7e88"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction lançant une version lite du candy crush pour les tests  <a href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab791841bb941a1f2a2db2024320d7e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61b26d531ca03853cb6daa7fa9982d18"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18">partiCasaliCrush</a> (unsigned &amp;score, unsigned &amp;nbDeplacement, <a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;param)</td></tr>
+<tr class="memdesc:a61b26d531ca03853cb6daa7fa9982d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction de lancement du jeu du candy crush  <a href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a61b26d531ca03853cb6daa7fa9982d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">main  <a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction principal permetant de choisir le mode de jeu  <a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des fonctions</h2>
@@ -181,16 +197,16 @@ Fonctions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00031">31</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00044">44</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a84f6ce81485253e1ddad16d51f965f62_icgraph.png" border="0" usemap="#amain_8cpp_a84f6ce81485253e1ddad16d51f965f62_icgraph" alt=""/></div>
 <map name="amain_8cpp_a84f6ce81485253e1ddad16d51f965f62_icgraph" id="amain_8cpp_a84f6ce81485253e1ddad16d51f965f62_icgraph">
-<area shape="rect" title="procédure permettant de charger les paramètres de jeu d&#39;un joueur depuis un fichier yaml" alt="" coords="285,5,424,32"/>
-<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="108,5,237,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="5,5,60,32"/>
+<area shape="rect" title="procédure permettant de charger les paramètres de jeu d&#39;un joueur depuis un fichier yaml" alt="" coords="108,5,247,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="fonction principal permetant de choisir le mode de jeu" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -246,7 +262,7 @@ Voici le graphe des appelants de cette fonction :</div>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>act </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00207">207</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00225">225</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -258,7 +274,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <area shape="rect" href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="287,137,449,163"/>
 <area shape="rect" href="main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3" title="procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nomb..." alt="" coords="529,13,771,39"/>
 <area shape="rect" href="main_8cpp.html#a8bd751d220569d601afc2200b0378423" title="procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre..." alt="" coords="539,78,761,105"/>
-<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="608,137,692,163"/>
+<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire différent de nb1 et nb2" alt="" coords="608,137,692,163"/>
 </map>
 </div>
 <div class="dynheader">
@@ -267,9 +283,9 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="center"><img src="main_8cpp_afce4f4bfde0cf1054c79ad05ac81abec_icgraph.png" border="0" usemap="#amain_8cpp_afce4f4bfde0cf1054c79ad05ac81abec_icgraph" alt=""/></div>
 <map name="amain_8cpp_afce4f4bfde0cf1054c79ad05ac81abec_icgraph" id="amain_8cpp_afce4f4bfde0cf1054c79ad05ac81abec_icgraph">
 <area shape="rect" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="297,31,499,57"/>
-<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="114,5,243,32"/>
-<area shape="rect" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,56,249,83"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="5,31,60,57"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="114,5,243,32"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,56,249,83"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="fonction principal permetant de choisir le mode de jeu" alt="" coords="5,31,60,57"/>
 </map>
 </div>
 
@@ -310,8 +326,9 @@ Voici le graphe des appelants de cette fonction :</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00118">118</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00136">136</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -328,8 +345,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <map name="amain_8cpp_a455e37b8945ae908caeee9bd5744c9b5_icgraph" id="amain_8cpp_a455e37b8945ae908caeee9bd5744c9b5_icgraph">
 <area shape="rect" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="444,23,671,65"/>
 <area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,31,396,57"/>
-<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
-<area shape="rect" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,56,147,83"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,56,147,83"/>
 </map>
 </div>
 
@@ -371,7 +388,7 @@ Voici le graphe des appelants de cette fonction :</div>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00159">159</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00177">177</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -388,8 +405,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <map name="amain_8cpp_a48f37957843802008c092eaff0851068_icgraph" id="amain_8cpp_a48f37957843802008c092eaff0851068_icgraph">
 <area shape="rect" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="444,23,671,65"/>
 <area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,31,396,57"/>
-<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
-<area shape="rect" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,56,147,83"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,56,147,83"/>
 </map>
 </div>
 
@@ -443,8 +460,9 @@ Voici le graphe des appelants de cette fonction :</div>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00102">102</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00119">119</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -507,7 +525,7 @@ Voici le graphe des appelants de cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00145">145</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00163">163</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -521,8 +539,8 @@ Voici le graphe des appelants de cette fonction :</div>
 
 </div>
 </div>
-<a id="ab9141e218cd2f57bcc0b48989c6a21d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9141e218cd2f57bcc0b48989c6a21d0">&#9670;&nbsp;</a></span>faitUnMouvement()</h2>
+<a id="a57ec81d127d4e7a2924c033bf3ddc617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57ec81d127d4e7a2924c033bf3ddc617">&#9670;&nbsp;</a></span>faitUnMouvement()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -555,7 +573,13 @@ Voici le graphe des appelants de cette fonction :</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned &amp;&#160;</td>
-          <td class="paramname"><em>nbDeplacement</em>&#160;</td>
+          <td class="paramname"><em>nbDeplacement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;&#160;</td>
+          <td class="paramname"><em>param</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -577,16 +601,16 @@ Voici le graphe des appelants de cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00243">243</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00261">261</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="main_8cpp_ab9141e218cd2f57bcc0b48989c6a21d0_icgraph.png" border="0" usemap="#amain_8cpp_ab9141e218cd2f57bcc0b48989c6a21d0_icgraph" alt=""/></div>
-<map name="amain_8cpp_ab9141e218cd2f57bcc0b48989c6a21d0_icgraph" id="amain_8cpp_ab9141e218cd2f57bcc0b48989c6a21d0_icgraph">
+<div class="center"><img src="main_8cpp_a57ec81d127d4e7a2924c033bf3ddc617_icgraph.png" border="0" usemap="#amain_8cpp_a57ec81d127d4e7a2924c033bf3ddc617_icgraph" alt=""/></div>
+<map name="amain_8cpp_a57ec81d127d4e7a2924c033bf3ddc617_icgraph" id="amain_8cpp_a57ec81d127d4e7a2924c033bf3ddc617_icgraph">
 <area shape="rect" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="297,31,437,57"/>
-<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="114,5,243,32"/>
-<area shape="rect" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,56,249,83"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="5,31,60,57"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="114,5,243,32"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,56,249,83"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="fonction principal permetant de choisir le mode de jeu" alt="" coords="5,31,60,57"/>
 </map>
 </div>
 
@@ -639,14 +663,14 @@ Voici le graphe des appelants de cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00077">77</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00093">93</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a97e00921cf09bf25414e22954db96866_cgraph.png" border="0" usemap="#amain_8cpp_a97e00921cf09bf25414e22954db96866_cgraph" alt=""/></div>
 <map name="amain_8cpp_a97e00921cf09bf25414e22954db96866_cgraph" id="amain_8cpp_a97e00921cf09bf25414e22954db96866_cgraph">
 <area shape="rect" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="5,5,73,32"/>
-<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="121,5,205,32"/>
+<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire différent de nb1 et nb2" alt="" coords="121,5,205,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -655,9 +679,9 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="center"><img src="main_8cpp_a97e00921cf09bf25414e22954db96866_icgraph.png" border="0" usemap="#amain_8cpp_a97e00921cf09bf25414e22954db96866_icgraph" alt=""/></div>
 <map name="amain_8cpp_a97e00921cf09bf25414e22954db96866_icgraph" id="amain_8cpp_a97e00921cf09bf25414e22954db96866_icgraph">
 <area shape="rect" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="297,31,365,57"/>
-<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="114,5,243,32"/>
-<area shape="rect" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,56,249,83"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="5,31,60,57"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="114,5,243,32"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,56,249,83"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="fonction principal permetant de choisir le mode de jeu" alt="" coords="5,31,60,57"/>
 </map>
 </div>
 
@@ -686,16 +710,16 @@ Voici le graphe des appelants de cette fonction :</div>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Auteurs</dt><dd>A.Casali, P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00013">13</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00015">15</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a04499e810295a8506131a7b912017990_icgraph.png" border="0" usemap="#amain_8cpp_a04499e810295a8506131a7b912017990_icgraph" alt=""/></div>
 <map name="amain_8cpp_a04499e810295a8506131a7b912017990_icgraph" id="amain_8cpp_a04499e810295a8506131a7b912017990_icgraph">
-<area shape="rect" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="285,5,376,32"/>
-<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="108,5,237,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="5,5,60,32"/>
+<area shape="rect" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="108,5,199,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="fonction principal permetant de choisir le mode de jeu" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -716,26 +740,26 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p>main </p>
+<p>fonction principal permetant de choisir le mode de jeu </p>
 <dl class="section return"><dt>Renvoie</dt><dd>0 </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00401">401</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00412">412</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
 <map name="amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
-<area shape="rect" title="main" alt="" coords="5,208,60,235"/>
-<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="114,171,243,197"/>
-<area shape="rect" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,233,249,260"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="afficheMatriceV1" alt="" coords="332,5,464,32"/>
-<area shape="rect" href="main_8cpp.html#a84f6ce81485253e1ddad16d51f965f62" title="procédure permettant de charger les paramètres de jeu d&#39;un joueur depuis un fichier yaml" alt="" coords="329,56,467,83"/>
-<area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="297,259,499,285"/>
-<area shape="rect" href="main_8cpp.html#ab9141e218cd2f57bcc0b48989c6a21d0" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="328,309,468,336"/>
+<area shape="rect" title="fonction principal permetant de choisir le mode de jeu" alt="" coords="5,81,60,108"/>
+<area shape="rect" href="main_8cpp.html#a84f6ce81485253e1ddad16d51f965f62" title="procédure permettant de charger les paramètres de jeu d&#39;un joueur depuis un fichier yaml" alt="" coords="109,5,248,32"/>
+<area shape="rect" href="main_8cpp.html#a04499e810295a8506131a7b912017990" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="133,56,224,83"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="114,107,243,133"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,157,249,184"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title=" " alt="" coords="332,5,464,32"/>
+<area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="297,56,499,83"/>
+<area shape="rect" href="main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="328,107,468,133"/>
 <area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="364,157,432,184"/>
-<area shape="rect" href="main_8cpp.html#a04499e810295a8506131a7b912017990" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="353,107,443,133"/>
 <area shape="rect" href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="338,208,458,235"/>
-<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="afficheMatriceV2" alt="" coords="332,360,464,387"/>
+<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title=" " alt="" coords="332,259,464,285"/>
 </map>
 </div>
 
@@ -773,7 +797,7 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p>fonction permettant de génerer un nouveau nombre aléatoire </p>
+<p>fonction permettant de génerer un nouveau nombre aléatoire différent de nb1 et nb2 </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">nb1</td><td></td></tr>
@@ -783,25 +807,25 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00064">64</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00080">80</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph.png" border="0" usemap="#amain_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph" alt=""/></div>
 <map name="amain_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph" id="amain_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph">
-<area shape="rect" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="655,31,739,57"/>
+<area shape="rect" title="fonction permettant de génerer un nouveau nombre aléatoire différent de nb1 et nb2" alt="" coords="655,31,739,57"/>
 <area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="261,5,329,32"/>
 <area shape="rect" href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="444,56,607,83"/>
-<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
-<area shape="rect" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,56,147,83"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,56,147,83"/>
 <area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,56,396,83"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a1cdc3675b05b04dab1542bd73570bd8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cdc3675b05b04dab1542bd73570bd8a">&#9670;&nbsp;</a></span>partiCasaliCrush()</h2>
+<a id="a61b26d531ca03853cb6daa7fa9982d18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61b26d531ca03853cb6daa7fa9982d18">&#9670;&nbsp;</a></span>partiCasaliCrush()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -816,7 +840,13 @@ Voici le graphe des appelants de cette fonction :</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned &amp;&#160;</td>
-          <td class="paramname"><em>nbDeplacement</em>&#160;</td>
+          <td class="paramname"><em>nbDeplacement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;&#160;</td>
+          <td class="paramname"><em>param</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -836,20 +866,18 @@ Voici le graphe des appelants de cette fonction :</div>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>0 </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00363">363</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00375">375</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="main_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_cgraph.png" border="0" usemap="#amain_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_cgraph" alt=""/></div>
-<map name="amain_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_cgraph" id="amain_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_cgraph">
+<div class="center"><img src="main_8cpp_a61b26d531ca03853cb6daa7fa9982d18_cgraph.png" border="0" usemap="#amain_8cpp_a61b26d531ca03853cb6daa7fa9982d18_cgraph" alt=""/></div>
+<map name="amain_8cpp_a61b26d531ca03853cb6daa7fa9982d18_cgraph" id="amain_8cpp_a61b26d531ca03853cb6daa7fa9982d18_cgraph">
 <area shape="rect" title="fonction de lancement du jeu du candy crush" alt="" coords="5,687,135,713"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="afficheMatriceV1" alt="" coords="217,284,349,311"/>
-<area shape="rect" href="main_8cpp.html#a84f6ce81485253e1ddad16d51f965f62" title="procédure permettant de charger les paramètres de jeu d&#39;un joueur depuis un fichier yaml" alt="" coords="214,585,353,612"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title=" " alt="" coords="217,284,349,311"/>
 <area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="183,636,384,663"/>
-<area shape="rect" href="main_8cpp.html#ab9141e218cd2f57bcc0b48989c6a21d0" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="213,687,353,713"/>
+<area shape="rect" href="main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="213,687,353,713"/>
 <area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="249,737,317,764"/>
-<area shape="rect" href="main_8cpp.html#a04499e810295a8506131a7b912017990" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="238,788,329,815"/>
-<area shape="rect" href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="223,839,343,865"/>
+<area shape="rect" href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="223,788,343,815"/>
 <area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="496,5,595,32"/>
 <area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="510,56,581,83"/>
 <area shape="rect" href="cst_8h.html#af81c8f45a494c8b75bb2623c7a57737f" title=" " alt="" coords="492,107,599,133"/>
@@ -864,23 +892,23 @@ Voici le graphe d'appel pour cette fonction :</div>
 <area shape="rect" href="main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="432,563,659,605"/>
 <area shape="rect" href="main_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="432,629,659,670"/>
 <area shape="rect" href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="464,695,627,721"/>
-<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="707,720,791,747"/>
+<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire différent de nb1 et nb2" alt="" coords="707,720,791,747"/>
 </map>
 </div>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="main_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_icgraph.png" border="0" usemap="#amain_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_icgraph" alt=""/></div>
-<map name="amain_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_icgraph" id="amain_8cpp_a1cdc3675b05b04dab1542bd73570bd8a_icgraph">
+<div class="center"><img src="main_8cpp_a61b26d531ca03853cb6daa7fa9982d18_icgraph.png" border="0" usemap="#amain_8cpp_a61b26d531ca03853cb6daa7fa9982d18_icgraph" alt=""/></div>
+<map name="amain_8cpp_a61b26d531ca03853cb6daa7fa9982d18_icgraph" id="amain_8cpp_a61b26d531ca03853cb6daa7fa9982d18_icgraph">
 <area shape="rect" title="fonction de lancement du jeu du candy crush" alt="" coords="108,5,237,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="5,5,60,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="fonction principal permetant de choisir le mode de jeu" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a6f1a4bb0a238f073132882c1ed6cfcf4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f1a4bb0a238f073132882c1ed6cfcf4">&#9670;&nbsp;</a></span>partiNumberCrush()</h2>
+<a id="ab791841bb941a1f2a2db2024320d7e88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab791841bb941a1f2a2db2024320d7e88">&#9670;&nbsp;</a></span>partiNumberCrush()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -895,7 +923,13 @@ Voici le graphe des appelants de cette fonction :</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned &amp;&#160;</td>
-          <td class="paramname"><em>nbDeplacement</em>&#160;</td>
+          <td class="paramname"><em>nbDeplacement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;&#160;</td>
+          <td class="paramname"><em>param</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -915,16 +949,16 @@ Voici le graphe des appelants de cette fonction :</div>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>0 </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00325">325</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00335">335</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="main_8cpp_a6f1a4bb0a238f073132882c1ed6cfcf4_cgraph.png" border="0" usemap="#amain_8cpp_a6f1a4bb0a238f073132882c1ed6cfcf4_cgraph" alt=""/></div>
-<map name="amain_8cpp_a6f1a4bb0a238f073132882c1ed6cfcf4_cgraph" id="amain_8cpp_a6f1a4bb0a238f073132882c1ed6cfcf4_cgraph">
+<div class="center"><img src="main_8cpp_ab791841bb941a1f2a2db2024320d7e88_cgraph.png" border="0" usemap="#amain_8cpp_ab791841bb941a1f2a2db2024320d7e88_cgraph" alt=""/></div>
+<map name="amain_8cpp_ab791841bb941a1f2a2db2024320d7e88_cgraph" id="amain_8cpp_ab791841bb941a1f2a2db2024320d7e88_cgraph">
 <area shape="rect" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,636,147,663"/>
-<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="afficheMatriceV2" alt="" coords="229,259,361,285"/>
+<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title=" " alt="" coords="229,259,361,285"/>
 <area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,585,396,612"/>
-<area shape="rect" href="main_8cpp.html#ab9141e218cd2f57bcc0b48989c6a21d0" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="225,636,365,663"/>
+<area shape="rect" href="main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="225,636,365,663"/>
 <area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="261,687,329,713"/>
 <area shape="rect" href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="235,737,355,764"/>
 <area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="508,5,607,32"/>
@@ -940,16 +974,16 @@ Voici le graphe d'appel pour cette fonction :</div>
 <area shape="rect" href="main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="444,513,671,554"/>
 <area shape="rect" href="main_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="444,578,671,619"/>
 <area shape="rect" href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="476,644,639,671"/>
-<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="719,669,803,696"/>
+<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire différent de nb1 et nb2" alt="" coords="719,669,803,696"/>
 </map>
 </div>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="main_8cpp_a6f1a4bb0a238f073132882c1ed6cfcf4_icgraph.png" border="0" usemap="#amain_8cpp_a6f1a4bb0a238f073132882c1ed6cfcf4_icgraph" alt=""/></div>
-<map name="amain_8cpp_a6f1a4bb0a238f073132882c1ed6cfcf4_icgraph" id="amain_8cpp_a6f1a4bb0a238f073132882c1ed6cfcf4_icgraph">
+<div class="center"><img src="main_8cpp_ab791841bb941a1f2a2db2024320d7e88_icgraph.png" border="0" usemap="#amain_8cpp_ab791841bb941a1f2a2db2024320d7e88_icgraph" alt=""/></div>
+<map name="amain_8cpp_ab791841bb941a1f2a2db2024320d7e88_icgraph" id="amain_8cpp_ab791841bb941a1f2a2db2024320d7e88_icgraph">
 <area shape="rect" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,5,249,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="5,5,60,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="fonction principal permetant de choisir le mode de jeu" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -997,14 +1031,14 @@ Voici le graphe des appelants de cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00185">185</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00203">203</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph.png" border="0" usemap="#amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph" alt=""/></div>
 <map name="amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph" id="amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph">
 <area shape="rect" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="5,5,168,32"/>
-<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="216,5,300,32"/>
+<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire différent de nb1 et nb2" alt="" coords="216,5,300,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1014,8 +1048,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <map name="amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_icgraph" id="amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_icgraph">
 <area shape="rect" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="444,31,607,57"/>
 <area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,31,396,57"/>
-<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
-<area shape="rect" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,56,147,83"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,56,147,83"/>
 </map>
 </div>
 
@@ -1057,25 +1091,29 @@ Voici le graphe des appelants de cette fonction :</div>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>auMoinsUnMov </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00222">222</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00240">240</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph.png" border="0" usemap="#amain_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph" alt=""/></div>
 <map name="amain_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph" id="amain_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph">
 <area shape="rect" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="297,31,417,57"/>
-<area shape="rect" href="main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="114,5,243,32"/>
-<area shape="rect" href="main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,56,249,83"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="5,31,60,57"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="114,5,243,32"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,56,249,83"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="fonction principal permetant de choisir le mode de jeu" alt="" coords="5,31,60,57"/>
 </map>
 </div>
 
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e37bb96bd9fccb878c1d62062fc8f7a5.html">SAECandyCrush</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>
