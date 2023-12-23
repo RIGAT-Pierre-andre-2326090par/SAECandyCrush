@@ -1,12 +1,12 @@
-toucheHaut: Z
-toucheBas: X
-toucheGauche: Q
-toucheDroite: D
-toucheHautGauche: A
-toucheGaucheBas: W
-toucheBasDroite: C
-toucheDroiteHaut: E
-toucheSelect: S
+toucheHaut: z
+toucheBas: x
+toucheGauche: q
+toucheDroite: d
+toucheHautGauche: a
+toucheGaucheBas: w
+toucheBasDroite: c
+toucheDroiteHaut: e
+toucheSelect: s
 
 nbLignes: 10
 nbColonnes: 10

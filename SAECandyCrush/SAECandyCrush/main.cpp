@@ -105,7 +105,7 @@ unsigned nouvRdm(unsigned & nb1, unsigned & nb2, const unsigned & nbMax){
  * @param nbMax
  */
 //initialisation de la grille de jeu avec maximum 2 nombre aligné
-void initMat (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice,
+void initMat (CMatrice & mat, const unsigned & nbMax,
              const size_t & nbLignes = 10,
              const size_t & nbColonnes = 10){
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
@@ -215,8 +215,8 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
  * @param vid
  * @param nbMax
  */
-void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
-                        const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+void remplaceVideParRdm(CMatrice & mat, const unsigned & nbMax,
+                        const unsigned & vid = KAIgnorer){
 
     for (unsigned i = 0 ; i < mat.size() ; ++i){
         for (unsigned j = 0 ; j < mat[i].size() ; ++j){ // pour chaque case de chaque ligne de la matrice
@@ -237,8 +237,8 @@ void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
  * @param plusGrandNb
  * @return act
  */
-bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
-                               const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
+bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned & vid,
+                               const unsigned & plusGrandNb){
 
     bool act (detectionExplositionUneBombeVerticale(mat, score) or
              detectionExplositionUneBombeHorizontale(mat, score));
@@ -355,7 +355,7 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
     size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
     size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
     while(true){
-        while (detectionExplositionBombe(mat, score) || zeroVidSousNb(mat))
+        while (detectionExplositionBombe(mat, score, KAIgnorer, param.mapParamUnsigned["nbMax"]) || zeroVidSousNb(mat))
             continue;
         afficheMatriceV2 (mat);
         cout << "Score : " << score << endl;
@@ -395,7 +395,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
     size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
     size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
     while(true){
-        while (detectionExplositionBombe(mat, score) || zeroVidSousNb(mat))
+        while (detectionExplositionBombe(mat, score, KAIgnorer, param.mapParamUnsigned["nbMax"]) || zeroVidSousNb(mat))
             continue;
         afficheMatriceV3 (mat, numLigne, numCol);
         cout << "Score : " << score << endl;
