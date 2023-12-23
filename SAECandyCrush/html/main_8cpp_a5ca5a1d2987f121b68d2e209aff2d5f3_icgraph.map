@@ -1,5 +1,5 @@
 <map id="explositionUneBombeHorizontale" name="explositionUneBombeHorizontale">
 <area shape="rect" id="node1" title="procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nomb..." alt="" coords="529,13,771,39"/>
 <area shape="rect" id="node2" href="$main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="255,5,481,47"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,13,207,39"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a1192cca94b99d93523fab5f646f2265c" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,13,207,39"/>
 </map>

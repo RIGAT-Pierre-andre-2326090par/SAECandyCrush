@@ -13,7 +13,5 @@ var cst_8h =
     [ "KReset", "cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5", null ],
     [ "KRouge", "cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628", null ],
     [ "KVert", "cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5", null ],
-    [ "KAIgnorer", "cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a", null ],
-    [ "KPlusGrandNombreDansLaMatrice", "cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49", null ],
-    [ "KPlusGrandNombreDansLaMatriceCasaliCrush", "cst_8h.html#a331799f02bdb4f23de0cbc11a7f81fb4", null ]
+    [ "KAIgnorer", "cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a", null ]
 ];

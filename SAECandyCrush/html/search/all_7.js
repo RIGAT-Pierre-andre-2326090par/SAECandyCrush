@@ -11,9 +11,7 @@ var searchData=
   ['kjaune_35',['KJaune',['../cst_8h.html#a1b010b9694f3acc35b02b0a667d99094',1,'cst.h']]],
   ['kmagenta_36',['KMagenta',['../cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a',1,'cst.h']]],
   ['knoir_37',['KNoir',['../cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6',1,'cst.h']]],
-  ['kplusgrandnombredanslamatrice_38',['KPlusGrandNombreDansLaMatrice',['../cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49',1,'cst.h']]],
-  ['kplusgrandnombredanslamatricecasalicrush_39',['KPlusGrandNombreDansLaMatriceCasaliCrush',['../cst_8h.html#a331799f02bdb4f23de0cbc11a7f81fb4',1,'cst.h']]],
-  ['kreset_40',['KReset',['../cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5',1,'cst.h']]],
-  ['krouge_41',['KRouge',['../cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628',1,'cst.h']]],
-  ['kvert_42',['KVert',['../cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5',1,'cst.h']]]
+  ['kreset_38',['KReset',['../cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5',1,'cst.h']]],
+  ['krouge_39',['KRouge',['../cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628',1,'cst.h']]],
+  ['kvert_40',['KVert',['../cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5',1,'cst.h']]]
 ];

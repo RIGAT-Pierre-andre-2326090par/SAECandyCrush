@@ -1,0 +1,4 @@
+<map id="chargerParametre" name="chargerParametre">
+<area shape="rect" id="node1" title="procédure permettant de charger les paramètres de jeu d&#39;un joueur depuis un fichier yaml" alt="" coords="5,5,144,32"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a295bf4a9119ccb6bfe2aac2f0a463563" title="procédure permettande d&#39;enlever le caractère &#39;:&#39; d&#39;une chaine de caractère passer en paramètre" alt="" coords="192,5,316,32"/>
+</map>

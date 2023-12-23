@@ -1,9 +1,9 @@
 <map id="partiCasaliCrush" name="partiCasaliCrush">
 <area shape="rect" id="node1" title="fonction de lancement du jeu du candy crush" alt="" coords="5,687,135,713"/>
 <area shape="rect" id="node2" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title=" " alt="" coords="217,284,349,311"/>
-<area shape="rect" id="node14" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="183,636,384,663"/>
+<area shape="rect" id="node14" href="$main_8cpp.html#a1192cca94b99d93523fab5f646f2265c" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="183,636,384,663"/>
 <area shape="rect" id="node19" href="$main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="213,687,353,713"/>
-<area shape="rect" id="node20" href="$main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="249,737,317,764"/>
+<area shape="rect" id="node20" href="$main_8cpp.html#a3810749d36ceb1fbab30d17cbab9fa88" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="249,737,317,764"/>
 <area shape="rect" id="node21" href="$main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="223,788,343,815"/>
 <area shape="rect" id="node3" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="496,5,595,32"/>
 <area shape="rect" id="node4" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="510,56,581,83"/>
@@ -18,6 +18,6 @@
 <area shape="rect" id="node13" href="$cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="517,512,574,539"/>
 <area shape="rect" id="node15" href="$main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="432,563,659,605"/>
 <area shape="rect" id="node16" href="$main_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="432,629,659,670"/>
-<area shape="rect" id="node17" href="$main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="464,695,627,721"/>
+<area shape="rect" id="node17" href="$main_8cpp.html#a47e3e8d0a790d8a7ea831acd89f77921" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="464,695,627,721"/>
 <area shape="rect" id="node18" href="$main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire différent de nb1 et nb2" alt="" coords="707,720,791,747"/>
 </map>
