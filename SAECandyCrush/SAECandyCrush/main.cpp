@@ -413,7 +413,7 @@ int main() {
 
     CMyParam param;
     initParams(param);
-    chargerParametre(param, "./build.yaml");
+    chargerParametre(param, "./build.yaml"); //"../SAECandyCrush/build.yaml"
 
     unsigned score=0;
     unsigned nbDeplacement=param.mapParamUnsigned["deplacementMax"];
