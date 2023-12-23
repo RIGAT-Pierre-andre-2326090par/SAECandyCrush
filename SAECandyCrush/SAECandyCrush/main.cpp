@@ -8,6 +8,10 @@
 using namespace std;
 
 /**
+ * @authors A.Casali, P-A.Rigat, C.Tamine, B.Gaston, A.Nurdin, A.Goncalves
+ */
+
+/**
  * @brief procédure initialisant les paramètres du joueur au sein du jeu
  * @param param
  * @authors A.Casali, P-A.Rigat
@@ -242,7 +246,7 @@ bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned
 
     bool act (detectionExplositionUneBombeVerticale(mat, score) or
              detectionExplositionUneBombeHorizontale(mat, score));
-    if (act) remplaceVideParRdm(mat, vid, plusGrandNb);
+    if (act) remplaceVideParRdm(mat, plusGrandNb, vid);
     return act;
 }
 
