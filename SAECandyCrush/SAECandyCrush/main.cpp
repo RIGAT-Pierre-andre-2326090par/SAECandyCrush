@@ -34,9 +34,9 @@ void initParams (CMyParam & param)
     param.mapParamUnsigned["nbLignes"] = 10;
 
     //
-    param.mapParamUnsigned["nbMax"] = 5;
-    param.mapParamUnsigned["scoreMax"] = 350;
-    param.mapParamUnsigned["deplacementMax"] = 15;
+    param.mapParamUnsigned["nbMax"] = 3;
+    param.mapParamUnsigned["scoreMax"] = 500;
+    param.mapParamUnsigned["deplacementMax"] = 10;
 }
 
 /**

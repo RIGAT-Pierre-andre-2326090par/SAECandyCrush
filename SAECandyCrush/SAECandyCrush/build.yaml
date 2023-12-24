@@ -11,6 +11,6 @@ toucheSelect: s
 nbLignes: 10
 nbColonnes: 10
 
-nbMax: 3
-scoreMax: 500
-deplacementMax: 10
+nbMax: 5
+scoreMax: 400
+deplacementMax: 15
