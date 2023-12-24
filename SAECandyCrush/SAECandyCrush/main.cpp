@@ -1,9 +1,18 @@
+#define FPS_LIMIT 60
+
 #include <iostream>
 #include <type.h>
 #include <cst.h>
 #include <affichage.h>
 #include <fstream>
 #include <mingl/mingl.h>
+#include <thread>
+
+#include "mingl/shape/rectangle.h"
+#include "mingl/shape/circle.h"
+#include "mingl/shape/line.h"
+#include "mingl/shape/triangle.h"
+
 using namespace std;
 
 /**
@@ -29,7 +38,7 @@ void initParams (CMyParam & param)
     param.mapParamUnsigned["nbLignes"] = 10;
 
     //
-    param.mapParamUnsigned["nbMax"] = 5;
+    param.mapParamUnsigned["nbMax"] = 3;
     param.mapParamUnsigned["scoreMax"] = 350;
     param.mapParamUnsigned["deplacementMax"] = 15;
 }
@@ -401,6 +410,86 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
     }
     return 0;
 }
+
+/********ici débute le Mingl*********/
+
+void dessinerRectangle (MinGL & window, const unsigned & x, const unsigned & y){
+    window << nsShape::Rectangle(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(50, 50), nsGraphics::KBlue);
+}
+
+void dessinerCercle (MinGL & window, const unsigned & x, const unsigned & y){
+    window << nsShape::Circle(nsGraphics::Vec2D(x + 25, y + 25), 25, nsGraphics::KRed);
+}
+
+void dessinerTriangle (MinGL & window, const unsigned & x, const unsigned & y){
+    window << nsShape::Triangle(nsGraphics::Vec2D(x + 25, y), nsGraphics::Vec2D(x, y + 50), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KYellow);
+}
+
+void dessinerCroix (MinGL & window, const unsigned & x, const unsigned & y){
+    window << nsShape::Line(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KGreen, 5.f);
+    window << nsShape::Line(nsGraphics::Vec2D(x + 50, y), nsGraphics::Vec2D(x, y + 50), nsGraphics::KGreen, 5.f);
+}
+
+/**
+ * @brief partiMinglCrush
+ * @param score
+ * @param nbDeplacement
+ * @param param
+ * @return 0
+ */
+int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & param) {
+    // Initialise le système
+    MinGL window("NumberCrush", nsGraphics::Vec2D(640, 640), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
+    window.initGlut();
+    window.initGraphic();
+
+    // Variable qui tient le temps de frame
+    chrono::microseconds frameTime = chrono::microseconds::zero();
+
+    //On initialise la partie de Number Crush
+    CMatrice mat;
+    initMat(mat, param.mapParamUnsigned["nbMax"],
+            param.mapParamUnsigned["nbLignes"],
+            param.mapParamUnsigned["nbColonnes"]);
+    size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
+    size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
+    afficheMatriceV2(mat);
+
+    // On fait tourner la boucle tant que la fenêtre est ouverte
+    while (window.isOpen())
+    {
+        // Récupère l'heure actuelle
+        chrono::time_point<chrono::steady_clock> start = chrono::steady_clock::now();
+
+        // On efface la fenêtre
+        window.clearScreen();
+
+        // On affiche la grille
+        for (unsigned i = 0 ; i < mat.size() ; ++i) {
+            for (unsigned j = 0 ; j < mat[i].size() ; ++j) {
+                if (mat[i][j] == 1) dessinerRectangle(window,j * 50,i * 50);
+                if (mat[i][j] == 2) dessinerCercle(window,j * 50,i * 50);
+                if (mat[i][j] == 3) dessinerTriangle(window,j * 50, i * 50);
+                if (mat[i][j] == 4) dessinerCroix(window,j * 50, i * 50);
+            }
+        }
+
+        // On gère les déplacements du curseur et les mouvements dans la grille
+
+        // On finit la frame en cours
+        window.finishFrame();
+
+        // On vide la queue d'évènements
+        window.getEventManager().clearEvents();
+
+        // On attend un peu pour limiter le framerate et soulager le CPU
+        this_thread::sleep_for(chrono::milliseconds(1000 / FPS_LIMIT) - chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start));
+
+        // On récupère le temps de frame
+        frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
+    }
+    return 0;
+}
 /**
  * @brief main.cpp
  * @return 0
@@ -410,7 +499,7 @@ int main() {
 
     CMyParam param;
     initParams(param);
-    chargerParametre(param, "../SAECandyCrush/build.yaml");
+    //chargerParametre(param, "../SAECandyCrush/build.yaml");
 
     unsigned score=0;
     unsigned nbDeplacement=param.mapParamUnsigned["deplacementMax"];
@@ -423,8 +512,7 @@ int main() {
         if (mode ==1 || mode==2 || mode==3) test = true ;
         else cout << "Ce mode de jeu n'existe pas rééssayez !" << endl;
     }
-    if (mode == 1) return 0;
+    if (mode == 1) return partiMinglCrush(score, nbDeplacement, param);
     else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance la partie sur le terminal
-    else if (mode == 3) return partiNumberCrush(score, nbDeplacement, param); //Lance une partie "classic" sur le terminal
     else return 0;
 }
