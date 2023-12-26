@@ -1,4 +1,4 @@
-#define FPS_LIMIT 60
+#define FPS_LIMIT 10
 
 #include <iostream>
 #include <type.h>
@@ -12,6 +12,7 @@
 #include "mingl/shape/circle.h"
 #include "mingl/shape/line.h"
 #include "mingl/shape/triangle.h"
+#include "mingl/gui/text.h"
 
 using namespace std;
 
@@ -436,6 +437,90 @@ void dessinerCurseur (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Triangle(nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::Vec2D(x + 50, y + 40), nsGraphics::Vec2D(x + 40, y + 50), nsGraphics::KWhite);
 }
 
+void afficheText(MinGL & window, const string & txt, const unsigned & x, const unsigned & y) {
+    window << nsGui::Text(nsGraphics::Vec2D(x, y), txt, nsGraphics::KWhite);
+}
+
+/**
+ * @brief permet de déplacer le curseur dans la fenètre mingl
+ * @param mat
+ * @param numLigne
+ * @param numCol
+ * @param nbDeplacement
+ * @param param
+ */
+void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
+                     size_t & numCol, unsigned & nbDeplacement, CMyParam & param) {
+
+    size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
+    if (window.isPressed({param.mapParamChar["toucheBasDroite"], false})) {
+        if (numLigne != 0) ++nouvellePositionLigne;
+        if (numCol < mat[0].size() - 1) ++nouvellePositionColonne;
+    }
+    else if (window.isPressed({param.mapParamChar["toucheBas"], false})) {
+        if (numLigne < mat.size() - 1) ++nouvellePositionLigne;
+    }
+    else if (window.isPressed({param.mapParamChar["toucheGaucheBas"], false})) {
+        if (numLigne != 0) ++nouvellePositionLigne;
+        if (numCol != 0) --nouvellePositionColonne;
+    }
+    else if (window.isPressed({param.mapParamChar["toucheGauche"], false})) {
+        if (numCol != 0) --nouvellePositionColonne;
+    }
+    else if (window.isPressed({param.mapParamChar["toucheHautGauche"], false})) {
+        if (numLigne != 0) --nouvellePositionLigne;
+        if (numCol != 0) --nouvellePositionColonne;
+    }
+    else if (window.isPressed({param.mapParamChar["toucheHaut"], false})) {
+        if (numLigne != 0) --nouvellePositionLigne;
+    }
+    else if ((window.isPressed({param.mapParamChar["toucheDroiteHaut"], false}))) {
+        if (numLigne != 0) --nouvellePositionLigne;
+        if (numCol < mat[0].size() - 1) ++nouvellePositionColonne;
+    }
+    else if (window.isPressed({param.mapParamChar["toucheDroite"], false})) {
+        if (numCol < mat[0].size() - 1) ++nouvellePositionColonne;
+    }
+    else if (window.isPressed({param.mapParamChar["toucheSelect"], false})) {
+        bool select = true;
+        while (select){
+            if (window.isPressed({param.mapParamChar["toucheBas"], false})) {
+                if (numLigne != 0){
+                    swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
+                    --nbDeplacement;
+                    select = false;
+                }
+            }
+            if (window.isPressed({param.mapParamChar["toucheDroite"], false})) {
+                if (numCol != mat[0].size() - 1){
+                    swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
+                    --nbDeplacement;
+                    select = false;
+                }
+            }
+            if (window.isPressed({param.mapParamChar["toucheHaut"], false})) {
+                if (numLigne != mat.size() - 1){
+                    swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
+                    --nbDeplacement;
+                    select = false;
+                }
+            }
+            if (window.isPressed({param.mapParamChar["toucheGauche"], false})) {
+                if (numCol != 0) {
+                    swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
+                    --nbDeplacement;
+                    select = false;
+                }
+            }
+            else afficheText(window, "Tu dois choisir entre Z ou Q ou D ou X", 510, 0);
+        }
+    }
+    else afficheText(window, "Tu dois choisir entre A ou Z ou E ou Q ou D ou X ou C ou W ou S pour déplacer le curseur", 510, 0);
+
+    numCol = nouvellePositionColonne;
+    numLigne = nouvellePositionLigne;
+}
+
 /**
  * @brief partiMinglCrush
  * @param score
@@ -459,10 +544,10 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
             param.mapParamUnsigned["nbColonnes"]);
     size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
     size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
-    afficheMatriceV3(mat,numLigne,numCol);
+
 
     // On fait tourner la boucle tant que la fenêtre est ouverte
-    while (window.isOpen())
+    while (nbDeplacement > 0 || score > 0 || window.isOpen() )
     {
         // Récupère l'heure actuelle
         chrono::time_point<chrono::steady_clock> start = chrono::steady_clock::now();
@@ -471,6 +556,7 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
         window.clearScreen();
 
         // On affiche la grille puis le curseur
+        afficheMatriceV3(mat,numLigne,numCol);
         for (unsigned i = 0 ; i < mat.size() ; ++i) {
             for (unsigned j = 0 ; j < mat[i].size() ; ++j) {
                 if (mat[i][j] == 1) dessinerRectangle(window, j * 50, i * 50);
@@ -479,9 +565,10 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
                 if (mat[i][j] == 4) dessinerCroix(window, j * 50, i * 50);
             }
         }
-        dessinerCurseur(window, numLigne * 50, numCol * 50);
+        dessinerCurseur(window, numCol * 50, numLigne * 50);
 
         // On gère les déplacements du curseur et les mouvements dans la grille
+        //faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param);
 
         // On finit la frame en cours
         window.finishFrame();
@@ -516,7 +603,7 @@ int main() {
     {
         cout <<" Sur quel mode de jeu voulez vous jouer ? :" << endl << endl << "1 : mode avec MinGl" << '\t' << "2 : mode avec les nombres" << endl ;
         cin >> mode ;
-        if (mode ==1 || mode==2 || mode==3) test = true ;
+        if (mode ==1 || mode==2) test = true ;
         else cout << "Ce mode de jeu n'existe pas rééssayez !" << endl;
     }
     if (mode == 1) return partiMinglCrush(score, nbDeplacement, param);
