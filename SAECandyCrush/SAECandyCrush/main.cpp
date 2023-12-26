@@ -38,7 +38,7 @@ void initParams (CMyParam & param)
     param.mapParamUnsigned["nbLignes"] = 10;
 
     //
-    param.mapParamUnsigned["nbMax"] = 3;
+    param.mapParamUnsigned["nbMax"] = 5;
     param.mapParamUnsigned["scoreMax"] = 350;
     param.mapParamUnsigned["deplacementMax"] = 15;
 }
@@ -330,7 +330,6 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, size_t & numLigne
     numLigne = nouvellePositionLigne;
 }
 
-
 /**
  * @brief fonction lançant une version lite du candy crush pour les tests
  * @param score
@@ -414,7 +413,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
 /********ici débute le Mingl*********/
 
 void dessinerRectangle (MinGL & window, const unsigned & x, const unsigned & y){
-    window << nsShape::Rectangle(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(50, 50), nsGraphics::KBlue);
+    window << nsShape::Rectangle(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KBlue);
 }
 
 void dessinerCercle (MinGL & window, const unsigned & x, const unsigned & y){
@@ -422,12 +421,19 @@ void dessinerCercle (MinGL & window, const unsigned & x, const unsigned & y){
 }
 
 void dessinerTriangle (MinGL & window, const unsigned & x, const unsigned & y){
-    window << nsShape::Triangle(nsGraphics::Vec2D(x + 25, y), nsGraphics::Vec2D(x, y + 50), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KYellow);
+    window << nsShape::Triangle(nsGraphics::Vec2D(x + 25, y), nsGraphics::Vec2D(x, y + 50), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KGreen);
 }
 
 void dessinerCroix (MinGL & window, const unsigned & x, const unsigned & y){
-    window << nsShape::Line(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KGreen, 5.f);
-    window << nsShape::Line(nsGraphics::Vec2D(x + 50, y), nsGraphics::Vec2D(x, y + 50), nsGraphics::KGreen, 5.f);
+    window << nsShape::Line(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KYellow, 5.f);
+    window << nsShape::Line(nsGraphics::Vec2D(x + 50, y), nsGraphics::Vec2D(x, y + 50), nsGraphics::KYellow, 5.f);
+}
+
+void dessinerCurseur (MinGL & window, const unsigned & x, const unsigned & y){
+    window << nsShape::Triangle(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x, y + 10), nsGraphics::Vec2D(x + 10, y), nsGraphics::KGray);
+    window << nsShape::Triangle(nsGraphics::Vec2D(x + 50, y), nsGraphics::Vec2D(x + 60, y), nsGraphics::Vec2D(x + 50, y + 10), nsGraphics::KGray);
+    window << nsShape::Triangle(nsGraphics::Vec2D(x, y + 50), nsGraphics::Vec2D(x, y + 60), nsGraphics::Vec2D(x + 10, y + 50), nsGraphics::KGray);
+    window << nsShape::Triangle(nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::Vec2D(x + 50, y + 60), nsGraphics::Vec2D(x + 60, y + 50), nsGraphics::KGray);
 }
 
 /**
@@ -439,7 +445,7 @@ void dessinerCroix (MinGL & window, const unsigned & x, const unsigned & y){
  */
 int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & param) {
     // Initialise le système
-    MinGL window("NumberCrush", nsGraphics::Vec2D(640, 640), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
+    MinGL window("NumberCrush", nsGraphics::Vec2D(500, 600), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
     window.initGlut();
     window.initGraphic();
 
@@ -453,7 +459,7 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
             param.mapParamUnsigned["nbColonnes"]);
     size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
     size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
-    afficheMatriceV2(mat);
+    afficheMatriceV3(mat,numLigne,numCol);
 
     // On fait tourner la boucle tant que la fenêtre est ouverte
     while (window.isOpen())
@@ -464,15 +470,16 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
         // On efface la fenêtre
         window.clearScreen();
 
-        // On affiche la grille
+        // On affiche la grille puis le curseur
         for (unsigned i = 0 ; i < mat.size() ; ++i) {
             for (unsigned j = 0 ; j < mat[i].size() ; ++j) {
-                if (mat[i][j] == 1) dessinerRectangle(window,j * 50,i * 50);
-                if (mat[i][j] == 2) dessinerCercle(window,j * 50,i * 50);
-                if (mat[i][j] == 3) dessinerTriangle(window,j * 50, i * 50);
-                if (mat[i][j] == 4) dessinerCroix(window,j * 50, i * 50);
+                if (mat[i][j] == 1) dessinerRectangle(window, j * 50, i * 50);
+                if (mat[i][j] == 2) dessinerCercle(window, j * 50, i * 50);
+                if (mat[i][j] == 3) dessinerTriangle(window, j * 50, i * 50);
+                if (mat[i][j] == 4) dessinerCroix(window, j * 50, i * 50);
             }
         }
+        dessinerCurseur(window, numLigne * 50, numCol * 50);
 
         // On gère les déplacements du curseur et les mouvements dans la grille
 
