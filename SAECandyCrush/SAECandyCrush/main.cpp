@@ -412,28 +412,28 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
 
 /********ici débute le Mingl*********/
 
-void dessinerRectangle (MinGL & window, const unsigned & x, const unsigned & y){
+void dessinerRectangle (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Rectangle(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KBlue);
 }
 
-void dessinerCercle (MinGL & window, const unsigned & x, const unsigned & y){
+void dessinerCercle (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Circle(nsGraphics::Vec2D(x + 25, y + 25), 25, nsGraphics::KRed);
 }
 
-void dessinerTriangle (MinGL & window, const unsigned & x, const unsigned & y){
+void dessinerTriangle (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Triangle(nsGraphics::Vec2D(x + 25, y), nsGraphics::Vec2D(x, y + 50), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KGreen);
 }
 
-void dessinerCroix (MinGL & window, const unsigned & x, const unsigned & y){
+void dessinerCroix (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Line(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KYellow, 5.f);
     window << nsShape::Line(nsGraphics::Vec2D(x + 50, y), nsGraphics::Vec2D(x, y + 50), nsGraphics::KYellow, 5.f);
 }
 
-void dessinerCurseur (MinGL & window, const unsigned & x, const unsigned & y){
-    window << nsShape::Triangle(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x, y + 10), nsGraphics::Vec2D(x + 10, y), nsGraphics::KGray);
-    window << nsShape::Triangle(nsGraphics::Vec2D(x + 50, y), nsGraphics::Vec2D(x + 60, y), nsGraphics::Vec2D(x + 50, y + 10), nsGraphics::KGray);
-    window << nsShape::Triangle(nsGraphics::Vec2D(x, y + 50), nsGraphics::Vec2D(x, y + 60), nsGraphics::Vec2D(x + 10, y + 50), nsGraphics::KGray);
-    window << nsShape::Triangle(nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::Vec2D(x + 50, y + 60), nsGraphics::Vec2D(x + 60, y + 50), nsGraphics::KGray);
+void dessinerCurseur (MinGL & window, const unsigned & x, const unsigned & y) {
+    window << nsShape::Triangle(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x, y + 10), nsGraphics::Vec2D(x + 10, y), nsGraphics::KWhite);
+    window << nsShape::Triangle(nsGraphics::Vec2D(x + 40, y), nsGraphics::Vec2D(x + 50, y), nsGraphics::Vec2D(x + 50, y + 10), nsGraphics::KWhite);
+    window << nsShape::Triangle(nsGraphics::Vec2D(x, y + 50), nsGraphics::Vec2D(x, y + 40), nsGraphics::Vec2D(x + 10, y + 50), nsGraphics::KWhite);
+    window << nsShape::Triangle(nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::Vec2D(x + 50, y + 40), nsGraphics::Vec2D(x + 40, y + 50), nsGraphics::KWhite);
 }
 
 /**
