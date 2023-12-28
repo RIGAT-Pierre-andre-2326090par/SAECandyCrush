@@ -512,10 +512,10 @@ void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
                     select = false;
                 }
             }
-            else afficheText(window, "Tu dois choisir entre Z ou Q ou D ou X", 510, 0);
+            else afficheText(window, "Tu dois choisir entre Z ou Q ou D ou X", 10, 520);
         }
     }
-    else afficheText(window, "Tu dois choisir entre A ou Z ou E ou Q ou D ou X ou C ou W ou S pour déplacer le curseur", 510, 0);
+    else afficheText(window, "Tu dois choisir entre A ou Z ou E ou Q ou D ou X ou C ou W ou S pour déplacer le curseur", 10, 520);
 
     numCol = nouvellePositionColonne;
     numLigne = nouvellePositionLigne;
@@ -566,9 +566,10 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
             }
         }
         dessinerCurseur(window, numCol * 50, numLigne * 50);
+        afficheText(window, "coucou", 10, 540);
 
         // On gère les déplacements du curseur et les mouvements dans la grille
-        //faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param);
+        faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param);
 
         // On finit la frame en cours
         window.finishFrame();
