@@ -512,10 +512,10 @@ void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
                     select = false;
                 }
             }
-            else afficheText(window, "Tu dois choisir entre Z ou Q ou D ou X", 10, 520);
+            else afficheText(window, "Tu dois choisir entre Z ou Q ou D ou X", 510, 0);
         }
     }
-    else afficheText(window, "Tu dois choisir entre A ou Z ou E ou Q ou D ou X ou C ou W ou S pour déplacer le curseur", 10, 520);
+    else afficheText(window, "Tu dois choisir entre A ou Z ou E ou Q ou D ou X ou C ou W ou S pour déplacer le curseur", 510, 0);
 
     numCol = nouvellePositionColonne;
     numLigne = nouvellePositionLigne;
@@ -566,10 +566,9 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
             }
         }
         dessinerCurseur(window, numCol * 50, numLigne * 50);
-        afficheText(window, "coucou", 10, 540);
 
         // On gère les déplacements du curseur et les mouvements dans la grille
-        faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param);
+        //faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param);
 
         // On finit la frame en cours
         window.finishFrame();
@@ -585,6 +584,71 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
     }
     return 0;
 }
+
+int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & param) {
+    // Initialise le système
+    MinGL window("NumberCrushT", nsGraphics::Vec2D(500, 600), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
+    window.initGlut();
+    window.initGraphic();
+
+    // Instancie le sprite
+    nsGui::Sprite alex("¡", nsGraphics::Vec2D(195,195)); // faudrait remplacer ¡ par le chemin des photos
+    nsGui::Sprite pierre("¡", nsGraphics::Vec2D(195,195));
+    nsGui::Sprite cyril("¡", nsGraphics::Vec2D(195,195));
+    nsGui::Sprite arnaud("¡", nsGraphics::Vec2D(195,195));
+    nsGui::Sprite bapt("¡", nsGraphics::Vec2D(195,195));
+
+    // Variable qui tient le temps de frame
+    chrono::microseconds frameTime = chrono::microseconds::zero();
+
+    //On initialise la partie de Number Crush
+    CMatrice mat;
+    initMat(mat, param.mapParamUnsigned["nbMax"],
+            param.mapParamUnsigned["nbLignes"],
+            param.mapParamUnsigned["nbColonnes"]);
+    size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
+    size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
+
+
+    // On fait tourner la boucle tant que la fenêtre est ouverte
+    while (nbDeplacement > 0 || score > 0 || window.isOpen() )
+    {
+        // Récupère l'heure actuelle
+        chrono::time_point<chrono::steady_clock> start = chrono::steady_clock::now();
+
+        // On efface la fenêtre
+        window.clearScreen();
+
+        // On affiche la grille puis le curseur
+        afficheMatriceV3(mat,numLigne,numCol);
+        for (unsigned i = 0 ; i < mat.size() ; ++i) {
+            for (unsigned j = 0 ; j < mat[i].size() ; ++j) { // Les ? c'est le temps de savoir qui va ou.
+                if (mat[i][j] == 1) ?;
+                if (mat[i][j] == 2) ?;
+                if (mat[i][j] == 3) ?;
+                if (mat[i][j] == 4) ?;
+            }
+        }
+        dessinerCurseur(window, numCol * 50, numLigne * 50);
+
+        // On gère les déplacements du curseur et les mouvements dans la grille
+        //faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param);
+
+        // On finit la frame en cours
+        window.finishFrame();
+
+        // On vide la queue d'évènements
+        window.getEventManager().clearEvents();
+
+        // On attend un peu pour limiter le framerate et soulager le CPU
+        this_thread::sleep_for(chrono::milliseconds(1000 / FPS_LIMIT) - chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start));
+
+        // On récupère le temps de frame
+        frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
+    }
+    return 0;
+}
+
 /**
  * @brief main.cpp
  * @return 0
