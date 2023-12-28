@@ -630,10 +630,10 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
         afficheMatriceV3(mat,numLigne,numCol);
         for (unsigned i = 0 ; i < mat.size() ; ++i) {
             for (unsigned j = 0 ; j < mat[i].size() ; ++j) { // Les ? c'est le temps de savoir qui va ou.
-                if (mat[i][j] == 1) ?;
+                /*if (mat[i][j] == 1) ?;
                 if (mat[i][j] == 2) ?;
                 if (mat[i][j] == 3) ?;
-                if (mat[i][j] == 4) ?;
+                if (mat[i][j] == 4) ?;*/
             }
         }
         dessinerCurseur(window, numCol * 50, numLigne * 50);
