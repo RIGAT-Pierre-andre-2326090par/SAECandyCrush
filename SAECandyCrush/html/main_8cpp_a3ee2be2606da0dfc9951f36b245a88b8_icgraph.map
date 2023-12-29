@@ -1,8 +1,10 @@
 <map id="nouvRdm" name="nouvRdm">
-<area shape="rect" id="node1" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="655,31,739,57"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="261,5,329,32"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="444,56,607,83"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,56,147,83"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,56,396,83"/>
+<area shape="rect" id="node1" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="665,81,749,108"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="272,107,340,133"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="455,56,617,83"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="19,56,144,83"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="5,157,157,184"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,107,152,133"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,56,407,83"/>
 </map>

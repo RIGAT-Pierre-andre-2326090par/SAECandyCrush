@@ -1,13 +1,10 @@
-#define FPS_LIMIT 60
-
 #include <iostream>
 #include <type.h>
 #include <cst.h>
 #include <affichage.h>
-#include <MinGL2/include/mingl/mingl.h>
-#include <thread>
-#include <MinGL2/include/mingl/shape/circle.h>
+#include <mingl/mingl.h>
 
+#include <mingl/shape/circle.h>
 
 using namespace std;
 
@@ -53,35 +50,23 @@ void couleur (const unsigned & coul) {
         cout << endl ;
     }
 }*/
-void  afficheMatriceV0 (const CMatrice & Mat /*, MinGL & window*/) {
-    MinGL window("Des ronds", nsGraphics::Vec2D(640, 640), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
-    window.initGlut();
-    window.initGraphic();
-    while (window.isOpen()){
-        window.clearScreen();
-        for (size_t i = 0 ; i < Mat.size() ; ++i)
-        {
-            for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
-                if (Mat[i][j]==KAIgnorer){ couleur(KNoir);} // Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
-                else if (Mat[i][j]==1){
-                    window << nsShape::Circle(nsGraphics::Vec2D(100,200), 50, nsGraphics::KCyan);} // Si l'élément = 1, alors la couleur sera cyan
-                else if (Mat[i][j]==2){
-                    window << nsShape::Circle(nsGraphics::Vec2D(100,200), 50, nsGraphics::KRed);} // Si l'élément = 2, alors la couleur sera rouge
-                else if (Mat[i][j]==3){
-                    window << nsShape::Circle(nsGraphics::Vec2D(100,200), 50, nsGraphics::KGreen);} // Si l'élément = 3, alors la couleur sera verte
-                else if (Mat[i][j]==4){
-                    window << nsShape::Circle(nsGraphics::Vec2D(100,200), 50, nsGraphics::KYellow);} // Si l'élément = 4, alors la couleur sera jaune
-                else if (Mat[i][j]==5){
-                    window << nsShape::Circle(nsGraphics::Vec2D(100,200), 50, nsGraphics::KMagenta);} // Si l'élément = 5, alors la couleur sera magenta
-                else if (Mat[i][j]==6){
-                    window << nsShape::Circle(nsGraphics::Vec2D(100,200), 50, nsGraphics::KBlue);
-                } // Si l'élément = 6, alors la couleur sera bleu
-            }
-            couleur(KReset); // On reset la couleur afin de ne pas avoir du texte affiché en jaune
-            cout << endl ;
+void  afficheMatriceV0 (const CMatrice & Mat , MinGL & window) {
+    for (size_t i = 0 ; i < Mat.size() ; ++i) {
+        for ( size_t j = 0 ; j < Mat[i].size() ; ++j) {
+            if (Mat[i][j]==KAIgnorer){ couleur(KNoir);} // Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
+            else if (Mat[i][j]==1)
+                window << nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KCyan); // Si l'élément = 1, alors la couleur sera cyan
+            else if (Mat[i][j]==2)
+                window << nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KRed); // Si l'élément = 2, alors la couleur sera rouge
+            else if (Mat[i][j]==3)
+                window << nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KGreen); // Si l'élément = 3, alors la couleur sera verte
+            else if (Mat[i][j]==4)
+                window << nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KYellow); // Si l'élément = 4, alors la couleur sera jaune
+            else if (Mat[i][j]==5)
+                window << nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KMagenta); // Si l'élément = 5, alors la couleur sera magenta
+            else if (Mat[i][j]==6)
+                window << nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KBlue); // Si l'élément = 6, alors la couleur sera bleu
         }
-        window.finishFrame();
-        window.getEventManager().clearEvents();
     }
 }
 

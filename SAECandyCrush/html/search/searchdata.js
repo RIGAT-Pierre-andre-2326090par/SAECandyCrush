@@ -5,7 +5,8 @@ var indexSectionsWithContent =
   2: "acmt",
   3: "acdefikmnprz",
   4: "_km",
-  5: "c"
+  5: "c",
+  6: "f"
 };
 
 var indexSectionNames =
@@ -15,7 +16,8 @@ var indexSectionNames =
   2: "files",
   3: "functions",
   4: "variables",
-  5: "typedefs"
+  5: "typedefs",
+  6: "defines"
 };
 
 var indexSectionLabels =
@@ -25,6 +27,7 @@ var indexSectionLabels =
   2: "Fichiers",
   3: "Fonctions",
   4: "Variables",
-  5: "Définitions de type"
+  5: "Définitions de type",
+  6: "Macros"
 };
 

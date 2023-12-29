@@ -413,23 +413,53 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
 
 /********ici débute le Mingl*********/
 
+/**
+ * @brief dessinerRectangle
+ * @param window
+ * @param x
+ * @param y
+ */
 void dessinerRectangle (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Rectangle(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KBlue);
 }
 
+/**
+ * @brief dessinerCercle
+ * @param window
+ * @param x
+ * @param y
+ */
 void dessinerCercle (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Circle(nsGraphics::Vec2D(x + 25, y + 25), 25, nsGraphics::KRed);
 }
 
+/**
+ * @brief dessinerTriangle
+ * @param window
+ * @param x
+ * @param y
+ */
 void dessinerTriangle (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Triangle(nsGraphics::Vec2D(x + 25, y), nsGraphics::Vec2D(x, y + 50), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KGreen);
 }
 
+/**
+ * @brief dessinerCroix
+ * @param window
+ * @param x
+ * @param y
+ */
 void dessinerCroix (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Line(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KYellow, 5.f);
     window << nsShape::Line(nsGraphics::Vec2D(x + 50, y), nsGraphics::Vec2D(x, y + 50), nsGraphics::KYellow, 5.f);
 }
 
+/**
+ * @brief dessinerCurseur
+ * @param window
+ * @param x
+ * @param y
+ */
 void dessinerCurseur (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Triangle(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x, y + 10), nsGraphics::Vec2D(x + 10, y), nsGraphics::KWhite);
     window << nsShape::Triangle(nsGraphics::Vec2D(x + 40, y), nsGraphics::Vec2D(x + 50, y), nsGraphics::Vec2D(x + 50, y + 10), nsGraphics::KWhite);
@@ -437,15 +467,15 @@ void dessinerCurseur (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Triangle(nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::Vec2D(x + 50, y + 40), nsGraphics::Vec2D(x + 40, y + 50), nsGraphics::KWhite);
 }
 
-void dessinerCurseur2 (MinGL & window, const unsigned & x, const unsigned & y) {
-    window << nsShape::Triangle(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x, y + 10), nsGraphics::Vec2D(x + 10, y), nsGraphics::KWhite);
-    window << nsShape::Triangle(nsGraphics::Vec2D(x + 40, y), nsGraphics::Vec2D(x + 50, y), nsGraphics::Vec2D(x + 50, y + 10), nsGraphics::KWhite);
-    window << nsShape::Triangle(nsGraphics::Vec2D(x, y + 50), nsGraphics::Vec2D(x, y + 40), nsGraphics::Vec2D(x + 10, y + 50), nsGraphics::KWhite);
-    window << nsShape::Triangle(nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::Vec2D(x + 50, y + 40), nsGraphics::Vec2D(x + 40, y + 50), nsGraphics::KWhite);
-}
-
+/**
+ * @brief afficheText
+ * @param window
+ * @param txt
+ * @param x
+ * @param y
+ */
 void afficheText(MinGL & window, const string & txt, const unsigned & x, const unsigned & y) {
-    window << nsGui::Text(nsGraphics::Vec2D(x, y), txt, nsGraphics::KWhite);
+    window << nsGui::Text(nsGraphics::Vec2D(x, y), txt, nsGraphics::KWhite, nsGui::GlutFont::BITMAP_9_BY_15);
 }
 
 /**
@@ -455,10 +485,11 @@ void afficheText(MinGL & window, const string & txt, const unsigned & x, const u
  * @param numCol
  * @param nbDeplacement
  * @param param
+ * @param curs2
  */
 void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
                           size_t & numCol, unsigned & nbDeplacement, CMyParam & param,
-                          bool & curs2, unsigned & time) {
+                          bool & curs2) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     if (window.isPressed({param.mapParamChar["toucheBasDroite"], false})) {
@@ -509,8 +540,9 @@ void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
             curs2 = !curs2;
         }
     }
-    else if (window.isPressed({param.mapParamChar["toucheSelect"], false}))
+    else if (window.isPressed({param.mapParamChar["toucheSelect"], false})) {
         curs2 = !curs2;
+    }
     else afficheText(window, "Tu dois choisir entre A ou Z ou E ou Q ou D ou X ou C ou W ou S pour déplacer le curseur", 510, 0);
 
     numCol = nouvellePositionColonne;
@@ -546,7 +578,7 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
     unsigned time = 0;
 
     // On fait tourner la boucle tant que la fenêtre est ouverte
-    while (nbDeplacement > 0 || score < param.mapParamUnsigned["scoreMax"] || window.isOpen() )
+    while (nbDeplacement > 0 && score <= param.mapParamUnsigned["scoreMax"] && window.isOpen() )
     {
         // Récupère l'heure actuelle
         chrono::time_point<chrono::steady_clock> start = chrono::steady_clock::now();
@@ -554,26 +586,42 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
         // On efface la fenêtre
         window.clearScreen();
 
-        // On affiche la grille puis le curseur
-        afficheMatriceV3(mat,numLigne,numCol);
-        for (unsigned i = 0 ; i < mat.size() ; ++i) {
+        // si le timer est suppérieur à 0, continue
+        if (time > 0) continue;
+
+        // On affiche la grille puis le curseur dans le terminal
+        afficheMatriceV3(mat, numLigne, numCol);
+
+        // On affiche la grille puis le curseur dans une interface MinGl
+        /*for (unsigned i = 0 ; i < mat.size() ; ++i) {
             for (unsigned j = 0 ; j < mat[i].size() ; ++j) {
                 if (mat[i][j] == 1) dessinerRectangle(window, j * 50, i * 50);
                 if (mat[i][j] == 2) dessinerCercle(window, j * 50, i * 50);
                 if (mat[i][j] == 3) dessinerTriangle(window, j * 50, i * 50);
                 if (mat[i][j] == 4) dessinerCroix(window, j * 50, i * 50);
             }
-        }
+        }*/
+        afficheMatriceV0(mat, window);
         dessinerCurseur(window, numCol * 50, numLigne * 50);
 
-        // on affiche les scores et le nombre de déplacement restant
-        afficheText(window, "coucou", 0, 0);
+        // on affiche le score et le nombre de déplacement restant dans le terminal
+        cout << "Score = " << score << endl
+             << "Deplacement Restant = " << nbDeplacement << endl;
+
+        // on affiche le score et le nombre de déplacement restant dans une interface MinGl
+        string strScore = "Score = ";
+        strScore += to_string(score);
+        afficheText(window, strScore, 10, 520);
+
+        string strDeplacement = "Deplacement restant = ";
+        strDeplacement += to_string(nbDeplacement);
+        afficheText(window, strDeplacement, 10, 540);
 
         // si il y a des combos, on supprime les combos et on continue
         if (detectionExplositionBombe(mat,score)) continue;
 
         // On gère les déplacements du curseur et les mouvements dans la grille
-        faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2, time);
+        faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2);
 
         // On finit la frame en cours
         window.finishFrame();
@@ -590,6 +638,13 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
     return 0;
 }
 
+/**
+ * @brief partiMinglTeteCrush
+ * @param score
+ * @param nbDeplacement
+ * @param param
+ * @return
+ */
 int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & param) {
     // Initialise le système
     MinGL window("NumberCrushT", nsGraphics::Vec2D(500, 600), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);

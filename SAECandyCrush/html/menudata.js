@@ -60,4 +60,5 @@ var menudata={children:[
 {text:"r",url:"globals_func.html#index_r"},
 {text:"z",url:"globals_func.html#index_z"}]},
 {text:"Variables",url:"globals_vars.html"},
-{text:"Définitions de type",url:"globals_type.html"}]}]}]}
+{text:"Définitions de type",url:"globals_type.html"},
+{text:"Macros",url:"globals_defs.html"}]}]}]}

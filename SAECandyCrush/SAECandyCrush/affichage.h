@@ -3,6 +3,7 @@
 
 #include <type.h>
 #include <cst.h>
+#include <mingl/mingl.h>
 
 // Ce document header contient l'appel aux fonctions d'affichage
 
@@ -10,7 +11,7 @@ void clearScreen(); // Reset l'écran
 
 void couleur(const unsigned & coul); // Affiche un texte en couleur
 
-void afficheMatriceV0(const CMatrice & Mat); // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
+void afficheMatriceV0(const CMatrice & Mat, MinGL & window); // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
 
 void afficheMatriceV1(const CMatrice & Mat); // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond de couleur
 //pour signifier que la case est a KAIgnorer

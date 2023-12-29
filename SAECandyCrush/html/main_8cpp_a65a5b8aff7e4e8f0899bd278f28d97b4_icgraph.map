@@ -1,6 +1,7 @@
 <map id="remplaceVideParRdm" name="remplaceVideParRdm">
-<area shape="rect" id="node1" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="444,31,607,57"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,31,396,57"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a1cdc3675b05b04dab1542bd73570bd8a" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a6f1a4bb0a238f073132882c1ed6cfcf4" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,56,147,83"/>
+<area shape="rect" id="node1" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="444,56,607,83"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,56,396,83"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="13,56,139,83"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,107,147,133"/>
 </map>
