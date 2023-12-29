@@ -457,7 +457,8 @@ void afficheText(MinGL & window, const string & txt, const unsigned & x, const u
  * @param param
  */
 void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
-                     size_t & numCol, unsigned & nbDeplacement, CMyParam & param) {
+                          size_t & numCol, unsigned & nbDeplacement, CMyParam & param,
+                          bool & curs2, unsigned & time) {
 
     size_t nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);
     if (window.isPressed({param.mapParamChar["toucheBasDroite"], false})) {
@@ -466,6 +467,11 @@ void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
     }
     else if (window.isPressed({param.mapParamChar["toucheBas"], false})) {
         if (numLigne < mat.size() - 1) ++nouvellePositionLigne;
+        if (curs2) {
+            swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
+            --nbDeplacement;
+            curs2 = !curs2;
+        }
     }
     else if (window.isPressed({param.mapParamChar["toucheGaucheBas"], false})) {
         if (numLigne != 0) ++nouvellePositionLigne;
@@ -473,6 +479,11 @@ void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
     }
     else if (window.isPressed({param.mapParamChar["toucheGauche"], false})) {
         if (numCol != 0) --nouvellePositionColonne;
+        if (curs2) {
+            swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
+            --nbDeplacement;
+            curs2 = !curs2;
+        }
     }
     else if (window.isPressed({param.mapParamChar["toucheHautGauche"], false})) {
         if (numLigne != 0) --nouvellePositionLigne;
@@ -480,6 +491,11 @@ void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
     }
     else if (window.isPressed({param.mapParamChar["toucheHaut"], false})) {
         if (numLigne != 0) --nouvellePositionLigne;
+        if (curs2) {
+            swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
+            --nbDeplacement;
+            curs2 = !curs2;
+        }
     }
     else if ((window.isPressed({param.mapParamChar["toucheDroiteHaut"], false}))) {
         if (numLigne != 0) --nouvellePositionLigne;
@@ -487,41 +503,14 @@ void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
     }
     else if (window.isPressed({param.mapParamChar["toucheDroite"], false})) {
         if (numCol < mat[0].size() - 1) ++nouvellePositionColonne;
-    }
-    else if (window.isPressed({param.mapParamChar["toucheSelect"], false})) {
-        bool select = true;
-        while (select){
-            if (window.isPressed({param.mapParamChar["toucheBas"], false})) {
-                if (numLigne != 0){
-                    swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);
-                    --nbDeplacement;
-                    select = false;
-                }
-            }
-            if (window.isPressed({param.mapParamChar["toucheDroite"], false})) {
-                if (numCol != mat[0].size() - 1){
-                    swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
-                    --nbDeplacement;
-                    select = false;
-                }
-            }
-            if (window.isPressed({param.mapParamChar["toucheHaut"], false})) {
-                if (numLigne != mat.size() - 1){
-                    swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);
-                    --nbDeplacement;
-                    select = false;
-                }
-            }
-            if (window.isPressed({param.mapParamChar["toucheGauche"], false})) {
-                if (numCol != 0) {
-                    swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);
-                    --nbDeplacement;
-                    select = false;
-                }
-            }
-            else afficheText(window, "Tu dois choisir entre Z ou Q ou D ou X", 510, 0);
+        if (curs2) {
+            swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);
+            --nbDeplacement;
+            curs2 = !curs2;
         }
     }
+    else if (window.isPressed({param.mapParamChar["toucheSelect"], false}))
+        curs2 = !curs2;
     else afficheText(window, "Tu dois choisir entre A ou Z ou E ou Q ou D ou X ou C ou W ou S pour déplacer le curseur", 510, 0);
 
     numCol = nouvellePositionColonne;
@@ -552,9 +541,12 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
     size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
     size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
 
+    //quelque variable utile
+    bool curs2 = false;
+    unsigned time = 0;
 
     // On fait tourner la boucle tant que la fenêtre est ouverte
-    while (nbDeplacement > 0 || score > 0 || window.isOpen() )
+    while (nbDeplacement > 0 || score < param.mapParamUnsigned["scoreMax"] || window.isOpen() )
     {
         // Récupère l'heure actuelle
         chrono::time_point<chrono::steady_clock> start = chrono::steady_clock::now();
@@ -574,8 +566,14 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
         }
         dessinerCurseur(window, numCol * 50, numLigne * 50);
 
+        // on affiche les scores et le nombre de déplacement restant
+        afficheText(window, "coucou", 0, 0);
+
+        // si il y a des combos, on supprime les combos et on continue
+        if (detectionExplositionBombe(mat,score)) continue;
+
         // On gère les déplacements du curseur et les mouvements dans la grille
-        //faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param);
+        faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2, time);
 
         // On finit la frame en cours
         window.finishFrame();
@@ -599,11 +597,11 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
     window.initGraphic();
 
     // Instancie le sprite
-    nsGui::Sprite alex("¡", nsGraphics::Vec2D(195,195)); // faudrait remplacer ¡ par le chemin des photos
+    /*nsGui::Sprite alex("¡", nsGraphics::Vec2D(195,195)); // faudrait remplacer ¡ par le chemin des photos
     nsGui::Sprite pierre("¡", nsGraphics::Vec2D(195,195));
     nsGui::Sprite cyril("¡", nsGraphics::Vec2D(195,195));
     nsGui::Sprite arnaud("¡", nsGraphics::Vec2D(195,195));
-    nsGui::Sprite bapt("¡", nsGraphics::Vec2D(195,195));
+    nsGui::Sprite bapt("¡", nsGraphics::Vec2D(195,195));*/
 
     // Variable qui tient le temps de frame
     chrono::microseconds frameTime = chrono::microseconds::zero();
