@@ -1,3 +1,4 @@
+#include "mingl/gui/sprite.h"
 #define FPS_LIMIT 10
 
 #include <iostream>
@@ -549,6 +550,10 @@ void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
     numLigne = nouvellePositionLigne;
 }
 
+void dessineBaptiste (MinGL & window, const unsigned & x, const unsigned & y) {
+    window << nsGui::Sprite ("res/baptiste.si2", nsGraphics::Vec2D(x, y));
+}
+
 /**
  * @brief partiMinglCrush
  * @param score
@@ -593,15 +598,16 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
         afficheMatriceV3(mat, numLigne, numCol);
 
         // On affiche la grille puis le curseur dans une interface MinGl
-        /*for (unsigned i = 0 ; i < mat.size() ; ++i) {
+        //afficheMatriceV0(mat, window);
+        for (unsigned i = 0 ; i < mat.size() ; ++i) {
             for (unsigned j = 0 ; j < mat[i].size() ; ++j) {
-                if (mat[i][j] == 1) dessinerRectangle(window, j * 50, i * 50);
-                if (mat[i][j] == 2) dessinerCercle(window, j * 50, i * 50);
-                if (mat[i][j] == 3) dessinerTriangle(window, j * 50, i * 50);
-                if (mat[i][j] == 4) dessinerCroix(window, j * 50, i * 50);
+                if (mat[i][j] == 1) dessineBaptiste(window, j * 50, i * 50);
+                if (mat[i][j] == 2) dessinerRectangle(window, j * 50, i * 50);
+                if (mat[i][j] == 3) dessinerCercle(window, j * 50, i * 50);
+                if (mat[i][j] == 4) dessinerTriangle(window, j * 50, i * 50);
+                if (mat[i][j] == 5) dessinerCroix(window, j * 50, i * 50);
             }
-        }*/
-        afficheMatriceV0(mat, window);
+        }
         dessinerCurseur(window, numCol * 50, numLigne * 50);
 
         // on affiche le score et le nombre de déplacement restant dans le terminal
