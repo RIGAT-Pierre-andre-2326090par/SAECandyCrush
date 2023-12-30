@@ -652,11 +652,12 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
     window.initGraphic();
 
     // Instancie le sprite
-    /*nsGui::Sprite alex("¡", nsGraphics::Vec2D(195,195)); // faudrait remplacer ¡ par le chemin des photos
-    nsGui::Sprite pierre("¡", nsGraphics::Vec2D(195,195));
-    nsGui::Sprite cyril("¡", nsGraphics::Vec2D(195,195));
-    nsGui::Sprite arnaud("¡", nsGraphics::Vec2D(195,195));
-    nsGui::Sprite bapt("¡", nsGraphics::Vec2D(195,195));*/
+    nsGui::Sprite alex("im/alex.si2", nsGraphics::Vec2D(195,195)); // faudrait remplacer ¡ par le chemin des photos
+    nsGui::Sprite pierre("im/peterandrew.si2", nsGraphics::Vec2D(195,195));
+    nsGui::Sprite cyril("im/dric.si2", nsGraphics::Vec2D(195,195));
+    nsGui::Sprite arnaud("im/arno.si2", nsGraphics::Vec2D(195,195));
+    nsGui::Sprite bapt("im/batist.si2", nsGraphics::Vec2D(195,195));
+    nsGui::Sprite casali("im/casali.si2", nsGraphics::Vec2D(195,195));
 
     // Variable qui tient le temps de frame
     chrono::microseconds frameTime = chrono::microseconds::zero();
