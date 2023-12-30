@@ -552,7 +552,7 @@ void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
 }
 
 void dessineBaptiste (MinGL & window, const unsigned & x, const unsigned & y) {
-    window << nsGui::Sprite ("res/baptiste.si2", nsGraphics::Vec2D(x, y));
+    window << nsGui::Sprite ("im/batiste.si2", nsGraphics::Vec2D(x, y));
 }
 
 /**
@@ -602,11 +602,10 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
         //afficheMatriceV0(mat, window);
         for (unsigned i = 0 ; i < mat.size() ; ++i) {
             for (unsigned j = 0 ; j < mat[i].size() ; ++j) {
-                if (mat[i][j] == 1) dessineBaptiste(window, j * 50, i * 50);
-                if (mat[i][j] == 2) dessinerRectangle(window, j * 50, i * 50);
-                if (mat[i][j] == 3) dessinerCercle(window, j * 50, i * 50);
-                if (mat[i][j] == 4) dessinerTriangle(window, j * 50, i * 50);
-                if (mat[i][j] == 5) dessinerCroix(window, j * 50, i * 50);
+                if (mat[i][j] == 1) dessinerRectangle(window, j * 50, i * 50);
+                if (mat[i][j] == 2) dessinerCercle(window, j * 50, i * 50);
+                if (mat[i][j] == 3) dessinerTriangle(window, j * 50, i * 50);
+                if (mat[i][j] == 4) dessinerCroix(window, j * 50, i * 50);
             }
         }
         dessinerCurseur(window, numCol * 50, numLigne * 50);
@@ -737,11 +736,16 @@ int main() {
     {
         cout <<" Sur quel mode de jeu voulez vous jouer ? :" << endl << endl << "1 : mode avec MinGl" << '\t' << "2 : mode avec les nombres" << endl ;
         cin >> mode ;
-        if (mode ==1 || mode==2) test = true ;
+        if (mode ==1 || mode==2 || mode==3) test = true ;
         else cout << "Ce mode de jeu n'existe pas rééssayez !" << endl;
     }
     if (mode == 1) return partiMinglCrush(score, nbDeplacement, param);
+<<<<<<< Updated upstream
     //else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance la partie sur le terminal
     else if (mode == 2) return partiMinglTeteCrush(score, nbDeplacement, param);
+=======
+    else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance la partie sur le terminal
+    else if (mode == 3) return partiMinglTeteCrush(score, nbDeplacement, param);
+>>>>>>> Stashed changes
     else return 0;
 }
