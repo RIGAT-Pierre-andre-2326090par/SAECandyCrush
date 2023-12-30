@@ -691,10 +691,11 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
         afficheMatriceV3(mat,numLigne,numCol);
         for (unsigned i = 0 ; i < mat.size() ; ++i) {
             for (unsigned j = 0 ; j < mat[i].size() ; ++j) { // Les ? c'est le temps de savoir qui va ou.
-                /*if (mat[i][j] == 1) ?;
-                if (mat[i][j] == 2) ?;
-                if (mat[i][j] == 3) ?;
-                if (mat[i][j] == 4) ?;*/
+                if (mat[i][j] == 1) bapt;
+                if (mat[i][j] == 2) cyril;
+                if (mat[i][j] == 3) alex;
+                if (mat[i][j] == 4) arnaud;
+                if (mat[i][j] == 5) pierre;
             }
         }
         dessinerCurseur(window, numCol * 50, numLigne * 50);
@@ -740,6 +741,7 @@ int main() {
         else cout << "Ce mode de jeu n'existe pas rééssayez !" << endl;
     }
     if (mode == 1) return partiMinglCrush(score, nbDeplacement, param);
-    else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance la partie sur le terminal
+    //else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance la partie sur le terminal
+    else if (mode == 2) return partiMinglTeteCrush(score, nbDeplacement, param);
     else return 0;
 }
