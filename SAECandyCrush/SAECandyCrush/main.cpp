@@ -14,6 +14,7 @@
 #include "mingl/shape/line.h"
 #include "mingl/shape/triangle.h"
 #include "mingl/gui/text.h"
+#include "mingl/gui/sprite.h"
 
 using namespace std;
 
