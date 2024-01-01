@@ -658,12 +658,12 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
     window.initGraphic();
 
     // Instancie le sprite
-    nsGui::Sprite alex("im/alex.si2", nsGraphics::Vec2D(195,195)); // faudrait remplacer ¡ par le chemin des photos
-    nsGui::Sprite pierre("im/peterandrew.si2", nsGraphics::Vec2D(195,195));
-    nsGui::Sprite cyril("im/dric.si2", nsGraphics::Vec2D(195,195));
-    nsGui::Sprite arnaud("im/arno.si2", nsGraphics::Vec2D(195,195));
-    nsGui::Sprite bapt("im/batist.si2", nsGraphics::Vec2D(195,195));
-    nsGui::Sprite casali("im/casali.si2", nsGraphics::Vec2D(195,195));
+    nsGui::Sprite alex("/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/im/alex.si2", nsGraphics::Vec2D(55,55)); // faudrait remplacer ¡ par le chemin des photos
+    nsGui::Sprite pierre("/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/im/peterandrew.si2", nsGraphics::Vec2D(55,55));
+    nsGui::Sprite cyril("/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/im/dric.si2", nsGraphics::Vec2D(55,55));
+    nsGui::Sprite arnaud("/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/im/arno.si2", nsGraphics::Vec2D(55,55));
+    nsGui::Sprite bapt("/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/im/batist.si2", nsGraphics::Vec2D(55,55));
+    nsGui::Sprite casali("/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/im/casali.si2", nsGraphics::Vec2D(55,55));
 
     // Variable qui tient le temps de frame
     chrono::microseconds frameTime = chrono::microseconds::zero();
@@ -690,11 +690,11 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
         afficheMatriceV3(mat,numLigne,numCol);
         for (unsigned i = 0 ; i < mat.size() ; ++i) {
             for (unsigned j = 0 ; j < mat[i].size() ; ++j) { // Les ? c'est le temps de savoir qui va ou.
-                if (mat[i][j] == 1) bapt;
-                if (mat[i][j] == 2) cyril;
-                if (mat[i][j] == 3) alex;
-                if (mat[i][j] == 4) arnaud;
-                if (mat[i][j] == 5) pierre;
+                if (mat[i][j] == 1) window << bapt;
+                if (mat[i][j] == 2) window << cyril;
+                if (mat[i][j] == 3) window << alex;
+                if (mat[i][j] == 4) window << arnaud;
+                if (mat[i][j] == 5) window << pierre;
             }
         }
         dessinerCurseur(window, numCol * 50, numLigne * 50);
@@ -740,12 +740,7 @@ int main() {
         else cout << "Ce mode de jeu n'existe pas rééssayez !" << endl;
     }
     if (mode == 1) return partiMinglCrush(score, nbDeplacement, param);
-<<<<<<< Updated upstream
-    //else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance la partie sur le terminal
-    else if (mode == 2) return partiMinglTeteCrush(score, nbDeplacement, param);
-=======
     else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance la partie sur le terminal
     else if (mode == 3) return partiMinglTeteCrush(score, nbDeplacement, param);
->>>>>>> Stashed changes
     else return 0;
 }
