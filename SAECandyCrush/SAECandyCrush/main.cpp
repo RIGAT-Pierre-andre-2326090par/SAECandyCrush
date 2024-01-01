@@ -552,7 +552,27 @@ void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
 }
 
 void dessineBaptiste (MinGL & window, const unsigned & x, const unsigned & y) {
-    window << nsGui::Sprite ("im/batiste.si2", nsGraphics::Vec2D(x, y));
+    window << nsGui::Sprite ("../SAECandyCrush/im/batist.si2", nsGraphics::Vec2D(x, y));
+}
+
+void dessineAlex (MinGL & window, const unsigned & x, const unsigned & y) {
+    window << nsGui::Sprite ("../SAECandyCrush/im/alex.si2", nsGraphics::Vec2D(x, y));
+}
+
+void dessinePierre (MinGL & window, const unsigned & x, const unsigned & y) {
+    window << nsGui::Sprite ("../SAECandyCrush/im/peterandrew.si2", nsGraphics::Vec2D(x, y));
+}
+
+void dessineCyril (MinGL & window, const unsigned & x, const unsigned & y) {
+    window << nsGui::Sprite ("../SAECandyCrush/im/dric.si2", nsGraphics::Vec2D(x, y));
+}
+
+void dessineArnaud (MinGL & window, const unsigned & x, const unsigned & y) {
+    window << nsGui::Sprite ("../SAECandyCrush/im/arno.si2", nsGraphics::Vec2D(x, y));
+}
+
+void dessineCasali (MinGL & window, const unsigned & x, const unsigned & y) {
+    window << nsGui::Sprite ("../SAECandyCrush/im/casali.si2", nsGraphics::Vec2D(x, y));
 }
 
 /**
@@ -657,14 +677,6 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
     window.initGlut();
     window.initGraphic();
 
-    // Instancie le sprite
-    nsGui::Sprite alex("../SAECandyCrush/im/alex.si2", nsGraphics::Vec2D(55,55)); // faudrait remplacer ¡ par le chemin des photos
-    nsGui::Sprite pierre("../SAECandyCrush/im/peterandrew.si2", nsGraphics::Vec2D(55,55));
-    nsGui::Sprite cyril("../SAECandyCrush/im/dric.si2", nsGraphics::Vec2D(55,55));
-    nsGui::Sprite arnaud("../SAECandyCrush/im/arno.si2", nsGraphics::Vec2D(55,55));
-    nsGui::Sprite bapt("../SAECandyCrush/im/batist.si2", nsGraphics::Vec2D(55,55));
-    nsGui::Sprite casali("../SAECandyCrush/im/casali.si2", nsGraphics::Vec2D(55,55));
-
     // Variable qui tient le temps de frame
     chrono::microseconds frameTime = chrono::microseconds::zero();
 
@@ -690,11 +702,11 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
         afficheMatriceV3(mat,numLigne,numCol);
         for (unsigned i = 0 ; i < mat.size() ; ++i) {
             for (unsigned j = 0 ; j < mat[i].size() ; ++j) { // Les ? c'est le temps de savoir qui va ou.
-                if (mat[i][j] == 1) window << bapt;
-                if (mat[i][j] == 2) window << cyril;
-                if (mat[i][j] == 3) window << alex;
-                if (mat[i][j] == 4) window << arnaud;
-                if (mat[i][j] == 5) window << pierre;
+                if (mat[i][j] == 1) dessineAlex(window, j * 50, i * 50);
+                if (mat[i][j] == 2) dessineArnaud(window, j * 50, i * 50);
+                if (mat[i][j] == 3) dessineBaptiste(window, j * 50, i * 50);
+                if (mat[i][j] == 4) dessineCyril(window, j * 50, i * 50);
+                if (mat[i][j] == 5) dessinePierre(window, j * 50, i * 50);
             }
         }
         dessinerCurseur(window, numCol * 50, numLigne * 50);
