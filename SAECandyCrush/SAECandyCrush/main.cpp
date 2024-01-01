@@ -658,12 +658,12 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
     window.initGraphic();
 
     // Instancie le sprite
-    nsGui::Sprite alex("/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/im/alex.si2", nsGraphics::Vec2D(55,55)); // faudrait remplacer ¡ par le chemin des photos
-    nsGui::Sprite pierre("/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/im/peterandrew.si2", nsGraphics::Vec2D(55,55));
-    nsGui::Sprite cyril("/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/im/dric.si2", nsGraphics::Vec2D(55,55));
-    nsGui::Sprite arnaud("/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/im/arno.si2", nsGraphics::Vec2D(55,55));
-    nsGui::Sprite bapt("/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/im/batist.si2", nsGraphics::Vec2D(55,55));
-    nsGui::Sprite casali("/home/alex/Documents/GitHub/SAECandyCrush/SAECandyCrush/SAECandyCrush/im/casali.si2", nsGraphics::Vec2D(55,55));
+    nsGui::Sprite alex("../SAECandyCrush/im/alex.si2", nsGraphics::Vec2D(55,55)); // faudrait remplacer ¡ par le chemin des photos
+    nsGui::Sprite pierre("../SAECandyCrush/im/peterandrew.si2", nsGraphics::Vec2D(55,55));
+    nsGui::Sprite cyril("../SAECandyCrush/im/dric.si2", nsGraphics::Vec2D(55,55));
+    nsGui::Sprite arnaud("../SAECandyCrush/im/arno.si2", nsGraphics::Vec2D(55,55));
+    nsGui::Sprite bapt("../SAECandyCrush/im/batist.si2", nsGraphics::Vec2D(55,55));
+    nsGui::Sprite casali("../SAECandyCrush/im/casali.si2", nsGraphics::Vec2D(55,55));
 
     // Variable qui tient le temps de frame
     chrono::microseconds frameTime = chrono::microseconds::zero();
