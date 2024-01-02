@@ -1,5 +1,4 @@
-#include "mingl/gui/sprite.h"
-#define FPS_LIMIT 10
+#define FPS_LIMIT 60
 
 #include <iostream>
 #include <type.h>
@@ -150,6 +149,13 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
             while (numCol < mat[numLigne].size() &&
                    mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
                 ++combienALaSuite;
+            // si on a 5 chiffres identiques à la suite, on créer un 6
+            if (combienALaSuite == 5) {
+                auMoinsUneExplosion = true;
+                mat[numLigne][numCol] = 6;
+                explositionUneBombeHorizontale(mat, numLigne, numCol + 1, combienALaSuite - 1);
+                score += 10 * (combienALaSuite - 2);
+            }
             //si on a au moins 3 chiffres identiques a la suite
             if (combienALaSuite >= 3){
                 auMoinsUneExplosion = true;
@@ -191,6 +197,13 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
             while (numLigne + combienALaSuite < mat.size() &&
                    mat[numLigne][numCol] == mat[numLigne + combienALaSuite][numCol])
                 ++combienALaSuite;
+            // si on a 5 chiffres identiques à la suite, on créer un 6
+            if (combienALaSuite == 5) {
+                auMoinsUneExplosion = true;
+                mat[numLigne][numCol] = 6;
+                explositionUneBombeVerticale (mat, numLigne + 1, numCol, combienALaSuite - 1);
+                score += 10 * (combienALaSuite - 2);
+            }
             //si on a au moins 3 chiffres identiques a la suite
             if (combienALaSuite >= 3){
                 auMoinsUneExplosion = true;
@@ -688,8 +701,11 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
     size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
     size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
 
+    // Quelque variable utile
+    bool curs2 = false;
+    //unsigned time = 0;
 
-    // On fait tourner la boucle tant que la fenêtre est ouverte
+    // On fait tourner la boucle tant que la fenêtre est ouverte ou que le joueur n'a pas gagné ni perdu
     while (nbDeplacement > 0 || score > 0 || window.isOpen() )
     {
         // Récupère l'heure actuelle
@@ -701,18 +717,28 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
         // On affiche la grille puis le curseur
         afficheMatriceV3(mat,numLigne,numCol);
         for (unsigned i = 0 ; i < mat.size() ; ++i) {
-            for (unsigned j = 0 ; j < mat[i].size() ; ++j) { // Les ? c'est le temps de savoir qui va ou.
+            for (unsigned j = 0 ; j < mat[i].size() ; ++j) {
                 if (mat[i][j] == 1) dessineAlex(window, j * 50, i * 50);
                 if (mat[i][j] == 2) dessineArnaud(window, j * 50, i * 50);
                 if (mat[i][j] == 3) dessineBaptiste(window, j * 50, i * 50);
                 if (mat[i][j] == 4) dessineCyril(window, j * 50, i * 50);
                 if (mat[i][j] == 5) dessinePierre(window, j * 50, i * 50);
+                if (mat[i][j] == 6) dessineCasali(window, j * 50, i * 50);
             }
         }
         dessinerCurseur(window, numCol * 50, numLigne * 50);
 
+        // on affiche le score et le nombre de déplacement restant dans une interface MinGl
+        string strScore = "Score = ";
+        strScore += to_string(score);
+        afficheText(window, strScore, 10, 520);
+
+        string strDeplacement = "Deplacement restant = ";
+        strDeplacement += to_string(nbDeplacement);
+        afficheText(window, strDeplacement, 10, 540);
+
         // On gère les déplacements du curseur et les mouvements dans la grille
-        //faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param);
+        faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2);
 
         // On finit la frame en cours
         window.finishFrame();
@@ -748,11 +774,12 @@ int main() {
     {
         cout <<" Sur quel mode de jeu voulez vous jouer ? :" << endl << endl << "1 : mode avec MinGl" << '\t' << "2 : mode avec les nombres" << endl ;
         cin >> mode ;
-        if (mode ==1 || mode==2 || mode==3) test = true ;
+        if (mode >= 1 && mode <= 4) test = true ;
         else cout << "Ce mode de jeu n'existe pas rééssayez !" << endl;
     }
     if (mode == 1) return partiMinglCrush(score, nbDeplacement, param);
     else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance la partie sur le terminal
     else if (mode == 3) return partiMinglTeteCrush(score, nbDeplacement, param);
+    else if (mode == 4) return partiNumberCrush(score, nbDeplacement, param);
     else return 0;
 }

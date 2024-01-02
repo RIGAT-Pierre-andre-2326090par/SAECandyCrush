@@ -1,18 +1,12 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title="main.cpp" alt="" coords="5,132,60,159"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#a04499e810295a8506131a7b912017990" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="127,81,218,108"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="108,132,237,159"/>
-<area shape="rect" id="node9" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="110,309,235,336"/>
-<area shape="rect" id="node4" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title=" " alt="" coords="320,107,452,133"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="285,157,487,184"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="316,5,456,32"/>
-<area shape="rect" id="node7" href="$main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="352,208,420,235"/>
-<area shape="rect" id="node8" href="$main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="326,56,446,83"/>
-<area shape="rect" id="node10" href="$main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="afficheText" alt="" coords="535,335,628,361"/>
-<area shape="rect" id="node11" href="$main_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6" title="dessinerCercle" alt="" coords="327,411,445,437"/>
-<area shape="rect" id="node12" href="$main_8cpp.html#ac46cbc355388b953335699211b70d29f" title="dessinerCroix" alt="" coords="331,461,441,488"/>
-<area shape="rect" id="node13" href="$main_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="dessinerCurseur" alt="" coords="323,512,449,539"/>
-<area shape="rect" id="node14" href="$main_8cpp.html#a7e881b244e62e74617783fc4aa6bdf06" title="dessinerRectangle" alt="" coords="315,563,457,589"/>
-<area shape="rect" id="node15" href="$main_8cpp.html#abd33c630339924d862adfb0af2f61405" title="dessinerTriangle" alt="" coords="322,259,450,285"/>
-<area shape="rect" id="node16" href="$main_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="permet de déplacer le curseur dans la fenètre mingl" alt="" coords="295,360,477,387"/>
+<area shape="rect" id="node1" title="main.cpp" alt="" coords="5,107,60,133"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a04499e810295a8506131a7b912017990" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="139,5,229,32"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,157,249,184"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="121,107,247,133"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="108,56,260,83"/>
+<area shape="rect" id="node10" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,208,255,235"/>
+<area shape="rect" id="node4" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title=" " alt="" coords="343,56,475,83"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="308,157,509,184"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="339,208,479,235"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="375,107,443,133"/>
 </map>
