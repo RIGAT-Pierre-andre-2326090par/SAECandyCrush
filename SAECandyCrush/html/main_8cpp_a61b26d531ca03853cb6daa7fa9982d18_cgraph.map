@@ -1,6 +1,6 @@
 <map id="partiCasaliCrush" name="partiCasaliCrush">
 <area shape="rect" id="node1" title="fonction de lancement du jeu du candy crush" alt="" coords="5,360,135,387"/>
-<area shape="rect" id="node2" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title=" " alt="" coords="217,259,349,285"/>
+<area shape="rect" id="node2" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="217,259,349,285"/>
 <area shape="rect" id="node14" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="183,309,384,336"/>
 <area shape="rect" id="node15" href="$main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="213,360,353,387"/>
 <area shape="rect" id="node16" href="$main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="249,411,317,437"/>

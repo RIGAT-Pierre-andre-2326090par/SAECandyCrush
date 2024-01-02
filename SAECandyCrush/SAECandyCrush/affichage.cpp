@@ -28,7 +28,6 @@ void couleur (const unsigned & coul) {
     cout << "\033[" << coul <<"m";
 }
 
-// affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
 /*void  afficheMatriceV0 (const CMatrice & Mat) {
     clearScreen();
     couleur (KReset);
@@ -50,11 +49,17 @@ void couleur (const unsigned & coul) {
         cout << endl ;
     }
 }*/
+
+/**
+ * @brief affichage de la matrice avec des cercles de couleurs différentes, représentant le contenu des cases
+ * @param Mat: matrice gérer par une fonction appelé par la fonction main
+ * @param window: fenêtre active où le texte va être affiché
+ * @authors A.Nurdin, A.Goncalves, P-A.Rigat
+ */
 void  afficheMatriceV0 (const CMatrice & Mat , MinGL & window) {
     for (size_t i = 0 ; i < Mat.size() ; ++i) {
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j) {
-            if (Mat[i][j]==KAIgnorer){ couleur(KNoir);} // Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
-            else if (Mat[i][j]==1)
+            if (Mat[i][j]==1)
                 window << nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KCyan); // Si l'élément = 1, alors la couleur sera cyan
             else if (Mat[i][j]==2)
                 window << nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KRed); // Si l'élément = 2, alors la couleur sera rouge
@@ -70,7 +75,11 @@ void  afficheMatriceV0 (const CMatrice & Mat , MinGL & window) {
     }
 }
 
-// affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond de couleur différente pour signifier que la case est a KAIgnorer
+/**
+ * @brief affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond de couleur différente pour signifier que la case est a KAIgnorer
+ * @param Mat: matrice gérer par une fonction appelé par la fonction main
+ * @author A.Nurdin
+ */
 void  afficheMatriceV1 (const CMatrice & Mat) {
     clearScreen();
     couleur (44); // Affiche la couleur bleue
@@ -101,7 +110,11 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
     }
 }
 
-// affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur différente pour signifier que la case est a KAIgnorer
+/**
+ * @brief affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur différente pour signifier que la case est a KAIgnorer
+ * @param Mat: matrice gérer par une fonction appelé par la fonction main
+ * @author A.Nurdin
+ */
 void  afficheMatriceV2 (const CMatrice & Mat) {
     clearScreen();
     couleur (44); // Affiche la couleur bleue
@@ -133,7 +146,13 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
     }
 }
 
-// affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur différente pour signifier que la case est a KAIgnorer et la case sélectionner a un fond de couleur différent
+/**
+ * @brief affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur différente pour signifier que la case est a KAIgnorer et la case sélectionner a un fond de couleur différent
+ * @param Mat: matrice gérer par une fonction appelé par la fonction main
+ * @param numLigne: absisse de la position de la case sélectionner
+ * @param numCol: ordonnée de la position de la case sélectionner
+ * @authors A.Nurdin, P-A.Rigat
+ */
 void  afficheMatriceV3 (const CMatrice & Mat, const size_t numLigne, const size_t numCol) {
     clearScreen();
     couleur (44); // Affiche la couleur bleue

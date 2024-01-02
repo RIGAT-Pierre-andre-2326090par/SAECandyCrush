@@ -4,16 +4,16 @@
 <area shape="rect" id="node3" href="$main_8cpp.html#a04499e810295a8506131a7b912017990" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="139,78,229,104"/>
 <area shape="rect" id="node4" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,179,249,206"/>
 <area shape="rect" id="node10" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,331,247,358"/>
-<area shape="rect" id="node15" href="$main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,230,251,256"/>
-<area shape="rect" id="node16" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,280,260,307"/>
+<area shape="rect" id="node15" href="$main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,280,251,307"/>
+<area shape="rect" id="node16" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,230,260,256"/>
 <area shape="rect" id="node17" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,128,255,155"/>
-<area shape="rect" id="node5" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title=" " alt="" coords="343,280,475,307"/>
+<area shape="rect" id="node5" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="343,280,475,307"/>
 <area shape="rect" id="node6" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="308,179,509,206"/>
-<area shape="rect" id="node7" href="$main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="339,128,479,155"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="339,78,479,104"/>
 <area shape="rect" id="node8" href="$main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="375,230,443,256"/>
-<area shape="rect" id="node9" href="$main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="349,78,469,104"/>
-<area shape="rect" id="node11" href="$main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="362,331,455,358"/>
-<area shape="rect" id="node12" href="$main_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6" title="dessine un cercle de couleur rouge avec comme origine x, y" alt="" coords="349,483,468,510"/>
-<area shape="rect" id="node13" href="$main_8cpp.html#ac46cbc355388b953335699211b70d29f" title="dessine une croix de couleur jaune avec comme origine x, y" alt="" coords="353,432,464,459"/>
-<area shape="rect" id="node14" href="$main_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="345,382,472,408"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="349,128,469,155"/>
+<area shape="rect" id="node11" href="$affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="362,331,455,358"/>
+<area shape="rect" id="node12" href="$affichagemingl_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6" title="dessine un cercle de couleur rouge avec comme origine x, y" alt="" coords="349,432,468,459"/>
+<area shape="rect" id="node13" href="$affichagemingl_8cpp.html#ac46cbc355388b953335699211b70d29f" title="dessine une croix de couleur jaune avec comme origine x, y" alt="" coords="353,483,464,510"/>
+<area shape="rect" id="node14" href="$affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="345,382,472,408"/>
 </map>

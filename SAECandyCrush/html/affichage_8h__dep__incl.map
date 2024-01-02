@@ -1,5 +1,6 @@
 <map id="SAECandyCrush/affichage.h" name="SAECandyCrush/affichage.h">
-<area shape="rect" id="node1" title=" " alt="" coords="126,5,329,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="273,5,475,32"/>
 <area shape="rect" id="node2" href="$affichage_8cpp.html" title=" " alt="" coords="5,80,223,107"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title=" " alt="" coords="247,80,437,107"/>
+<area shape="rect" id="node3" href="$affichagemingl_8cpp.html" title=" " alt="" coords="247,80,501,107"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title=" " alt="" coords="525,80,716,107"/>
 </map>

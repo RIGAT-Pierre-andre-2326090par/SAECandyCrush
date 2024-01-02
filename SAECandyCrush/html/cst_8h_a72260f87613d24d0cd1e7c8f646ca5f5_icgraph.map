@@ -1,8 +1,8 @@
 <map id="KVert" name="KVert">
 <area shape="rect" id="node1" title=" " alt="" coords="385,56,443,83"/>
-<area shape="rect" id="node2" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title=" " alt="" coords="205,5,337,32"/>
-<area shape="rect" id="node3" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title=" " alt="" coords="205,56,337,83"/>
-<area shape="rect" id="node5" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title=" " alt="" coords="205,132,337,159"/>
+<area shape="rect" id="node2" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="205,5,337,32"/>
+<area shape="rect" id="node3" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,56,337,83"/>
+<area shape="rect" id="node5" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,132,337,159"/>
 <area shape="rect" id="node4" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,31,152,57"/>
 <area shape="rect" id="node6" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,81,146,108"/>
 <area shape="rect" id="node7" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,132,144,159"/>

@@ -1,5 +1,5 @@
 <map id="afficheMatriceV3" name="afficheMatriceV3">
-<area shape="rect" id="node1" title=" " alt="" coords="5,259,137,285"/>
+<area shape="rect" id="node1" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="5,259,137,285"/>
 <area shape="rect" id="node2" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="189,5,288,32"/>
 <area shape="rect" id="node3" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="203,56,274,83"/>
 <area shape="rect" id="node4" href="$cst_8h.html#af81c8f45a494c8b75bb2623c7a57737f" title=" " alt="" coords="185,107,292,133"/>

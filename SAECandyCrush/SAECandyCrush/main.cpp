@@ -434,8 +434,6 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
     return 0;
 }
 
-/********ici débute les fonctions MinGL*********/
-
 /**
  * @brief gère une fenêtre MinGL ainsi qu'une partie de NumberCrush avec un affichage de forme
  * @param score: entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main
