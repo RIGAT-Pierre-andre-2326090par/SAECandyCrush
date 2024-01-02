@@ -3,7 +3,7 @@
 <area shape="rect" id="node2" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title=" " alt="" coords="217,81,349,108"/>
 <area shape="rect" id="node7" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="183,132,384,159"/>
 <area shape="rect" id="node8" href="$main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="213,183,353,209"/>
-<area shape="rect" id="node9" href="$main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="249,233,317,260"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="249,233,317,260"/>
 <area shape="rect" id="node10" href="$main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="223,284,343,311"/>
 <area shape="rect" id="node3" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="436,5,535,32"/>
 <area shape="rect" id="node4" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="450,56,521,83"/>

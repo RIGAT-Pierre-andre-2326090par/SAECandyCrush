@@ -91,7 +91,7 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a69c339b2966791489487938c49401cf3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a69c339b2966791489487938c49401cf3">FPS_LIMIT</a>&#160;&#160;&#160;60</td></tr>
+<tr class="memitem:a69c339b2966791489487938c49401cf3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a69c339b2966791489487938c49401cf3">FPS_LIMIT</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:a69c339b2966791489487938c49401cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -103,10 +103,10 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a84f6ce81485253e1ddad16d51f965f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml  <a href="main_8cpp.html#a84f6ce81485253e1ddad16d51f965f62">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a84f6ce81485253e1ddad16d51f965f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ee2be2606da0dfc9951f36b245a88b8"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8">nouvRdm</a> (unsigned &amp;nb1, unsigned &amp;nb2, const unsigned &amp;nbMax)</td></tr>
-<tr class="memdesc:a3ee2be2606da0dfc9951f36b245a88b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction permettant de génerer un nouveau nombre aléatoire  <a href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a3ee2be2606da0dfc9951f36b245a88b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2  <a href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a3ee2be2606da0dfc9951f36b245a88b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97e00921cf09bf25414e22954db96866"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866">initMat</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const unsigned &amp;nbMax=<a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a>, const size_t &amp;nbLignes=10, const size_t &amp;nbColonnes=10)</td></tr>
-<tr class="memdesc:a97e00921cf09bf25414e22954db96866"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure générant une matrice carrée remplie de nombre aléatoire  <a href="main_8cpp.html#a97e00921cf09bf25414e22954db96866">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a97e00921cf09bf25414e22954db96866"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax  <a href="main_8cpp.html#a97e00921cf09bf25414e22954db96866">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a97e00921cf09bf25414e22954db96866"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ca5a1d2987f121b68d2e209aff2d5f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3">explositionUneBombeHorizontale</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const size_t &amp;numLigne, const size_t &amp;numColonne, const size_t &amp;combien)</td></tr>
 <tr class="memdesc:a5ca5a1d2987f121b68d2e209aff2d5f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nombre de 3 à 5  <a href="main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3">Plus de détails...</a><br /></td></tr>
@@ -139,46 +139,52 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a61b26d531ca03853cb6daa7fa9982d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction de lancement du jeu du candy crush  <a href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a61b26d531ca03853cb6daa7fa9982d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e881b244e62e74617783fc4aa6bdf06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a7e881b244e62e74617783fc4aa6bdf06">dessinerRectangle</a> (MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</td></tr>
-<tr class="memdesc:a7e881b244e62e74617783fc4aa6bdf06"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessinerRectangle  <a href="main_8cpp.html#a7e881b244e62e74617783fc4aa6bdf06">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a7e881b244e62e74617783fc4aa6bdf06"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un rectangle de couleur bleu avec comme origine x, y  <a href="main_8cpp.html#a7e881b244e62e74617783fc4aa6bdf06">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a7e881b244e62e74617783fc4aa6bdf06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad920d50dadc4a1dd91aace872ef1d4d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6">dessinerCercle</a> (MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</td></tr>
-<tr class="memdesc:ad920d50dadc4a1dd91aace872ef1d4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessinerCercle  <a href="main_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:ad920d50dadc4a1dd91aace872ef1d4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un cercle de couleur rouge avec comme origine x, y  <a href="main_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad920d50dadc4a1dd91aace872ef1d4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd33c630339924d862adfb0af2f61405"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abd33c630339924d862adfb0af2f61405">dessinerTriangle</a> (MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</td></tr>
-<tr class="memdesc:abd33c630339924d862adfb0af2f61405"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessinerTriangle  <a href="main_8cpp.html#abd33c630339924d862adfb0af2f61405">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:abd33c630339924d862adfb0af2f61405"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un triangle de couleur verte avec comme origine x, y  <a href="main_8cpp.html#abd33c630339924d862adfb0af2f61405">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abd33c630339924d862adfb0af2f61405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac46cbc355388b953335699211b70d29f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac46cbc355388b953335699211b70d29f">dessinerCroix</a> (MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</td></tr>
-<tr class="memdesc:ac46cbc355388b953335699211b70d29f"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessinerCroix  <a href="main_8cpp.html#ac46cbc355388b953335699211b70d29f">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:ac46cbc355388b953335699211b70d29f"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine une croix de couleur jaune avec comme origine x, y  <a href="main_8cpp.html#ac46cbc355388b953335699211b70d29f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac46cbc355388b953335699211b70d29f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8eb56329f9a6ddaf328249f7b822476d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d">dessinerCurseur</a> (MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</td></tr>
-<tr class="memdesc:a8eb56329f9a6ddaf328249f7b822476d"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessinerCurseur  <a href="main_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a8eb56329f9a6ddaf328249f7b822476d"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x, y  <a href="main_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8eb56329f9a6ddaf328249f7b822476d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1a8fa20652284fd681b7e13967f5f70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">afficheText</a> (MinGL &amp;window, const string &amp;txt, const unsigned &amp;x, const unsigned &amp;y)</td></tr>
-<tr class="memdesc:ae1a8fa20652284fd681b7e13967f5f70"><td class="mdescLeft">&#160;</td><td class="mdescRight">afficheText  <a href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:ae1a8fa20652284fd681b7e13967f5f70"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche le texte txt en blanc au coordonné x, y  <a href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae1a8fa20652284fd681b7e13967f5f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab64f2a1fda3b84c374e6961856478e2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b">faitUnMouvementMinGL</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, MinGL &amp;window, size_t &amp;numLigne, size_t &amp;numCol, unsigned &amp;nbDeplacement, <a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;param, bool &amp;curs2)</td></tr>
-<tr class="memdesc:ab64f2a1fda3b84c374e6961856478e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">permet de déplacer le curseur dans la fenètre mingl  <a href="main_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:ab64f2a1fda3b84c374e6961856478e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">permet de déplacer le curseur dans la fenêtre mingl  <a href="main_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab64f2a1fda3b84c374e6961856478e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a024a6770bc84a237f11e0137430fdc7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a024a6770bc84a237f11e0137430fdc7f">dessineBaptiste</a> (MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</td></tr>
+<tr class="memdesc:a024a6770bc84a237f11e0137430fdc7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche la tête de Baptiste avec comme origine x, y  <a href="main_8cpp.html#a024a6770bc84a237f11e0137430fdc7f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a024a6770bc84a237f11e0137430fdc7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab80fa0eba33900bee956bde40a2ac2f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab80fa0eba33900bee956bde40a2ac2f6">dessineAlex</a> (MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</td></tr>
+<tr class="memdesc:ab80fa0eba33900bee956bde40a2ac2f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche la tête d'Alex avec comme origine x, y  <a href="main_8cpp.html#ab80fa0eba33900bee956bde40a2ac2f6">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab80fa0eba33900bee956bde40a2ac2f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09224c84307ef255e22a69986bceb296"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a09224c84307ef255e22a69986bceb296">dessinePierre</a> (MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</td></tr>
+<tr class="memdesc:a09224c84307ef255e22a69986bceb296"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche la tête de Pierre-André avec comme origine x, y  <a href="main_8cpp.html#a09224c84307ef255e22a69986bceb296">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a09224c84307ef255e22a69986bceb296"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e84c73c6ff8a93f011e1f1b3fde578d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9e84c73c6ff8a93f011e1f1b3fde578d">dessineCyril</a> (MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</td></tr>
+<tr class="memdesc:a9e84c73c6ff8a93f011e1f1b3fde578d"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche la tête de Cyril avec comme origine x, y  <a href="main_8cpp.html#a9e84c73c6ff8a93f011e1f1b3fde578d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a9e84c73c6ff8a93f011e1f1b3fde578d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ac89b215e10ff7f04c87c9a62ce71fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9ac89b215e10ff7f04c87c9a62ce71fc">dessineArnaud</a> (MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</td></tr>
+<tr class="memdesc:a9ac89b215e10ff7f04c87c9a62ce71fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche la tête d'Arnaud avec comme origine x, y  <a href="main_8cpp.html#a9ac89b215e10ff7f04c87c9a62ce71fc">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a9ac89b215e10ff7f04c87c9a62ce71fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01c3b932e860e2ba98f75812e68271aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a01c3b932e860e2ba98f75812e68271aa">dessineCasali</a> (MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</td></tr>
+<tr class="memdesc:a01c3b932e860e2ba98f75812e68271aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche la tête de A.Casali avec comme origine x, y  <a href="main_8cpp.html#a01c3b932e860e2ba98f75812e68271aa">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a01c3b932e860e2ba98f75812e68271aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a770773bcbab73afe222d1f921bd74684"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684">partiMinglCrush</a> (unsigned &amp;score, unsigned &amp;nbDeplacement, <a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;param)</td></tr>
-<tr class="memdesc:a770773bcbab73afe222d1f921bd74684"><td class="mdescLeft">&#160;</td><td class="mdescRight">partiMinglCrush  <a href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a770773bcbab73afe222d1f921bd74684"><td class="mdescLeft">&#160;</td><td class="mdescRight">gère une fenêtre MinGL ainsi qu'une partie de NumberCrush avec un affichage de forme  <a href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a770773bcbab73afe222d1f921bd74684"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf3d9b449ed0c8eb96763cfd90b5d76d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d">partiMinglTeteCrush</a> (unsigned &amp;score, unsigned &amp;nbDeplacement, <a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;param)</td></tr>
-<tr class="memdesc:abf3d9b449ed0c8eb96763cfd90b5d76d"><td class="mdescLeft">&#160;</td><td class="mdescRight">partiMinglTeteCrush  <a href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:abf3d9b449ed0c8eb96763cfd90b5d76d"><td class="mdescLeft">&#160;</td><td class="mdescRight">gère une partie de NumberCrush avec les têtes de l'équipes et de A.Casali  <a href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abf3d9b449ed0c8eb96763cfd90b5d76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="main_8cpp.html">main.cpp</a>  <a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">la fonction main permettant de choisir le mode de jeux  <a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des macros</h2>
@@ -189,7 +195,7 @@ Fonctions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FPS_LIMIT&#160;&#160;&#160;60</td>
+          <td class="memname">#define FPS_LIMIT&#160;&#160;&#160;10</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -237,27 +243,28 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>afficheText </p>
+<p>affiche le texte txt en blanc au coordonné x, y </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td></td></tr>
-    <tr><td class="paramname">txt</td><td></td></tr>
-    <tr><td class="paramname">x</td><td></td></tr>
-    <tr><td class="paramname">y</td><td></td></tr>
+    <tr><td class="paramname">window</td><td>fenêtre active où le texte va être affiché </td></tr>
+    <tr><td class="paramname">txt</td><td>texte à afficher </td></tr>
+    <tr><td class="paramname">x</td><td>absisse de l'origine du texte </td></tr>
+    <tr><td class="paramname">y</td><td>ordonnée de l'origine du texte </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00492">492</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00510">510</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_ae1a8fa20652284fd681b7e13967f5f70_icgraph.png" border="0" usemap="#amain_8cpp_ae1a8fa20652284fd681b7e13967f5f70_icgraph" alt=""/></div>
 <map name="amain_8cpp_ae1a8fa20652284fd681b7e13967f5f70_icgraph" id="amain_8cpp_ae1a8fa20652284fd681b7e13967f5f70_icgraph">
-<area shape="rect" title="afficheText" alt="" coords="435,31,528,57"/>
-<area shape="rect" href="main_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="permet de déplacer le curseur dans la fenètre mingl" alt="" coords="205,31,387,57"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="19,5,144,32"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="5,68,157,95"/>
+<area shape="rect" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="435,31,528,57"/>
+<area shape="rect" href="main_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="permet de déplacer le curseur dans la fenêtre mingl" alt="" coords="205,31,387,57"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,5,144,32"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="5,68,157,95"/>
 </map>
 </div>
 
@@ -292,8 +299,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">params</td><td></td></tr>
-    <tr><td class="paramname">fichier</td><td></td></tr>
+    <tr><td class="paramname">params</td><td>structure de variable gérer par la fonction main </td></tr>
+    <tr><td class="paramname">fichier</td><td>chemin du fichier yaml cible </td></tr>
   </table>
   </dd>
 </dl>
@@ -335,15 +342,26 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00571">571</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p>affiche la tête d'Alex avec comme origine x, y </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>fenêtre active où la forme va être dessiné </td></tr>
+    <tr><td class="paramname">x</td><td>absisse de l'origine de l'image </td></tr>
+    <tr><td class="paramname">y</td><td>ordonnée de l'origine de l'image </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00604">604</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_ab80fa0eba33900bee956bde40a2ac2f6_icgraph.png" border="0" usemap="#amain_8cpp_ab80fa0eba33900bee956bde40a2ac2f6_icgraph" alt=""/></div>
 <map name="amain_8cpp_ab80fa0eba33900bee956bde40a2ac2f6_icgraph" id="amain_8cpp_ab80fa0eba33900bee956bde40a2ac2f6_icgraph">
-<area shape="rect" title=" " alt="" coords="308,5,409,32"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="108,5,260,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,5,60,32"/>
+<area shape="rect" title="affiche la tête d&#39;Alex avec comme origine x, y" alt="" coords="308,5,409,32"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="108,5,260,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -381,15 +399,26 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00583">583</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p>affiche la tête d'Arnaud avec comme origine x, y </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>fenêtre active où la forme va être dessiné </td></tr>
+    <tr><td class="paramname">x</td><td>absisse de l'origine de l'image </td></tr>
+    <tr><td class="paramname">y</td><td>ordonnée de l'origine de l'image </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00636">636</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a9ac89b215e10ff7f04c87c9a62ce71fc_icgraph.png" border="0" usemap="#amain_8cpp_a9ac89b215e10ff7f04c87c9a62ce71fc_icgraph" alt=""/></div>
 <map name="amain_8cpp_a9ac89b215e10ff7f04c87c9a62ce71fc_icgraph" id="amain_8cpp_a9ac89b215e10ff7f04c87c9a62ce71fc_icgraph">
-<area shape="rect" title=" " alt="" coords="308,5,427,32"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="108,5,260,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,5,60,32"/>
+<area shape="rect" title="affiche la tête d&#39;Arnaud avec comme origine x, y" alt="" coords="308,5,427,32"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="108,5,260,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -427,15 +456,26 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00567">567</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p>affiche la tête de Baptiste avec comme origine x, y </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>fenêtre active où la forme va être dessiné </td></tr>
+    <tr><td class="paramname">x</td><td>absisse de l'origine de l'image </td></tr>
+    <tr><td class="paramname">y</td><td>ordonnée de l'origine de l'image </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00593">593</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a024a6770bc84a237f11e0137430fdc7f_icgraph.png" border="0" usemap="#amain_8cpp_a024a6770bc84a237f11e0137430fdc7f_icgraph" alt=""/></div>
 <map name="amain_8cpp_a024a6770bc84a237f11e0137430fdc7f_icgraph" id="amain_8cpp_a024a6770bc84a237f11e0137430fdc7f_icgraph">
-<area shape="rect" title=" " alt="" coords="308,5,435,32"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="108,5,260,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,5,60,32"/>
+<area shape="rect" title="affiche la tête de Baptiste avec comme origine x, y" alt="" coords="308,5,435,32"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="108,5,260,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -473,15 +513,26 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00587">587</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p>affiche la tête de A.Casali avec comme origine x, y </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>fenêtre active où la forme va être dessiné </td></tr>
+    <tr><td class="paramname">x</td><td>absisse de l'origine de l'image </td></tr>
+    <tr><td class="paramname">y</td><td>ordonnée de l'origine de l'image </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00647">647</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a01c3b932e860e2ba98f75812e68271aa_icgraph.png" border="0" usemap="#amain_8cpp_a01c3b932e860e2ba98f75812e68271aa_icgraph" alt=""/></div>
 <map name="amain_8cpp_a01c3b932e860e2ba98f75812e68271aa_icgraph" id="amain_8cpp_a01c3b932e860e2ba98f75812e68271aa_icgraph">
-<area shape="rect" title=" " alt="" coords="308,5,420,32"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="108,5,260,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,5,60,32"/>
+<area shape="rect" title="affiche la tête de A.Casali avec comme origine x, y" alt="" coords="308,5,420,32"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="108,5,260,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -519,15 +570,26 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00579">579</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p>affiche la tête de Cyril avec comme origine x, y </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>fenêtre active où la forme va être dessiné </td></tr>
+    <tr><td class="paramname">x</td><td>absisse de l'origine de l'image </td></tr>
+    <tr><td class="paramname">y</td><td>ordonnée de l'origine de l'image </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00625">625</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a9e84c73c6ff8a93f011e1f1b3fde578d_icgraph.png" border="0" usemap="#amain_8cpp_a9e84c73c6ff8a93f011e1f1b3fde578d_icgraph" alt=""/></div>
 <map name="amain_8cpp_a9e84c73c6ff8a93f011e1f1b3fde578d_icgraph" id="amain_8cpp_a9e84c73c6ff8a93f011e1f1b3fde578d_icgraph">
-<area shape="rect" title=" " alt="" coords="308,5,411,32"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="108,5,260,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,5,60,32"/>
+<area shape="rect" title="affiche la tête de Cyril avec comme origine x, y" alt="" coords="308,5,411,32"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="108,5,260,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -565,15 +627,26 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00575">575</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p>affiche la tête de Pierre-André avec comme origine x, y </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>fenêtre active où la forme va être dessiné </td></tr>
+    <tr><td class="paramname">x</td><td>absisse de l'origine de l'image </td></tr>
+    <tr><td class="paramname">y</td><td>ordonnée de l'origine de l'image </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00614">614</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a09224c84307ef255e22a69986bceb296_icgraph.png" border="0" usemap="#amain_8cpp_a09224c84307ef255e22a69986bceb296_icgraph" alt=""/></div>
 <map name="amain_8cpp_a09224c84307ef255e22a69986bceb296_icgraph" id="amain_8cpp_a09224c84307ef255e22a69986bceb296_icgraph">
-<area shape="rect" title=" " alt="" coords="308,5,419,32"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="108,5,260,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,5,60,32"/>
+<area shape="rect" title="affiche la tête de Pierre&#45;André avec comme origine x, y" alt="" coords="308,5,419,32"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="108,5,260,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -611,25 +684,26 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p>dessinerCercle </p>
+<p>dessine un cercle de couleur rouge avec comme origine x, y </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td></td></tr>
-    <tr><td class="paramname">x</td><td></td></tr>
-    <tr><td class="paramname">y</td><td></td></tr>
+    <tr><td class="paramname">window</td><td>fenêtre active où la forme va être dessiné </td></tr>
+    <tr><td class="paramname">x</td><td>absisse de l'origine du cercle </td></tr>
+    <tr><td class="paramname">y</td><td>ordonnée de l'origine du cercle </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00447">447</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00461">461</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_ad920d50dadc4a1dd91aace872ef1d4d6_icgraph.png" border="0" usemap="#amain_8cpp_ad920d50dadc4a1dd91aace872ef1d4d6_icgraph" alt=""/></div>
 <map name="amain_8cpp_ad920d50dadc4a1dd91aace872ef1d4d6_icgraph" id="amain_8cpp_ad920d50dadc4a1dd91aace872ef1d4d6_icgraph">
-<area shape="rect" title="dessinerCercle" alt="" coords="281,5,400,32"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="108,5,233,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,5,60,32"/>
+<area shape="rect" title="dessine un cercle de couleur rouge avec comme origine x, y" alt="" coords="281,5,400,32"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="108,5,233,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -667,25 +741,26 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p>dessinerCroix </p>
+<p>dessine une croix de couleur jaune avec comme origine x, y </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td></td></tr>
-    <tr><td class="paramname">x</td><td></td></tr>
-    <tr><td class="paramname">y</td><td></td></tr>
+    <tr><td class="paramname">window</td><td>fenêtre active où la forme va être dessiné </td></tr>
+    <tr><td class="paramname">x</td><td>absisse de l'origine de la croix </td></tr>
+    <tr><td class="paramname">y</td><td>ordonnée de l'origine de la croix </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00467">467</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00483">483</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_ac46cbc355388b953335699211b70d29f_icgraph.png" border="0" usemap="#amain_8cpp_ac46cbc355388b953335699211b70d29f_icgraph" alt=""/></div>
 <map name="amain_8cpp_ac46cbc355388b953335699211b70d29f_icgraph" id="amain_8cpp_ac46cbc355388b953335699211b70d29f_icgraph">
-<area shape="rect" title="dessinerCroix" alt="" coords="281,5,392,32"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="108,5,233,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,5,60,32"/>
+<area shape="rect" title="dessine une croix de couleur jaune avec comme origine x, y" alt="" coords="281,5,392,32"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="108,5,233,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -723,26 +798,27 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p>dessinerCurseur </p>
+<p>dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x, y </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td></td></tr>
-    <tr><td class="paramname">x</td><td></td></tr>
-    <tr><td class="paramname">y</td><td></td></tr>
+    <tr><td class="paramname">window</td><td>fenêtre active où la forme va être dessiné </td></tr>
+    <tr><td class="paramname">x</td><td>absisse de l'origine du curseur </td></tr>
+    <tr><td class="paramname">y</td><td>ordonnée de l'origine du curseur </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00478">478</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00495">495</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a8eb56329f9a6ddaf328249f7b822476d_icgraph.png" border="0" usemap="#amain_8cpp_a8eb56329f9a6ddaf328249f7b822476d_icgraph" alt=""/></div>
 <map name="amain_8cpp_a8eb56329f9a6ddaf328249f7b822476d_icgraph" id="amain_8cpp_a8eb56329f9a6ddaf328249f7b822476d_icgraph">
-<area shape="rect" title="dessinerCurseur" alt="" coords="308,31,435,57"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="121,5,247,32"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="108,56,260,83"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,31,60,57"/>
+<area shape="rect" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="308,31,435,57"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,5,247,32"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="108,56,260,83"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,31,60,57"/>
 </map>
 </div>
 
@@ -780,25 +856,26 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p>dessinerRectangle </p>
+<p>dessine un rectangle de couleur bleu avec comme origine x, y </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td></td></tr>
-    <tr><td class="paramname">x</td><td></td></tr>
-    <tr><td class="paramname">y</td><td></td></tr>
+    <tr><td class="paramname">window</td><td>fenêtre active où la forme va être dessiné </td></tr>
+    <tr><td class="paramname">x</td><td>absisse de l'origine du rectangle </td></tr>
+    <tr><td class="paramname">y</td><td>ordonnée de l'origine du rectangle </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00437">437</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00450">450</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a7e881b244e62e74617783fc4aa6bdf06_icgraph.png" border="0" usemap="#amain_8cpp_a7e881b244e62e74617783fc4aa6bdf06_icgraph" alt=""/></div>
 <map name="amain_8cpp_a7e881b244e62e74617783fc4aa6bdf06_icgraph" id="amain_8cpp_a7e881b244e62e74617783fc4aa6bdf06_icgraph">
-<area shape="rect" title="dessinerRectangle" alt="" coords="281,5,424,32"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="108,5,233,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,5,60,32"/>
+<area shape="rect" title="dessine un rectangle de couleur bleu avec comme origine x, y" alt="" coords="281,5,424,32"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="108,5,233,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -836,25 +913,26 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p>dessinerTriangle </p>
+<p>dessine un triangle de couleur verte avec comme origine x, y </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td></td></tr>
-    <tr><td class="paramname">x</td><td></td></tr>
-    <tr><td class="paramname">y</td><td></td></tr>
+    <tr><td class="paramname">window</td><td>fenêtre active où la forme va être dessiné </td></tr>
+    <tr><td class="paramname">x</td><td>absisse de l'origine du triangle </td></tr>
+    <tr><td class="paramname">y</td><td>ordonnée de l'origine du triangle </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00457">457</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00472">472</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_abd33c630339924d862adfb0af2f61405_icgraph.png" border="0" usemap="#amain_8cpp_abd33c630339924d862adfb0af2f61405_icgraph" alt=""/></div>
 <map name="amain_8cpp_abd33c630339924d862adfb0af2f61405_icgraph" id="amain_8cpp_abd33c630339924d862adfb0af2f61405_icgraph">
-<area shape="rect" title="dessinerTriangle" alt="" coords="281,5,409,32"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="108,5,233,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,5,60,32"/>
+<area shape="rect" title="dessine un triangle de couleur verte avec comme origine x, y" alt="" coords="281,5,409,32"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="108,5,233,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -901,16 +979,17 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l'aide des deux autres fonctions de détection </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td></td></tr>
-    <tr><td class="paramname">score</td><td></td></tr>
-    <tr><td class="paramname">vid</td><td></td></tr>
-    <tr><td class="paramname">plusGrandNb</td><td></td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main </td></tr>
+    <tr><td class="paramname">vid</td><td>valeur d'une case vide(par défaut 0) </td></tr>
+    <tr><td class="paramname">plusGrandNb</td><td>les nombres aléatoire sont compris entre 1 et plusGrandNb(par défaut 4) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>act </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true si il y a eu au moins une explosion vertical ou horizontal, false sinon </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00246">246</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00255">255</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -922,7 +1001,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <area shape="rect" href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="287,137,449,163"/>
 <area shape="rect" href="main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3" title="procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nomb..." alt="" coords="529,13,771,39"/>
 <area shape="rect" href="main_8cpp.html#a8bd751d220569d601afc2200b0378423" title="procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre..." alt="" coords="539,78,761,105"/>
-<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="608,137,692,163"/>
+<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="608,137,692,163"/>
 </map>
 </div>
 <div class="dynheader">
@@ -932,9 +1011,9 @@ Voici le graphe des appelants de cette fonction :</div>
 <map name="amain_8cpp_afce4f4bfde0cf1054c79ad05ac81abec_icgraph" id="amain_8cpp_afce4f4bfde0cf1054c79ad05ac81abec_icgraph">
 <area shape="rect" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="297,56,499,83"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="114,5,243,32"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="116,56,241,83"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="116,56,241,83"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,107,249,133"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,56,60,83"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,56,60,83"/>
 </map>
 </div>
 
@@ -969,15 +1048,15 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td></td></tr>
-    <tr><td class="paramname">score</td><td></td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
-<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true si il y a au moins une explosion, false sinon </dd></dl>
+<dl class="section author"><dt>Auteurs</dt><dd>A.Casali, P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00143">143</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00148">148</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -995,7 +1074,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="444,49,671,90"/>
 <area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,56,396,83"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="13,56,139,83"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="13,56,139,83"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,107,147,133"/>
 </map>
 </div>
@@ -1031,14 +1110,15 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td></td></tr>
-    <tr><td class="paramname">score</td><td></td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true si il y a au moins un explosion, false sinon </dd></dl>
+<dl class="section author"><dt>Auteurs</dt><dd>P-A.Rigat, A.Nurdin </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00191">191</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00198">198</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -1056,7 +1136,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="444,49,671,90"/>
 <area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,56,396,83"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="13,56,139,83"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="13,56,139,83"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,107,147,133"/>
 </map>
 </div>
@@ -1104,16 +1184,16 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nombre de 3 à 5 </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td></td></tr>
-    <tr><td class="paramname">numLigne</td><td></td></tr>
-    <tr><td class="paramname">numColonne</td><td></td></tr>
-    <tr><td class="paramname">combien</td><td></td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">numLigne</td><td>absisse du premier nombre servant de repère pour l'explosion de la bombe </td></tr>
+    <tr><td class="paramname">numColonne</td><td>ordonnée du premier nombre servant de repère pour l'explosion de la bombe </td></tr>
+    <tr><td class="paramname">combien</td><td>nombre de chiffre aligné horizontalement </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00126">126</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00131">131</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -1168,15 +1248,16 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre de 3 à 5 </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td></td></tr>
-    <tr><td class="paramname">numLigne</td><td></td></tr>
-    <tr><td class="paramname">numColonne</td><td></td></tr>
-    <tr><td class="paramname">combien</td><td></td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">numLigne</td><td>absisse du premier nombre servant de repère pour l'explosion de la bombe </td></tr>
+    <tr><td class="paramname">numColonne</td><td>ordonnée du premier nombre servant de repère pour l'explosion de la bombe </td></tr>
+    <tr><td class="paramname">combien</td><td>nombre de chiffre aligné verticalement </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Auteurs</dt><dd>P-A.Rigat, A.Nurdin </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00177">177</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00183">183</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -1243,16 +1324,16 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>procédure permettant au joueur de se déplacer dans la grille et de déplacer l'élément qu'il a séléctionné </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td></td></tr>
-    <tr><td class="paramname">deplacment</td><td></td></tr>
-    <tr><td class="paramname">numLigne</td><td></td></tr>
-    <tr><td class="paramname">numCol</td><td></td></tr>
-    <tr><td class="paramname">nbDeplacement</td><td></td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">deplacment</td><td>caractère indiquant l'action choisi </td></tr>
+    <tr><td class="paramname">numLigne</td><td>absisse du curseur </td></tr>
+    <tr><td class="paramname">numCol</td><td>ordonnée du curseur </td></tr>
+    <tr><td class="paramname">nbDeplacement</td><td>nombre de déplacement restant, gérer par la fonction main </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00282">282</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00292">292</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -1261,7 +1342,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="297,31,437,57"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="114,5,243,32"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,56,249,83"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,31,60,57"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,31,60,57"/>
 </map>
 </div>
 
@@ -1323,27 +1404,28 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p>permet de déplacer le curseur dans la fenètre mingl </p>
+<p>permet de déplacer le curseur dans la fenêtre mingl </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td></td></tr>
-    <tr><td class="paramname">numLigne</td><td></td></tr>
-    <tr><td class="paramname">numCol</td><td></td></tr>
-    <tr><td class="paramname">nbDeplacement</td><td></td></tr>
-    <tr><td class="paramname">param</td><td></td></tr>
-    <tr><td class="paramname">curs2</td><td></td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">numLigne</td><td>absisse du curseur </td></tr>
+    <tr><td class="paramname">numCol</td><td>ordonnée du curseur </td></tr>
+    <tr><td class="paramname">nbDeplacement</td><td>nombre de déplacement restant, gérer par la fonction main </td></tr>
+    <tr><td class="paramname">param</td><td>structure de variable gérer par la fonction main </td></tr>
+    <tr><td class="paramname">curs2</td><td>booléen permettant de savoir si il y a une case sélectionné ou non </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Auteurs</dt><dd>A.Casali, P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00505">505</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00524">524</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_ab64f2a1fda3b84c374e6961856478e2b_cgraph.png" border="0" usemap="#amain_8cpp_ab64f2a1fda3b84c374e6961856478e2b_cgraph" alt=""/></div>
 <map name="amain_8cpp_ab64f2a1fda3b84c374e6961856478e2b_cgraph" id="amain_8cpp_ab64f2a1fda3b84c374e6961856478e2b_cgraph">
-<area shape="rect" title="permet de déplacer le curseur dans la fenètre mingl" alt="" coords="5,5,187,32"/>
-<area shape="rect" href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="afficheText" alt="" coords="235,5,328,32"/>
+<area shape="rect" title="permet de déplacer le curseur dans la fenêtre mingl" alt="" coords="5,5,187,32"/>
+<area shape="rect" href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="235,5,328,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1351,10 +1433,10 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_ab64f2a1fda3b84c374e6961856478e2b_icgraph.png" border="0" usemap="#amain_8cpp_ab64f2a1fda3b84c374e6961856478e2b_icgraph" alt=""/></div>
 <map name="amain_8cpp_ab64f2a1fda3b84c374e6961856478e2b_icgraph" id="amain_8cpp_ab64f2a1fda3b84c374e6961856478e2b_icgraph">
-<area shape="rect" title="permet de déplacer le curseur dans la fenètre mingl" alt="" coords="308,31,489,57"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="121,5,247,32"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="108,56,260,83"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,31,60,57"/>
+<area shape="rect" title="permet de déplacer le curseur dans la fenêtre mingl" alt="" coords="308,31,489,57"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,5,247,32"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="108,56,260,83"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,31,60,57"/>
 </map>
 </div>
 
@@ -1398,23 +1480,26 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p>procédure générant une matrice carrée remplie de nombre aléatoire </p>
+<p>procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td></td></tr>
-    <tr><td class="paramname">nbMax</td><td></td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">nbMax</td><td>les nombres aléatoire sont compris entre 1 et nbMax(par défaut 4) </td></tr>
+    <tr><td class="paramname">nbLignes</td><td>nombre de ligne de la matrice mat </td></tr>
+    <tr><td class="paramname">nbColonnes</td><td>nombre de colonne de la matrice mat </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00100">100</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00105">105</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a97e00921cf09bf25414e22954db96866_cgraph.png" border="0" usemap="#amain_8cpp_a97e00921cf09bf25414e22954db96866_cgraph" alt=""/></div>
 <map name="amain_8cpp_a97e00921cf09bf25414e22954db96866_cgraph" id="amain_8cpp_a97e00921cf09bf25414e22954db96866_cgraph">
-<area shape="rect" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="5,5,73,32"/>
-<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="121,5,205,32"/>
+<area shape="rect" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="5,5,73,32"/>
+<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="121,5,205,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1422,12 +1507,12 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a97e00921cf09bf25414e22954db96866_icgraph.png" border="0" usemap="#amain_8cpp_a97e00921cf09bf25414e22954db96866_icgraph" alt=""/></div>
 <map name="amain_8cpp_a97e00921cf09bf25414e22954db96866_icgraph" id="amain_8cpp_a97e00921cf09bf25414e22954db96866_icgraph">
-<area shape="rect" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="308,81,376,108"/>
+<area shape="rect" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="308,81,376,108"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,5,249,32"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="121,56,247,83"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="108,107,260,133"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,56,247,83"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="108,107,260,133"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,157,255,184"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,81,60,108"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,81,60,108"/>
 </map>
 </div>
 
@@ -1452,7 +1537,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>procédure initialisant les paramètres du joueur au sein du jeu </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">param</td><td></td></tr>
+    <tr><td class="paramname">param</td><td>structure de variable gérer par la fonction main </td></tr>
   </table>
   </dd>
 </dl>
@@ -1465,7 +1550,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="center"><img src="main_8cpp_a04499e810295a8506131a7b912017990_icgraph.png" border="0" usemap="#amain_8cpp_a04499e810295a8506131a7b912017990_icgraph" alt=""/></div>
 <map name="amain_8cpp_a04499e810295a8506131a7b912017990_icgraph" id="amain_8cpp_a04499e810295a8506131a7b912017990_icgraph">
 <area shape="rect" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="108,5,199,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,5,60,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -1486,25 +1571,26 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="main_8cpp.html">main.cpp</a> </p>
+<p>la fonction main permettant de choisir le mode de jeux </p>
 <dl class="section return"><dt>Renvoie</dt><dd>0 </dd></dl>
+<dl class="section author"><dt>Auteurs</dt><dd>A.Nurdin, A.Goncalves, P-A.Rigat, C.Tamine </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00762">762</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00826">826</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
 <map name="amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
-<area shape="rect" title="main.cpp" alt="" coords="5,107,60,133"/>
+<area shape="rect" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,107,60,133"/>
 <area shape="rect" href="main_8cpp.html#a04499e810295a8506131a7b912017990" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="139,5,229,32"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,157,249,184"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="121,107,247,133"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="108,56,260,83"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,107,247,133"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="108,56,260,83"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,208,255,235"/>
 <area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title=" " alt="" coords="343,56,475,83"/>
 <area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="308,157,509,184"/>
 <area shape="rect" href="main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="339,208,479,235"/>
-<area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="375,107,443,133"/>
+<area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="375,107,443,133"/>
 </map>
 </div>
 
@@ -1542,28 +1628,30 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p>fonction permettant de génerer un nouveau nombre aléatoire </p>
+<p>fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2 </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nb1</td><td></td></tr>
-    <tr><td class="paramname">nb2</td><td></td></tr>
-    <tr><td class="paramname">nbMax</td><td></td></tr>
+    <tr><td class="paramname">nb1</td><td>premier nombre dont le nouveaux nombre aléatoire doit être différent </td></tr>
+    <tr><td class="paramname">nb2</td><td>second nombre dont le nouveaux nombre aléatoire doit être différent </td></tr>
+    <tr><td class="paramname">nbMax</td><td>le nouveaux nombre aléatoire doit être inclut entre 1 et nbMax </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Renvoie</dt><dd>rdm: nombre aléatoire entre 1 et nbMax différent de nb1 et nb2 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00087">87</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00089">89</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph.png" border="0" usemap="#amain_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph" alt=""/></div>
 <map name="amain_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph" id="amain_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph">
-<area shape="rect" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="665,81,749,108"/>
-<area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="272,107,340,133"/>
+<area shape="rect" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="665,81,749,108"/>
+<area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="272,107,340,133"/>
 <area shape="rect" href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="455,56,617,83"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="19,56,144,83"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="5,157,157,184"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,56,144,83"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="5,157,157,184"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,107,152,133"/>
 <area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,56,407,83"/>
 </map>
@@ -1606,14 +1694,15 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>fonction de lancement du jeu du candy crush </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">score</td><td></td></tr>
-    <tr><td class="paramname">nbDeplacement</td><td></td></tr>
+    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main </td></tr>
+    <tr><td class="paramname">nbDeplacement</td><td>nombre de déplacement restant, gérer par la fonction main </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>0 </dd></dl>
+<dl class="section author"><dt>Auteurs</dt><dd>A.Nurdin, A.Goncalves, P-A.Rigat, C.Tamine, B.Gaston </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00395">395</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00407">407</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -1623,7 +1712,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title=" " alt="" coords="217,81,349,108"/>
 <area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="183,132,384,159"/>
 <area shape="rect" href="main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="213,183,353,209"/>
-<area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="249,233,317,260"/>
+<area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="249,233,317,260"/>
 <area shape="rect" href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="223,284,343,311"/>
 <area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="436,5,535,32"/>
 <area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="450,56,521,83"/>
@@ -1637,7 +1726,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="center"><img src="main_8cpp_a61b26d531ca03853cb6daa7fa9982d18_icgraph.png" border="0" usemap="#amain_8cpp_a61b26d531ca03853cb6daa7fa9982d18_icgraph" alt=""/></div>
 <map name="amain_8cpp_a61b26d531ca03853cb6daa7fa9982d18_icgraph" id="amain_8cpp_a61b26d531ca03853cb6daa7fa9982d18_icgraph">
 <area shape="rect" title="fonction de lancement du jeu du candy crush" alt="" coords="108,5,237,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,5,60,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -1675,25 +1764,27 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p>partiMinglCrush </p>
+<p>gère une fenêtre MinGL ainsi qu'une partie de NumberCrush avec un affichage de forme </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">score</td><td></td></tr>
-    <tr><td class="paramname">nbDeplacement</td><td></td></tr>
-    <tr><td class="paramname">param</td><td></td></tr>
+    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main </td></tr>
+    <tr><td class="paramname">nbDeplacement</td><td>nombre de déplacement restant, gérer par la fonction main </td></tr>
+    <tr><td class="paramname">param</td><td>structure de variable gérer par la fonction main </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>0 </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bogue:</a></b></dt><dd>pas de forme pour le nombre 5 </dd></dl>
+<dl class="section author"><dt>Auteurs</dt><dd>A.Goncalves, P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00598">598</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00660">660</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a770773bcbab73afe222d1f921bd74684_icgraph.png" border="0" usemap="#amain_8cpp_a770773bcbab73afe222d1f921bd74684_icgraph" alt=""/></div>
 <map name="amain_8cpp_a770773bcbab73afe222d1f921bd74684_icgraph" id="amain_8cpp_a770773bcbab73afe222d1f921bd74684_icgraph">
-<area shape="rect" title="partiMinglCrush" alt="" coords="108,5,233,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,5,60,32"/>
+<area shape="rect" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="108,5,233,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -1731,25 +1822,26 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p>partiMinglTeteCrush </p>
+<p>gère une partie de NumberCrush avec les têtes de l'équipes et de A.Casali </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">score</td><td></td></tr>
-    <tr><td class="paramname">nbDeplacement</td><td></td></tr>
-    <tr><td class="paramname">param</td><td></td></tr>
+    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main </td></tr>
+    <tr><td class="paramname">nbDeplacement</td><td>nombre de déplacement restant, gérer par la fonction main </td></tr>
+    <tr><td class="paramname">param</td><td>structure de variable gérer par la fonction main </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 </dd></dl>
+<dl class="section author"><dt>Auteurs</dt><dd>A.Goncalves, P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00687">687</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00750">750</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_abf3d9b449ed0c8eb96763cfd90b5d76d_icgraph.png" border="0" usemap="#amain_8cpp_abf3d9b449ed0c8eb96763cfd90b5d76d_icgraph" alt=""/></div>
 <map name="amain_8cpp_abf3d9b449ed0c8eb96763cfd90b5d76d_icgraph" id="amain_8cpp_abf3d9b449ed0c8eb96763cfd90b5d76d_icgraph">
-<area shape="rect" title="partiMinglTeteCrush" alt="" coords="108,5,260,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,5,60,32"/>
+<area shape="rect" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="108,5,260,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -1790,14 +1882,15 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>fonction lançant une version lite du candy crush pour les tests </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">score</td><td></td></tr>
-    <tr><td class="paramname">nbDeplacement</td><td></td></tr>
+    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main </td></tr>
+    <tr><td class="paramname">nbDeplacement</td><td>nombre de déplacement restant, gérer par la fonction main </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>0 </dd></dl>
+<dl class="section author"><dt>Auteurs</dt><dd>A.Nurdin, A.Goncalves, P-A.Rigat, C.Tamine, B.Gaston </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00355">355</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00366">366</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -1807,7 +1900,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title=" " alt="" coords="229,81,361,108"/>
 <area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,132,396,159"/>
 <area shape="rect" href="main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="225,183,365,209"/>
-<area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="261,233,329,260"/>
+<area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="261,233,329,260"/>
 <area shape="rect" href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="235,284,355,311"/>
 <area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="444,5,543,32"/>
 <area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="458,56,529,83"/>
@@ -1821,7 +1914,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="center"><img src="main_8cpp_ab791841bb941a1f2a2db2024320d7e88_icgraph.png" border="0" usemap="#amain_8cpp_ab791841bb941a1f2a2db2024320d7e88_icgraph" alt=""/></div>
 <map name="amain_8cpp_ab791841bb941a1f2a2db2024320d7e88_icgraph" id="amain_8cpp_ab791841bb941a1f2a2db2024320d7e88_icgraph">
 <area shape="rect" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,5,249,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,5,60,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -1862,21 +1955,22 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>remplace toutes les cases vides par des nombres aléatoires </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td></td></tr>
-    <tr><td class="paramname">vid</td><td></td></tr>
-    <tr><td class="paramname">nbMax</td><td></td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">vid</td><td>valeur d'une case vide(par défaut 0) </td></tr>
+    <tr><td class="paramname">nbMax</td><td>les nombres aléatoire sont compris entre 1 et nbMax(par défaut 4) </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00224">224</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00232">232</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph.png" border="0" usemap="#amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph" alt=""/></div>
 <map name="amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph" id="amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph">
 <area shape="rect" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="5,5,168,32"/>
-<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire" alt="" coords="216,5,300,32"/>
+<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="216,5,300,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1887,7 +1981,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="444,56,607,83"/>
 <area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,56,396,83"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="11,5,141,32"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="13,56,139,83"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="13,56,139,83"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,107,147,133"/>
 </map>
 </div>
@@ -1923,14 +2017,15 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu'à être côte à côte d'un élément juste en dessous d'eux ou au fond de la matrice si il n'y a pas d'éléments en dessous </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td></td></tr>
-    <tr><td class="paramname">vid</td><td></td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">vid</td><td>valeur d'une case vide(par défaut 0) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>auMoinsUnMov </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true si un ou plusieurs élément on été déplacé, false sinon </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00261">261</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00271">271</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -1939,7 +2034,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="297,31,417,57"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="114,5,243,32"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,56,249,83"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,31,60,57"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,31,60,57"/>
 </map>
 </div>
 

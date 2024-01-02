@@ -1,6 +1,6 @@
 <map id="dessinerCurseur" name="dessinerCurseur">
-<area shape="rect" id="node1" title="dessinerCurseur" alt="" coords="308,31,435,57"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="121,5,247,32"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="108,56,260,83"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main.cpp" alt="" coords="5,31,60,57"/>
+<area shape="rect" id="node1" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="308,31,435,57"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,5,247,32"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="108,56,260,83"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,31,60,57"/>
 </map>

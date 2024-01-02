@@ -1,4 +1,4 @@
-#define FPS_LIMIT 60
+#define FPS_LIMIT 10
 
 #include <iostream>
 #include <type.h>
@@ -19,7 +19,7 @@ using namespace std;
 
 /**
  * @brief procédure initialisant les paramètres du joueur au sein du jeu
- * @param param
+ * @param param: structure de variable gérer par la fonction main
  * @authors A.Casali, P-A.Rigat
  */
 void initParams (CMyParam & param)
@@ -47,8 +47,8 @@ void initParams (CMyParam & param)
 
 /**
  * @brief procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml
- * @param params
- * @param fichier
+ * @param params: structure de variable gérer par la fonction main
+ * @param fichier: chemin du fichier yaml cible
  * @author A.Casali
  */
 void chargerParametre(CMyParam & params, const string & fichier){
@@ -78,10 +78,12 @@ void chargerParametre(CMyParam & params, const string & fichier){
 }
 
 /**
- * @brief fonction permettant de génerer un nouveau nombre aléatoire
- * @param nb1
- * @param nb2
- * @param nbMax
+ * @brief fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2
+ * @param nb1: premier nombre dont le nouveaux nombre aléatoire doit être différent
+ * @param nb2: second nombre dont le nouveaux nombre aléatoire doit être différent
+ * @param nbMax: le nouveaux nombre aléatoire doit être inclut entre 1 et nbMax
+ * @return rdm: nombre aléatoire entre 1 et nbMax différent de nb1 et nb2
+ * @author P-A.Rigat
  */
 //renvoie un nombre random différent de ceux passer en paramètre
 unsigned nouvRdm(unsigned & nb1, unsigned & nb2, const unsigned & nbMax){
@@ -92,9 +94,12 @@ unsigned nouvRdm(unsigned & nb1, unsigned & nb2, const unsigned & nbMax){
 }
 
 /**
- * @brief procédure générant une matrice carrée remplie de nombre aléatoire
- * @param mat
- * @param nbMax
+ * @brief procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax
+ * @param mat: matrice gérer par une fonction appelé par la fonction main
+ * @param nbMax: les nombres aléatoire sont compris entre 1 et nbMax(par défaut 4)
+ * @param nbLignes: nombre de ligne de la matrice mat
+ * @param nbColonnes: nombre de colonne de la matrice mat
+ * @author P-A.Rigat
  */
 //initialisation de la grille de jeu avec maximum 2 nombre aligné
 void initMat (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice,
@@ -117,10 +122,10 @@ void initMat (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMat
 
 /**
  * @brief procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nombre de 3 à 5
- * @param mat
- * @param numLigne
- * @param numColonne
- * @param combien
+ * @param mat: matrice gérer par une fonction appelé par la fonction main
+ * @param numLigne: absisse du premier nombre servant de repère pour l'explosion de la bombe
+ * @param numColonne: ordonnée du premier nombre servant de repère pour l'explosion de la bombe
+ * @param combien: nombre de chiffre aligné horizontalement
  * @author A.Casali
  */
 void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
@@ -135,10 +140,10 @@ void explositionUneBombeHorizontale (CMatrice & mat, const size_t & numLigne,
 
 /**
  * @brief fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice
- * @param mat
- * @param score
- * @return
- * @author A.Casali
+ * @param mat: matrice gérer par une fonction appelé par la fonction main
+ * @param score: entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main
+ * @return true si il y a au moins une explosion, false sinon
+ * @authors A.Casali, P-A.Rigat
  */
 bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
     bool auMoinsUneExplosion (false);
@@ -169,10 +174,11 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
 
 /**
  * @brief procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre de 3 à 5
- * @param mat
- * @param numLigne
- * @param numColonne
- * @param combien
+ * @param mat: matrice gérer par une fonction appelé par la fonction main
+ * @param numLigne: absisse du premier nombre servant de repère pour l'explosion de la bombe
+ * @param numColonne: ordonnée du premier nombre servant de repère pour l'explosion de la bombe
+ * @param combien: nombre de chiffre aligné verticalement
+ * @authors P-A.Rigat, A.Nurdin
  */
 void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
                                   const size_t & numColonne, const size_t & combien){
@@ -184,9 +190,10 @@ void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
 
 /**
  * @brief fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice
- * @param mat
- * @param score
- * @return
+ * @param mat: matrice gérer par une fonction appelé par la fonction main
+ * @param score: entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main
+ * @return true si il y a au moins un explosion, false sinon
+ * @authors P-A.Rigat, A.Nurdin
  */
 bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
     bool auMoinsUneExplosion (false);
@@ -217,9 +224,10 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
 
 /**
  * @brief remplace toutes les cases vides par des nombres aléatoires
- * @param mat
- * @param vid
- * @param nbMax
+ * @param mat: matrice gérer par une fonction appelé par la fonction main
+ * @param vid: valeur d'une case vide(par défaut 0)
+ * @param nbMax: les nombres aléatoire sont compris entre 1 et nbMax(par défaut 4)
+ * @author P-A.Rigat
  */
 void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
                         const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
@@ -237,11 +245,12 @@ void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
 
 /**
  * @brief fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l'aide des deux autres fonctions de détection
- * @param mat
- * @param score
- * @param vid
- * @param plusGrandNb
- * @return act
+ * @param mat: matrice gérer par une fonction appelé par la fonction main
+ * @param score: entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main
+ * @param vid: valeur d'une case vide(par défaut 0)
+ * @param plusGrandNb: les nombres aléatoire sont compris entre 1 et plusGrandNb(par défaut 4)
+ * @return true si il y a eu au moins une explosion vertical ou horizontal, false sinon
+ * @author P-A.Rigat
  */
 bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
                                const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
@@ -254,9 +263,10 @@ bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned
 
 /**
  * @brief fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu'à être côte à côte d'un élément juste en dessous d'eux ou au fond de la matrice si il n'y a pas d'éléments en dessous
- * @param mat
- * @param vid
- * @return auMoinsUnMov
+ * @param mat: matrice gérer par une fonction appelé par la fonction main
+ * @param vid: valeur d'une case vide(par défaut 0)
+ * @return true si un ou plusieurs élément on été déplacé, false sinon
+ * @author P-A.Rigat
  */
 bool zeroVidSousNb (CMatrice & mat, const unsigned & vid = KAIgnorer) {
     bool auMoinsUnMov = false;
@@ -273,11 +283,11 @@ bool zeroVidSousNb (CMatrice & mat, const unsigned & vid = KAIgnorer) {
 
 /**
  * @brief procédure permettant au joueur de se déplacer dans la grille et de déplacer l'élément qu'il a séléctionné
- * @param mat
- * @param deplacment
- * @param numLigne
- * @param numCol
- * @param nbDeplacement
+ * @param mat: matrice gérer par une fonction appelé par la fonction main
+ * @param deplacment: caractère indiquant l'action choisi
+ * @param numLigne: absisse du curseur
+ * @param numCol: ordonnée du curseur
+ * @param nbDeplacement: nombre de déplacement restant, gérer par la fonction main
  */
 void faitUnMouvement (CMatrice & mat, const char & deplacment, size_t & numLigne,
                      size_t & numCol, unsigned & nbDeplacement, CMyParam & param) {
@@ -348,9 +358,10 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, size_t & numLigne
 
 /**
  * @brief fonction lançant une version lite du candy crush pour les tests
- * @param score
- * @param nbDeplacement
+ * @param score: entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main
+ * @param nbDeplacement: nombre de déplacement restant, gérer par la fonction main
  * @return 0
+ * @authors A.Nurdin, A.Goncalves, P-A.Rigat, C.Tamine, B.Gaston
  */
 int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & param){
     CMatrice mat;
@@ -388,9 +399,10 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
 
 /**
  * @brief fonction de lancement du jeu du candy crush
- * @param score
- * @param nbDeplacement
+ * @param score: entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main
+ * @param nbDeplacement: nombre de déplacement restant, gérer par la fonction main
  * @return 0
+ * @authors A.Nurdin, A.Goncalves, P-A.Rigat, C.Tamine, B.Gaston
  */
 int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & param){
     CMatrice mat;
@@ -429,40 +441,44 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
 /********ici débute le Mingl*********/
 
 /**
- * @brief dessinerRectangle
- * @param window
- * @param x
- * @param y
+ * @brief dessine un rectangle de couleur bleu avec comme origine x, y
+ * @param window: fenêtre active où la forme va être dessiné
+ * @param x: absisse de l'origine du rectangle
+ * @param y: ordonnée de l'origine du rectangle
+ * @author P-A.Rigat
  */
 void dessinerRectangle (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Rectangle(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KBlue);
 }
 
 /**
- * @brief dessinerCercle
- * @param window
- * @param x
- * @param y
+ * @brief dessine un cercle de couleur rouge avec comme origine x, y
+ * @param window: fenêtre active où la forme va être dessiné
+ * @param x: absisse de l'origine du cercle
+ * @param y: ordonnée de l'origine du cercle
+ * @author P-A.Rigat
  */
 void dessinerCercle (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Circle(nsGraphics::Vec2D(x + 25, y + 25), 25, nsGraphics::KRed);
 }
 
 /**
- * @brief dessinerTriangle
- * @param window
- * @param x
- * @param y
+ * @brief dessine un triangle de couleur verte avec comme origine x, y
+ * @param window: fenêtre active où la forme va être dessiné
+ * @param x: absisse de l'origine du triangle
+ * @param y: ordonnée de l'origine du triangle
+ * @author P-A.Rigat
  */
 void dessinerTriangle (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Triangle(nsGraphics::Vec2D(x + 25, y), nsGraphics::Vec2D(x, y + 50), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KGreen);
 }
 
 /**
- * @brief dessinerCroix
- * @param window
- * @param x
- * @param y
+ * @brief dessine une croix de couleur jaune avec comme origine x, y
+ * @param window: fenêtre active où la forme va être dessiné
+ * @param x: absisse de l'origine de la croix
+ * @param y: ordonnée de l'origine de la croix
+ * @author P-A.Rigat
  */
 void dessinerCroix (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Line(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KYellow, 5.f);
@@ -470,10 +486,11 @@ void dessinerCroix (MinGL & window, const unsigned & x, const unsigned & y) {
 }
 
 /**
- * @brief dessinerCurseur
- * @param window
- * @param x
- * @param y
+ * @brief dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x, y
+ * @param window: fenêtre active où la forme va être dessiné
+ * @param x: absisse de l'origine du curseur
+ * @param y: ordonnée de l'origine du curseur
+ * @author P-A.Rigat
  */
 void dessinerCurseur (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Triangle(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x, y + 10), nsGraphics::Vec2D(x + 10, y), nsGraphics::KWhite);
@@ -483,24 +500,26 @@ void dessinerCurseur (MinGL & window, const unsigned & x, const unsigned & y) {
 }
 
 /**
- * @brief afficheText
- * @param window
- * @param txt
- * @param x
- * @param y
+ * @brief affiche le texte txt en blanc au coordonné x, y
+ * @param window: fenêtre active où le texte va être affiché
+ * @param txt: texte à afficher
+ * @param x: absisse de l'origine du texte
+ * @param y: ordonnée de l'origine du texte
+ * @author P-A.Rigat
  */
 void afficheText(MinGL & window, const string & txt, const unsigned & x, const unsigned & y) {
     window << nsGui::Text(nsGraphics::Vec2D(x, y), txt, nsGraphics::KWhite, nsGui::GlutFont::BITMAP_9_BY_15);
 }
 
 /**
- * @brief permet de déplacer le curseur dans la fenètre mingl
- * @param mat
- * @param numLigne
- * @param numCol
- * @param nbDeplacement
- * @param param
- * @param curs2
+ * @brief permet de déplacer le curseur dans la fenêtre mingl
+ * @param mat: matrice gérer par une fonction appelé par la fonction main
+ * @param numLigne: absisse du curseur
+ * @param numCol: ordonnée du curseur
+ * @param nbDeplacement: nombre de déplacement restant, gérer par la fonction main
+ * @param param: structure de variable gérer par la fonction main
+ * @param curs2: booléen permettant de savoir si il y a une case sélectionné ou non
+ * @authors A.Casali, P-A.Rigat
  */
 void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
                           size_t & numCol, unsigned & nbDeplacement, CMyParam & param,
@@ -564,36 +583,79 @@ void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
     numLigne = nouvellePositionLigne;
 }
 
+/**
+ * @brief affiche la tête de Baptiste avec comme origine x, y
+ * @param window: fenêtre active où la forme va être dessiné
+ * @param x: absisse de l'origine de l'image
+ * @param y: ordonnée de l'origine de l'image
+ * @author P-A.Rigat
+ */
 void dessineBaptiste (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsGui::Sprite ("../SAECandyCrush/im/batist.si2", nsGraphics::Vec2D(x, y));
 }
 
+/**
+ * @brief affiche la tête d'Alex avec comme origine x, y
+ * @param window: fenêtre active où la forme va être dessiné
+ * @param x: absisse de l'origine de l'image
+ * @param y: ordonnée de l'origine de l'image
+ * @author P-A.Rigat
+ */
 void dessineAlex (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsGui::Sprite ("../SAECandyCrush/im/alex.si2", nsGraphics::Vec2D(x, y));
 }
-
+/**
+ * @brief affiche la tête de Pierre-André avec comme origine x, y
+ * @param window: fenêtre active où la forme va être dessiné
+ * @param x: absisse de l'origine de l'image
+ * @param y: ordonnée de l'origine de l'image
+ * @author P-A.Rigat
+ */
 void dessinePierre (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsGui::Sprite ("../SAECandyCrush/im/peterandrew.si2", nsGraphics::Vec2D(x, y));
 }
 
+/**
+ * @brief affiche la tête de Cyril avec comme origine x, y
+ * @param window: fenêtre active où la forme va être dessiné
+ * @param x: absisse de l'origine de l'image
+ * @param y: ordonnée de l'origine de l'image
+ * @author P-A.Rigat
+ */
 void dessineCyril (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsGui::Sprite ("../SAECandyCrush/im/dric.si2", nsGraphics::Vec2D(x, y));
 }
 
+/**
+ * @brief affiche la tête d'Arnaud avec comme origine x, y
+ * @param window: fenêtre active où la forme va être dessiné
+ * @param x: absisse de l'origine de l'image
+ * @param y: ordonnée de l'origine de l'image
+ * @author P-A.Rigat
+ */
 void dessineArnaud (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsGui::Sprite ("../SAECandyCrush/im/arno.si2", nsGraphics::Vec2D(x, y));
 }
 
+/**
+ * @brief affiche la tête de A.Casali avec comme origine x, y
+ * @param window: fenêtre active où la forme va être dessiné
+ * @param x: absisse de l'origine de l'image
+ * @param y: ordonnée de l'origine de l'image
+ * @author P-A.Rigat
+ */
 void dessineCasali (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsGui::Sprite ("../SAECandyCrush/im/casali.si2", nsGraphics::Vec2D(x, y));
 }
 
 /**
- * @brief partiMinglCrush
- * @param score
- * @param nbDeplacement
- * @param param
+ * @brief gère une fenêtre MinGL ainsi qu'une partie de NumberCrush avec un affichage de forme
+ * @param score: entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main
+ * @param nbDeplacement: nombre de déplacement restant, gérer par la fonction main
+ * @param param: structure de variable gérer par la fonction main
  * @return 0
+ * @bug pas de forme pour le nombre 5
+ * @authors A.Goncalves, P-A.Rigat
  */
 int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & param) {
     // Initialise le système
@@ -678,11 +740,12 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
 }
 
 /**
- * @brief partiMinglTeteCrush
- * @param score
- * @param nbDeplacement
- * @param param
- * @return
+ * @brief gère une partie de NumberCrush avec les têtes de l'équipes et de A.Casali
+ * @param score: entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main
+ * @param nbDeplacement: nombre de déplacement restant, gérer par la fonction main
+ * @param param: structure de variable gérer par la fonction main
+ * @return 0
+ * @authors A.Goncalves, P-A.Rigat
  */
 int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & param) {
     // Initialise le système
@@ -756,8 +819,9 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
 }
 
 /**
- * @brief main.cpp
+ * @brief la fonction main permettant de choisir le mode de jeux
  * @return 0
+ * @authors A.Nurdin, A.Goncalves, P-A.Rigat, C.Tamine
  */
 int main() {
     srand(time(NULL));

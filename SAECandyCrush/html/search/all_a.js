@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['particasalicrush_62',['partiCasaliCrush',['../main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18',1,'main.cpp']]],
-  ['partiminglcrush_63',['partiMinglCrush',['../main_8cpp.html#a770773bcbab73afe222d1f921bd74684',1,'main.cpp']]],
-  ['partimingltetecrush_64',['partiMinglTeteCrush',['../main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d',1,'main.cpp']]],
-  ['partinumbercrush_65',['partiNumberCrush',['../main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88',1,'main.cpp']]],
-  ['position_66',['position',['../structposition.html',1,'']]]
+  ['nouvrdm_62',['nouvRdm',['../main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8',1,'main.cpp']]]
 ];

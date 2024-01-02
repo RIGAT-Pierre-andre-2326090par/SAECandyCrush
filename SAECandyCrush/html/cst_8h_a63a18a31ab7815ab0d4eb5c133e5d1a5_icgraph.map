@@ -5,6 +5,6 @@
 <area shape="rect" id="node5" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title=" " alt="" coords="205,119,337,145"/>
 <area shape="rect" id="node4" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,43,152,69"/>
 <area shape="rect" id="node6" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,93,146,120"/>
-<area shape="rect" id="node7" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="19,144,144,171"/>
-<area shape="rect" id="node8" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="5,195,157,221"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,144,144,171"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="5,195,157,221"/>
 </map>

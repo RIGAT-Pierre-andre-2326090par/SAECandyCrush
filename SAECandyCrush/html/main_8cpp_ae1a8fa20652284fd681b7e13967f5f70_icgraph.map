@@ -1,6 +1,6 @@
 <map id="afficheText" name="afficheText">
-<area shape="rect" id="node1" title="afficheText" alt="" coords="435,31,528,57"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="permet de déplacer le curseur dans la fenètre mingl" alt="" coords="205,31,387,57"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="partiMinglCrush" alt="" coords="19,5,144,32"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="partiMinglTeteCrush" alt="" coords="5,68,157,95"/>
+<area shape="rect" id="node1" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="435,31,528,57"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="permet de déplacer le curseur dans la fenêtre mingl" alt="" coords="205,31,387,57"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,5,144,32"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="5,68,157,95"/>
 </map>
