@@ -1,4 +1,4 @@
-#define FPS_LIMIT 10
+#define FPS_LIMIT 60
 
 #include <iostream>
 #include <type.h>
@@ -858,8 +858,15 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
         // On efface la fenêtre
         window.clearScreen();
 
-        // On affiche la grille puis le curseur
+        // on affiche le fond
+        window << nsGui::Sprite ("../SAECandyCrush/im/fond.si2", nsGraphics::Vec2D(0, 0));
+
+        // on affiche la grille, le score et le nombre de déplacement restant dans le terminal
         afficheMatriceV3(mat,numLigne,numCol);
+        cout << "Score = " << score << endl
+             << "Deplacement Restant = " << nbDeplacement << endl;
+
+        // On affiche la grille puis le curseur dans une interface MinGL
         for (unsigned i = 0 ; i < mat.size() ; ++i) {
             for (unsigned j = 0 ; j < mat[i].size() ; ++j) {
                 if (mat[i][j] == 1) dessineAlex(window, j * 50, i * 50);
@@ -881,8 +888,12 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
         strDeplacement += to_string(nbDeplacement);
         afficheText(window, strDeplacement, 10, 540);
 
+        // si il y a des combos, on supprime les combos et on continue
+        if (detectionExplositionBombe(mat,score)) continue;
+        else {
         // On gère les déplacements du curseur et les mouvements dans la grille
         faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2);
+        }
 
         // On finit la frame en cours
         window.finishFrame();
