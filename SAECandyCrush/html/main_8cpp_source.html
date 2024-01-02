@@ -106,7 +106,7 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbColonnes&quot;</span>] = 10;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbLignes&quot;</span>] = 10;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//quelque variable utile</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbMax&quot;</span>] = 5;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;scoreMax&quot;</span>] = 350;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;deplacementMax&quot;</span>] = 15;</div>
@@ -560,148 +560,227 @@ $(function() {
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;        <a class="code" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9">afficheMatriceV3</a>(mat, numLigne, numCol);</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160; </div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;        <span class="comment">// On affiche la grille puis le curseur dans une interface MinGl</span></div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;        <span class="comment">//afficheMatriceV0(mat, window);</span></div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0 ; i &lt; mat.size() ; ++i) {</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> j = 0 ; j &lt; mat[i].size() ; ++j) {</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 1) <a class="code" href="main_8cpp.html#a7e881b244e62e74617783fc4aa6bdf06">dessinerRectangle</a>(window, j * 50, i * 50);</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 2) <a class="code" href="main_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6">dessinerCercle</a>(window, j * 50, i * 50);</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 3) <a class="code" href="main_8cpp.html#abd33c630339924d862adfb0af2f61405">dessinerTriangle</a>(window, j * 50, i * 50);</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 4) <a class="code" href="main_8cpp.html#ac46cbc355388b953335699211b70d29f">dessinerCroix</a>(window, j * 50, i * 50);</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;            }</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        }</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        <a class="code" href="main_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d">dessinerCurseur</a>(window, numCol * 50, numLigne * 50);</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160; </div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        <span class="comment">// on affiche le score et le nombre de déplacement restant dans le terminal</span></div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Score = &quot;</span> &lt;&lt; score &lt;&lt; endl</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;             &lt;&lt; <span class="stringliteral">&quot;Deplacement Restant = &quot;</span> &lt;&lt; nbDeplacement &lt;&lt; endl;</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        <span class="comment">// on affiche le score et le nombre de déplacement restant dans une interface MinGl</span></div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        <span class="keywordtype">string</span> strScore = <span class="stringliteral">&quot;Score = &quot;</span>;</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        strScore += to_string(score);</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        <a class="code" href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">afficheText</a>(window, strScore, 10, 520);</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        <span class="keywordtype">string</span> strDeplacement = <span class="stringliteral">&quot;Deplacement restant = &quot;</span>;</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        strDeplacement += to_string(nbDeplacement);</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <a class="code" href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">afficheText</a>(window, strDeplacement, 10, 540);</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160; </div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <span class="comment">// si il y a des combos, on supprime les combos et on continue</span></div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec">detectionExplositionBombe</a>(mat,score)) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160; </div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        <span class="comment">// On gère les déplacements du curseur et les mouvements dans la grille</span></div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        <a class="code" href="main_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b">faitUnMouvementMinGL</a>(mat, window, numLigne, numCol, nbDeplacement, param, curs2);</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160; </div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        <span class="comment">// On finit la frame en cours</span></div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        window.finishFrame();</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160; </div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        <span class="comment">// On vide la queue d&#39;évènements</span></div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        window.getEventManager().clearEvents();</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        <span class="comment">// On attend un peu pour limiter le framerate et soulager le CPU</span></div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        this_thread::sleep_for(chrono::milliseconds(1000 / <a class="code" href="main_8cpp.html#a69c339b2966791489487938c49401cf3">FPS_LIMIT</a>) - chrono::duration_cast&lt;chrono::microseconds&gt;(chrono::steady_clock::now() - start));</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160; </div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        <span class="comment">// On récupère le temps de frame</span></div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        frameTime = chrono::duration_cast&lt;chrono::microseconds&gt;(chrono::steady_clock::now() - start);</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    }</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;}</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160; </div>
-<div class="line"><a name="l00750"></a><span class="lineno"><a class="line" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d">  750</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d">partiMinglTeteCrush</a> (<span class="keywordtype">unsigned</span> &amp; score, <span class="keywordtype">unsigned</span> &amp; nbDeplacement, <a class="code" href="struct_c_my_param.html">CMyParam</a> &amp; param) {</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <span class="comment">// Initialise le système</span></div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    MinGL window(<span class="stringliteral">&quot;NumberCrushT&quot;</span>, nsGraphics::Vec2D(500, 600), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    window.initGlut();</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    window.initGraphic();</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160; </div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    <span class="comment">// Variable qui tient le temps de frame</span></div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    chrono::microseconds frameTime = chrono::microseconds::zero();</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160; </div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <span class="comment">//On initialise la partie de Number Crush</span></div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <a class="code" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> mat;</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <a class="code" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866">initMat</a>(mat, param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbMax&quot;</span>],</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;            param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbLignes&quot;</span>],</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;            param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbColonnes&quot;</span>]);</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    <span class="keywordtype">size_t</span> numCol = (param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbLignes&quot;</span>] / 2) - 1;</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    <span class="keywordtype">size_t</span> numLigne = (param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbColonnes&quot;</span>] / 2) - 1;</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160; </div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    <span class="comment">// Quelque variable utile</span></div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    <span class="keywordtype">bool</span> curs2 = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    <span class="comment">//unsigned time = 0;</span></div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160; </div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    <span class="comment">// On fait tourner la boucle tant que la fenêtre est ouverte ou que le joueur n&#39;a pas gagné ni perdu</span></div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    <span class="keywordflow">while</span> (nbDeplacement &gt; 0 || score &gt; 0 || window.isOpen() )</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    {</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        <span class="comment">// Récupère l&#39;heure actuelle</span></div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        chrono::time_point&lt;chrono::steady_clock&gt; start = chrono::steady_clock::now();</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160; </div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;        <span class="comment">// On efface la fenêtre</span></div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        window.clearScreen();</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160; </div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        <span class="comment">// On affiche la grille puis le curseur</span></div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        <a class="code" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9">afficheMatriceV3</a>(mat,numLigne,numCol);</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0 ; i &lt; mat.size() ; ++i) {</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> j = 0 ; j &lt; mat[i].size() ; ++j) {</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 1) <a class="code" href="main_8cpp.html#ab80fa0eba33900bee956bde40a2ac2f6">dessineAlex</a>(window, j * 50, i * 50);</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 2) <a class="code" href="main_8cpp.html#a9ac89b215e10ff7f04c87c9a62ce71fc">dessineArnaud</a>(window, j * 50, i * 50);</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 3) <a class="code" href="main_8cpp.html#a024a6770bc84a237f11e0137430fdc7f">dessineBaptiste</a>(window, j * 50, i * 50);</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 4) <a class="code" href="main_8cpp.html#a9e84c73c6ff8a93f011e1f1b3fde578d">dessineCyril</a>(window, j * 50, i * 50);</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 5) <a class="code" href="main_8cpp.html#a09224c84307ef255e22a69986bceb296">dessinePierre</a>(window, j * 50, i * 50);</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 6) <a class="code" href="main_8cpp.html#a01c3b932e860e2ba98f75812e68271aa">dessineCasali</a>(window, j * 50, i * 50);</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;            }</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;        }</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        <a class="code" href="main_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d">dessinerCurseur</a>(window, numCol * 50, numLigne * 50);</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160; </div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        <span class="comment">// on affiche le score et le nombre de déplacement restant dans une interface MinGl</span></div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;        <span class="keywordtype">string</span> strScore = <span class="stringliteral">&quot;Score = &quot;</span>;</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;        strScore += to_string(score);</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;        <a class="code" href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">afficheText</a>(window, strScore, 10, 520);</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160; </div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;        <span class="keywordtype">string</span> strDeplacement = <span class="stringliteral">&quot;Deplacement restant = &quot;</span>;</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;        strDeplacement += to_string(nbDeplacement);</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;        <a class="code" href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">afficheText</a>(window, strDeplacement, 10, 540);</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160; </div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        <span class="comment">// On gère les déplacements du curseur et les mouvements dans la grille</span></div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        <a class="code" href="main_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b">faitUnMouvementMinGL</a>(mat, window, numLigne, numCol, nbDeplacement, param, curs2);</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160; </div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        <span class="comment">// On finit la frame en cours</span></div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        window.finishFrame();</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160; </div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        <span class="comment">// On vide la queue d&#39;évènements</span></div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        window.getEventManager().clearEvents();</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160; </div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        <span class="comment">// On attend un peu pour limiter le framerate et soulager le CPU</span></div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;        this_thread::sleep_for(chrono::milliseconds(1000 / <a class="code" href="main_8cpp.html#a69c339b2966791489487938c49401cf3">FPS_LIMIT</a>) - chrono::duration_cast&lt;chrono::microseconds&gt;(chrono::steady_clock::now() - start));</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160; </div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        <span class="comment">// On récupère le temps de frame</span></div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;        frameTime = chrono::duration_cast&lt;chrono::microseconds&gt;(chrono::steady_clock::now() - start);</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;    }</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;}</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160; </div>
-<div class="line"><a name="l00826"></a><span class="lineno"><a class="line" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">  826</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;    srand(time(NULL));</div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160; </div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    <a class="code" href="struct_c_my_param.html">CMyParam</a> param;</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;    <a class="code" href="main_8cpp.html#a04499e810295a8506131a7b912017990">initParams</a>(param);</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    <span class="comment">//chargerParametre(param, &quot;../SAECandyCrush/build.yaml&quot;);</span></div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160; </div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    <span class="keywordtype">unsigned</span> score=0;</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    <span class="keywordtype">unsigned</span> nbDeplacement=param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;deplacementMax&quot;</span>];</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;    <span class="keywordtype">unsigned</span> mode ; <span class="comment">// Initialisation du mode de jeu, soit avec MinGl, soit avec le terminal</span></div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    <span class="keywordtype">bool</span> test = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    <span class="keywordflow">while</span> (test == <span class="keyword">false</span>)</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;    {</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;        cout &lt;&lt;<span class="stringliteral">&quot; Sur quel mode de jeu voulez vous jouer ? :&quot;</span> &lt;&lt; endl &lt;&lt; endl &lt;&lt; <span class="stringliteral">&quot;1 : mode avec MinGl&quot;</span> &lt;&lt; <span class="charliteral">&#39;\t&#39;</span> &lt;&lt; <span class="stringliteral">&quot;2 : mode avec les nombres&quot;</span> &lt;&lt; endl ;</div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;        cin &gt;&gt; mode ;</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;        <span class="keywordflow">if</span> (mode &gt;= 1 &amp;&amp; mode &lt;= 4) test = true ;</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;        <span class="keywordflow">else</span> cout &lt;&lt; <span class="stringliteral">&quot;Ce mode de jeu n&#39;existe pas rééssayez !&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;    }</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;    <span class="keywordflow">if</span> (mode == 1) <span class="keywordflow">return</span> <a class="code" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684">partiMinglCrush</a>(score, nbDeplacement, param);</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == 2) <span class="keywordflow">return</span> <a class="code" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18">partiCasaliCrush</a>(score, nbDeplacement, param); <span class="comment">//Lance la partie sur le terminal</span></div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == 3) <span class="keywordflow">return</span> <a class="code" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d">partiMinglTeteCrush</a>(score, nbDeplacement, param);</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == 4) <span class="keywordflow">return</span> <a class="code" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88">partiNumberCrush</a>(score, nbDeplacement, param);</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;}</div>
-<div class="ttc" id="aaffichage_8cpp_html_ac12230328cd907d48a41036c9faff9c9"><div class="ttname"><a href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9">afficheMatriceV3</a></div><div class="ttdeci">void afficheMatriceV3(const CMatrice &amp;Mat, const size_t numLigne, const size_t numCol)</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8cpp_source.html#l00140">affichage.cpp:140</a></div></div>
-<div class="ttc" id="aaffichage_8cpp_html_adc444f3102a22c73b9a55c140303305d"><div class="ttname"><a href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d">afficheMatriceV2</a></div><div class="ttdeci">void afficheMatriceV2(const CMatrice &amp;Mat)</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8cpp_source.html#l00107">affichage.cpp:107</a></div></div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0 ; i &lt; mat.size() ; ++i) {</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> j = 0 ; j &lt; mat[i].size() ; ++j) {</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 1) <a class="code" href="main_8cpp.html#a7e881b244e62e74617783fc4aa6bdf06">dessinerRectangle</a>(window, j * 50, i * 50);</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 2) <a class="code" href="main_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6">dessinerCercle</a>(window, j * 50, i * 50);</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 3) <a class="code" href="main_8cpp.html#abd33c630339924d862adfb0af2f61405">dessinerTriangle</a>(window, j * 50, i * 50);</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 4) <a class="code" href="main_8cpp.html#ac46cbc355388b953335699211b70d29f">dessinerCroix</a>(window, j * 50, i * 50);</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;            }</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        }</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <a class="code" href="main_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d">dessinerCurseur</a>(window, numCol * 50, numLigne * 50);</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160; </div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        <span class="comment">// on affiche le score et le nombre de déplacement restant dans le terminal</span></div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Score = &quot;</span> &lt;&lt; score &lt;&lt; endl</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;             &lt;&lt; <span class="stringliteral">&quot;Deplacement Restant = &quot;</span> &lt;&lt; nbDeplacement &lt;&lt; endl;</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        <span class="comment">// on affiche le score et le nombre de déplacement restant dans une interface MinGl</span></div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        <span class="keywordtype">string</span> strScore = <span class="stringliteral">&quot;Score = &quot;</span>;</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        strScore += to_string(score);</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        <a class="code" href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">afficheText</a>(window, strScore, 10, 520);</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160; </div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        <span class="keywordtype">string</span> strDeplacement = <span class="stringliteral">&quot;Deplacement restant = &quot;</span>;</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        strDeplacement += to_string(nbDeplacement);</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <a class="code" href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">afficheText</a>(window, strDeplacement, 10, 540);</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160; </div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <span class="comment">// si il y a des combos, on supprime les combos et on continue</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec">detectionExplositionBombe</a>(mat,score)) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160; </div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        <span class="comment">// On gère les déplacements du curseur et les mouvements dans la grille</span></div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        <a class="code" href="main_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b">faitUnMouvementMinGL</a>(mat, window, numLigne, numCol, nbDeplacement, param, curs2);</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160; </div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        <span class="comment">// On finit la frame en cours</span></div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        window.finishFrame();</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160; </div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;        <span class="comment">// On vide la queue d&#39;évènements</span></div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        window.getEventManager().clearEvents();</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160; </div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        <span class="comment">// On attend un peu pour limiter le framerate et soulager le CPU</span></div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        this_thread::sleep_for(chrono::milliseconds(1000 / <a class="code" href="main_8cpp.html#a69c339b2966791489487938c49401cf3">FPS_LIMIT</a>) - chrono::duration_cast&lt;chrono::microseconds&gt;(chrono::steady_clock::now() - start));</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160; </div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        <span class="comment">// On récupère le temps de frame</span></div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        frameTime = chrono::duration_cast&lt;chrono::microseconds&gt;(chrono::steady_clock::now() - start);</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    }</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;}</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160; </div>
+<div class="line"><a name="l00749"></a><span class="lineno"><a class="line" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747">  749</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747">partiMinglCrush2</a> (<span class="keywordtype">unsigned</span> &amp; score, <span class="keywordtype">unsigned</span> &amp; nbDeplacement, <a class="code" href="struct_c_my_param.html">CMyParam</a> &amp; param) {</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <span class="comment">// Initialise le système</span></div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    MinGL window(<span class="stringliteral">&quot;NumberCrush&quot;</span>, nsGraphics::Vec2D(500, 600), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    window.initGlut();</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    window.initGraphic();</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160; </div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    <span class="comment">// Variable qui tient le temps de frame</span></div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    chrono::microseconds frameTime = chrono::microseconds::zero();</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160; </div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    <span class="comment">//On initialise la partie de Number Crush</span></div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <a class="code" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> mat;</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <a class="code" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866">initMat</a>(mat, param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbMax&quot;</span>],</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;            param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbLignes&quot;</span>],</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;            param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbColonnes&quot;</span>]);</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    <span class="keywordtype">size_t</span> numCol = (param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbLignes&quot;</span>] / 2) - 1;</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    <span class="keywordtype">size_t</span> numLigne = (param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbColonnes&quot;</span>] / 2) - 1;</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160; </div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    <span class="comment">//quelque variable utile</span></div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    <span class="keywordtype">bool</span> curs2 = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    <span class="keywordtype">unsigned</span> time = 0;</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160; </div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    <span class="comment">// On fait tourner la boucle tant que la fenêtre est ouverte</span></div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    <span class="keywordflow">while</span> (nbDeplacement &gt; 0 &amp;&amp; score &lt;= param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;scoreMax&quot;</span>] &amp;&amp; window.isOpen() )</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    {</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        <span class="comment">// Récupère l&#39;heure actuelle</span></div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        chrono::time_point&lt;chrono::steady_clock&gt; start = chrono::steady_clock::now();</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160; </div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;        <span class="comment">// On efface la fenêtre</span></div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;        window.clearScreen();</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160; </div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;        <span class="comment">// si le timer est suppérieur à 0, continue</span></div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        <span class="keywordflow">if</span> (time &gt; 0) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160; </div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;        <span class="comment">// On affiche la grille puis le curseur dans le terminal</span></div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        <a class="code" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9">afficheMatriceV3</a>(mat, numLigne, numCol);</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160; </div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;        <span class="comment">// On affiche la grille puis le curseur dans une interface MinGl</span></div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;        <a class="code" href="affichage_8cpp.html#acfe23845c34839ea22b01d6ae8cb7acd">afficheMatriceV0</a>(mat, window);</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        <a class="code" href="main_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d">dessinerCurseur</a>(window, numCol * 50, numLigne * 50);</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160; </div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;        <span class="comment">// on affiche le score et le nombre de déplacement restant dans le terminal</span></div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Score = &quot;</span> &lt;&lt; score &lt;&lt; endl</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;             &lt;&lt; <span class="stringliteral">&quot;Deplacement Restant = &quot;</span> &lt;&lt; nbDeplacement &lt;&lt; endl;</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160; </div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;        <span class="comment">// on affiche le score et le nombre de déplacement restant dans une interface MinGl</span></div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        <span class="keywordtype">string</span> strScore = <span class="stringliteral">&quot;Score = &quot;</span>;</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;        strScore += to_string(score);</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;        <a class="code" href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">afficheText</a>(window, strScore, 10, 520);</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160; </div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;        <span class="keywordtype">string</span> strDeplacement = <span class="stringliteral">&quot;Deplacement restant = &quot;</span>;</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;        strDeplacement += to_string(nbDeplacement);</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;        <a class="code" href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">afficheText</a>(window, strDeplacement, 10, 540);</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160; </div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;        <span class="comment">// si il y a des combos, on supprime les combos et on continue</span></div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec">detectionExplositionBombe</a>(mat,score)) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160; </div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;        <span class="comment">// On gère les déplacements du curseur et les mouvements dans la grille</span></div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        <a class="code" href="main_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b">faitUnMouvementMinGL</a>(mat, window, numLigne, numCol, nbDeplacement, param, curs2);</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160; </div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        <span class="comment">// On finit la frame en cours</span></div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        window.finishFrame();</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160; </div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;        <span class="comment">// On vide la queue d&#39;évènements</span></div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        window.getEventManager().clearEvents();</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160; </div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;        <span class="comment">// On attend un peu pour limiter le framerate et soulager le CPU</span></div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        this_thread::sleep_for(chrono::milliseconds(1000 / <a class="code" href="main_8cpp.html#a69c339b2966791489487938c49401cf3">FPS_LIMIT</a>) - chrono::duration_cast&lt;chrono::microseconds&gt;(chrono::steady_clock::now() - start));</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160; </div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        <span class="comment">// On récupère le temps de frame</span></div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;        frameTime = chrono::duration_cast&lt;chrono::microseconds&gt;(chrono::steady_clock::now() - start);</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    }</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;}</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160; </div>
+<div class="line"><a name="l00831"></a><span class="lineno"><a class="line" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d">  831</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d">partiMinglTeteCrush</a> (<span class="keywordtype">unsigned</span> &amp; score, <span class="keywordtype">unsigned</span> &amp; nbDeplacement, <a class="code" href="struct_c_my_param.html">CMyParam</a> &amp; param) {</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    <span class="comment">// Initialise le système</span></div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    MinGL window(<span class="stringliteral">&quot;NumberCrushT&quot;</span>, nsGraphics::Vec2D(500, 600), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    window.initGlut();</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;    window.initGraphic();</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160; </div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    <span class="comment">// Variable qui tient le temps de frame</span></div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;    chrono::microseconds frameTime = chrono::microseconds::zero();</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160; </div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;    <span class="comment">//On initialise la partie de Number Crush</span></div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;    <a class="code" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> mat;</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;    <a class="code" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866">initMat</a>(mat, param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbMax&quot;</span>],</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;            param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbLignes&quot;</span>],</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;            param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbColonnes&quot;</span>]);</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;    <span class="keywordtype">size_t</span> numCol = (param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbLignes&quot;</span>] / 2) - 1;</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;    <span class="keywordtype">size_t</span> numLigne = (param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;nbColonnes&quot;</span>] / 2) - 1;</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160; </div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;    <span class="comment">// Quelque variable utile</span></div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;    <span class="keywordtype">bool</span> curs2 = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;    <span class="comment">//unsigned time = 0;</span></div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160; </div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;    <span class="comment">// On fait tourner la boucle tant que la fenêtre est ouverte ou que le joueur n&#39;a pas gagné ni perdu</span></div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;    <span class="keywordflow">while</span> (nbDeplacement &gt; 0 || score &gt; 0 || window.isOpen() )</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;    {</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;        <span class="comment">// Récupère l&#39;heure actuelle</span></div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;        chrono::time_point&lt;chrono::steady_clock&gt; start = chrono::steady_clock::now();</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160; </div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;        <span class="comment">// On efface la fenêtre</span></div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;        window.clearScreen();</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160; </div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;        <span class="comment">// On affiche la grille puis le curseur</span></div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;        <a class="code" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9">afficheMatriceV3</a>(mat,numLigne,numCol);</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0 ; i &lt; mat.size() ; ++i) {</div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> j = 0 ; j &lt; mat[i].size() ; ++j) {</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 1) <a class="code" href="main_8cpp.html#ab80fa0eba33900bee956bde40a2ac2f6">dessineAlex</a>(window, j * 50, i * 50);</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 2) <a class="code" href="main_8cpp.html#a9ac89b215e10ff7f04c87c9a62ce71fc">dessineArnaud</a>(window, j * 50, i * 50);</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 3) <a class="code" href="main_8cpp.html#a024a6770bc84a237f11e0137430fdc7f">dessineBaptiste</a>(window, j * 50, i * 50);</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 4) <a class="code" href="main_8cpp.html#a9e84c73c6ff8a93f011e1f1b3fde578d">dessineCyril</a>(window, j * 50, i * 50);</div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 5) <a class="code" href="main_8cpp.html#a09224c84307ef255e22a69986bceb296">dessinePierre</a>(window, j * 50, i * 50);</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;                <span class="keywordflow">if</span> (mat[i][j] == 6) <a class="code" href="main_8cpp.html#a01c3b932e860e2ba98f75812e68271aa">dessineCasali</a>(window, j * 50, i * 50);</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;            }</div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;        }</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;        <a class="code" href="main_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d">dessinerCurseur</a>(window, numCol * 50, numLigne * 50);</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160; </div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;        <span class="comment">// on affiche le score et le nombre de déplacement restant dans une interface MinGl</span></div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;        <span class="keywordtype">string</span> strScore = <span class="stringliteral">&quot;Score = &quot;</span>;</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;        strScore += to_string(score);</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        <a class="code" href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">afficheText</a>(window, strScore, 10, 520);</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160; </div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;        <span class="keywordtype">string</span> strDeplacement = <span class="stringliteral">&quot;Deplacement restant = &quot;</span>;</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;        strDeplacement += to_string(nbDeplacement);</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;        <a class="code" href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">afficheText</a>(window, strDeplacement, 10, 540);</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160; </div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;        <span class="comment">// On gère les déplacements du curseur et les mouvements dans la grille</span></div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;        <a class="code" href="main_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b">faitUnMouvementMinGL</a>(mat, window, numLigne, numCol, nbDeplacement, param, curs2);</div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160; </div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;        <span class="comment">// On finit la frame en cours</span></div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;        window.finishFrame();</div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160; </div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;        <span class="comment">// On vide la queue d&#39;évènements</span></div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;        window.getEventManager().clearEvents();</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160; </div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;        <span class="comment">// On attend un peu pour limiter le framerate et soulager le CPU</span></div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;        this_thread::sleep_for(chrono::milliseconds(1000 / <a class="code" href="main_8cpp.html#a69c339b2966791489487938c49401cf3">FPS_LIMIT</a>) - chrono::duration_cast&lt;chrono::microseconds&gt;(chrono::steady_clock::now() - start));</div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160; </div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;        <span class="comment">// On récupère le temps de frame</span></div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;        frameTime = chrono::duration_cast&lt;chrono::microseconds&gt;(chrono::steady_clock::now() - start);</div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;    }</div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;}</div>
+<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160; </div>
+<div class="line"><a name="l00907"></a><span class="lineno"><a class="line" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">  907</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;    srand(time(NULL));</div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160; </div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;    <a class="code" href="struct_c_my_param.html">CMyParam</a> param;</div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;    <a class="code" href="main_8cpp.html#a04499e810295a8506131a7b912017990">initParams</a>(param);</div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;    <span class="comment">//chargerParametre(param, &quot;../SAECandyCrush/build.yaml&quot;);</span></div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160; </div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;    <span class="keywordtype">unsigned</span> score=0;</div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;    <span class="keywordtype">unsigned</span> nbDeplacement=param.<a class="code" href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">mapParamUnsigned</a>[<span class="stringliteral">&quot;deplacementMax&quot;</span>];</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;    <span class="keywordtype">unsigned</span> mode ; <span class="comment">// Initialisation du mode de jeu, soit avec MinGl, soit avec le terminal</span></div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;    <span class="keywordtype">bool</span> test = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;    <span class="keywordflow">while</span> (test == <span class="keyword">false</span>)</div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;    {</div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;        cout &lt;&lt;<span class="stringliteral">&quot; Sur quel mode de jeu voulez vous jouer ? :&quot;</span> &lt;&lt; endl &lt;&lt; endl &lt;&lt; <span class="stringliteral">&quot;1 : mode avec MinGl&quot;</span> &lt;&lt; <span class="charliteral">&#39;\t&#39;</span> &lt;&lt; <span class="stringliteral">&quot;2 : mode avec les nombres&quot;</span> &lt;&lt; endl ;</div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;        cin &gt;&gt; mode ;</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;        <span class="keywordflow">if</span> (mode &gt;= 1 &amp;&amp; mode &lt;= 5) test = true ;</div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;            <a class="code" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f">clearScreen</a>();</div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;Ce mode de jeu n&#39;existe pas rééssayez !&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;        }</div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;    }</div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;    <span class="keywordflow">if</span> (mode == 1) <span class="keywordflow">return</span> <a class="code" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684">partiMinglCrush</a>(score, nbDeplacement, param);</div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == 2) <span class="keywordflow">return</span> <a class="code" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18">partiCasaliCrush</a>(score, nbDeplacement, param); <span class="comment">//Lance la partie sur le terminal</span></div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == 3) <span class="keywordflow">return</span> <a class="code" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d">partiMinglTeteCrush</a>(score, nbDeplacement, param);</div>
+<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == 4) <span class="keywordflow">return</span> <a class="code" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747">partiMinglCrush2</a>(score, nbDeplacement, param);</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == 5) <span class="keywordflow">return</span> <a class="code" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88">partiNumberCrush</a>(score, nbDeplacement, param);</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;}</div>
+<div class="ttc" id="aaffichage_8cpp_html_a9d7e8af417b6d543da691e9c0e2f6f9f"><div class="ttname"><a href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f">clearScreen</a></div><div class="ttdeci">void clearScreen()</div><div class="ttdoc">clearScreen</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8cpp_source.html#l00018">affichage.cpp:18</a></div></div>
+<div class="ttc" id="aaffichage_8cpp_html_ac12230328cd907d48a41036c9faff9c9"><div class="ttname"><a href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9">afficheMatriceV3</a></div><div class="ttdeci">void afficheMatriceV3(const CMatrice &amp;Mat, const size_t numLigne, const size_t numCol)</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8cpp_source.html#l00137">affichage.cpp:137</a></div></div>
+<div class="ttc" id="aaffichage_8cpp_html_acfe23845c34839ea22b01d6ae8cb7acd"><div class="ttname"><a href="affichage_8cpp.html#acfe23845c34839ea22b01d6ae8cb7acd">afficheMatriceV0</a></div><div class="ttdeci">void afficheMatriceV0(const CMatrice &amp;Mat, MinGL &amp;window)</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8cpp_source.html#l00053">affichage.cpp:53</a></div></div>
+<div class="ttc" id="aaffichage_8cpp_html_adc444f3102a22c73b9a55c140303305d"><div class="ttname"><a href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d">afficheMatriceV2</a></div><div class="ttdeci">void afficheMatriceV2(const CMatrice &amp;Mat)</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8cpp_source.html#l00105">affichage.cpp:105</a></div></div>
 <div class="ttc" id="aaffichage_8h_html"><div class="ttname"><a href="affichage_8h.html">affichage.h</a></div></div>
 <div class="ttc" id="acst_8h_html"><div class="ttname"><a href="cst_8h.html">cst.h</a></div></div>
 <div class="ttc" id="acst_8h_html_a7d0c8ee42c07e97113818539b3aa8f49"><div class="ttname"><a href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a></div><div class="ttdeci">const contenueDUneCase KPlusGrandNombreDansLaMatrice</div><div class="ttdef"><b>Definition:</b> <a href="cst_8h_source.html#l00022">cst.h:22</a></div></div>
@@ -717,6 +796,7 @@ $(function() {
 <div class="ttc" id="amain_8cpp_html_a5ca5a1d2987f121b68d2e209aff2d5f3"><div class="ttname"><a href="main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3">explositionUneBombeHorizontale</a></div><div class="ttdeci">void explositionUneBombeHorizontale(CMatrice &amp;mat, const size_t &amp;numLigne, const size_t &amp;numColonne, const size_t &amp;combien)</div><div class="ttdoc">procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nomb...</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00131">main.cpp:131</a></div></div>
 <div class="ttc" id="amain_8cpp_html_a61b26d531ca03853cb6daa7fa9982d18"><div class="ttname"><a href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18">partiCasaliCrush</a></div><div class="ttdeci">int partiCasaliCrush(unsigned &amp;score, unsigned &amp;nbDeplacement, CMyParam &amp;param)</div><div class="ttdoc">fonction de lancement du jeu du candy crush</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00407">main.cpp:407</a></div></div>
 <div class="ttc" id="amain_8cpp_html_a65a5b8aff7e4e8f0899bd278f28d97b4"><div class="ttname"><a href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4">remplaceVideParRdm</a></div><div class="ttdeci">void remplaceVideParRdm(CMatrice &amp;mat, const unsigned &amp;vid=KAIgnorer, const unsigned &amp;nbMax=KPlusGrandNombreDansLaMatrice)</div><div class="ttdoc">remplace toutes les cases vides par des nombres aléatoires</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00232">main.cpp:232</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a67f038b3fab66fa8bb64317fe8b51747"><div class="ttname"><a href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747">partiMinglCrush2</a></div><div class="ttdeci">int partiMinglCrush2(unsigned &amp;score, unsigned &amp;nbDeplacement, CMyParam &amp;param)</div><div class="ttdoc">gère une fenêtre MinGL ainsi qu'une partie de NumberCrush avec un affichage de forme</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00749">main.cpp:749</a></div></div>
 <div class="ttc" id="amain_8cpp_html_a69c339b2966791489487938c49401cf3"><div class="ttname"><a href="main_8cpp.html#a69c339b2966791489487938c49401cf3">FPS_LIMIT</a></div><div class="ttdeci">#define FPS_LIMIT</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00001">main.cpp:1</a></div></div>
 <div class="ttc" id="amain_8cpp_html_a770773bcbab73afe222d1f921bd74684"><div class="ttname"><a href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684">partiMinglCrush</a></div><div class="ttdeci">int partiMinglCrush(unsigned &amp;score, unsigned &amp;nbDeplacement, CMyParam &amp;param)</div><div class="ttdoc">gère une fenêtre MinGL ainsi qu'une partie de NumberCrush avec un affichage de forme</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00660">main.cpp:660</a></div></div>
 <div class="ttc" id="amain_8cpp_html_a7e881b244e62e74617783fc4aa6bdf06"><div class="ttname"><a href="main_8cpp.html#a7e881b244e62e74617783fc4aa6bdf06">dessinerRectangle</a></div><div class="ttdeci">void dessinerRectangle(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">dessine un rectangle de couleur bleu avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00450">main.cpp:450</a></div></div>
@@ -730,12 +810,12 @@ $(function() {
 <div class="ttc" id="amain_8cpp_html_ab791841bb941a1f2a2db2024320d7e88"><div class="ttname"><a href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88">partiNumberCrush</a></div><div class="ttdeci">int partiNumberCrush(unsigned &amp;score, unsigned &amp;nbDeplacement, CMyParam &amp;param)</div><div class="ttdoc">fonction lançant une version lite du candy crush pour les tests</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00366">main.cpp:366</a></div></div>
 <div class="ttc" id="amain_8cpp_html_ab80fa0eba33900bee956bde40a2ac2f6"><div class="ttname"><a href="main_8cpp.html#ab80fa0eba33900bee956bde40a2ac2f6">dessineAlex</a></div><div class="ttdeci">void dessineAlex(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">affiche la tête d'Alex avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00604">main.cpp:604</a></div></div>
 <div class="ttc" id="amain_8cpp_html_abd33c630339924d862adfb0af2f61405"><div class="ttname"><a href="main_8cpp.html#abd33c630339924d862adfb0af2f61405">dessinerTriangle</a></div><div class="ttdeci">void dessinerTriangle(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">dessine un triangle de couleur verte avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00472">main.cpp:472</a></div></div>
-<div class="ttc" id="amain_8cpp_html_abf3d9b449ed0c8eb96763cfd90b5d76d"><div class="ttname"><a href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d">partiMinglTeteCrush</a></div><div class="ttdeci">int partiMinglTeteCrush(unsigned &amp;score, unsigned &amp;nbDeplacement, CMyParam &amp;param)</div><div class="ttdoc">gère une partie de NumberCrush avec les têtes de l'équipes et de A.Casali</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00750">main.cpp:750</a></div></div>
+<div class="ttc" id="amain_8cpp_html_abf3d9b449ed0c8eb96763cfd90b5d76d"><div class="ttname"><a href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d">partiMinglTeteCrush</a></div><div class="ttdeci">int partiMinglTeteCrush(unsigned &amp;score, unsigned &amp;nbDeplacement, CMyParam &amp;param)</div><div class="ttdoc">gère une fenêtre ainsi qu'une partie de NumberCrush avec les têtes de l'équipes et de A....</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00831">main.cpp:831</a></div></div>
 <div class="ttc" id="amain_8cpp_html_ac46cbc355388b953335699211b70d29f"><div class="ttname"><a href="main_8cpp.html#ac46cbc355388b953335699211b70d29f">dessinerCroix</a></div><div class="ttdeci">void dessinerCroix(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">dessine une croix de couleur jaune avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00483">main.cpp:483</a></div></div>
 <div class="ttc" id="amain_8cpp_html_ad920d50dadc4a1dd91aace872ef1d4d6"><div class="ttname"><a href="main_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6">dessinerCercle</a></div><div class="ttdeci">void dessinerCercle(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">dessine un cercle de couleur rouge avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00461">main.cpp:461</a></div></div>
 <div class="ttc" id="amain_8cpp_html_ae1a8fa20652284fd681b7e13967f5f70"><div class="ttname"><a href="main_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">afficheText</a></div><div class="ttdeci">void afficheText(MinGL &amp;window, const string &amp;txt, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">affiche le texte txt en blanc au coordonné x, y</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00510">main.cpp:510</a></div></div>
 <div class="ttc" id="amain_8cpp_html_ae3c472825f8e1704d249cae90b350d54"><div class="ttname"><a href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54">zeroVidSousNb</a></div><div class="ttdeci">bool zeroVidSousNb(CMatrice &amp;mat, const unsigned &amp;vid=KAIgnorer)</div><div class="ttdoc">fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu'à êt...</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00271">main.cpp:271</a></div></div>
-<div class="ttc" id="amain_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdoc">la fonction main permettant de choisir le mode de jeux</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00826">main.cpp:826</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdoc">la fonction main permettant de choisir le mode de jeux</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00907">main.cpp:907</a></div></div>
 <div class="ttc" id="amain_8cpp_html_afce4f4bfde0cf1054c79ad05ac81abec"><div class="ttname"><a href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec">detectionExplositionBombe</a></div><div class="ttdeci">bool detectionExplositionBombe(CMatrice &amp;mat, unsigned &amp;score, const unsigned &amp;vid=KAIgnorer, const unsigned &amp;plusGrandNb=KPlusGrandNombreDansLaMatrice)</div><div class="ttdoc">fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l'aide de...</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00255">main.cpp:255</a></div></div>
 <div class="ttc" id="astruct_c_my_param_html"><div class="ttname"><a href="struct_c_my_param.html">CMyParam</a></div><div class="ttdef"><b>Definition:</b> <a href="type_8h_source.html#l00020">type.h:20</a></div></div>
 <div class="ttc" id="astruct_c_my_param_html_a875b040b2e842cfce652211336407046"><div class="ttname"><a href="struct_c_my_param.html#a875b040b2e842cfce652211336407046">CMyParam::mapParamUnsigned</a></div><div class="ttdeci">std::map&lt; std::string, unsigned &gt; mapParamUnsigned</div><div class="ttdef"><b>Definition:</b> <a href="type_8h_source.html#l00022">type.h:22</a></div></div>

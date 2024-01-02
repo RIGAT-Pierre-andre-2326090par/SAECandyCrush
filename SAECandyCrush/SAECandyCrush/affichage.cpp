@@ -70,8 +70,7 @@ void  afficheMatriceV0 (const CMatrice & Mat , MinGL & window) {
     }
 }
 
-// affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond de couleur
-//pour signifier que la case est a KAIgnorer
+// affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond de couleur différente pour signifier que la case est a KAIgnorer
 void  afficheMatriceV1 (const CMatrice & Mat) {
     clearScreen();
     couleur (44); // Affiche la couleur bleue
@@ -102,8 +101,7 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
     }
 }
 
-// affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur
-//pour signifier que la case est a KAIgnorer
+// affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur différente pour signifier que la case est a KAIgnorer
 void  afficheMatriceV2 (const CMatrice & Mat) {
     clearScreen();
     couleur (44); // Affiche la couleur bleue
@@ -135,8 +133,7 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
     }
 }
 
-// affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur
-// pour signifier que la case est a KAIgnorer et la case sélectionner a un fond de couleur différent
+// affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur différente pour signifier que la case est a KAIgnorer et la case sélectionner a un fond de couleur différent
 void  afficheMatriceV3 (const CMatrice & Mat, const size_t numLigne, const size_t numCol) {
     clearScreen();
     couleur (44); // Affiche la couleur bleue

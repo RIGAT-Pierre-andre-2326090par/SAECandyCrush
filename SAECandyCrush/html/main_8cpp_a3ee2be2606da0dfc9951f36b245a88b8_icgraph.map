@@ -1,10 +1,11 @@
 <map id="nouvRdm" name="nouvRdm">
 <area shape="rect" id="node1" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="665,81,749,108"/>
 <area shape="rect" id="node2" href="$main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="272,107,340,133"/>
-<area shape="rect" id="node7" href="$main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="455,56,617,83"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,56,144,83"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une partie de NumberCrush avec les têtes de l&#39;équipes et de A.Casali" alt="" coords="5,157,157,184"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,107,152,133"/>
-<area shape="rect" id="node8" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,56,407,83"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="455,56,617,83"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,56,146,83"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,107,144,133"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,157,148,184"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,208,157,235"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,5,152,32"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,56,407,83"/>
 </map>

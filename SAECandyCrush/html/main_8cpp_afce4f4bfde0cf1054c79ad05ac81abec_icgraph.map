@@ -1,7 +1,8 @@
 <map id="detectionExplositionBombe" name="detectionExplositionBombe">
-<area shape="rect" id="node1" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="297,56,499,83"/>
+<area shape="rect" id="node1" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="297,81,499,108"/>
 <area shape="rect" id="node2" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="114,5,243,32"/>
 <area shape="rect" id="node4" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="116,56,241,83"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,107,249,133"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,56,60,83"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="112,107,245,133"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,157,249,184"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,81,60,108"/>
 </map>
