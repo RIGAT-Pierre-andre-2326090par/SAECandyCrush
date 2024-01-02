@@ -14,7 +14,8 @@
 
 using namespace std;
 
-// ce fichier contient toutes les fonctions MinGL utile au main
+// Ce document cpp est un document regroupant toutes les fonctions/procédures d'affichage de la matrice dans une fenêtre MinGL, permettant de réduire le code du main
+
 
 /**
  * @brief dessine un rectangle de couleur bleu avec comme origine x, y
