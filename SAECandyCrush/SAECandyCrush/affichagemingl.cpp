@@ -1,5 +1,3 @@
-#define FPS_LIMIT 60
-
 #include <type.h>
 #include <cst.h>
 #include <affichage.h>

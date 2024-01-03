@@ -20,7 +20,6 @@ const unsigned KBGGrisClair(47);
 
 const contenueDUneCase KAIgnorer = 0;
 const contenueDUneCase KPlusGrandNombreDansLaMatrice = 4;
-const contenueDUneCase KPlusGrandNombreDansLaMatriceCasaliCrush = 5;
 
 #endif // CST_H
 
