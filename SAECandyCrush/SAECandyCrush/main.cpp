@@ -440,7 +440,6 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
  * @param nbDeplacement: nombre de déplacement restant, gérer par la fonction main
  * @param param: structure de variable gérer par la fonction main
  * @return 0
- * @bug pas de forme pour le nombre 5
  * @authors A.Goncalves, P-A.Rigat
  */
 int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & param) {
@@ -479,6 +478,10 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
         // On affiche la grille puis le curseur dans le terminal
         afficheMatriceV3(mat, numLigne, numCol);
 
+        // on affiche le score et le nombre de déplacement restant dans le terminal
+        cout << "Score = " << score << endl
+             << "Deplacement Restant = " << nbDeplacement << endl;
+
         // On affiche la grille puis le curseur dans une interface MinGl
         for (unsigned i = 0 ; i < mat.size() ; ++i) {
             for (unsigned j = 0 ; j < mat[i].size() ; ++j) {
@@ -486,13 +489,10 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
                 if (mat[i][j] == 2) dessinerCercle(window, j * 50, i * 50);
                 if (mat[i][j] == 3) dessinerTriangle(window, j * 50, i * 50);
                 if (mat[i][j] == 4) dessinerCroix(window, j * 50, i * 50);
+                if (mat[i][j] == 5) dessinerEtoile(window, j * 50, i * 50);
             }
         }
         dessinerCurseur(window, numCol * 50, numLigne * 50);
-
-        // on affiche le score et le nombre de déplacement restant dans le terminal
-        cout << "Score = " << score << endl
-             << "Deplacement Restant = " << nbDeplacement << endl;
 
         // on affiche le score et le nombre de déplacement restant dans une interface MinGl
         string strScore = "Score = ";

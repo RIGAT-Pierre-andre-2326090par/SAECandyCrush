@@ -17,6 +17,8 @@ void dessinerCroix (MinGL & window, const unsigned & x, const unsigned & y);
 
 void dessinerCurseur (MinGL & window, const unsigned & x, const unsigned & y);
 
+void dessinerEtoile (MinGL & window, const unsigned & x, const unsigned & y);
+
 void afficheText(MinGL & window, const std::string & txt, const unsigned & x, const unsigned & y);
 
 void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
