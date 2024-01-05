@@ -275,10 +275,8 @@ bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned
 
     bool act (detectionExplositionUneBombeVerticale(mat, score) or
              detectionExplositionUneBombeHorizontale(mat, score));
-    if (act) {
-        remplaceVideParRdm(mat, vid, plusGrandNb);
-        zeroVidSousNb(mat);
-    }
+    if (act) remplaceVideParRdm(mat, vid, plusGrandNb);
+    zeroVidSousNb(mat);
     return act;
 }
 

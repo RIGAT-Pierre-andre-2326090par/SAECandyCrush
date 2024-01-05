@@ -85,13 +85,7 @@ void dessinerCroix (MinGL & window, const unsigned & x, const unsigned & y) {
 }
 
 
-/**
- * @brief dessine une étoile de couleur violette avec comme origine x, y
- * @param window: fenêtre active où la forme va être dessiné
- * @param x: absisse de l'origine de l'étoile
- * @param y: ordonnée de l'origine de l'étoile
- * @author P-A.Rigat
- */
+
 void dessinerEtoile (MinGL & window, const unsigned & x, const unsigned & y) {
     window << nsShape::Triangle(nsGraphics::Vec2D(x + 25, y), nsGraphics::Vec2D(x + 35, y + 30), nsGraphics::Vec2D(x + 14, y + 30), nsGraphics::KPurple);
     window << nsShape::Triangle(nsGraphics::Vec2D(x, y + 20), nsGraphics::Vec2D(x + 32, y + 20), nsGraphics::Vec2D(x + 25, y + 38), nsGraphics::KPurple);
