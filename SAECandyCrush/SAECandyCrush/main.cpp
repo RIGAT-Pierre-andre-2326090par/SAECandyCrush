@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <iomanip>
 
 using namespace std;
 
@@ -40,7 +39,6 @@ typedef vector <CVLigne> CMatrice; // un type représentant la grille
 
 const contenueDUneCase KAIgnorer = 0;
 const contenueDUneCase KPlusGrandNombreDansLaMatrice = 4;
-const contenueDUneCase KPlusGrandNombreDansLaMatricePourCasaliCrush = 5;
 
 //initialisation de la grille de jeu
 void initMat (CMatrice & mat, const size_t & nbLignes = 10,
@@ -50,14 +48,13 @@ void initMat (CMatrice & mat, const size_t & nbLignes = 10,
     mat.resize(nbLignes); // Ajuste le nombre de ligne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i) mat[i].resize(nbColonnes); // Ajuste le nombre de colonne de la matrice
     for (unsigned i = 0 ; i < nbLignes ; ++i){
-        for (unsigned j = 0 ; j < nbColonnes ; ++j){
-            mat[i][j] = (rand()%nbMax)+1; //L'élément de la matrice sera une valeur comprise entre 1 et le nbMax
+        for (unsigned j = 0 ; j < nbColonnes ; ++j){ //Pour chaque élément de la matrice
+            mat[i][j] = (rand()%nbMax)+1; //L'élément de la matrice sera une valeur aléatoire comprise entre 1 et le nbMax
         }
     }
 }
 
-
-//renvoie un nombre random différent de celui passer en paramètre
+//renvoie un nombre aléatoire différent de celui passer en paramètre
 unsigned nouvRdm(unsigned & nb, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
     unsigned rdm = (rand()%nbMax)+1;
     while(rdm == nb) rdm = (rand()%nbMax)+1;
@@ -88,7 +85,7 @@ void  afficheMatriceV0 (const CMatrice & Mat) {
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
-            if (Mat[i][j]==0) couleur(KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
+            if (Mat[i][j]==0) couleur(KReset); // Si l'élément = 0, alors la couleur sera la couleur par défaut du terminal
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
             if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
             if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
@@ -119,7 +116,7 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
         cout << "  ";
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
             couleur(KReset); // Enlève la couleur bleue pour l'affiche d'un élément
-            if (Mat[i][j]==0) couleur(KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
+            if (Mat[i][j]==0) couleur(KReset); // Si l'élément = 0, alors la couleur sera la couleur par défaut du terminal
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
             if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
             if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
@@ -150,7 +147,7 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
         cout << ' ';
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
             couleur(KReset); // Enlève la couleur bleue pour afficher un élément
-            if (Mat[i][j]==0) couleur(KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
+            if (Mat[i][j]==0) couleur(KReset); // Si l'élément = 0, alors la couleur sera la couleur par défaut du terminal
             if (Mat[i][j]==1) couleur(KCyan); // Si l'élément = 1, alors la couleur sera cyan
             if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
             if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
@@ -186,7 +183,7 @@ void  afficheMatriceV3 (const CMatrice & Mat, const size_t numLigne, const size_
                 couleur(KBGGrisClair);
             }
             else{
-                if (Mat[i][j]==0) couleur (KReset); // Si l'élément = 1, alors la couleur sera la couleur par défaut du terminal
+                if (Mat[i][j]==0) couleur (KReset); // Si l'élément = 0, alors la couleur sera la couleur par défaut du terminal
                 if (Mat[i][j]==1) couleur (KCyan); // Si l'élément = 1, alors la couleur sera cyan
                 if (Mat[i][j]==2) couleur (KRouge); // Si l'élément = 2, alors la couleur sera rouge
                 if (Mat[i][j]==3) couleur (KVert); // Si l'élément = 3, alors la couleur sera verte
@@ -358,6 +355,7 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, const size_t & nu
         cout<<"Tu choisis A ou Z ou E ou Q ou D ou X ou C ou V pour déplacer le curseur ou S pour échanger 2 cases"<<endl;
             break;
     }
+    swap(mat[numLigne][numCol], mat[numLigne + nouvellePositionLigne][numCol + nouvellePositionColonne]);
 }
 
 void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLigne,
@@ -447,7 +445,6 @@ int ppalExo03 (){
     // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
     afficheMatriceV1 (mat);
     while (detectionExplositionUneBombeHorizontale (mat)) {
-        mat[5][8] = 4;
         afficheMatriceV1 (mat);
     }
     return 0;
@@ -499,18 +496,20 @@ int partiNumberCrush(){
     return 0;
 }
 
+void affichePave() {
+    cout << "quel exercice voulez vous voir ?" << endl
+         << "1: exercice 1, génère et affiche une matrice rempli de nombre aléatoire entre 1 et " << KPlusGrandNombreDansLaMatrice << '.' << endl
+         << "2: exercice 2, génère et affiche une matrice rempli de nombre aléatoire entre 1 et " << KPlusGrandNombreDansLaMatrice
+         << " et détecte si il y a plus de 3 nombres alignés horizontalement." << endl
+         << "3: exercice 3, génère et affiche une matrice rempli de nombre aléatoire entre 1 et " << KPlusGrandNombreDansLaMatrice
+         << " et détecte si il y a plus de 3 nombres alignés horizontalement. si il y a détection, il enleve les nombres alignés et fait tomber les nombres au dessus."
+         << "4: exercice 4, génère et affiche une matrice rempli de nombre aléatoire entre 1 et " << KPlusGrandNombreDansLaMatrice
+         << " et détecte si il y a plus de 3 nombres alignés horizontalement. si il y a détection, il enleve les nombres alignés et fait tomber les nombres au dessus. fait un mouvement et répète indéfiniment le déplacement." << endl
+         << "0: une petite partie ?" << endl
+         << "-1: sortie du programme";
+}
+
 int main() {
-
-    // ---------Exercice 2 -----------------//
-    //    clearScreen();
-
-    //    CMatrice mat (10, CVLine (10, kEmpty));
-    //    mat [0][mat.size()-1] = kTokenPlayer1;
-    //    mat [mat.size()-1][0] = kTokenPlayer2;
-    //    showMatrix(mat);
-    //-------------------------------------//
-    //return 0;
-
     // ---------Exercice 1 -----------------//
     //return ppalExo01();
     //--------------------------------------//
@@ -529,5 +528,36 @@ int main() {
 
     //return partiNumberCrush();
 
-    //return 0;
+    int select = -2;
+    affichePave();
+    while (true) {
+        cin >> select;
+        if (select == -1) break;
+        else if (select == 0) {
+            partiNumberCrush();
+            clearScreen();
+        }
+        else if (select == 1) {
+            ppalExo01();
+            clearScreen();
+        }
+        else if (select == 2) {
+            ppalExo02();
+            clearScreen();
+        }
+        else if (select == 3) {
+            ppalExo03();
+            clearScreen();
+        }
+        else if (select == 4) {
+            ppalExo04();
+            clearScreen();
+        }
+        else {
+            clearScreen();
+            cout << "oops" << endl;
+        }
+        affichePave();
+    }
+    return 0;
 }
