@@ -1,5 +1,5 @@
 <map id="KBGGrisClair" name="KBGGrisClair">
-<area shape="rect" id="node1" title=" " alt="" coords="385,81,492,108"/>
+<area shape="rect" id="node1" title="code pour afficher la couleur gris clair dans l&#39;arrière plan du terminal" alt="" coords="385,81,492,108"/>
 <area shape="rect" id="node2" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,81,337,108"/>
 <area shape="rect" id="node3" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
 <area shape="rect" id="node4" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,56,144,83"/>

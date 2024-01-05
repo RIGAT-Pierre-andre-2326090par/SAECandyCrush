@@ -1,10 +1,10 @@
 <map id="SAECandyCrush/affichagemingl.h" name="SAECandyCrush/affichagemingl.h">
-<area shape="rect" id="node1" title=" " alt="" coords="149,5,388,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="21,229,79,256"/>
-<area shape="rect" id="node3" title=" " alt="" coords="33,80,232,107"/>
-<area shape="rect" id="node4" href="$type_8h.html" title=" " alt="" coords="237,155,300,181"/>
-<area shape="rect" id="node7" href="$cst_8h.html" title=" " alt="" coords="306,80,359,107"/>
-<area shape="rect" id="node8" title=" " alt="" coords="383,80,495,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="197,229,260,256"/>
-<area shape="rect" id="node6" title=" " alt="" coords="285,229,335,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="30,5,269,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,229,64,256"/>
+<area shape="rect" id="node3" href="$type_8h.html" title=" " alt="" coords="89,155,151,181"/>
+<area shape="rect" id="node6" href="$cst_8h.html" title=" " alt="" coords="123,80,176,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="200,80,312,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="335,80,534,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="89,229,151,256"/>
+<area shape="rect" id="node5" title=" " alt="" coords="176,229,227,256"/>
 </map>

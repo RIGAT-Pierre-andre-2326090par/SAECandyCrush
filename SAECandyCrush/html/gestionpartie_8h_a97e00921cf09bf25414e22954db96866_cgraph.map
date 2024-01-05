@@ -1,0 +1,4 @@
+<map id="initMat" name="initMat">
+<area shape="rect" id="node1" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="5,5,73,32"/>
+<area shape="rect" id="node2" href="$gestionpartie_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="121,5,205,32"/>
+</map>

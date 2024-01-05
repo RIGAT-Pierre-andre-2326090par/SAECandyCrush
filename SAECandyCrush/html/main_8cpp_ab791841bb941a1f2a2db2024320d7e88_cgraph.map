@@ -1,19 +1,22 @@
 <map id="partiNumberCrush" name="partiNumberCrush">
-<area shape="rect" id="node1" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,465,147,492"/>
+<area shape="rect" id="node1" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,669,147,696"/>
 <area shape="rect" id="node2" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="229,259,361,285"/>
-<area shape="rect" id="node13" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,415,396,441"/>
-<area shape="rect" id="node15" href="$main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="225,465,365,492"/>
-<area shape="rect" id="node16" href="$main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="261,516,329,543"/>
-<area shape="rect" id="node17" href="$main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="235,567,355,593"/>
-<area shape="rect" id="node3" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="508,5,607,32"/>
-<area shape="rect" id="node4" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="522,56,593,83"/>
-<area shape="rect" id="node5" href="$cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="527,107,587,133"/>
-<area shape="rect" id="node6" href="$cst_8h.html#aed31d4db92c112edda1291acad69dd00" title=" " alt="" coords="526,157,589,184"/>
-<area shape="rect" id="node7" href="$cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title=" " alt="" coords="524,208,591,235"/>
-<area shape="rect" id="node8" href="$cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title=" " alt="" coords="513,259,601,285"/>
-<area shape="rect" id="node9" href="$cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title=" " alt="" coords="528,309,587,336"/>
-<area shape="rect" id="node10" href="$cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title=" " alt="" coords="523,360,591,387"/>
-<area shape="rect" id="node11" href="$cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title=" " alt="" coords="521,411,593,437"/>
-<area shape="rect" id="node12" href="$cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="529,461,586,488"/>
-<area shape="rect" id="node14" href="$main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="444,513,671,554"/>
+<area shape="rect" id="node13" href="$gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,619,396,645"/>
+<area shape="rect" id="node17" href="$gestionpartie_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="497,695,617,721"/>
+<area shape="rect" id="node18" href="$gestionpartie_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="225,720,365,747"/>
+<area shape="rect" id="node19" href="$gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="261,771,329,797"/>
+<area shape="rect" id="node3" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="508,5,607,32"/>
+<area shape="rect" id="node4" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="applique la couleur donné à une partie du terminal" alt="" coords="522,56,593,83"/>
+<area shape="rect" id="node5" href="$cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="527,107,587,133"/>
+<area shape="rect" id="node6" href="$cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="526,157,589,184"/>
+<area shape="rect" id="node7" href="$cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="524,208,591,235"/>
+<area shape="rect" id="node8" href="$cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="513,259,601,285"/>
+<area shape="rect" id="node9" href="$cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title="code pour afficher la couleur noir dans le terminal" alt="" coords="528,309,587,336"/>
+<area shape="rect" id="node10" href="$cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title="couleur par défaut du terminal" alt="" coords="523,360,591,387"/>
+<area shape="rect" id="node11" href="$cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title="code pour afficher la couleur rouge dans le terminal" alt="" coords="521,411,593,437"/>
+<area shape="rect" id="node12" href="$cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title="code pour afficher la couleur vert dans le terminal" alt="" coords="529,461,586,488"/>
+<area shape="rect" id="node14" href="$gestionpartie_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="444,513,671,554"/>
+<area shape="rect" id="node15" href="$gestionpartie_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="444,578,671,619"/>
+<area shape="rect" id="node16" href="$gestionpartie_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="476,644,639,671"/>
+<area shape="rect" id="node20" href="$gestionpartie_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="515,771,599,797"/>
 </map>

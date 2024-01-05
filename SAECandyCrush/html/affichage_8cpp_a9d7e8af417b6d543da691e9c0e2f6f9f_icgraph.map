@@ -1,12 +1,13 @@
 <map id="clearScreen" name="clearScreen">
-<area shape="rect" id="node1" title="clearScreen" alt="" coords="488,81,587,108"/>
-<area shape="rect" id="node2" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="308,5,440,32"/>
-<area shape="rect" id="node3" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="308,56,440,83"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,183,60,209"/>
-<area shape="rect" id="node6" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="308,208,440,235"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,56,255,83"/>
-<area shape="rect" id="node7" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,157,249,184"/>
-<area shape="rect" id="node8" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,208,247,235"/>
-<area shape="rect" id="node9" href="$main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,259,251,285"/>
-<area shape="rect" id="node10" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,309,260,336"/>
+<area shape="rect" id="node1" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="488,107,587,133"/>
+<area shape="rect" id="node2" href="$affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="308,5,440,32"/>
+<area shape="rect" id="node3" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="308,56,440,83"/>
+<area shape="rect" id="node4" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="308,107,440,133"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,233,60,260"/>
+<area shape="rect" id="node7" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="308,259,440,285"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,107,255,133"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,208,249,235"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,259,247,285"/>
+<area shape="rect" id="node10" href="$main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,309,251,336"/>
+<area shape="rect" id="node11" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,360,260,387"/>
 </map>

@@ -73,13 +73,13 @@ $(function() {
 <div class="title">Référence du fichier main.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="affichagemingl_8h_source.html">affichagemingl.h</a>&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;<a class="el" href="affichagemingl_8h_source.html">affichagemingl.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="affichage_8h_source.html">affichage.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="gestionpartie_8h_source.html">gestionpartie.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="type_8h_source.html">type.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="cst_8h_source.html">cst.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="affichage_8h_source.html">affichage.h</a>&gt;</code><br />
-<code>#include &lt;fstream&gt;</code><br />
-<code>#include &lt;thread&gt;</code><br />
 <code>#include &lt;mingl/mingl.h&gt;</code><br />
 <code>#include &lt;mingl/gui/sprite.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -87,18 +87,18 @@ Graphe des dépendances par inclusion de main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#a_s_a_e_candy_crush_2main_8cpp" alt=""/></div>
 <map name="a_s_a_e_candy_crush_2main_8cpp" id="a_s_a_e_candy_crush_2main_8cpp">
-<area shape="rect" title=" " alt="" coords="401,5,591,32"/>
-<area shape="rect" href="affichagemingl_8h.html" title=" " alt="" coords="75,80,205,107"/>
-<area shape="rect" href="type_8h.html" title=" " alt="" coords="387,229,450,256"/>
-<area shape="rect" href="cst_8h.html" title=" " alt="" coords="392,155,445,181"/>
-<area shape="rect" title=" " alt="" coords="256,155,368,181"/>
-<area shape="rect" title=" " alt="" coords="456,80,536,107"/>
-<area shape="rect" href="affichage_8h.html" title=" " alt="" coords="286,80,381,107"/>
-<area shape="rect" title=" " alt="" coords="611,80,685,107"/>
-<area shape="rect" title=" " alt="" coords="709,80,773,107"/>
-<area shape="rect" title=" " alt="" coords="797,80,933,107"/>
-<area shape="rect" title=" " alt="" coords="153,304,212,331"/>
-<area shape="rect" title=" " alt="" coords="34,155,233,181"/>
+<area shape="rect" title=" " alt="" coords="321,5,511,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,85,107"/>
+<area shape="rect" title=" " alt="" coords="109,80,173,107"/>
+<area shape="rect" href="affichagemingl_8h.html" title=" " alt="" coords="248,80,379,107"/>
+<area shape="rect" href="type_8h.html" title=" " alt="" coords="515,229,578,256"/>
+<area shape="rect" href="cst_8h.html" title=" " alt="" coords="488,155,541,181"/>
+<area shape="rect" title=" " alt="" coords="29,155,141,181"/>
+<area shape="rect" href="affichage_8h.html" title=" " alt="" coords="454,80,549,107"/>
+<area shape="rect" href="gestionpartie_8h.html" title=" " alt="" coords="573,80,693,107"/>
+<area shape="rect" title=" " alt="" coords="768,80,904,107"/>
+<area shape="rect" title=" " alt="" coords="317,304,376,331"/>
+<area shape="rect" title=" " alt="" coords="215,155,414,181"/>
 </map>
 </div>
 </div>
@@ -106,47 +106,11 @@ Graphe des dépendances par inclusion de main.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a69c339b2966791489487938c49401cf3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a69c339b2966791489487938c49401cf3">FPS_LIMIT</a>&#160;&#160;&#160;60</td></tr>
+<tr class="memitem:a69c339b2966791489487938c49401cf3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a69c339b2966791489487938c49401cf3">FPS_LIMIT</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:a69c339b2966791489487938c49401cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a04499e810295a8506131a7b912017990"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a04499e810295a8506131a7b912017990">initParams</a> (<a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;param)</td></tr>
-<tr class="memdesc:a04499e810295a8506131a7b912017990"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure initialisant les paramètres du joueur au sein du jeu  <a href="main_8cpp.html#a04499e810295a8506131a7b912017990">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a04499e810295a8506131a7b912017990"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84f6ce81485253e1ddad16d51f965f62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a84f6ce81485253e1ddad16d51f965f62">chargerParametre</a> (<a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;params, const string &amp;fichier)</td></tr>
-<tr class="memdesc:a84f6ce81485253e1ddad16d51f965f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml  <a href="main_8cpp.html#a84f6ce81485253e1ddad16d51f965f62">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a84f6ce81485253e1ddad16d51f965f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ee2be2606da0dfc9951f36b245a88b8"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8">nouvRdm</a> (unsigned &amp;nb1, unsigned &amp;nb2, const unsigned &amp;nbMax)</td></tr>
-<tr class="memdesc:a3ee2be2606da0dfc9951f36b245a88b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2  <a href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a3ee2be2606da0dfc9951f36b245a88b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97e00921cf09bf25414e22954db96866"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866">initMat</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const unsigned &amp;nbMax=<a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a>, const size_t &amp;nbLignes=10, const size_t &amp;nbColonnes=10)</td></tr>
-<tr class="memdesc:a97e00921cf09bf25414e22954db96866"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax  <a href="main_8cpp.html#a97e00921cf09bf25414e22954db96866">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a97e00921cf09bf25414e22954db96866"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ca5a1d2987f121b68d2e209aff2d5f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3">explositionUneBombeHorizontale</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const size_t &amp;numLigne, const size_t &amp;numColonne, const size_t &amp;combien)</td></tr>
-<tr class="memdesc:a5ca5a1d2987f121b68d2e209aff2d5f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nombre de 3 à 5  <a href="main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a5ca5a1d2987f121b68d2e209aff2d5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a455e37b8945ae908caeee9bd5744c9b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5">detectionExplositionUneBombeHorizontale</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, unsigned &amp;score)</td></tr>
-<tr class="memdesc:a455e37b8945ae908caeee9bd5744c9b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice  <a href="main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a455e37b8945ae908caeee9bd5744c9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bd751d220569d601afc2200b0378423"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8bd751d220569d601afc2200b0378423">explositionUneBombeVerticale</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const size_t &amp;numLigne, const size_t &amp;numColonne, const size_t &amp;combien)</td></tr>
-<tr class="memdesc:a8bd751d220569d601afc2200b0378423"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre de 3 à 5  <a href="main_8cpp.html#a8bd751d220569d601afc2200b0378423">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a8bd751d220569d601afc2200b0378423"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48f37957843802008c092eaff0851068"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a48f37957843802008c092eaff0851068">detectionExplositionUneBombeVerticale</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, unsigned &amp;score)</td></tr>
-<tr class="memdesc:a48f37957843802008c092eaff0851068"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice  <a href="main_8cpp.html#a48f37957843802008c092eaff0851068">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a48f37957843802008c092eaff0851068"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65a5b8aff7e4e8f0899bd278f28d97b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4">remplaceVideParRdm</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const unsigned &amp;vid=<a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a>, const unsigned &amp;nbMax=<a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a>)</td></tr>
-<tr class="memdesc:a65a5b8aff7e4e8f0899bd278f28d97b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">remplace toutes les cases vides par des nombres aléatoires  <a href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a65a5b8aff7e4e8f0899bd278f28d97b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afce4f4bfde0cf1054c79ad05ac81abec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec">detectionExplositionBombe</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, unsigned &amp;score, const unsigned &amp;vid=<a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a>, const unsigned &amp;plusGrandNb=<a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a>)</td></tr>
-<tr class="memdesc:afce4f4bfde0cf1054c79ad05ac81abec"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l'aide des deux autres fonctions de détection  <a href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec">Plus de détails...</a><br /></td></tr>
-<tr class="separator:afce4f4bfde0cf1054c79ad05ac81abec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3c472825f8e1704d249cae90b350d54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54">zeroVidSousNb</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const unsigned &amp;vid=<a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a>)</td></tr>
-<tr class="memdesc:ae3c472825f8e1704d249cae90b350d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu'à être côte à côte d'un élément juste en dessous d'eux ou au fond de la matrice si il n'y a pas d'éléments en dessous  <a href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ae3c472825f8e1704d249cae90b350d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57ec81d127d4e7a2924c033bf3ddc617"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617">faitUnMouvement</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const char &amp;deplacment, size_t &amp;numLigne, size_t &amp;numCol, unsigned &amp;nbDeplacement, <a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;param)</td></tr>
-<tr class="memdesc:a57ec81d127d4e7a2924c033bf3ddc617"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure permettant au joueur de se déplacer dans la grille et de déplacer l'élément qu'il a séléctionné  <a href="main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a57ec81d127d4e7a2924c033bf3ddc617"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab791841bb941a1f2a2db2024320d7e88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88">partiNumberCrush</a> (unsigned &amp;score, unsigned &amp;nbDeplacement, <a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;param)</td></tr>
 <tr class="memdesc:ab791841bb941a1f2a2db2024320d7e88"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction lançant une version lite du candy crush pour les tests  <a href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab791841bb941a1f2a2db2024320d7e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,7 +138,7 @@ Fonctions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FPS_LIMIT&#160;&#160;&#160;60</td>
+          <td class="memname">#define FPS_LIMIT&#160;&#160;&#160;10</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -184,577 +148,6 @@ Fonctions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a84f6ce81485253e1ddad16d51f965f62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84f6ce81485253e1ddad16d51f965f62">&#9670;&nbsp;</a></span>chargerParametre()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void chargerParametre </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;&#160;</td>
-          <td class="paramname"><em>params</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>fichier</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">params</td><td>structure de variable gérer par la fonction main </td></tr>
-    <tr><td class="paramname">fichier</td><td>chemin du fichier yaml cible </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00050">50</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
-<a id="afce4f4bfde0cf1054c79ad05ac81abec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afce4f4bfde0cf1054c79ad05ac81abec">&#9670;&nbsp;</a></span>detectionExplositionBombe()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool detectionExplositionBombe </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
-          <td class="paramname"><em>mat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned &amp;&#160;</td>
-          <td class="paramname"><em>score</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>vid</em> = <code><a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a></code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>plusGrandNb</em> = <code><a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l'aide des deux autres fonctions de détection </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main </td></tr>
-    <tr><td class="paramname">vid</td><td>valeur d'une case vide(par défaut 0) </td></tr>
-    <tr><td class="paramname">plusGrandNb</td><td>les nombres aléatoire sont compris entre 1 et plusGrandNb(par défaut 4) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>true si il y a eu au moins une explosion vertical ou horizontal, false sinon </dd></dl>
-<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00251">251</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="dynheader">
-Voici le graphe d'appel pour cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_afce4f4bfde0cf1054c79ad05ac81abec_cgraph.png" border="0" usemap="#amain_8cpp_afce4f4bfde0cf1054c79ad05ac81abec_cgraph" alt=""/></div>
-<map name="amain_8cpp_afce4f4bfde0cf1054c79ad05ac81abec_cgraph" id="amain_8cpp_afce4f4bfde0cf1054c79ad05ac81abec_cgraph">
-<area shape="rect" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,78,207,105"/>
-<area shape="rect" href="main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="255,5,481,47"/>
-<area shape="rect" href="main_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="255,71,481,112"/>
-<area shape="rect" href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="287,137,449,163"/>
-<area shape="rect" href="main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3" title="procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nomb..." alt="" coords="529,13,771,39"/>
-<area shape="rect" href="main_8cpp.html#a8bd751d220569d601afc2200b0378423" title="procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre..." alt="" coords="539,78,761,105"/>
-<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="608,137,692,163"/>
-</map>
-</div>
-<div class="dynheader">
-Voici le graphe des appelants de cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_afce4f4bfde0cf1054c79ad05ac81abec_icgraph.png" border="0" usemap="#amain_8cpp_afce4f4bfde0cf1054c79ad05ac81abec_icgraph" alt=""/></div>
-<map name="amain_8cpp_afce4f4bfde0cf1054c79ad05ac81abec_icgraph" id="amain_8cpp_afce4f4bfde0cf1054c79ad05ac81abec_icgraph">
-<area shape="rect" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="308,107,509,133"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,5,249,32"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,56,247,83"/>
-<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,107,251,133"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,157,260,184"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,208,255,235"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,107,60,133"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a455e37b8945ae908caeee9bd5744c9b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a455e37b8945ae908caeee9bd5744c9b5">&#9670;&nbsp;</a></span>detectionExplositionUneBombeHorizontale()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool detectionExplositionUneBombeHorizontale </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
-          <td class="paramname"><em>mat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned &amp;&#160;</td>
-          <td class="paramname"><em>score</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>true si il y a au moins une explosion, false sinon </dd></dl>
-<dl class="section author"><dt>Auteurs</dt><dd>A.Casali, P-A.Rigat </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00144">144</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="dynheader">
-Voici le graphe d'appel pour cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a455e37b8945ae908caeee9bd5744c9b5_cgraph.png" border="0" usemap="#amain_8cpp_a455e37b8945ae908caeee9bd5744c9b5_cgraph" alt=""/></div>
-<map name="amain_8cpp_a455e37b8945ae908caeee9bd5744c9b5_cgraph" id="amain_8cpp_a455e37b8945ae908caeee9bd5744c9b5_cgraph">
-<area shape="rect" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="5,5,232,47"/>
-<area shape="rect" href="main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3" title="procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nomb..." alt="" coords="280,13,521,39"/>
-</map>
-</div>
-<div class="dynheader">
-Voici le graphe des appelants de cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a455e37b8945ae908caeee9bd5744c9b5_icgraph.png" border="0" usemap="#amain_8cpp_a455e37b8945ae908caeee9bd5744c9b5_icgraph" alt=""/></div>
-<map name="amain_8cpp_a455e37b8945ae908caeee9bd5744c9b5_icgraph" id="amain_8cpp_a455e37b8945ae908caeee9bd5744c9b5_icgraph">
-<area shape="rect" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="455,99,681,141"/>
-<area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,107,407,133"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,56,144,83"/>
-<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,107,148,133"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,157,157,184"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,208,152,235"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a48f37957843802008c092eaff0851068"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48f37957843802008c092eaff0851068">&#9670;&nbsp;</a></span>detectionExplositionUneBombeVerticale()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool detectionExplositionUneBombeVerticale </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
-          <td class="paramname"><em>mat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned &amp;&#160;</td>
-          <td class="paramname"><em>score</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>true si il y a au moins un explosion, false sinon </dd></dl>
-<dl class="section author"><dt>Auteurs</dt><dd>P-A.Rigat, A.Nurdin </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00194">194</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="dynheader">
-Voici le graphe d'appel pour cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a48f37957843802008c092eaff0851068_cgraph.png" border="0" usemap="#amain_8cpp_a48f37957843802008c092eaff0851068_cgraph" alt=""/></div>
-<map name="amain_8cpp_a48f37957843802008c092eaff0851068_cgraph" id="amain_8cpp_a48f37957843802008c092eaff0851068_cgraph">
-<area shape="rect" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="5,5,232,47"/>
-<area shape="rect" href="main_8cpp.html#a8bd751d220569d601afc2200b0378423" title="procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre..." alt="" coords="280,13,503,39"/>
-</map>
-</div>
-<div class="dynheader">
-Voici le graphe des appelants de cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a48f37957843802008c092eaff0851068_icgraph.png" border="0" usemap="#amain_8cpp_a48f37957843802008c092eaff0851068_icgraph" alt=""/></div>
-<map name="amain_8cpp_a48f37957843802008c092eaff0851068_icgraph" id="amain_8cpp_a48f37957843802008c092eaff0851068_icgraph">
-<area shape="rect" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="455,99,681,141"/>
-<area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,107,407,133"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,56,144,83"/>
-<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,107,148,133"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,157,157,184"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,208,152,235"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a5ca5a1d2987f121b68d2e209aff2d5f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ca5a1d2987f121b68d2e209aff2d5f3">&#9670;&nbsp;</a></span>explositionUneBombeHorizontale()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void explositionUneBombeHorizontale </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
-          <td class="paramname"><em>mat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
-          <td class="paramname"><em>numLigne</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
-          <td class="paramname"><em>numColonne</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
-          <td class="paramname"><em>combien</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nombre de 3 à 5 </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">numLigne</td><td>absisse du premier nombre servant de repère pour l'explosion de la bombe </td></tr>
-    <tr><td class="paramname">numColonne</td><td>ordonnée du premier nombre servant de repère pour l'explosion de la bombe </td></tr>
-    <tr><td class="paramname">combien</td><td>nombre de chiffre aligné horizontalement </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00127">127</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="dynheader">
-Voici le graphe des appelants de cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a5ca5a1d2987f121b68d2e209aff2d5f3_icgraph.png" border="0" usemap="#amain_8cpp_a5ca5a1d2987f121b68d2e209aff2d5f3_icgraph" alt=""/></div>
-<map name="amain_8cpp_a5ca5a1d2987f121b68d2e209aff2d5f3_icgraph" id="amain_8cpp_a5ca5a1d2987f121b68d2e209aff2d5f3_icgraph">
-<area shape="rect" title="procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nomb..." alt="" coords="529,13,771,39"/>
-<area shape="rect" href="main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="255,5,481,47"/>
-<area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,13,207,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a8bd751d220569d601afc2200b0378423"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bd751d220569d601afc2200b0378423">&#9670;&nbsp;</a></span>explositionUneBombeVerticale()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void explositionUneBombeVerticale </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
-          <td class="paramname"><em>mat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
-          <td class="paramname"><em>numLigne</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
-          <td class="paramname"><em>numColonne</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
-          <td class="paramname"><em>combien</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre de 3 à 5 </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">numLigne</td><td>absisse du premier nombre servant de repère pour l'explosion de la bombe </td></tr>
-    <tr><td class="paramname">numColonne</td><td>ordonnée du premier nombre servant de repère pour l'explosion de la bombe </td></tr>
-    <tr><td class="paramname">combien</td><td>nombre de chiffre aligné verticalement </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section author"><dt>Auteurs</dt><dd>P-A.Rigat, A.Nurdin </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00179">179</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="dynheader">
-Voici le graphe des appelants de cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a8bd751d220569d601afc2200b0378423_icgraph.png" border="0" usemap="#amain_8cpp_a8bd751d220569d601afc2200b0378423_icgraph" alt=""/></div>
-<map name="amain_8cpp_a8bd751d220569d601afc2200b0378423_icgraph" id="amain_8cpp_a8bd751d220569d601afc2200b0378423_icgraph">
-<area shape="rect" title="procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre..." alt="" coords="529,13,752,39"/>
-<area shape="rect" href="main_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="255,5,481,47"/>
-<area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,13,207,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a57ec81d127d4e7a2924c033bf3ddc617"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57ec81d127d4e7a2924c033bf3ddc617">&#9670;&nbsp;</a></span>faitUnMouvement()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void faitUnMouvement </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
-          <td class="paramname"><em>mat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char &amp;&#160;</td>
-          <td class="paramname"><em>deplacment</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t &amp;&#160;</td>
-          <td class="paramname"><em>numLigne</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t &amp;&#160;</td>
-          <td class="paramname"><em>numCol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned &amp;&#160;</td>
-          <td class="paramname"><em>nbDeplacement</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;&#160;</td>
-          <td class="paramname"><em>param</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>procédure permettant au joueur de se déplacer dans la grille et de déplacer l'élément qu'il a séléctionné </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">deplacment</td><td>caractère indiquant l'action choisi </td></tr>
-    <tr><td class="paramname">numLigne</td><td>absisse du curseur </td></tr>
-    <tr><td class="paramname">numCol</td><td>ordonnée du curseur </td></tr>
-    <tr><td class="paramname">nbDeplacement</td><td>nombre de déplacement restant, gérer par la fonction main </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00288">288</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="dynheader">
-Voici le graphe des appelants de cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a57ec81d127d4e7a2924c033bf3ddc617_icgraph.png" border="0" usemap="#amain_8cpp_a57ec81d127d4e7a2924c033bf3ddc617_icgraph" alt=""/></div>
-<map name="amain_8cpp_a57ec81d127d4e7a2924c033bf3ddc617_icgraph" id="amain_8cpp_a57ec81d127d4e7a2924c033bf3ddc617_icgraph">
-<area shape="rect" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="297,31,437,57"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="114,5,243,32"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,56,249,83"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,31,60,57"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a97e00921cf09bf25414e22954db96866"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97e00921cf09bf25414e22954db96866">&#9670;&nbsp;</a></span>initMat()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void initMat </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
-          <td class="paramname"><em>mat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>nbMax</em> = <code><a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a></code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
-          <td class="paramname"><em>nbLignes</em> = <code>10</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
-          <td class="paramname"><em>nbColonnes</em> = <code>10</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">nbMax</td><td>les nombres aléatoire sont compris entre 1 et nbMax(par défaut 4) </td></tr>
-    <tr><td class="paramname">nbLignes</td><td>nombre de ligne de la matrice mat </td></tr>
-    <tr><td class="paramname">nbColonnes</td><td>nombre de colonne de la matrice mat </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00101">101</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="dynheader">
-Voici le graphe d'appel pour cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a97e00921cf09bf25414e22954db96866_cgraph.png" border="0" usemap="#amain_8cpp_a97e00921cf09bf25414e22954db96866_cgraph" alt=""/></div>
-<map name="amain_8cpp_a97e00921cf09bf25414e22954db96866_cgraph" id="amain_8cpp_a97e00921cf09bf25414e22954db96866_cgraph">
-<area shape="rect" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="5,5,73,32"/>
-<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="121,5,205,32"/>
-</map>
-</div>
-<div class="dynheader">
-Voici le graphe des appelants de cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a97e00921cf09bf25414e22954db96866_icgraph.png" border="0" usemap="#amain_8cpp_a97e00921cf09bf25414e22954db96866_icgraph" alt=""/></div>
-<map name="amain_8cpp_a97e00921cf09bf25414e22954db96866_icgraph" id="amain_8cpp_a97e00921cf09bf25414e22954db96866_icgraph">
-<area shape="rect" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="308,107,376,133"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,5,249,32"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,56,247,83"/>
-<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,107,251,133"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,157,260,184"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,208,255,235"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,107,60,133"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a04499e810295a8506131a7b912017990"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04499e810295a8506131a7b912017990">&#9670;&nbsp;</a></span>initParams()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void initParams </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;&#160;</td>
-          <td class="paramname"><em>param</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>procédure initialisant les paramètres du joueur au sein du jeu </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">param</td><td>structure de variable gérer par la fonction main </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section author"><dt>Auteurs</dt><dd>A.Casali, P-A.Rigat </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00021">21</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="dynheader">
-Voici le graphe des appelants de cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a04499e810295a8506131a7b912017990_icgraph.png" border="0" usemap="#amain_8cpp_a04499e810295a8506131a7b912017990_icgraph" alt=""/></div>
-<map name="amain_8cpp_a04499e810295a8506131a7b912017990_icgraph" id="amain_8cpp_a04499e810295a8506131a7b912017990_icgraph">
-<area shape="rect" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="108,5,199,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
-</map>
-</div>
-
-</div>
-</div>
 <a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
 
@@ -774,93 +167,32 @@ Voici le graphe des appelants de cette fonction :</div>
 <dl class="section return"><dt>Renvoie</dt><dd>0 </dd></dl>
 <dl class="section author"><dt>Auteurs</dt><dd>A.Nurdin, P-A.Rigat, C.Tamine </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00704">704</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00394">394</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
 <map name="amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
-<area shape="rect" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,179,60,206"/>
-<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="557,154,656,180"/>
-<area shape="rect" href="main_8cpp.html#a04499e810295a8506131a7b912017990" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="139,78,229,104"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,179,249,206"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,331,247,358"/>
-<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,280,251,307"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,230,260,256"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,128,255,155"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="343,280,475,307"/>
-<area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="308,179,509,206"/>
-<area shape="rect" href="main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="339,78,479,104"/>
-<area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="375,230,443,256"/>
-<area shape="rect" href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="349,128,469,155"/>
-<area shape="rect" href="affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="362,331,455,358"/>
-<area shape="rect" href="affichagemingl_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6" title="dessine un cercle de couleur rouge avec comme origine x, y" alt="" coords="349,432,468,459"/>
-<area shape="rect" href="affichagemingl_8cpp.html#ac46cbc355388b953335699211b70d29f" title="dessine une croix de couleur jaune avec comme origine x, y" alt="" coords="353,483,464,510"/>
-<area shape="rect" href="affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="345,382,472,408"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a3ee2be2606da0dfc9951f36b245a88b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ee2be2606da0dfc9951f36b245a88b8">&#9670;&nbsp;</a></span>nouvRdm()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned nouvRdm </td>
-          <td>(</td>
-          <td class="paramtype">unsigned &amp;&#160;</td>
-          <td class="paramname"><em>nb1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned &amp;&#160;</td>
-          <td class="paramname"><em>nb2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>nbMax</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2 </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nb1</td><td>premier nombre dont le nouveaux nombre aléatoire doit être différent </td></tr>
-    <tr><td class="paramname">nb2</td><td>second nombre dont le nouveaux nombre aléatoire doit être différent </td></tr>
-    <tr><td class="paramname">nbMax</td><td>le nouveaux nombre aléatoire doit être inclut entre 1 et nbMax </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>rdm: nombre aléatoire entre 1 et nbMax différent de nb1 et nb2 </dd></dl>
-<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00085">85</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="dynheader">
-Voici le graphe des appelants de cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph.png" border="0" usemap="#amain_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph" alt=""/></div>
-<map name="amain_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph" id="amain_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph">
-<area shape="rect" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="665,132,749,159"/>
-<area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="272,107,340,133"/>
-<area shape="rect" href="main_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="455,157,617,184"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,56,146,83"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,107,144,133"/>
-<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,157,148,184"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,208,157,235"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,5,152,32"/>
-<area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,157,407,184"/>
+<area shape="rect" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,294,60,321"/>
+<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="568,446,667,473"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a04499e810295a8506131a7b912017990" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="139,700,229,726"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,193,249,220"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,345,247,372"/>
+<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,244,251,270"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,294,260,321"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,142,255,169"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="343,244,475,270"/>
+<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="308,193,509,220"/>
+<area shape="rect" href="gestionpartie_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="557,92,677,118"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="339,41,479,68"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="375,142,443,169"/>
+<area shape="rect" href="affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="362,294,455,321"/>
+<area shape="rect" href="affichagemingl_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6" title="dessine un cercle de couleur rouge avec comme origine x, y" alt="" coords="349,446,468,473"/>
+<area shape="rect" href="affichagemingl_8cpp.html#ac46cbc355388b953335699211b70d29f" title="dessine une croix de couleur jaune avec comme origine x, y" alt="" coords="353,497,464,524"/>
+<area shape="rect" href="affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="345,345,472,372"/>
+<area shape="rect" href="affichagemingl_8cpp.html#aa3e6cb35e5e996580a5dac2320fdb09d" title="dessine une étoile de couleur violette avec comme origine x, y" alt="" coords="351,548,466,574"/>
+<area shape="rect" href="affichagemingl_8cpp.html#a7e881b244e62e74617783fc4aa6bdf06" title="dessine un rectangle de couleur bleu avec comme origine x, y" alt="" coords="337,598,480,625"/>
+<area shape="rect" href="affichagemingl_8cpp.html#abd33c630339924d862adfb0af2f61405" title="dessine un triangle de couleur verte avec comme origine x, y" alt="" coords="345,396,473,422"/>
 </map>
 </div>
 
@@ -909,29 +241,32 @@ Voici le graphe des appelants de cette fonction :</div>
 <dl class="section return"><dt>Renvoie</dt><dd>0 </dd></dl>
 <dl class="section author"><dt>Auteurs</dt><dd>A.Nurdin, A.Goncalves, P-A.Rigat, C.Tamine, B.Gaston </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00403">403</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00069">69</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a61b26d531ca03853cb6daa7fa9982d18_cgraph.png" border="0" usemap="#amain_8cpp_a61b26d531ca03853cb6daa7fa9982d18_cgraph" alt=""/></div>
 <map name="amain_8cpp_a61b26d531ca03853cb6daa7fa9982d18_cgraph" id="amain_8cpp_a61b26d531ca03853cb6daa7fa9982d18_cgraph">
-<area shape="rect" title="fonction de lancement du jeu du candy crush" alt="" coords="5,360,135,387"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="217,259,349,285"/>
-<area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="183,309,384,336"/>
-<area shape="rect" href="main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="213,360,353,387"/>
-<area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="249,411,317,437"/>
-<area shape="rect" href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="223,461,343,488"/>
-<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="436,5,535,32"/>
-<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="450,56,521,83"/>
-<area shape="rect" href="cst_8h.html#af81c8f45a494c8b75bb2623c7a57737f" title=" " alt="" coords="432,107,539,133"/>
-<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="455,157,515,184"/>
-<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title=" " alt="" coords="454,208,517,235"/>
-<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title=" " alt="" coords="452,259,519,285"/>
-<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title=" " alt="" coords="441,309,529,336"/>
-<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title=" " alt="" coords="456,360,515,387"/>
-<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title=" " alt="" coords="451,411,519,437"/>
-<area shape="rect" href="cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title=" " alt="" coords="449,461,521,488"/>
-<area shape="rect" href="cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="457,512,514,539"/>
+<area shape="rect" title="fonction de lancement du jeu du candy crush" alt="" coords="5,716,135,743"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="217,284,349,311"/>
+<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="183,665,384,692"/>
+<area shape="rect" href="gestionpartie_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="485,745,605,772"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="213,767,353,793"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="249,817,317,844"/>
+<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="496,5,595,32"/>
+<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="applique la couleur donné à une partie du terminal" alt="" coords="510,56,581,83"/>
+<area shape="rect" href="cst_8h.html#af81c8f45a494c8b75bb2623c7a57737f" title="code pour afficher la couleur gris clair dans l&#39;arrière plan du terminal" alt="" coords="492,107,599,133"/>
+<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="515,157,575,184"/>
+<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="514,208,577,235"/>
+<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="512,259,579,285"/>
+<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="501,309,589,336"/>
+<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title="code pour afficher la couleur noir dans le terminal" alt="" coords="516,360,575,387"/>
+<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title="couleur par défaut du terminal" alt="" coords="511,411,579,437"/>
+<area shape="rect" href="cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title="code pour afficher la couleur rouge dans le terminal" alt="" coords="509,461,581,488"/>
+<area shape="rect" href="cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title="code pour afficher la couleur vert dans le terminal" alt="" coords="517,512,574,539"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="432,563,659,605"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="432,629,659,670"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="464,695,627,721"/>
 </map>
 </div>
 <div class="dynheader">
@@ -990,29 +325,32 @@ Voici le graphe des appelants de cette fonction :</div>
 <dl class="section return"><dt>Renvoie</dt><dd>0 </dd></dl>
 <dl class="section author"><dt>Auteurs</dt><dd>A.Goncalves, P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00445">445</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00115">115</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a770773bcbab73afe222d1f921bd74684_cgraph.png" border="0" usemap="#amain_8cpp_a770773bcbab73afe222d1f921bd74684_cgraph" alt=""/></div>
 <map name="amain_8cpp_a770773bcbab73afe222d1f921bd74684_cgraph" id="amain_8cpp_a770773bcbab73afe222d1f921bd74684_cgraph">
-<area shape="rect" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="5,360,131,387"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="213,107,345,133"/>
-<area shape="rect" href="affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="435,411,528,437"/>
-<area shape="rect" href="affichagemingl_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6" title="dessine un cercle de couleur rouge avec comme origine x, y" alt="" coords="220,208,339,235"/>
-<area shape="rect" href="affichagemingl_8cpp.html#ac46cbc355388b953335699211b70d29f" title="dessine une croix de couleur jaune avec comme origine x, y" alt="" coords="224,259,335,285"/>
-<area shape="rect" href="affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="216,309,343,336"/>
-<area shape="rect" href="affichagemingl_8cpp.html#aa3e6cb35e5e996580a5dac2320fdb09d" title="dessine une étoile de couleur violette avec comme origine x, y" alt="" coords="222,360,337,387"/>
-<area shape="rect" href="affichagemingl_8cpp.html#a7e881b244e62e74617783fc4aa6bdf06" title="dessine un rectangle de couleur bleu avec comme origine x, y" alt="" coords="208,411,351,437"/>
-<area shape="rect" href="affichagemingl_8cpp.html#abd33c630339924d862adfb0af2f61405" title="dessine un triangle de couleur verte avec comme origine x, y" alt="" coords="215,461,343,488"/>
-<area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="179,512,380,539"/>
-<area shape="rect" href="affichagemingl_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="permet de déplacer le curseur dans la fenêtre mingl" alt="" coords="189,563,370,589"/>
-<area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="245,613,313,640"/>
-<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="432,5,531,32"/>
-<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="446,56,517,83"/>
-<area shape="rect" href="cst_8h.html#af81c8f45a494c8b75bb2623c7a57737f" title=" " alt="" coords="428,107,535,133"/>
-<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="451,157,511,184"/>
-<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title=" " alt="" coords="450,208,513,235"/>
+<area shape="rect" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="5,436,131,463"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="213,183,345,209"/>
+<area shape="rect" href="affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="435,512,528,539"/>
+<area shape="rect" href="affichagemingl_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6" title="dessine un cercle de couleur rouge avec comme origine x, y" alt="" coords="220,284,339,311"/>
+<area shape="rect" href="affichagemingl_8cpp.html#ac46cbc355388b953335699211b70d29f" title="dessine une croix de couleur jaune avec comme origine x, y" alt="" coords="224,335,335,361"/>
+<area shape="rect" href="affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="216,385,343,412"/>
+<area shape="rect" href="affichagemingl_8cpp.html#aa3e6cb35e5e996580a5dac2320fdb09d" title="dessine une étoile de couleur violette avec comme origine x, y" alt="" coords="222,436,337,463"/>
+<area shape="rect" href="affichagemingl_8cpp.html#a7e881b244e62e74617783fc4aa6bdf06" title="dessine un rectangle de couleur bleu avec comme origine x, y" alt="" coords="208,487,351,513"/>
+<area shape="rect" href="affichagemingl_8cpp.html#abd33c630339924d862adfb0af2f61405" title="dessine un triangle de couleur verte avec comme origine x, y" alt="" coords="215,537,343,564"/>
+<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="179,588,380,615"/>
+<area shape="rect" href="affichagemingl_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="permet de déplacer le curseur dans la fenêtre mingl" alt="" coords="189,639,370,665"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="245,689,313,716"/>
+<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="432,5,531,32"/>
+<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="applique la couleur donné à une partie du terminal" alt="" coords="446,56,517,83"/>
+<area shape="rect" href="cst_8h.html#af81c8f45a494c8b75bb2623c7a57737f" title="code pour afficher la couleur gris clair dans l&#39;arrière plan du terminal" alt="" coords="428,107,535,133"/>
+<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="451,157,511,184"/>
+<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="450,208,513,235"/>
+<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="448,259,515,285"/>
+<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="437,309,525,336"/>
+<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title="code pour afficher la couleur noir dans le terminal" alt="" coords="452,360,511,387"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1071,29 +409,32 @@ Voici le graphe des appelants de cette fonction :</div>
 <dl class="section return"><dt>Renvoie</dt><dd>0 </dd></dl>
 <dl class="section author"><dt>Auteurs</dt><dd>A.Goncalves, P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00535">535</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00212">212</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a67f038b3fab66fa8bb64317fe8b51747_cgraph.png" border="0" usemap="#amain_8cpp_a67f038b3fab66fa8bb64317fe8b51747_cgraph" alt=""/></div>
 <map name="amain_8cpp_a67f038b3fab66fa8bb64317fe8b51747_cgraph" id="amain_8cpp_a67f038b3fab66fa8bb64317fe8b51747_cgraph">
-<area shape="rect" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="5,397,139,424"/>
-<area shape="rect" href="affichage_8cpp.html#acfe23845c34839ea22b01d6ae8cb7acd" title="affichage de la matrice avec des cercles de couleurs différentes, représentant le contenu des cases" alt="" coords="221,56,353,83"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="221,233,353,260"/>
-<area shape="rect" href="affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="443,461,536,488"/>
-<area shape="rect" href="affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="224,448,351,475"/>
-<area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="187,499,388,525"/>
-<area shape="rect" href="affichagemingl_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="permet de déplacer le curseur dans la fenêtre mingl" alt="" coords="197,347,378,373"/>
-<area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="253,549,321,576"/>
-<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title=" " alt="" coords="458,5,521,32"/>
-<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title=" " alt="" coords="445,56,533,83"/>
-<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="440,208,539,235"/>
-<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="454,259,525,285"/>
-<area shape="rect" href="cst_8h.html#af81c8f45a494c8b75bb2623c7a57737f" title=" " alt="" coords="436,309,543,336"/>
-<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="459,360,519,387"/>
-<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title=" " alt="" coords="456,411,523,437"/>
-<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title=" " alt="" coords="460,107,519,133"/>
-<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title=" " alt="" coords="455,157,523,184"/>
+<area shape="rect" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="5,541,139,568"/>
+<area shape="rect" href="affichagemingl_8cpp.html#a9aa1b945f36803846a1a6e0162e23989" title="affichage de la matrice avec des cercles de couleurs différentes, représentant le contenu des cases" alt="" coords="212,56,363,83"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="221,284,353,311"/>
+<area shape="rect" href="affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="503,563,596,589"/>
+<area shape="rect" href="affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="224,592,351,619"/>
+<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="187,643,388,669"/>
+<area shape="rect" href="affichagemingl_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="permet de déplacer le curseur dans la fenêtre mingl" alt="" coords="197,491,378,517"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="253,693,321,720"/>
+<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="518,56,581,83"/>
+<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="505,5,593,32"/>
+<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="500,259,599,285"/>
+<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="applique la couleur donné à une partie du terminal" alt="" coords="514,309,585,336"/>
+<area shape="rect" href="cst_8h.html#af81c8f45a494c8b75bb2623c7a57737f" title="code pour afficher la couleur gris clair dans l&#39;arrière plan du terminal" alt="" coords="496,360,603,387"/>
+<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="519,411,579,437"/>
+<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="516,461,583,488"/>
+<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title="code pour afficher la couleur noir dans le terminal" alt="" coords="520,512,579,539"/>
+<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title="couleur par défaut du terminal" alt="" coords="515,107,583,133"/>
+<area shape="rect" href="cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title="code pour afficher la couleur rouge dans le terminal" alt="" coords="513,157,585,184"/>
+<area shape="rect" href="cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title="code pour afficher la couleur vert dans le terminal" alt="" coords="521,208,578,235"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="436,635,663,677"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1152,29 +493,32 @@ Voici le graphe des appelants de cette fonction :</div>
 <dl class="section return"><dt>Renvoie</dt><dd>0 </dd></dl>
 <dl class="section author"><dt>Auteurs</dt><dd>A.Goncalves, P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00617">617</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00301">301</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_abf3d9b449ed0c8eb96763cfd90b5d76d_cgraph.png" border="0" usemap="#amain_8cpp_abf3d9b449ed0c8eb96763cfd90b5d76d_cgraph" alt=""/></div>
 <map name="amain_8cpp_abf3d9b449ed0c8eb96763cfd90b5d76d_cgraph" id="amain_8cpp_abf3d9b449ed0c8eb96763cfd90b5d76d_cgraph">
-<area shape="rect" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,360,157,387"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="240,81,372,108"/>
-<area shape="rect" href="affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="461,385,555,412"/>
-<area shape="rect" href="affichagemingl_8cpp.html#ab80fa0eba33900bee956bde40a2ac2f6" title="affiche la tête d&#39;Alex avec comme origine x, y" alt="" coords="255,183,357,209"/>
-<area shape="rect" href="affichagemingl_8cpp.html#a9ac89b215e10ff7f04c87c9a62ce71fc" title="affiche la tête d&#39;Arnaud avec comme origine x, y" alt="" coords="247,233,365,260"/>
-<area shape="rect" href="affichagemingl_8cpp.html#a024a6770bc84a237f11e0137430fdc7f" title="affiche la tête de Baptiste avec comme origine x, y" alt="" coords="243,284,369,311"/>
-<area shape="rect" href="affichagemingl_8cpp.html#a01c3b932e860e2ba98f75812e68271aa" title="affiche la tête de A.Casali avec comme origine x, y" alt="" coords="250,335,362,361"/>
-<area shape="rect" href="affichagemingl_8cpp.html#a9e84c73c6ff8a93f011e1f1b3fde578d" title="affiche la tête de Cyril avec comme origine x, y" alt="" coords="255,385,357,412"/>
-<area shape="rect" href="affichagemingl_8cpp.html#a09224c84307ef255e22a69986bceb296" title="affiche la tête de Pierre&#45;André avec comme origine x, y" alt="" coords="251,436,361,463"/>
-<area shape="rect" href="affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="243,487,369,513"/>
-<area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,537,407,564"/>
-<area shape="rect" href="affichagemingl_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="permet de déplacer le curseur dans la fenêtre mingl" alt="" coords="215,588,397,615"/>
-<area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="272,639,340,665"/>
-<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="459,5,557,32"/>
-<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="473,56,543,83"/>
-<area shape="rect" href="cst_8h.html#af81c8f45a494c8b75bb2623c7a57737f" title=" " alt="" coords="455,107,561,133"/>
-<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="478,157,538,184"/>
+<area shape="rect" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,436,157,463"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="240,157,372,184"/>
+<area shape="rect" href="affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="461,512,555,539"/>
+<area shape="rect" href="affichagemingl_8cpp.html#ab80fa0eba33900bee956bde40a2ac2f6" title="affiche la tête d&#39;Alex avec comme origine x, y" alt="" coords="255,259,357,285"/>
+<area shape="rect" href="affichagemingl_8cpp.html#a9ac89b215e10ff7f04c87c9a62ce71fc" title="affiche la tête d&#39;Arnaud avec comme origine x, y" alt="" coords="247,309,365,336"/>
+<area shape="rect" href="affichagemingl_8cpp.html#a024a6770bc84a237f11e0137430fdc7f" title="affiche la tête de Baptiste avec comme origine x, y" alt="" coords="243,360,369,387"/>
+<area shape="rect" href="affichagemingl_8cpp.html#a01c3b932e860e2ba98f75812e68271aa" title="affiche la tête de A.Casali avec comme origine x, y" alt="" coords="250,411,362,437"/>
+<area shape="rect" href="affichagemingl_8cpp.html#a9e84c73c6ff8a93f011e1f1b3fde578d" title="affiche la tête de Cyril avec comme origine x, y" alt="" coords="255,461,357,488"/>
+<area shape="rect" href="affichagemingl_8cpp.html#a09224c84307ef255e22a69986bceb296" title="affiche la tête de Pierre&#45;André avec comme origine x, y" alt="" coords="251,512,361,539"/>
+<area shape="rect" href="affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="243,563,369,589"/>
+<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,613,407,640"/>
+<area shape="rect" href="affichagemingl_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="permet de déplacer le curseur dans la fenêtre mingl" alt="" coords="215,664,397,691"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="272,715,340,741"/>
+<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="459,5,557,32"/>
+<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="applique la couleur donné à une partie du terminal" alt="" coords="473,56,543,83"/>
+<area shape="rect" href="cst_8h.html#af81c8f45a494c8b75bb2623c7a57737f" title="code pour afficher la couleur gris clair dans l&#39;arrière plan du terminal" alt="" coords="455,107,561,133"/>
+<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="478,157,538,184"/>
+<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="477,208,539,235"/>
+<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="475,259,541,285"/>
+<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="464,309,552,336"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1232,29 +576,32 @@ Voici le graphe des appelants de cette fonction :</div>
 <dl class="section return"><dt>Renvoie</dt><dd>0 </dd></dl>
 <dl class="section author"><dt>Auteurs</dt><dd>A.Nurdin, A.Goncalves, P-A.Rigat, C.Tamine, B.Gaston </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00362">362</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00024">24</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_ab791841bb941a1f2a2db2024320d7e88_cgraph.png" border="0" usemap="#amain_8cpp_ab791841bb941a1f2a2db2024320d7e88_cgraph" alt=""/></div>
 <map name="amain_8cpp_ab791841bb941a1f2a2db2024320d7e88_cgraph" id="amain_8cpp_ab791841bb941a1f2a2db2024320d7e88_cgraph">
-<area shape="rect" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,465,147,492"/>
+<area shape="rect" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,669,147,696"/>
 <area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="229,259,361,285"/>
-<area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,415,396,441"/>
-<area shape="rect" href="main_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="225,465,365,492"/>
-<area shape="rect" href="main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="261,516,329,543"/>
-<area shape="rect" href="main_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="235,567,355,593"/>
-<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="508,5,607,32"/>
-<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="522,56,593,83"/>
-<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="527,107,587,133"/>
-<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title=" " alt="" coords="526,157,589,184"/>
-<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title=" " alt="" coords="524,208,591,235"/>
-<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title=" " alt="" coords="513,259,601,285"/>
-<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title=" " alt="" coords="528,309,587,336"/>
-<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title=" " alt="" coords="523,360,591,387"/>
-<area shape="rect" href="cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title=" " alt="" coords="521,411,593,437"/>
-<area shape="rect" href="cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="529,461,586,488"/>
-<area shape="rect" href="main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="444,513,671,554"/>
+<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,619,396,645"/>
+<area shape="rect" href="gestionpartie_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="497,695,617,721"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="225,720,365,747"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="261,771,329,797"/>
+<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="508,5,607,32"/>
+<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="applique la couleur donné à une partie du terminal" alt="" coords="522,56,593,83"/>
+<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="527,107,587,133"/>
+<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="526,157,589,184"/>
+<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="524,208,591,235"/>
+<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="513,259,601,285"/>
+<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title="code pour afficher la couleur noir dans le terminal" alt="" coords="528,309,587,336"/>
+<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title="couleur par défaut du terminal" alt="" coords="523,360,591,387"/>
+<area shape="rect" href="cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title="code pour afficher la couleur rouge dans le terminal" alt="" coords="521,411,593,437"/>
+<area shape="rect" href="cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title="code pour afficher la couleur vert dans le terminal" alt="" coords="529,461,586,488"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="444,513,671,554"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="444,578,671,619"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="476,644,639,671"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="515,771,599,797"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1264,128 +611,6 @@ Voici le graphe des appelants de cette fonction :</div>
 <map name="amain_8cpp_ab791841bb941a1f2a2db2024320d7e88_icgraph" id="amain_8cpp_ab791841bb941a1f2a2db2024320d7e88_icgraph">
 <area shape="rect" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,5,249,32"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a65a5b8aff7e4e8f0899bd278f28d97b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65a5b8aff7e4e8f0899bd278f28d97b4">&#9670;&nbsp;</a></span>remplaceVideParRdm()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void remplaceVideParRdm </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
-          <td class="paramname"><em>mat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>vid</em> = <code><a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a></code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>nbMax</em> = <code><a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>remplace toutes les cases vides par des nombres aléatoires </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">vid</td><td>valeur d'une case vide(par défaut 0) </td></tr>
-    <tr><td class="paramname">nbMax</td><td>les nombres aléatoire sont compris entre 1 et nbMax(par défaut 4) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00228">228</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="dynheader">
-Voici le graphe d'appel pour cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph.png" border="0" usemap="#amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph" alt=""/></div>
-<map name="amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph" id="amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_cgraph">
-<area shape="rect" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="5,5,168,32"/>
-<area shape="rect" href="main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="216,5,300,32"/>
-</map>
-</div>
-<div class="dynheader">
-Voici le graphe des appelants de cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_icgraph.png" border="0" usemap="#amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_icgraph" alt=""/></div>
-<map name="amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_icgraph" id="amain_8cpp_a65a5b8aff7e4e8f0899bd278f28d97b4_icgraph">
-<area shape="rect" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="455,107,617,133"/>
-<area shape="rect" href="main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,107,407,133"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,56,144,83"/>
-<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,107,148,133"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,157,157,184"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,208,152,235"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ae3c472825f8e1704d249cae90b350d54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3c472825f8e1704d249cae90b350d54">&#9670;&nbsp;</a></span>zeroVidSousNb()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool zeroVidSousNb </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
-          <td class="paramname"><em>mat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>vid</em> = <code><a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu'à être côte à côte d'un élément juste en dessous d'eux ou au fond de la matrice si il n'y a pas d'éléments en dessous </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">vid</td><td>valeur d'une case vide(par défaut 0) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>true si un ou plusieurs élément on été déplacé, false sinon </dd></dl>
-<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="main_8cpp_source.html#l00267">267</a> du fichier <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="dynheader">
-Voici le graphe des appelants de cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph.png" border="0" usemap="#amain_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph" alt=""/></div>
-<map name="amain_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph" id="amain_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph">
-<area shape="rect" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="297,31,417,57"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="114,5,243,32"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,56,249,83"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,31,60,57"/>
 </map>
 </div>
 

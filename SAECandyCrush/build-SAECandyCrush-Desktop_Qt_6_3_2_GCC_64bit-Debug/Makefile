@@ -54,6 +54,7 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../SAECandyCrush/affichage.cpp \
 		../SAECandyCrush/affichagemingl.cpp \
+		../SAECandyCrush/gestionpartie.cpp \
 		../SAECandyCrush/main.cpp \
 		../MinGL2_IUT_AIX-master/src/audio/audioengine.cpp \
 		../MinGL2_IUT_AIX-master/src/exception/cexception.cpp \
@@ -74,6 +75,7 @@ SOURCES       = ../SAECandyCrush/affichage.cpp \
 		../MinGL2_IUT_AIX-master/src/transition/transition_engine.cpp 
 OBJECTS       = affichage.o \
 		affichagemingl.o \
+		gestionpartie.o \
 		main.o \
 		audioengine.o \
 		cexception.o \
@@ -360,6 +362,7 @@ DIST          = ../../../../Qt/6.3.2/gcc_64/mkspecs/features/spec_pre.prf \
 		../SAECandyCrush/SAECandyCrush.pro affichage.h \
 		affichagemingl.h \
 		cst.h \
+		gestionpartie.h \
 		type.h \
 		/home/m24/cpp/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/audio/audioengine.h \
 		/home/m24/cpp/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/exception/cexception.h \
@@ -389,6 +392,7 @@ DIST          = ../../../../Qt/6.3.2/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/m24/cpp/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/transition/transition_engine.h \
 		/home/m24/cpp/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/transition/transition_types.h ../SAECandyCrush/affichage.cpp \
 		../SAECandyCrush/affichagemingl.cpp \
+		../SAECandyCrush/gestionpartie.cpp \
 		../SAECandyCrush/main.cpp \
 		../MinGL2_IUT_AIX-master/src/audio/audioengine.cpp \
 		../MinGL2_IUT_AIX-master/src/exception/cexception.cpp \
@@ -996,18 +1000,7 @@ compiler_clean:
 
 affichage.o: ../SAECandyCrush/affichage.cpp ../SAECandyCrush/type.h \
 		../SAECandyCrush/cst.h \
-		../SAECandyCrush/affichage.h \
-		../MinGL2_IUT_AIX-master/include/mingl/mingl.h \
-		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
-		../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
-		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
-		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
-		../MinGL2_IUT_AIX-master/include/mingl/graphics/vec2d.h \
-		../MinGL2_IUT_AIX-master/include/mingl/event/event_manager.h \
-		../MinGL2_IUT_AIX-master/include/mingl/event/event.hpp \
-		../MinGL2_IUT_AIX-master/include/mingl/shape/circle.h \
-		../MinGL2_IUT_AIX-master/include/mingl/shape/shape.h \
-		../MinGL2_IUT_AIX-master/include/mingl/transition/itransitionable.h
+		../SAECandyCrush/affichage.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o affichage.o ../SAECandyCrush/affichage.cpp
 
 affichagemingl.o: ../SAECandyCrush/affichagemingl.cpp ../SAECandyCrush/type.h \
@@ -1032,11 +1025,25 @@ affichagemingl.o: ../SAECandyCrush/affichagemingl.cpp ../SAECandyCrush/type.h \
 		../MinGL2_IUT_AIX-master/include/mingl/gui/sprite.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o affichagemingl.o ../SAECandyCrush/affichagemingl.cpp
 
-main.o: ../SAECandyCrush/main.cpp ../SAECandyCrush/affichagemingl.h \
-		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
+gestionpartie.o: ../SAECandyCrush/gestionpartie.cpp ../SAECandyCrush/affichagemingl.h \
 		../SAECandyCrush/type.h \
 		../SAECandyCrush/cst.h \
 		../MinGL2_IUT_AIX-master/include/mingl/mingl.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
+		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/vec2d.h \
+		../MinGL2_IUT_AIX-master/include/mingl/event/event_manager.h \
+		../MinGL2_IUT_AIX-master/include/mingl/event/event.hpp \
+		../SAECandyCrush/affichage.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gestionpartie.o ../SAECandyCrush/gestionpartie.cpp
+
+main.o: ../SAECandyCrush/main.cpp ../SAECandyCrush/affichagemingl.h \
+		../SAECandyCrush/type.h \
+		../SAECandyCrush/cst.h \
+		../MinGL2_IUT_AIX-master/include/mingl/mingl.h \
+		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
 		../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
 		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
 		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
@@ -1044,6 +1051,7 @@ main.o: ../SAECandyCrush/main.cpp ../SAECandyCrush/affichagemingl.h \
 		../MinGL2_IUT_AIX-master/include/mingl/event/event_manager.h \
 		../MinGL2_IUT_AIX-master/include/mingl/event/event.hpp \
 		../SAECandyCrush/affichage.h \
+		../SAECandyCrush/gestionpartie.h \
 		../MinGL2_IUT_AIX-master/include/mingl/gui/sprite.h \
 		../MinGL2_IUT_AIX-master/include/mingl/transition/itransitionable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../SAECandyCrush/main.cpp

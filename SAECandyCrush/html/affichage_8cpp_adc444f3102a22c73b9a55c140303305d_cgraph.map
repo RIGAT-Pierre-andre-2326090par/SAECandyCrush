@@ -1,13 +1,13 @@
 <map id="afficheMatriceV2" name="afficheMatriceV2">
 <area shape="rect" id="node1" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="5,233,137,260"/>
-<area shape="rect" id="node2" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="185,5,284,32"/>
-<area shape="rect" id="node3" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="199,56,270,83"/>
-<area shape="rect" id="node4" href="$cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="205,107,265,133"/>
-<area shape="rect" id="node5" href="$cst_8h.html#aed31d4db92c112edda1291acad69dd00" title=" " alt="" coords="203,157,266,184"/>
-<area shape="rect" id="node6" href="$cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title=" " alt="" coords="201,208,268,235"/>
-<area shape="rect" id="node7" href="$cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title=" " alt="" coords="191,259,279,285"/>
-<area shape="rect" id="node8" href="$cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title=" " alt="" coords="205,309,264,336"/>
-<area shape="rect" id="node9" href="$cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title=" " alt="" coords="201,360,269,387"/>
-<area shape="rect" id="node10" href="$cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title=" " alt="" coords="199,411,271,437"/>
-<area shape="rect" id="node11" href="$cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="206,461,263,488"/>
+<area shape="rect" id="node2" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="185,5,284,32"/>
+<area shape="rect" id="node3" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="applique la couleur donné à une partie du terminal" alt="" coords="199,56,270,83"/>
+<area shape="rect" id="node4" href="$cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="205,107,265,133"/>
+<area shape="rect" id="node5" href="$cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="203,157,266,184"/>
+<area shape="rect" id="node6" href="$cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="201,208,268,235"/>
+<area shape="rect" id="node7" href="$cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="191,259,279,285"/>
+<area shape="rect" id="node8" href="$cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title="code pour afficher la couleur noir dans le terminal" alt="" coords="205,309,264,336"/>
+<area shape="rect" id="node9" href="$cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title="couleur par défaut du terminal" alt="" coords="201,360,269,387"/>
+<area shape="rect" id="node10" href="$cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title="code pour afficher la couleur rouge dans le terminal" alt="" coords="199,411,271,437"/>
+<area shape="rect" id="node11" href="$cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title="code pour afficher la couleur vert dans le terminal" alt="" coords="206,461,263,488"/>
 </map>

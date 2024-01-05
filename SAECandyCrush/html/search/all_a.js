@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['particasalicrush_66',['partiCasaliCrush',['../main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18',1,'main.cpp']]],
-  ['partiminglcrush_67',['partiMinglCrush',['../main_8cpp.html#a770773bcbab73afe222d1f921bd74684',1,'main.cpp']]],
-  ['partiminglcrush2_68',['partiMinglCrush2',['../main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747',1,'main.cpp']]],
-  ['partimingltetecrush_69',['partiMinglTeteCrush',['../main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d',1,'main.cpp']]],
-  ['partinumbercrush_70',['partiNumberCrush',['../main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88',1,'main.cpp']]],
-  ['position_71',['position',['../structposition.html',1,'']]]
+  ['nouvrdm_63',['nouvRdm',['../gestionpartie_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8',1,'nouvRdm(unsigned &amp;nb1, unsigned &amp;nb2, const unsigned &amp;nbMax):&#160;gestionpartie.cpp'],['../gestionpartie_8h.html#a3ee2be2606da0dfc9951f36b245a88b8',1,'nouvRdm(unsigned &amp;nb1, unsigned &amp;nb2, const unsigned &amp;nbMax):&#160;gestionpartie.cpp']]]
 ];

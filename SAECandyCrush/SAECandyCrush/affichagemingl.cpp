@@ -14,6 +14,30 @@ using namespace std;
 
 // Ce document cpp est un document regroupant toutes les fonctions/procédures d'affichage de la matrice dans une fenêtre MinGL, permettant de réduire le code du main
 
+/**
+ * @brief affichage de la matrice avec des cercles de couleurs différentes, représentant le contenu des cases
+ * @param Mat: matrice gérer par une fonction appelé par la fonction main
+ * @param window: fenêtre active où le texte va être affiché
+ * @authors A.Nurdin, A.Goncalves, P-A.Rigat
+ */
+void  afficheMatriceMingl (const CMatrice & Mat, MinGL & window) {
+    for (size_t i = 0 ; i < Mat.size() ; ++i) {
+        for ( size_t j = 0 ; j < Mat[i].size() ; ++j) {
+            if (Mat[i][j]==1)
+                window << nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KCyan); // Si l'élément = 1, alors la couleur sera cyan
+            else if (Mat[i][j]==2)
+                window << nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KRed); // Si l'élément = 2, alors la couleur sera rouge
+            else if (Mat[i][j]==3)
+                window << nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KGreen); // Si l'élément = 3, alors la couleur sera verte
+            else if (Mat[i][j]==4)
+                window << nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KYellow); // Si l'élément = 4, alors la couleur sera jaune
+            else if (Mat[i][j]==5)
+                window << nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KMagenta); // Si l'élément = 5, alors la couleur sera magenta
+            else if (Mat[i][j]==6)
+                window << nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KBlue); // Si l'élément = 6, alors la couleur sera bleu
+        }
+    }
+}
 
 /**
  * @brief dessine un rectangle de couleur bleu avec comme origine x, y
