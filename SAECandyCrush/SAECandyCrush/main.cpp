@@ -37,8 +37,20 @@ void initParams (CMyParam & param)
 
     //quelque variable utile
     param.mapParamUnsigned["nbMax"] = 5;
-    param.mapParamUnsigned["scoreMax"] = 350;
+    param.mapParamUnsigned["scoreMax"] = 150;
     param.mapParamUnsigned["deplacementMax"] = 15;
+
+    // variable limitant le nombre de niveaux
+    param.mapParamUnsigned["nbNiveau"] = 16;
+
+    //taille de la grille pour chaque niveau
+    param.mapParamVecUnsigned["nbColonnes"] = {10, 8, 10, 8, 9, 7, 9, 7, 6, 5, 6, 6, 4, 3, 4, 3};
+    param.mapParamVecUnsigned["nbLignes"] = {10, 10, 8, 8, 9, 9, 7, 7, 6, 6, 5, 5, 4, 4, 3, 3};
+
+    //des variables utiles pour chaque niveau
+    param.mapParamVecUnsigned["nbMax"] = {5, 4, 3, 2, 5, 4, 3, 2, 5, 4, 3, 2, 5, 4, 3, 2};
+    param.mapParamVecUnsigned["scoreMax"] = {150, 200, 200, 250, 250, 300, 300, 350, 350, 400, 400, 450, 450, 500, 500, 550, 550, 600};
+    param.mapParamVecUnsigned["deplacementMax"] = {15, 14, 12, 13, 11, 10, 8, 9, 7, 7, 6, 6, 6, 5, 5, 4};
 }
 
 /**

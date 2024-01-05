@@ -20,6 +20,7 @@ struct position {
 struct CMyParam {
 std::map <std::string, char> mapParamChar;
 std::map <std::string, unsigned> mapParamUnsigned;
-std::map <std::string, std::vector <unsigned> > mapParamVecUnsigned;
+std::map <std::string, std::vector <unsigned>> mapParamVecUnsigned;
 };
+
 #endif // TYPE_H
