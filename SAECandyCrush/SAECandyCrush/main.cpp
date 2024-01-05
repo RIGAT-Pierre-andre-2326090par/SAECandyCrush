@@ -1,4 +1,4 @@
-#define FPS_LIMIT 60
+#define FPS_LIMIT 10
 
 #include <affichagemingl.h>
 #include <iostream>
@@ -41,7 +41,7 @@ void initParams (CMyParam & param)
     param.mapParamUnsigned["deplacementMax"] = 15;
 
     // variable limitant le nombre de niveaux
-    param.mapParamUnsigned["nbNiveau"] = 16;
+    param.mapParamUnsigned["nbNiveaux"] = 16;
 
     //taille de la grille pour chaque niveau
     param.mapParamVecUnsigned["nbColonnes"] = {10, 8, 10, 8, 9, 7, 9, 7, 6, 5, 6, 6, 4, 3, 4, 3};
@@ -107,7 +107,7 @@ unsigned nouvRdm(unsigned & nb1, unsigned & nb2, const unsigned & nbMax){
  * @param nbMax: les nombres aléatoire sont compris entre 1 et nbMax(par défaut 4)
  * @param nbLignes: nombre de ligne de la matrice mat
  * @param nbColonnes: nombre de colonne de la matrice mat
- * @author P-A.Rigat
+ * @authors A.Casali, P-A.Rigat
  */
 //initialisation de la grille de jeu avec maximum 2 nombre aligné
 void initMat (CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice,
@@ -162,8 +162,8 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
             while (numCol < mat[numLigne].size() &&
                    mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
                 ++combienALaSuite;
-            // si on a 5 chiffres identiques à la suite, on créer un 6
-            if (combienALaSuite == 5) {
+            // si on a 5 chiffres identiques à la suite, on créer un 6 et on fait pété
+            if (combienALaSuite >= 5) {
                 auMoinsUneExplosion = true;
                 explositionUneBombeHorizontale(mat, numLigne, numCol, combienALaSuite);
                 mat[numLigne][numCol] = 6;
@@ -212,8 +212,8 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
             while (numLigne + combienALaSuite < mat.size() &&
                    mat[numLigne][numCol] == mat[numLigne + combienALaSuite][numCol])
                 ++combienALaSuite;
-            // si on a 5 chiffres identiques à la suite, on créer un 6
-            if (combienALaSuite == 5) {
+            // si on a 5 chiffres identiques à la suite, on créer un 6 et on fait pété
+            if (combienALaSuite >= 5) {
                 auMoinsUneExplosion = true;
                 explositionUneBombeVerticale (mat, numLigne, numCol, combienALaSuite);
                 mat[numLigne][numCol] = 6;
@@ -240,8 +240,8 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
 void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
                         const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
 
-    for (unsigned i = 0 ; i < mat.size() ; ++i){
-        for (unsigned j = 0 ; j < mat[i].size() ; ++j){ // pour chaque case de chaque ligne de la matrice
+    for (unsigned i = 0 ; i < mat.size() - 1 ; ++i){
+        for (unsigned j = 0 ; j < mat[i].size() - 1; ++j){ // pour chaque case de chaque ligne de la matrice
             if (mat[i][j] == vid) { // si la case est pleine,
                 unsigned Haut = mat[i + 1][j]; // le contenu de la case du haut
                 unsigned Cote = mat[i][j + 1]; // le contenu de la case sur le côté
@@ -372,35 +372,38 @@ void faitUnMouvement (CMatrice & mat, const char & deplacment, size_t & numLigne
  * @authors A.Nurdin, A.Goncalves, P-A.Rigat, C.Tamine, B.Gaston
  */
 int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & param){
-    CMatrice mat;
-    initMat(mat, param.mapParamUnsigned["nbMax"],
-            param.mapParamUnsigned["nbLignes"],
-            param.mapParamUnsigned["nbColonnes"]);
-    size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
-    size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
-    while(true){
-        while (detectionExplositionBombe(mat, score) || zeroVidSousNb(mat))
-            continue;
-        afficheMatriceV2 (mat);
-        cout << "Score : " << score << endl;
-        cout << "Nombre de déplacement restant : " <<  nbDeplacement << endl;
-        if (score >= param.mapParamUnsigned["scoreMax"]){
-            cout << "Tu as gagné !" << endl;
-                break;
+    for (unsigned i = 0 ; i < param.mapParamUnsigned["nbNiveaux"] ; ++i) {
+        CMatrice mat;
+        initMat(mat, param.mapParamVecUnsigned["nbMax"][i],
+                param.mapParamVecUnsigned["nbLignes"][i],
+                param.mapParamVecUnsigned["nbColonnes"][i]);
+        size_t numCol = (param.mapParamVecUnsigned["nbLignes"][i] / 2) - 1;
+        size_t numLigne = (param.mapParamVecUnsigned["nbColonnes"][i] / 2) - 1;
+        nbDeplacement = param.mapParamVecUnsigned["deplacementMax"][i];
+        while(true){
+            while (detectionExplositionBombe(mat, score, KAIgnorer, param.mapParamVecUnsigned["nbMax"][i]) || zeroVidSousNb(mat))
+                continue;
+            afficheMatriceV2 (mat);
+            cout << "Score : " << score << endl;
+            cout << "Nombre de déplacement restant : " <<  nbDeplacement << endl;
+            if (score >= param.mapParamVecUnsigned["scoreMax"][0]){
+                cout << "Tu as gagné !" << endl;
+                    break;
+            }
+            if (nbDeplacement ==0){
+                cout << "Tu n'as plus de déplacements, payer 5€ pour 5 déplacements supplémentaires ?(signé EA)" << endl;
+                    break;
+            }
+            cout << "Fait un mouvement ";
+            cout << "numero de ligne : ";
+            cout << numLigne + 1;
+            cout << ", numero de colonne : ";
+            cout << numCol + 1 << endl;
+            cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
+            char deplacement;
+            cin >> deplacement;
+            faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
         }
-        if (nbDeplacement ==0){
-            cout << "Tu n'as plus de déplacements, payer 5€ pour 5 déplacements supplémentaires ?(signé EA)" << endl;
-                break;
-        }
-        cout << "Fait un mouvement ";
-        cout << "numero de ligne : ";
-        cout << numLigne + 1;
-        cout << ", numero de colonne : ";
-        cout << numCol + 1 << endl;
-        cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
-        char deplacement;
-        cin >> deplacement;
-        faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
     }
     return 0;
 }
@@ -413,35 +416,38 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
  * @authors A.Nurdin, A.Goncalves, P-A.Rigat, C.Tamine, B.Gaston
  */
 int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & param){
-    CMatrice mat;
-    initMat(mat, param.mapParamUnsigned["nbMax"],
-            param.mapParamUnsigned["nbLignes"],
-            param.mapParamUnsigned["nbColonnes"]);
-    size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
-    size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
-    while(true){
-        while (detectionExplositionBombe(mat, score) || zeroVidSousNb(mat))
-            continue;
-        afficheMatriceV3 (mat, numLigne, numCol);
-        cout << "Score : " << score << endl;
-       cout << "Nombre de déplacement restant : " <<  nbDeplacement << endl;
-        if (score >= param.mapParamUnsigned["scoreMax"]){
-            cout << "Tu as gagné !" << endl;
-                break;
+    for (unsigned i = 0 ; i < param.mapParamUnsigned["nbNiveaux"] ; ++i) {
+        CMatrice mat;
+        initMat(mat, param.mapParamVecUnsigned["nbMax"][i],
+                param.mapParamVecUnsigned["nbLignes"][i],
+                param.mapParamVecUnsigned["nbColonnes"][i]);
+        size_t numCol = (param.mapParamVecUnsigned["nbLignes"][i] / 2) - 1;
+        size_t numLigne = (param.mapParamVecUnsigned["nbColonnes"][i] / 2) - 1;
+        nbDeplacement = param.mapParamVecUnsigned["deplacementMax"][i];
+        while(true){
+            while (detectionExplositionBombe(mat, score, KAIgnorer, param.mapParamVecUnsigned["nbMax"][i]) || zeroVidSousNb(mat))
+                continue;
+            afficheMatriceV3 (mat, numLigne, numCol);
+            cout << "Score : " << score << endl;
+           cout << "Nombre de déplacement restant : " <<  nbDeplacement << endl;
+            if (score >= param.mapParamVecUnsigned["scoreMax"][i]){
+                cout << "Tu as gagné !" << endl;
+                    break;
+            }
+            if (nbDeplacement ==0){
+                cout << "Tu n'as plus de déplacements, payer 5€ pour 5 déplacements supplémentaires ?(signé EA)" << endl;
+                    break;
+            }
+            cout << "Fait un mouvement ";
+            cout << "numero de ligne : ";
+            cout << numLigne + 1;
+            cout << ", numero de colonne : ";
+            cout << numCol + 1 << endl;
+            cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
+            char deplacement;
+            cin >> deplacement;
+            faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
         }
-        if (nbDeplacement ==0){
-            cout << "Tu n'as plus de déplacements, payer 5€ pour 5 déplacements supplémentaires ?(signé EA)" << endl;
-                break;
-        }
-        cout << "Fait un mouvement ";
-        cout << "numero de ligne : ";
-        cout << numLigne + 1;
-        cout << ", numero de colonne : ";
-        cout << numCol + 1 << endl;
-        cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
-        char deplacement;
-        cin >> deplacement;
-        faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
     }
     return 0;
 }
@@ -463,75 +469,81 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
     // Variable qui tient le temps de frame
     chrono::microseconds frameTime = chrono::microseconds::zero();
 
-    //On initialise la partie de Number Crush
-    CMatrice mat;
-    initMat(mat, param.mapParamUnsigned["nbMax"],
-            param.mapParamUnsigned["nbLignes"],
-            param.mapParamUnsigned["nbColonnes"]);
-    size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
-    size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
+    // Pour chaque niveau
+    for (unsigned i = 0 ; i < param.mapParamUnsigned["nbNiveaux"] ; ++i) {
 
-    //quelque variable utile
-    bool curs2 = false;
-    unsigned time = 0;
+        //On initialise la partie de Number Crush
+        CMatrice mat;
+        initMat(mat, param.mapParamVecUnsigned["nbMax"][i],
+                param.mapParamVecUnsigned["nbLignes"][i],
+                param.mapParamVecUnsigned["nbColonnes"][i]);
+        size_t numCol = (param.mapParamVecUnsigned["nbLignes"][i] / 2) - 1;
+        size_t numLigne = (param.mapParamVecUnsigned["nbColonnes"][i] / 2) - 1;
+        nbDeplacement = param.mapParamVecUnsigned["deplacementMax"][i];
 
-    // On fait tourner la boucle tant que la fenêtre est ouverte
-    while (nbDeplacement > 0 && score <= param.mapParamUnsigned["scoreMax"] && window.isOpen() )
-    {
-        // Récupère l'heure actuelle
-        chrono::time_point<chrono::steady_clock> start = chrono::steady_clock::now();
+        //quelque variable utile
+        bool curs2 = false;
+        unsigned time = 0;
 
-        // On efface la fenêtre
-        window.clearScreen();
+        // On fait tourner la boucle tant que la fenêtre est ouverte
+        while (nbDeplacement > 0 && score <= param.mapParamVecUnsigned["scoreMax"][i] && window.isOpen() )
+        {
+            // Récupère l'heure actuelle
+            chrono::time_point<chrono::steady_clock> start = chrono::steady_clock::now();
 
-        // si le timer est suppérieur à 0, continue
-        if (time > 0) continue;
+            // On efface la fenêtre
+            window.clearScreen();
 
-        // On affiche la grille puis le curseur dans le terminal
-        afficheMatriceV3(mat, numLigne, numCol);
+            // si le timer est suppérieur à 0, continue
+            if (time > 0) continue;
 
-        // on affiche le score et le nombre de déplacement restant dans le terminal
-        cout << "Score = " << score << endl
-             << "Deplacement Restant = " << nbDeplacement << endl;
+            // On affiche la grille puis le curseur dans le terminal
+            afficheMatriceV3(mat, numLigne, numCol);
 
-        // On affiche la grille puis le curseur dans une interface MinGl
-        for (unsigned i = 0 ; i < mat.size() ; ++i) {
-            for (unsigned j = 0 ; j < mat[i].size() ; ++j) {
-                if (mat[i][j] == 1) dessinerRectangle(window, j * 50, i * 50);
-                if (mat[i][j] == 2) dessinerCercle(window, j * 50, i * 50);
-                if (mat[i][j] == 3) dessinerTriangle(window, j * 50, i * 50);
-                if (mat[i][j] == 4) dessinerCroix(window, j * 50, i * 50);
-                if (mat[i][j] == 5) dessinerEtoile(window, j * 50, i * 50);
+            // on affiche le score et le nombre de déplacement restant dans le terminal
+            cout << "Score = " << score << endl
+                 << "Deplacement Restant = " << nbDeplacement << endl;
+
+            // On affiche la grille puis le curseur dans une interface MinGl
+            for (unsigned i = 0 ; i < mat.size() ; ++i) {
+                for (unsigned j = 0 ; j < mat[i].size() ; ++j) {
+                    if (mat[i][j] == 1) dessinerRectangle(window, j * 50, i * 50);
+                    if (mat[i][j] == 2) dessinerCercle(window, j * 50, i * 50);
+                    if (mat[i][j] == 3) dessinerTriangle(window, j * 50, i * 50);
+                    if (mat[i][j] == 4) dessinerCroix(window, j * 50, i * 50);
+                    if (mat[i][j] == 5) dessinerEtoile(window, j * 50, i * 50);
+                }
             }
+            dessinerCurseur(window, numCol * 50, numLigne * 50);
+
+            // on affiche le score et le nombre de déplacement restant dans une interface MinGl
+            string strScore = "Score = ";
+            strScore += to_string(score);
+            afficheText(window, strScore, 10, 520);
+
+            string strDeplacement = "Deplacement restant = ";
+            strDeplacement += to_string(nbDeplacement);
+            afficheText(window, strDeplacement, 10, 540);
+
+            // si il y a des combos, on supprime les combos et on continue
+                if (detectionExplositionBombe(mat,score, KAIgnorer, param.mapParamVecUnsigned["nbMax"][i])) continue;
+            else {
+                // On gère les déplacements du curseur et les mouvements dans la grille
+                faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2);
+            }
+
+            // On finit la frame en cours
+            window.finishFrame();
+
+            // On vide la queue d'évènements
+            window.getEventManager().clearEvents();
+
+            // On attend un peu pour limiter le framerate et soulager le CPU
+            this_thread::sleep_for(chrono::milliseconds(1000 / FPS_LIMIT) - chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start));
+
+            // On récupère le temps de frame
+            frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
         }
-        dessinerCurseur(window, numCol * 50, numLigne * 50);
-
-        // on affiche le score et le nombre de déplacement restant dans une interface MinGl
-        string strScore = "Score = ";
-        strScore += to_string(score);
-        afficheText(window, strScore, 10, 520);
-
-        string strDeplacement = "Deplacement restant = ";
-        strDeplacement += to_string(nbDeplacement);
-        afficheText(window, strDeplacement, 10, 540);
-
-        // si il y a des combos, on supprime les combos et on continue
-        if (detectionExplositionBombe(mat,score)) continue;
-
-        // On gère les déplacements du curseur et les mouvements dans la grille
-        faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2);
-
-        // On finit la frame en cours
-        window.finishFrame();
-
-        // On vide la queue d'évènements
-        window.getEventManager().clearEvents();
-
-        // On attend un peu pour limiter le framerate et soulager le CPU
-        this_thread::sleep_for(chrono::milliseconds(1000 / FPS_LIMIT) - chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start));
-
-        // On récupère le temps de frame
-        frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
     }
     return 0;
 }
@@ -553,67 +565,73 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
     // Variable qui tient le temps de frame
     chrono::microseconds frameTime = chrono::microseconds::zero();
 
-    //On initialise la partie de Number Crush
-    CMatrice mat;
-    initMat(mat, param.mapParamUnsigned["nbMax"],
-            param.mapParamUnsigned["nbLignes"],
-            param.mapParamUnsigned["nbColonnes"]);
-    size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
-    size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
+    // Pour chaque niveau
+    for (unsigned i = 0 ; i < param.mapParamUnsigned["nbNiveaux"] ; ++i) {
 
-    //quelque variable utile
-    bool curs2 = false;
-    unsigned time = 0;
+        //On initialise la partie de Number Crush
+        CMatrice mat;
+        initMat(mat, param.mapParamVecUnsigned["nbMax"][i],
+                param.mapParamVecUnsigned["nbLignes"][i],
+                param.mapParamVecUnsigned["nbColonnes"][i]);
+        size_t numCol = (param.mapParamVecUnsigned["nbLignes"][i] / 2) - 1;
+        size_t numLigne = (param.mapParamVecUnsigned["nbColonnes"][i] / 2) - 1;
+        nbDeplacement = param.mapParamVecUnsigned["deplacementMax"][i];
 
-    // On fait tourner la boucle tant que la fenêtre est ouverte
-    while (nbDeplacement > 0 && score <= param.mapParamUnsigned["scoreMax"] && window.isOpen() )
-    {
-        // Récupère l'heure actuelle
-        chrono::time_point<chrono::steady_clock> start = chrono::steady_clock::now();
+        //quelque variable utile
+        bool curs2 = false;
+        unsigned time = 0;
 
-        // On efface la fenêtre
-        window.clearScreen();
+        // On fait tourner la boucle tant que la fenêtre est ouverte
+        while (nbDeplacement > 0 && score <= param.mapParamVecUnsigned["scoreMax"][i] && window.isOpen() )
+        {
+            // Récupère l'heure actuelle
+            chrono::time_point<chrono::steady_clock> start = chrono::steady_clock::now();
 
-        // si le timer est suppérieur à 0, continue
-        if (time > 0) continue;
+            // On efface la fenêtre
+            window.clearScreen();
 
-        // On affiche la grille puis le curseur dans le terminal
-        afficheMatriceV3(mat, numLigne, numCol);
+            // si le timer est suppérieur à 0, continue
+            if (time > 0) continue;
 
-        // On affiche la grille puis le curseur dans une interface MinGl
-        afficheMatriceV0(mat, window);
-        dessinerCurseur(window, numCol * 50, numLigne * 50);
+            // On affiche la grille puis le curseur dans le terminal
+            afficheMatriceV3(mat, numLigne, numCol);
 
-        // on affiche le score et le nombre de déplacement restant dans le terminal
-        cout << "Score = " << score << endl
-             << "Deplacement Restant = " << nbDeplacement << endl;
+            // On affiche la grille puis le curseur dans une interface MinGl
+            afficheMatriceV0(mat, window);
+            dessinerCurseur(window, numCol * 50, numLigne * 50);
 
-        // on affiche le score et le nombre de déplacement restant dans une interface MinGl
-        string strScore = "Score = ";
-        strScore += to_string(score);
-        afficheText(window, strScore, 10, 520);
+            // on affiche le score et le nombre de déplacement restant dans le terminal
+            cout << "Score = " << score << endl
+                 << "Deplacement Restant = " << nbDeplacement << endl;
 
-        string strDeplacement = "Deplacement restant = ";
-        strDeplacement += to_string(nbDeplacement);
-        afficheText(window, strDeplacement, 10, 540);
+            // on affiche le score et le nombre de déplacement restant dans une interface MinGl
+            string strScore = "Score = ";
+            strScore += to_string(score);
+            afficheText(window, strScore, 10, 520);
 
-        // si il y a des combos, on supprime les combos et on continue
-        if (detectionExplositionBombe(mat,score)) continue;
+            string strDeplacement = "Deplacement restant = ";
+            strDeplacement += to_string(nbDeplacement);
+            afficheText(window, strDeplacement, 10, 540);
 
-        // On gère les déplacements du curseur et les mouvements dans la grille
-        faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2);
+            // si il y a des combos, on supprime les combos et on continue
+            if (detectionExplositionBombe(mat,score, KAIgnorer, param.mapParamVecUnsigned["nbMax"][i])) continue;
+            else {
+                // On gère les déplacements du curseur et les mouvements dans la grille
+                faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2);
+            }
 
-        // On finit la frame en cours
-        window.finishFrame();
+            // On finit la frame en cours
+            window.finishFrame();
 
-        // On vide la queue d'évènements
-        window.getEventManager().clearEvents();
+            // On vide la queue d'évènements
+            window.getEventManager().clearEvents();
 
-        // On attend un peu pour limiter le framerate et soulager le CPU
-        this_thread::sleep_for(chrono::milliseconds(1000 / FPS_LIMIT) - chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start));
+            // On attend un peu pour limiter le framerate et soulager le CPU
+            this_thread::sleep_for(chrono::milliseconds(1000 / FPS_LIMIT) - chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start));
 
-        // On récupère le temps de frame
-        frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
+            // On récupère le temps de frame
+            frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
+        }
     }
     return 0;
 }
@@ -635,75 +653,80 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
     // Variable qui tient le temps de frame
     chrono::microseconds frameTime = chrono::microseconds::zero();
 
-    //On initialise la partie de Number Crush
-    CMatrice mat;
-    initMat(mat, param.mapParamUnsigned["nbMax"],
-            param.mapParamUnsigned["nbLignes"],
-            param.mapParamUnsigned["nbColonnes"]);
-    size_t numCol = (param.mapParamUnsigned["nbLignes"] / 2) - 1;
-    size_t numLigne = (param.mapParamUnsigned["nbColonnes"] / 2) - 1;
+    // Pour chaque niveau
+    for (unsigned i = 0 ; i < param.mapParamUnsigned["nbNiveaux"] ; ++i) {
 
-    // Quelque variable utile
-    bool curs2 = false;
-    //unsigned time = 0;
+        //On initialise la partie de Number Crush
+        CMatrice mat;
+        initMat(mat, param.mapParamVecUnsigned["nbMax"][i],
+                param.mapParamVecUnsigned["nbLignes"][i],
+                param.mapParamVecUnsigned["nbColonnes"][i]);
+        size_t numCol = (param.mapParamVecUnsigned["nbLignes"][i] / 2) - 1;
+        size_t numLigne = (param.mapParamVecUnsigned["nbColonnes"][i] / 2) - 1;
+        nbDeplacement = param.mapParamVecUnsigned["deplacementMax"][i];
 
-    // On fait tourner la boucle tant que la fenêtre est ouverte ou que le joueur n'a pas gagné ni perdu
-    while (nbDeplacement > 0 || score > 0 || window.isOpen() )
-    {
-        // Récupère l'heure actuelle
-        chrono::time_point<chrono::steady_clock> start = chrono::steady_clock::now();
+        // Quelque variable utile
+        bool curs2 = false;
+        //unsigned time = 0;
 
-        // On efface la fenêtre
-        window.clearScreen();
+        // On fait tourner la boucle tant que la fenêtre est ouverte ou que le joueur n'a pas gagné ni perdu
+        while (nbDeplacement > 0 && score <= param.mapParamVecUnsigned["scoreMax"][i] && window.isOpen())
+        {
+            // Récupère l'heure actuelle
+            chrono::time_point<chrono::steady_clock> start = chrono::steady_clock::now();
 
-        // on affiche le fond
-        window << nsGui::Sprite ("../SAECandyCrush/im/fond.si2", nsGraphics::Vec2D(0, 0));
+            // On efface la fenêtre
+            window.clearScreen();
 
-        // on affiche la grille, le score et le nombre de déplacement restant dans le terminal
-        afficheMatriceV3(mat,numLigne,numCol);
-        cout << "Score = " << score << endl
-             << "Deplacement Restant = " << nbDeplacement << endl;
+            // on affiche le fond
+            window << nsGui::Sprite ("../SAECandyCrush/im/fond.si2", nsGraphics::Vec2D(0, 0));
 
-        // On affiche la grille puis le curseur dans une interface MinGL
-        for (unsigned i = 0 ; i < mat.size() ; ++i) {
-            for (unsigned j = 0 ; j < mat[i].size() ; ++j) {
-                if (mat[i][j] == 1) dessineAlex(window, j * 50, i * 50);
-                if (mat[i][j] == 2) dessineArnaud(window, j * 50, i * 50);
-                if (mat[i][j] == 3) dessineBaptiste(window, j * 50, i * 50);
-                if (mat[i][j] == 4) dessineCyril(window, j * 50, i * 50);
-                if (mat[i][j] == 5) dessinePierre(window, j * 50, i * 50);
-                if (mat[i][j] == 6) dessineCasali(window, j * 50, i * 50);
+            // on affiche la grille, le score et le nombre de déplacement restant dans le terminal
+            afficheMatriceV3(mat,numLigne,numCol);
+            cout << "Score = " << score << endl
+                 << "Deplacement Restant = " << nbDeplacement << endl;
+
+            // On affiche la grille puis le curseur dans une interface MinGL
+            for (unsigned i = 0 ; i < mat.size() ; ++i) {
+                for (unsigned j = 0 ; j < mat[i].size() ; ++j) {
+                    if (mat[i][j] == 1) dessineAlex(window, j * 50, i * 50);
+                    if (mat[i][j] == 2) dessineArnaud(window, j * 50, i * 50);
+                    if (mat[i][j] == 3) dessineBaptiste(window, j * 50, i * 50);
+                    if (mat[i][j] == 4) dessineCyril(window, j * 50, i * 50);
+                    if (mat[i][j] == 5) dessinePierre(window, j * 50, i * 50);
+                    if (mat[i][j] == 6) dessineCasali(window, j * 50, i * 50);
+                }
             }
+            dessinerCurseur(window, numCol * 50, numLigne * 50);
+
+            // on affiche le score et le nombre de déplacement restant dans une interface MinGl
+            string strScore = "Score = ";
+            strScore += to_string(score);
+            afficheText(window, strScore, 10, 520);
+
+            string strDeplacement = "Deplacement restant = ";
+            strDeplacement += to_string(nbDeplacement);
+            afficheText(window, strDeplacement, 10, 540);
+
+            // si il y a des combos, on supprime les combos et on continue
+            if (detectionExplositionBombe(mat,score, KAIgnorer, param.mapParamVecUnsigned["nbMax"][i])) continue;
+            else {
+            // On gère les déplacements du curseur et les mouvements dans la grille
+            faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2);
+            }
+
+            // On finit la frame en cours
+            window.finishFrame();
+
+            // On vide la queue d'évènements
+            window.getEventManager().clearEvents();
+
+            // On attend un peu pour limiter le framerate et soulager le CPU
+            this_thread::sleep_for(chrono::milliseconds(1000 / FPS_LIMIT) - chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start));
+
+            // On récupère le temps de frame
+            frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
         }
-        dessinerCurseur(window, numCol * 50, numLigne * 50);
-
-        // on affiche le score et le nombre de déplacement restant dans une interface MinGl
-        string strScore = "Score = ";
-        strScore += to_string(score);
-        afficheText(window, strScore, 10, 520);
-
-        string strDeplacement = "Deplacement restant = ";
-        strDeplacement += to_string(nbDeplacement);
-        afficheText(window, strDeplacement, 10, 540);
-
-        // si il y a des combos, on supprime les combos et on continue
-        if (detectionExplositionBombe(mat,score)) continue;
-        else {
-        // On gère les déplacements du curseur et les mouvements dans la grille
-        faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2);
-        }
-
-        // On finit la frame en cours
-        window.finishFrame();
-
-        // On vide la queue d'évènements
-        window.getEventManager().clearEvents();
-
-        // On attend un peu pour limiter le framerate et soulager le CPU
-        this_thread::sleep_for(chrono::milliseconds(1000 / FPS_LIMIT) - chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start));
-
-        // On récupère le temps de frame
-        frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
     }
     return 0;
 }
