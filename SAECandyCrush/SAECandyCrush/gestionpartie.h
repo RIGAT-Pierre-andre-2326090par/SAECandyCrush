@@ -1,7 +1,6 @@
 #ifndef GESTIONPARTIE_H
 #define GESTIONPARTIE_H
 
-#include <type.h>
 #include <cst.h>
 
 /**

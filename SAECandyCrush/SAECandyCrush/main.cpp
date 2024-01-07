@@ -6,10 +6,8 @@
 #include <affichagemingl.h>
 #include <affichage.h>
 #include <gestionpartie.h>
-#include <type.h>
-#include <cst.h>
+#include <tp.h>
 
-#include <mingl/mingl.h>
 #include <mingl/gui/sprite.h>
 
 using namespace std;
@@ -419,10 +417,11 @@ int main() {
             cout << "Ce mode de jeu n'existe pas rééssayez !" << endl;
         }
     }
-    if (mode == 1) return partiMinglCrush(score, nbDeplacement, param);
+    if (mode == 1) return partiMinglCrush2(score, nbDeplacement, param);
     else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance la partie sur le terminal
-    else if (mode == 3) return partiMinglTeteCrush(score, nbDeplacement, param);
-    else if (mode == 4) return partiMinglCrush2(score, nbDeplacement, param);
-    else if (mode == 5) return partiNumberCrush(score, nbDeplacement, param);
+    else if (mode == 3) return tp(); //lance le programme du tp
+    else if (mode == 4) return partiMinglTeteCrush(score, nbDeplacement, param);
+    else if (mode == 5) return partiMinglCrush(score, nbDeplacement, param);
+    else if (mode == 6) return partiNumberCrush(score, nbDeplacement, param);
     else return 0;
 }

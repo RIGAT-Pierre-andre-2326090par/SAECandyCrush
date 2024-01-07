@@ -1,5 +1,3 @@
-#include <type.h>
-#include <cst.h>
 #include <affichage.h>
 #include <mingl/mingl.h>
 

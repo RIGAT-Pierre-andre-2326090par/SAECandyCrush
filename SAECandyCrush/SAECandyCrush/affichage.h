@@ -1,7 +1,6 @@
 #ifndef AFFICHAGE_H
 #define AFFICHAGE_H
 
-#include <type.h>
 #include <cst.h>
 
 // Ce document header contient l'appel aux fonctions d'affichage

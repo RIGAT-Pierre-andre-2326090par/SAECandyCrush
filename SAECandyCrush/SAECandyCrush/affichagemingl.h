@@ -3,7 +3,6 @@
 
 #include <string>
 
-#include <type.h>
 #include <cst.h>
 #include <mingl/mingl.h>
 #include <mingl/graphics/idrawable.h>

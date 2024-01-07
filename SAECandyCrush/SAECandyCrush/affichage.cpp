@@ -1,6 +1,4 @@
 #include <iostream>
-#include <type.h>
-#include <cst.h>
 #include <affichage.h>
 
 using namespace std;

@@ -1,8 +1,6 @@
 #include <iostream>
 #include <fstream>
 
-#include <type.h>
-#include <cst.h>
 #include <affichage.h>
 
 using namespace std;
