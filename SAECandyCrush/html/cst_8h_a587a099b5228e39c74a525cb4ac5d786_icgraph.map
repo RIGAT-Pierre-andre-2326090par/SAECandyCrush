@@ -1,8 +1,12 @@
 <map id="KBleu" name="KBleu">
-<area shape="rect" id="node1" title=" " alt="" coords="375,56,435,83"/>
-<area shape="rect" id="node2" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title=" " alt="" coords="195,5,327,32"/>
-<area shape="rect" id="node3" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title=" " alt="" coords="195,56,327,83"/>
-<area shape="rect" id="node5" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title=" " alt="" coords="195,107,327,133"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,56,147,83"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="11,107,141,133"/>
+<area shape="rect" id="node1" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="385,81,445,108"/>
+<area shape="rect" id="node2" href="$affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="205,5,337,32"/>
+<area shape="rect" id="node3" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="205,56,337,83"/>
+<area shape="rect" id="node4" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,107,337,133"/>
+<area shape="rect" id="node6" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,183,337,209"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,81,152,108"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,132,146,159"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,183,144,209"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,233,148,260"/>
+<area shape="rect" id="node10" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,284,157,311"/>
 </map>

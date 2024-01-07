@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['strsansdeuxpts_93',['strSansDeuxPts',['../main_8cpp.html#a295bf4a9119ccb6bfe2aac2f0a463563',1,'main.cpp']]]
+  ['zerovidsousnb_131',['zeroVidSousNb',['../gestionpartie_8cpp.html#ae3c472825f8e1704d249cae90b350d54',1,'zeroVidSousNb(CMatrice &amp;mat, const unsigned &amp;vid=KAIgnorer):&#160;gestionpartie.cpp'],['../gestionpartie_8h.html#ae3c472825f8e1704d249cae90b350d54',1,'zeroVidSousNb(CMatrice &amp;mat, const unsigned &amp;vid=KAIgnorer):&#160;gestionpartie.cpp']]]
 ];

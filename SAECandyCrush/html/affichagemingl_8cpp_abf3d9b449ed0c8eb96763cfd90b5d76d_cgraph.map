@@ -1,0 +1,19 @@
+<map id="partiMinglTeteCrush" name="partiMinglTeteCrush">
+<area shape="rect" id="node1" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,360,157,387"/>
+<area shape="rect" id="node2" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="240,81,372,108"/>
+<area shape="rect" id="node7" href="$affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="461,385,555,412"/>
+<area shape="rect" id="node8" href="$affichagemingl_8cpp.html#ab80fa0eba33900bee956bde40a2ac2f6" title="affiche la tête d&#39;Alex avec comme origine x, y" alt="" coords="255,183,357,209"/>
+<area shape="rect" id="node9" href="$affichagemingl_8cpp.html#a9ac89b215e10ff7f04c87c9a62ce71fc" title="affiche la tête d&#39;Arnaud avec comme origine x, y" alt="" coords="247,233,365,260"/>
+<area shape="rect" id="node10" href="$affichagemingl_8cpp.html#a024a6770bc84a237f11e0137430fdc7f" title="affiche la tête de Baptiste avec comme origine x, y" alt="" coords="243,284,369,311"/>
+<area shape="rect" id="node11" href="$affichagemingl_8cpp.html#a01c3b932e860e2ba98f75812e68271aa" title="affiche la tête de A.Casali avec comme origine x, y" alt="" coords="250,335,362,361"/>
+<area shape="rect" id="node12" href="$affichagemingl_8cpp.html#a9e84c73c6ff8a93f011e1f1b3fde578d" title="affiche la tête de Cyril avec comme origine x, y" alt="" coords="255,385,357,412"/>
+<area shape="rect" id="node13" href="$affichagemingl_8cpp.html#a09224c84307ef255e22a69986bceb296" title="affiche la tête de Pierre&#45;André avec comme origine x, y" alt="" coords="251,436,361,463"/>
+<area shape="rect" id="node14" href="$affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="243,487,369,513"/>
+<area shape="rect" id="node15" href="$main_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,537,407,564"/>
+<area shape="rect" id="node16" href="$affichagemingl_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="permet de déplacer le curseur dans la fenêtre mingl" alt="" coords="215,588,397,615"/>
+<area shape="rect" id="node17" href="$main_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="272,639,340,665"/>
+<area shape="rect" id="node3" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="459,5,557,32"/>
+<area shape="rect" id="node4" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="473,56,543,83"/>
+<area shape="rect" id="node5" href="$cst_8h.html#af81c8f45a494c8b75bb2623c7a57737f" title=" " alt="" coords="455,107,561,133"/>
+<area shape="rect" id="node6" href="$cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="478,157,538,184"/>
+</map>

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['particasalicrush_46',['partiCasaliCrush',['../main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18',1,'main.cpp']]],
-  ['partinumbercrush_47',['partiNumberCrush',['../main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88',1,'main.cpp']]],
-  ['position_48',['position',['../structposition.html',1,'']]]
+  ['nouvrdm_63',['nouvRdm',['../gestionpartie_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8',1,'nouvRdm(unsigned &amp;nb1, unsigned &amp;nb2, const unsigned &amp;nbMax):&#160;gestionpartie.cpp'],['../gestionpartie_8h.html#a3ee2be2606da0dfc9951f36b245a88b8',1,'nouvRdm(unsigned &amp;nb1, unsigned &amp;nb2, const unsigned &amp;nbMax):&#160;gestionpartie.cpp']]]
 ];

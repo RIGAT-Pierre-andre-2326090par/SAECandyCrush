@@ -1,4 +1,4 @@
 <map id="remplaceVideParRdm" name="remplaceVideParRdm">
 <area shape="rect" id="node1" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="5,5,168,32"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire différent de nb1 et nb2" alt="" coords="216,5,300,32"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="216,5,300,32"/>
 </map>

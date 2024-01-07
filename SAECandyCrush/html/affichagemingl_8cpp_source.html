@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SAECandyCrush:  Fichier source de SAECandyCrush/affichagemingl.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SAECandyCrush
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e37bb96bd9fccb878c1d62062fc8f7a5.html">SAECandyCrush</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">affichagemingl.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="affichagemingl_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="type_8h.html">type.h</a>&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="cst_8h.html">cst.h</a>&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="affichage_8h.html">affichage.h</a>&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;mingl/mingl.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;mingl/shape/rectangle.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;mingl/shape/circle.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;mingl/shape/line.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;mingl/shape/triangle.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;mingl/gui/text.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;mingl/gui/sprite.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// Ce document cpp est un document regroupant toutes les fonctions/procédures d&#39;affichage de la matrice dans une fenêtre MinGL, permettant de réduire le code du main</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="affichagemingl_8cpp.html#a9aa1b945f36803846a1a6e0162e23989">   23</a></span>&#160;<span class="keywordtype">void</span>  <a class="code" href="affichagemingl_8cpp.html#a9aa1b945f36803846a1a6e0162e23989">afficheMatriceMingl</a> (<span class="keyword">const</span> <a class="code" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp; Mat, MinGL &amp; window) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0 ; i &lt; Mat.size() ; ++i) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">for</span> ( <span class="keywordtype">size_t</span> j = 0 ; j &lt; Mat[i].size() ; ++j) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">if</span> (Mat[i][j]==1)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                window &lt;&lt; nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, <a class="code" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00">nsGraphics::KCyan</a>); <span class="comment">// Si l&#39;élément = 1, alors la couleur sera cyan</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Mat[i][j]==2)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                window &lt;&lt; nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KRed); <span class="comment">// Si l&#39;élément = 2, alors la couleur sera rouge</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Mat[i][j]==3)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                window &lt;&lt; nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KGreen); <span class="comment">// Si l&#39;élément = 3, alors la couleur sera verte</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Mat[i][j]==4)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                window &lt;&lt; nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KYellow); <span class="comment">// Si l&#39;élément = 4, alors la couleur sera jaune</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Mat[i][j]==5)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                window &lt;&lt; nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, <a class="code" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a">nsGraphics::KMagenta</a>); <span class="comment">// Si l&#39;élément = 5, alors la couleur sera magenta</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Mat[i][j]==6)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                window &lt;&lt; nsShape::Circle(nsGraphics::Vec2D(j * 50 + 25, i * 50 + 25), 25, nsGraphics::KBlue); <span class="comment">// Si l&#39;élément = 6, alors la couleur sera bleu</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="affichagemingl_8cpp.html#a7e881b244e62e74617783fc4aa6bdf06">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichagemingl_8cpp.html#a7e881b244e62e74617783fc4aa6bdf06">dessinerRectangle</a> (MinGL &amp; window, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; x, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; y) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    window &lt;&lt; nsShape::Rectangle(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KBlue);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="affichagemingl_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6">   60</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichagemingl_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6">dessinerCercle</a> (MinGL &amp; window, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; x, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; y) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    window &lt;&lt; nsShape::Circle(nsGraphics::Vec2D(x + 25, y + 25), 25, nsGraphics::KRed);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="affichagemingl_8cpp.html#abd33c630339924d862adfb0af2f61405">   71</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichagemingl_8cpp.html#abd33c630339924d862adfb0af2f61405">dessinerTriangle</a> (MinGL &amp; window, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; x, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; y) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    window &lt;&lt; nsShape::Triangle(nsGraphics::Vec2D(x + 25, y), nsGraphics::Vec2D(x, y + 50), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KGreen);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="affichagemingl_8cpp.html#ac46cbc355388b953335699211b70d29f">   82</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichagemingl_8cpp.html#ac46cbc355388b953335699211b70d29f">dessinerCroix</a> (MinGL &amp; window, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; x, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; y) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    window &lt;&lt; nsShape::Line(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::KYellow, 5.f);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    window &lt;&lt; nsShape::Line(nsGraphics::Vec2D(x + 50, y), nsGraphics::Vec2D(x, y + 50), nsGraphics::KYellow, 5.f);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="affichagemingl_8cpp.html#aa3e6cb35e5e996580a5dac2320fdb09d">   95</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichagemingl_8cpp.html#aa3e6cb35e5e996580a5dac2320fdb09d">dessinerEtoile</a> (MinGL &amp; window, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; x, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; y) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    window &lt;&lt; nsShape::Triangle(nsGraphics::Vec2D(x + 25, y), nsGraphics::Vec2D(x + 35, y + 30), nsGraphics::Vec2D(x + 14, y + 30), nsGraphics::KPurple);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    window &lt;&lt; nsShape::Triangle(nsGraphics::Vec2D(x, y + 20), nsGraphics::Vec2D(x + 32, y + 20), nsGraphics::Vec2D(x + 25, y + 38), nsGraphics::KPurple);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    window &lt;&lt; nsShape::Triangle(nsGraphics::Vec2D(x + 50, y + 20), nsGraphics::Vec2D(x + 18, y + 20), nsGraphics::Vec2D(x + 25, y + 38), nsGraphics::KPurple);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    window &lt;&lt; nsShape::Triangle(nsGraphics::Vec2D(x + 42 , y + 50), nsGraphics::Vec2D(x + 14, y + 30), nsGraphics::Vec2D(x + 32, y + 20), nsGraphics::KPurple);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    window &lt;&lt; nsShape::Triangle(nsGraphics::Vec2D(x + 7, y + 50), nsGraphics::Vec2D(x + 18, y + 20), nsGraphics::Vec2D(x + 35, y + 30), nsGraphics::KPurple);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d">  110</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d">dessinerCurseur</a> (MinGL &amp; window, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; x, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; y) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    window &lt;&lt; nsShape::Triangle(nsGraphics::Vec2D(x, y), nsGraphics::Vec2D(x, y + 10), nsGraphics::Vec2D(x + 10, y), nsGraphics::KWhite);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    window &lt;&lt; nsShape::Triangle(nsGraphics::Vec2D(x + 40, y), nsGraphics::Vec2D(x + 50, y), nsGraphics::Vec2D(x + 50, y + 10), nsGraphics::KWhite);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    window &lt;&lt; nsShape::Triangle(nsGraphics::Vec2D(x, y + 50), nsGraphics::Vec2D(x, y + 40), nsGraphics::Vec2D(x + 10, y + 50), nsGraphics::KWhite);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    window &lt;&lt; nsShape::Triangle(nsGraphics::Vec2D(x + 50, y + 50), nsGraphics::Vec2D(x + 50, y + 40), nsGraphics::Vec2D(x + 40, y + 50), nsGraphics::KWhite);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">  125</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">afficheText</a>(MinGL &amp; window, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp; txt, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; x, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; y) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    window &lt;&lt; nsGui::Text(nsGraphics::Vec2D(x, y), txt, nsGraphics::KWhite, nsGui::GlutFont::BITMAP_9_BY_15);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="affichagemingl_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b">  139</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichagemingl_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b">faitUnMouvementMinGL</a> (<a class="code" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp; mat, MinGL &amp; window, <span class="keywordtype">size_t</span> &amp; numLigne,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                          <span class="keywordtype">size_t</span> &amp; numCol, <span class="keywordtype">unsigned</span> &amp; nbDeplacement, <a class="code" href="struct_c_my_param.html">CMyParam</a> &amp; param,</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                          <span class="keywordtype">bool</span> &amp; curs2) {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">size_t</span> nouvellePositionLigne (numLigne), nouvellePositionColonne (numCol);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> (window.isPressed({param.mapParamChar[<span class="stringliteral">&quot;toucheBasDroite&quot;</span>], false})) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">if</span> (numLigne != 0) ++nouvellePositionLigne;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">if</span> (numCol &lt; mat[0].size() - 1) ++nouvellePositionColonne;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (window.isPressed({param.mapParamChar[<span class="stringliteral">&quot;toucheBas&quot;</span>], false})) {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">if</span> (numLigne &lt; mat.size() - 1) ++nouvellePositionLigne;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">if</span> (curs2) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            swap(mat[numLigne][numCol],mat[numLigne + 1][numCol]);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            --nbDeplacement;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            curs2 = !curs2;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (window.isPressed({param.mapParamChar[<span class="stringliteral">&quot;toucheGaucheBas&quot;</span>], false})) {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">if</span> (numLigne != 0) ++nouvellePositionLigne;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">if</span> (numCol != 0) --nouvellePositionColonne;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (window.isPressed({param.mapParamChar[<span class="stringliteral">&quot;toucheGauche&quot;</span>], false})) {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">if</span> (numCol != 0) --nouvellePositionColonne;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">if</span> (curs2) {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            swap(mat[numLigne][numCol],mat[numLigne][numCol - 1]);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            --nbDeplacement;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            curs2 = !curs2;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (window.isPressed({param.mapParamChar[<span class="stringliteral">&quot;toucheHautGauche&quot;</span>], false})) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">if</span> (numLigne != 0) --nouvellePositionLigne;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">if</span> (numCol != 0) --nouvellePositionColonne;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (window.isPressed({param.mapParamChar[<span class="stringliteral">&quot;toucheHaut&quot;</span>], false})) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">if</span> (numLigne != 0) --nouvellePositionLigne;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">if</span> (curs2) {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            swap(mat[numLigne][numCol],mat[numLigne - 1][numCol]);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            --nbDeplacement;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            curs2 = !curs2;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((window.isPressed({param.mapParamChar[<span class="stringliteral">&quot;toucheDroiteHaut&quot;</span>], false}))) {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">if</span> (numLigne != 0) --nouvellePositionLigne;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">if</span> (numCol &lt; mat[0].size() - 1) ++nouvellePositionColonne;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (window.isPressed({param.mapParamChar[<span class="stringliteral">&quot;toucheDroite&quot;</span>], false})) {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">if</span> (numCol &lt; mat[0].size() - 1) ++nouvellePositionColonne;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">if</span> (curs2) {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            swap(mat[numLigne][numCol],mat[numLigne][numCol + 1]);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            --nbDeplacement;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            curs2 = !curs2;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (window.isPressed({param.mapParamChar[<span class="stringliteral">&quot;toucheSelect&quot;</span>], false})) {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        curs2 = !curs2;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">else</span> <a class="code" href="affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">afficheText</a>(window, <span class="stringliteral">&quot;Tu dois choisir entre A ou Z ou E ou Q ou D ou X ou C ou W ou S pour déplacer le curseur&quot;</span>, 510, 0);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    numCol = nouvellePositionColonne;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    numLigne = nouvellePositionLigne;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="affichagemingl_8cpp.html#a024a6770bc84a237f11e0137430fdc7f">  208</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichagemingl_8cpp.html#a024a6770bc84a237f11e0137430fdc7f">dessineBaptiste</a> (MinGL &amp; window, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; x, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; y) {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    window &lt;&lt; nsGui::Sprite (<span class="stringliteral">&quot;../SAECandyCrush/im/batist.si2&quot;</span>, nsGraphics::Vec2D(x, y));</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="affichagemingl_8cpp.html#ab80fa0eba33900bee956bde40a2ac2f6">  219</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichagemingl_8cpp.html#ab80fa0eba33900bee956bde40a2ac2f6">dessineAlex</a> (MinGL &amp; window, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; x, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; y) {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    window &lt;&lt; nsGui::Sprite (<span class="stringliteral">&quot;../SAECandyCrush/im/alex.si2&quot;</span>, nsGraphics::Vec2D(x, y));</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
+<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="affichagemingl_8cpp.html#a09224c84307ef255e22a69986bceb296">  229</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichagemingl_8cpp.html#a09224c84307ef255e22a69986bceb296">dessinePierre</a> (MinGL &amp; window, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; x, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; y) {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    window &lt;&lt; nsGui::Sprite (<span class="stringliteral">&quot;../SAECandyCrush/im/peterandrew.si2&quot;</span>, nsGraphics::Vec2D(x, y));</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="affichagemingl_8cpp.html#a9e84c73c6ff8a93f011e1f1b3fde578d">  240</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichagemingl_8cpp.html#a9e84c73c6ff8a93f011e1f1b3fde578d">dessineCyril</a> (MinGL &amp; window, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; x, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; y) {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    window &lt;&lt; nsGui::Sprite (<span class="stringliteral">&quot;../SAECandyCrush/im/dric.si2&quot;</span>, nsGraphics::Vec2D(x, y));</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;}</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="affichagemingl_8cpp.html#a9ac89b215e10ff7f04c87c9a62ce71fc">  251</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichagemingl_8cpp.html#a9ac89b215e10ff7f04c87c9a62ce71fc">dessineArnaud</a> (MinGL &amp; window, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; x, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; y) {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    window &lt;&lt; nsGui::Sprite (<span class="stringliteral">&quot;../SAECandyCrush/im/arno.si2&quot;</span>, nsGraphics::Vec2D(x, y));</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="affichagemingl_8cpp.html#a01c3b932e860e2ba98f75812e68271aa">  262</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichagemingl_8cpp.html#a01c3b932e860e2ba98f75812e68271aa">dessineCasali</a> (MinGL &amp; window, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; x, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; y) {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    window &lt;&lt; nsGui::Sprite (<span class="stringliteral">&quot;../SAECandyCrush/im/casali.si2&quot;</span>, nsGraphics::Vec2D(x, y));</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
+<div class="ttc" id="aaffichage_8h_html"><div class="ttname"><a href="affichage_8h.html">affichage.h</a></div></div>
+<div class="ttc" id="aaffichagemingl_8cpp_html_a01c3b932e860e2ba98f75812e68271aa"><div class="ttname"><a href="affichagemingl_8cpp.html#a01c3b932e860e2ba98f75812e68271aa">dessineCasali</a></div><div class="ttdeci">void dessineCasali(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">affiche la tête de A.Casali avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="affichagemingl_8cpp_source.html#l00262">affichagemingl.cpp:262</a></div></div>
+<div class="ttc" id="aaffichagemingl_8cpp_html_a024a6770bc84a237f11e0137430fdc7f"><div class="ttname"><a href="affichagemingl_8cpp.html#a024a6770bc84a237f11e0137430fdc7f">dessineBaptiste</a></div><div class="ttdeci">void dessineBaptiste(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">affiche la tête de Baptiste avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="affichagemingl_8cpp_source.html#l00208">affichagemingl.cpp:208</a></div></div>
+<div class="ttc" id="aaffichagemingl_8cpp_html_a09224c84307ef255e22a69986bceb296"><div class="ttname"><a href="affichagemingl_8cpp.html#a09224c84307ef255e22a69986bceb296">dessinePierre</a></div><div class="ttdeci">void dessinePierre(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">affiche la tête de Pierre-André avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="affichagemingl_8cpp_source.html#l00229">affichagemingl.cpp:229</a></div></div>
+<div class="ttc" id="aaffichagemingl_8cpp_html_a7e881b244e62e74617783fc4aa6bdf06"><div class="ttname"><a href="affichagemingl_8cpp.html#a7e881b244e62e74617783fc4aa6bdf06">dessinerRectangle</a></div><div class="ttdeci">void dessinerRectangle(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">dessine un rectangle de couleur bleu avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="affichagemingl_8cpp_source.html#l00049">affichagemingl.cpp:49</a></div></div>
+<div class="ttc" id="aaffichagemingl_8cpp_html_a8eb56329f9a6ddaf328249f7b822476d"><div class="ttname"><a href="affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d">dessinerCurseur</a></div><div class="ttdeci">void dessinerCurseur(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,...</div><div class="ttdef"><b>Definition:</b> <a href="affichagemingl_8cpp_source.html#l00110">affichagemingl.cpp:110</a></div></div>
+<div class="ttc" id="aaffichagemingl_8cpp_html_a9aa1b945f36803846a1a6e0162e23989"><div class="ttname"><a href="affichagemingl_8cpp.html#a9aa1b945f36803846a1a6e0162e23989">afficheMatriceMingl</a></div><div class="ttdeci">void afficheMatriceMingl(const CMatrice &amp;Mat, MinGL &amp;window)</div><div class="ttdoc">affichage de la matrice avec des cercles de couleurs différentes, représentant le contenu des cases</div><div class="ttdef"><b>Definition:</b> <a href="affichagemingl_8cpp_source.html#l00023">affichagemingl.cpp:23</a></div></div>
+<div class="ttc" id="aaffichagemingl_8cpp_html_a9ac89b215e10ff7f04c87c9a62ce71fc"><div class="ttname"><a href="affichagemingl_8cpp.html#a9ac89b215e10ff7f04c87c9a62ce71fc">dessineArnaud</a></div><div class="ttdeci">void dessineArnaud(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">affiche la tête d'Arnaud avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="affichagemingl_8cpp_source.html#l00251">affichagemingl.cpp:251</a></div></div>
+<div class="ttc" id="aaffichagemingl_8cpp_html_a9e84c73c6ff8a93f011e1f1b3fde578d"><div class="ttname"><a href="affichagemingl_8cpp.html#a9e84c73c6ff8a93f011e1f1b3fde578d">dessineCyril</a></div><div class="ttdeci">void dessineCyril(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">affiche la tête de Cyril avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="affichagemingl_8cpp_source.html#l00240">affichagemingl.cpp:240</a></div></div>
+<div class="ttc" id="aaffichagemingl_8cpp_html_aa3e6cb35e5e996580a5dac2320fdb09d"><div class="ttname"><a href="affichagemingl_8cpp.html#aa3e6cb35e5e996580a5dac2320fdb09d">dessinerEtoile</a></div><div class="ttdeci">void dessinerEtoile(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">dessine une étoile de couleur violette avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="affichagemingl_8cpp_source.html#l00095">affichagemingl.cpp:95</a></div></div>
+<div class="ttc" id="aaffichagemingl_8cpp_html_ab64f2a1fda3b84c374e6961856478e2b"><div class="ttname"><a href="affichagemingl_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b">faitUnMouvementMinGL</a></div><div class="ttdeci">void faitUnMouvementMinGL(CMatrice &amp;mat, MinGL &amp;window, size_t &amp;numLigne, size_t &amp;numCol, unsigned &amp;nbDeplacement, CMyParam &amp;param, bool &amp;curs2)</div><div class="ttdoc">permet de déplacer le curseur dans la fenêtre mingl</div><div class="ttdef"><b>Definition:</b> <a href="affichagemingl_8cpp_source.html#l00139">affichagemingl.cpp:139</a></div></div>
+<div class="ttc" id="aaffichagemingl_8cpp_html_ab80fa0eba33900bee956bde40a2ac2f6"><div class="ttname"><a href="affichagemingl_8cpp.html#ab80fa0eba33900bee956bde40a2ac2f6">dessineAlex</a></div><div class="ttdeci">void dessineAlex(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">affiche la tête d'Alex avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="affichagemingl_8cpp_source.html#l00219">affichagemingl.cpp:219</a></div></div>
+<div class="ttc" id="aaffichagemingl_8cpp_html_abd33c630339924d862adfb0af2f61405"><div class="ttname"><a href="affichagemingl_8cpp.html#abd33c630339924d862adfb0af2f61405">dessinerTriangle</a></div><div class="ttdeci">void dessinerTriangle(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">dessine un triangle de couleur verte avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="affichagemingl_8cpp_source.html#l00071">affichagemingl.cpp:71</a></div></div>
+<div class="ttc" id="aaffichagemingl_8cpp_html_ac46cbc355388b953335699211b70d29f"><div class="ttname"><a href="affichagemingl_8cpp.html#ac46cbc355388b953335699211b70d29f">dessinerCroix</a></div><div class="ttdeci">void dessinerCroix(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">dessine une croix de couleur jaune avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="affichagemingl_8cpp_source.html#l00082">affichagemingl.cpp:82</a></div></div>
+<div class="ttc" id="aaffichagemingl_8cpp_html_ad920d50dadc4a1dd91aace872ef1d4d6"><div class="ttname"><a href="affichagemingl_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6">dessinerCercle</a></div><div class="ttdeci">void dessinerCercle(MinGL &amp;window, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">dessine un cercle de couleur rouge avec comme origine x, y</div><div class="ttdef"><b>Definition:</b> <a href="affichagemingl_8cpp_source.html#l00060">affichagemingl.cpp:60</a></div></div>
+<div class="ttc" id="aaffichagemingl_8cpp_html_ae1a8fa20652284fd681b7e13967f5f70"><div class="ttname"><a href="affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70">afficheText</a></div><div class="ttdeci">void afficheText(MinGL &amp;window, const string &amp;txt, const unsigned &amp;x, const unsigned &amp;y)</div><div class="ttdoc">affiche le texte txt en blanc au coordonné x, y</div><div class="ttdef"><b>Definition:</b> <a href="affichagemingl_8cpp_source.html#l00125">affichagemingl.cpp:125</a></div></div>
+<div class="ttc" id="acst_8h_html"><div class="ttname"><a href="cst_8h.html">cst.h</a></div></div>
+<div class="ttc" id="acst_8h_html_a72fc9faf461c582bffc7491eb12ddb9a"><div class="ttname"><a href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a">KMagenta</a></div><div class="ttdeci">const unsigned KMagenta(35)</div><div class="ttdoc">code pour afficher la couleur magenta dans le terminal</div></div>
+<div class="ttc" id="acst_8h_html_aed31d4db92c112edda1291acad69dd00"><div class="ttname"><a href="cst_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a></div><div class="ttdeci">const unsigned KCyan(36)</div><div class="ttdoc">code pour afficher la couleur cyan dans le terminal</div></div>
+<div class="ttc" id="astruct_c_my_param_html"><div class="ttname"><a href="struct_c_my_param.html">CMyParam</a></div><div class="ttdoc">la classe param</div><div class="ttdef"><b>Definition:</b> <a href="type_8h_source.html#l00049">type.h:49</a></div></div>
+<div class="ttc" id="atype_8h_html"><div class="ttname"><a href="type_8h.html">type.h</a></div></div>
+<div class="ttc" id="atype_8h_html_a37304a67fccb047666efd38e9c84d9bf"><div class="ttname"><a href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a></div><div class="ttdeci">std::vector&lt; CVLigne &gt; CMatrice</div><div class="ttdoc">définition d'une grille</div><div class="ttdef"><b>Definition:</b> <a href="type_8h_source.html#l00036">type.h:36</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

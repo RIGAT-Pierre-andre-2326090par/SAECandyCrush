@@ -5,11 +5,15 @@ CONFIG -= qt
 
 SOURCES += \
         affichage.cpp \
+        affichagemingl.cpp \
+        gestionpartie.cpp \
         main.cpp
         
-include(../MinGL2_IUT_AIX-master/mingl.pri)
-
 HEADERS += \
     affichage.h \
+    affichagemingl.h \
     cst.h \
+    gestionpartie.h \
     type.h
+
+include(../MinGL2_IUT_AIX-master/mingl.pri)

@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -50,23 +46,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('affichage_8cpp.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,6 +60,11 @@ $(document).ready(function(){initNavTree('affichage_8cpp.html',''); initResizabl
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e37bb96bd9fccb878c1d62062fc8f7a5.html">SAECandyCrush</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Fonctions</a>  </div>
@@ -113,19 +97,73 @@ Graphe des dépendances par inclusion de affichage.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a9d7e8af417b6d543da691e9c0e2f6f9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f">clearScreen</a> ()</td></tr>
-<tr class="memdesc:a9d7e8af417b6d543da691e9c0e2f6f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">clearScreen  <a href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a9d7e8af417b6d543da691e9c0e2f6f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">remonte l'écran de façon à donner l'impression que l'écran ai été effacé  <a href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a9d7e8af417b6d543da691e9c0e2f6f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae241cf89d39423f89bb8e65688e4c031"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a> (const unsigned &amp;coul)</td></tr>
-<tr class="memdesc:ae241cf89d39423f89bb8e65688e4c031"><td class="mdescLeft">&#160;</td><td class="mdescRight">couleur  <a href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:ae241cf89d39423f89bb8e65688e4c031"><td class="mdescLeft">&#160;</td><td class="mdescRight">applique la couleur donné à une partie du terminal  <a href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae241cf89d39423f89bb8e65688e4c031"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05f377cba574bda4b62e575113001dc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0">afficheMatriceV0</a> (const <a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;Mat)</td></tr>
+<tr class="memdesc:a05f377cba574bda4b62e575113001dc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">affichage de la matrice avec une couleur différente pour chaque nombre  <a href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a05f377cba574bda4b62e575113001dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a582a33cfd726b8d8e367401130d55285"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285">afficheMatriceV1</a> (const <a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;Mat)</td></tr>
+<tr class="memdesc:a582a33cfd726b8d8e367401130d55285"><td class="mdescLeft">&#160;</td><td class="mdescRight">affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond de couleur différente pour signifier que la case est a KAIgnorer  <a href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a582a33cfd726b8d8e367401130d55285"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc444f3102a22c73b9a55c140303305d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d">afficheMatriceV2</a> (const <a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;Mat)</td></tr>
+<tr class="memdesc:adc444f3102a22c73b9a55c140303305d"><td class="mdescLeft">&#160;</td><td class="mdescRight">affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur différente pour signifier que la case est a KAIgnorer  <a href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:adc444f3102a22c73b9a55c140303305d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac12230328cd907d48a41036c9faff9c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9">afficheMatriceV3</a> (const <a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;Mat, const size_t numLigne, const size_t numCol)</td></tr>
+<tr class="memdesc:ac12230328cd907d48a41036c9faff9c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur différente pour signifier que la case est a KAIgnorer et la case sélectionner a un fond de couleur différent  <a href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac12230328cd907d48a41036c9faff9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a05f377cba574bda4b62e575113001dc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05f377cba574bda4b62e575113001dc0">&#9670;&nbsp;</a></span>afficheMatriceV0()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void afficheMatriceV0 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;&#160;</td>
+          <td class="paramname"><em>Mat</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>affichage de la matrice avec une couleur différente pour chaque nombre </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">window</td><td>fenêtre active où le texte va être affiché </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Auteurs</dt><dd>A.Nurdin, A.Goncalves, P-A.Rigat </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="affichage_8cpp_source.html#l00033">33</a> du fichier <a class="el" href="affichage_8cpp_source.html">affichage.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="affichage_8cpp_a05f377cba574bda4b62e575113001dc0_cgraph.png" border="0" usemap="#aaffichage_8cpp_a05f377cba574bda4b62e575113001dc0_cgraph" alt=""/></div>
+<map name="aaffichage_8cpp_a05f377cba574bda4b62e575113001dc0_cgraph" id="aaffichage_8cpp_a05f377cba574bda4b62e575113001dc0_cgraph">
+<area shape="rect" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="5,233,137,260"/>
+<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="185,5,284,32"/>
+<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="applique la couleur donné à une partie du terminal" alt="" coords="199,56,270,83"/>
+<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="205,107,265,133"/>
+<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="203,157,266,184"/>
+<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="201,208,268,235"/>
+<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="191,259,279,285"/>
+<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title="code pour afficher la couleur noir dans le terminal" alt="" coords="205,309,264,336"/>
+<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title="couleur par défaut du terminal" alt="" coords="201,360,269,387"/>
+<area shape="rect" href="cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title="code pour afficher la couleur rouge dans le terminal" alt="" coords="199,411,271,437"/>
+<area shape="rect" href="cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title="code pour afficher la couleur vert dans le terminal" alt="" coords="206,461,263,488"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a582a33cfd726b8d8e367401130d55285"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a582a33cfd726b8d8e367401130d55285">&#9670;&nbsp;</a></span>afficheMatriceV1()</h2>
 
@@ -142,23 +180,32 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="affichage_8cpp_source.html#l00052">52</a> du fichier <a class="el" href="affichage_8cpp_source.html">affichage.cpp</a>.</p>
+<p>affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond de couleur différente pour signifier que la case est a KAIgnorer </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Auteur</dt><dd>A.Nurdin </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="affichage_8cpp_source.html#l00060">60</a> du fichier <a class="el" href="affichage_8cpp_source.html">affichage.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="affichage_8cpp_a582a33cfd726b8d8e367401130d55285_cgraph.png" border="0" usemap="#aaffichage_8cpp_a582a33cfd726b8d8e367401130d55285_cgraph" alt=""/></div>
 <map name="aaffichage_8cpp_a582a33cfd726b8d8e367401130d55285_cgraph" id="aaffichage_8cpp_a582a33cfd726b8d8e367401130d55285_cgraph">
-<area shape="rect" title=" " alt="" coords="5,233,137,260"/>
-<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="185,5,284,32"/>
-<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="199,56,270,83"/>
-<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="205,107,265,133"/>
-<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title=" " alt="" coords="203,157,266,184"/>
-<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title=" " alt="" coords="201,208,268,235"/>
-<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title=" " alt="" coords="191,259,279,285"/>
-<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title=" " alt="" coords="205,309,264,336"/>
-<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title=" " alt="" coords="201,360,269,387"/>
-<area shape="rect" href="cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title=" " alt="" coords="199,411,271,437"/>
-<area shape="rect" href="cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="206,461,263,488"/>
+<area shape="rect" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="5,233,137,260"/>
+<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="185,5,284,32"/>
+<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="applique la couleur donné à une partie du terminal" alt="" coords="199,56,270,83"/>
+<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="205,107,265,133"/>
+<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="203,157,266,184"/>
+<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="201,208,268,235"/>
+<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="191,259,279,285"/>
+<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title="code pour afficher la couleur noir dans le terminal" alt="" coords="205,309,264,336"/>
+<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title="couleur par défaut du terminal" alt="" coords="201,360,269,387"/>
+<area shape="rect" href="cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title="code pour afficher la couleur rouge dans le terminal" alt="" coords="199,411,271,437"/>
+<area shape="rect" href="cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title="code pour afficher la couleur vert dans le terminal" alt="" coords="206,461,263,488"/>
 </map>
 </div>
 
@@ -180,23 +227,32 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="affichage_8cpp_source.html#l00084">84</a> du fichier <a class="el" href="affichage_8cpp_source.html">affichage.cpp</a>.</p>
+<p>affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur différente pour signifier que la case est a KAIgnorer </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Auteur</dt><dd>A.Nurdin </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="affichage_8cpp_source.html#l00095">95</a> du fichier <a class="el" href="affichage_8cpp_source.html">affichage.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="affichage_8cpp_adc444f3102a22c73b9a55c140303305d_cgraph.png" border="0" usemap="#aaffichage_8cpp_adc444f3102a22c73b9a55c140303305d_cgraph" alt=""/></div>
 <map name="aaffichage_8cpp_adc444f3102a22c73b9a55c140303305d_cgraph" id="aaffichage_8cpp_adc444f3102a22c73b9a55c140303305d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,233,137,260"/>
-<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="185,5,284,32"/>
-<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="199,56,270,83"/>
-<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="205,107,265,133"/>
-<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title=" " alt="" coords="203,157,266,184"/>
-<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title=" " alt="" coords="201,208,268,235"/>
-<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title=" " alt="" coords="191,259,279,285"/>
-<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title=" " alt="" coords="205,309,264,336"/>
-<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title=" " alt="" coords="201,360,269,387"/>
-<area shape="rect" href="cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title=" " alt="" coords="199,411,271,437"/>
-<area shape="rect" href="cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="206,461,263,488"/>
+<area shape="rect" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="5,233,137,260"/>
+<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="185,5,284,32"/>
+<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="applique la couleur donné à une partie du terminal" alt="" coords="199,56,270,83"/>
+<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="205,107,265,133"/>
+<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="203,157,266,184"/>
+<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="201,208,268,235"/>
+<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="191,259,279,285"/>
+<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title="code pour afficher la couleur noir dans le terminal" alt="" coords="205,309,264,336"/>
+<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title="couleur par défaut du terminal" alt="" coords="201,360,269,387"/>
+<area shape="rect" href="cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title="code pour afficher la couleur rouge dans le terminal" alt="" coords="199,411,271,437"/>
+<area shape="rect" href="cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title="code pour afficher la couleur vert dans le terminal" alt="" coords="206,461,263,488"/>
 </map>
 </div>
 <div class="dynheader">
@@ -204,9 +260,9 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="affichage_8cpp_adc444f3102a22c73b9a55c140303305d_icgraph.png" border="0" usemap="#aaffichage_8cpp_adc444f3102a22c73b9a55c140303305d_icgraph" alt=""/></div>
 <map name="aaffichage_8cpp_adc444f3102a22c73b9a55c140303305d_icgraph" id="aaffichage_8cpp_adc444f3102a22c73b9a55c140303305d_icgraph">
-<area shape="rect" title=" " alt="" coords="297,5,429,32"/>
+<area shape="rect" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="297,5,429,32"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,5,249,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="fonction principal permetant de choisir le mode de jeu" alt="" coords="5,5,60,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -244,24 +300,35 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="affichage_8cpp_source.html#l00117">117</a> du fichier <a class="el" href="affichage_8cpp_source.html">affichage.cpp</a>.</p>
+<p>affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de couleur différente pour signifier que la case est a KAIgnorer et la case sélectionner a un fond de couleur différent </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">numLigne</td><td>absisse de la position de la case sélectionner </td></tr>
+    <tr><td class="paramname">numCol</td><td>ordonnée de la position de la case sélectionner </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Auteurs</dt><dd>A.Nurdin, P-A.Rigat </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="affichage_8cpp_source.html#l00133">133</a> du fichier <a class="el" href="affichage_8cpp_source.html">affichage.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="affichage_8cpp_ac12230328cd907d48a41036c9faff9c9_cgraph.png" border="0" usemap="#aaffichage_8cpp_ac12230328cd907d48a41036c9faff9c9_cgraph" alt=""/></div>
 <map name="aaffichage_8cpp_ac12230328cd907d48a41036c9faff9c9_cgraph" id="aaffichage_8cpp_ac12230328cd907d48a41036c9faff9c9_cgraph">
-<area shape="rect" title=" " alt="" coords="5,259,137,285"/>
-<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="clearScreen" alt="" coords="189,5,288,32"/>
-<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="couleur" alt="" coords="203,56,274,83"/>
-<area shape="rect" href="cst_8h.html#af81c8f45a494c8b75bb2623c7a57737f" title=" " alt="" coords="185,107,292,133"/>
-<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="209,157,269,184"/>
-<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title=" " alt="" coords="207,208,270,235"/>
-<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title=" " alt="" coords="205,259,272,285"/>
-<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title=" " alt="" coords="195,309,283,336"/>
-<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title=" " alt="" coords="209,360,268,387"/>
-<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title=" " alt="" coords="205,411,273,437"/>
-<area shape="rect" href="cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title=" " alt="" coords="203,461,275,488"/>
-<area shape="rect" href="cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="210,512,267,539"/>
+<area shape="rect" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="5,259,137,285"/>
+<area shape="rect" href="affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="189,5,288,32"/>
+<area shape="rect" href="affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="applique la couleur donné à une partie du terminal" alt="" coords="203,56,274,83"/>
+<area shape="rect" href="cst_8h.html#af81c8f45a494c8b75bb2623c7a57737f" title="code pour afficher la couleur gris clair dans l&#39;arrière plan du terminal" alt="" coords="185,107,292,133"/>
+<area shape="rect" href="cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="209,157,269,184"/>
+<area shape="rect" href="cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="207,208,270,235"/>
+<area shape="rect" href="cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="205,259,272,285"/>
+<area shape="rect" href="cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="195,309,283,336"/>
+<area shape="rect" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title="code pour afficher la couleur noir dans le terminal" alt="" coords="209,360,268,387"/>
+<area shape="rect" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title="couleur par défaut du terminal" alt="" coords="205,411,273,437"/>
+<area shape="rect" href="cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title="code pour afficher la couleur rouge dans le terminal" alt="" coords="203,461,275,488"/>
+<area shape="rect" href="cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title="code pour afficher la couleur vert dans le terminal" alt="" coords="210,512,267,539"/>
 </map>
 </div>
 <div class="dynheader">
@@ -269,9 +336,12 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="affichage_8cpp_ac12230328cd907d48a41036c9faff9c9_icgraph.png" border="0" usemap="#aaffichage_8cpp_ac12230328cd907d48a41036c9faff9c9_icgraph" alt=""/></div>
 <map name="aaffichage_8cpp_ac12230328cd907d48a41036c9faff9c9_icgraph" id="aaffichage_8cpp_ac12230328cd907d48a41036c9faff9c9_icgraph">
-<area shape="rect" title=" " alt="" coords="285,5,417,32"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="108,5,237,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="fonction principal permetant de choisir le mode de jeu" alt="" coords="5,5,60,32"/>
+<area shape="rect" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="308,81,440,108"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,5,249,32"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,56,247,83"/>
+<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,107,251,133"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,157,260,184"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,81,60,108"/>
 </map>
 </div>
 
@@ -292,7 +362,7 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p>clearScreen </p>
+<p>remonte l'écran de façon à donner l'impression que l'écran ai été effacé </p>
 <dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="affichage_8cpp_source.html#l00014">14</a> du fichier <a class="el" href="affichage_8cpp_source.html">affichage.cpp</a>.</p>
@@ -301,12 +371,17 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="affichage_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f_icgraph.png" border="0" usemap="#aaffichage_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f_icgraph" alt=""/></div>
 <map name="aaffichage_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f_icgraph" id="aaffichage_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f_icgraph">
-<area shape="rect" title="clearScreen" alt="" coords="375,56,473,83"/>
-<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title=" " alt="" coords="195,5,327,32"/>
-<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title=" " alt="" coords="195,56,327,83"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title=" " alt="" coords="195,107,327,133"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,56,147,83"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="11,107,141,133"/>
+<area shape="rect" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="488,107,587,133"/>
+<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="308,5,440,32"/>
+<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="308,56,440,83"/>
+<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="308,107,440,133"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,233,60,260"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="308,259,440,285"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,107,255,133"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,208,249,235"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,259,247,285"/>
+<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,309,251,336"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,360,260,387"/>
 </map>
 </div>
 
@@ -328,10 +403,10 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p>couleur </p>
+<p>applique la couleur donné à une partie du terminal </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">coul</td><td></td></tr>
+    <tr><td class="paramname">coul</td><td>couleur des caractères à venir </td></tr>
   </table>
   </dd>
 </dl>
@@ -343,25 +418,25 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="affichage_8cpp_ae241cf89d39423f89bb8e65688e4c031_icgraph.png" border="0" usemap="#aaffichage_8cpp_ae241cf89d39423f89bb8e65688e4c031_icgraph" alt=""/></div>
 <map name="aaffichage_8cpp_ae241cf89d39423f89bb8e65688e4c031_icgraph" id="aaffichage_8cpp_ae241cf89d39423f89bb8e65688e4c031_icgraph">
-<area shape="rect" title="couleur" alt="" coords="375,56,445,83"/>
-<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title=" " alt="" coords="195,5,327,32"/>
-<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title=" " alt="" coords="195,56,327,83"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title=" " alt="" coords="195,107,327,133"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,56,147,83"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="11,107,141,133"/>
+<area shape="rect" title="applique la couleur donné à une partie du terminal" alt="" coords="385,81,456,108"/>
+<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="205,5,337,32"/>
+<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="205,56,337,83"/>
+<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,107,337,133"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,183,337,209"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,81,152,108"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,132,146,159"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,183,144,209"/>
+<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,233,148,260"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,284,157,311"/>
 </map>
 </div>
 
 </div>
 </div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_e37bb96bd9fccb878c1d62062fc8f7a5.html">SAECandyCrush</a></li><li class="navelem"><a class="el" href="affichage_8cpp.html">affichage.cpp</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
 </body>
 </html>

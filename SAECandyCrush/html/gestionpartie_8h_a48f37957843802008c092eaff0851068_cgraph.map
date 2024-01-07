@@ -1,0 +1,4 @@
+<map id="detectionExplositionUneBombeVerticale" name="detectionExplositionUneBombeVerticale">
+<area shape="rect" id="node1" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="5,5,232,47"/>
+<area shape="rect" id="node2" href="$gestionpartie_8cpp.html#a8bd751d220569d601afc2200b0378423" title="procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre..." alt="" coords="280,13,503,39"/>
+</map>
