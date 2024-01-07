@@ -1,8 +1,9 @@
+#ifndef TYPE_H
+#define TYPE_H
+
 #include <string>
 #include <vector>
 #include <map>
-#ifndef TYPE_H
-#define TYPE_H
 
 /**
  * @brief définition d'une ligne
