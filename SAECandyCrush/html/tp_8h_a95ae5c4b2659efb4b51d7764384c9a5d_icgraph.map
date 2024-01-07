@@ -1,0 +1,5 @@
+<map id="faitUnMouvement" name="faitUnMouvement">
+<area shape="rect" id="node1" title="procédure permettant au joueur d&#39;échanger 2 éléments dans la grille" alt="" coords="229,5,369,32"/>
+<area shape="rect" id="node2" href="$tp_8cpp.html#abf4c7f37019ca794033d59caaf040c79" title="l&#39;exercice 4 du TP" alt="" coords="92,5,181,32"/>
+<area shape="rect" id="node3" href="$tp_8cpp.html#ac112972a185fb734d2dc8080ad336cce" title="permet de tester les exos et une version primitive de number crush" alt="" coords="5,5,44,32"/>
+</map>

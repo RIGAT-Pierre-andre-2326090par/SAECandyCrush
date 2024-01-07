@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('cst_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_e37bb96bd9fccb878c1d62062fc8f7a5.html">SAECandyCrush</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Fonctions</a> &#124;
@@ -91,14 +107,16 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="cst_8h__dep__incl.png" border="0" usemap="#a_s_a_e_candy_crush_2cst_8hdep" alt=""/></div>
 <map name="a_s_a_e_candy_crush_2cst_8hdep" id="a_s_a_e_candy_crush_2cst_8hdep">
-<area shape="rect" title=" " alt="" coords="568,5,729,32"/>
+<area shape="rect" title=" " alt="" coords="925,5,1087,32"/>
+<area shape="rect" href="affichage_8h.html" title=" " alt="" coords="537,80,739,107"/>
+<area shape="rect" href="affichagemingl_8h.html" title=" " alt="" coords="1016,80,1255,107"/>
+<area shape="rect" href="gestionpartie_8h.html" title=" " alt="" coords="764,80,992,107"/>
+<area shape="rect" href="tp_8h.html" title=" " alt="" coords="1279,80,1434,107"/>
 <area shape="rect" href="affichage_8cpp.html" title=" " alt="" coords="5,155,223,181"/>
-<area shape="rect" href="affichage_8h.html" title=" " alt="" coords="409,80,611,107"/>
 <area shape="rect" href="affichagemingl_8cpp.html" title=" " alt="" coords="247,155,501,181"/>
 <area shape="rect" href="gestionpartie_8cpp.html" title=" " alt="" coords="526,155,769,181"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="793,155,984,181"/>
-<area shape="rect" href="affichagemingl_8h.html" title=" " alt="" coords="737,80,976,107"/>
-<area shape="rect" href="gestionpartie_8h.html" title=" " alt="" coords="1000,80,1228,107"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="1015,155,1205,181"/>
+<area shape="rect" href="tp_8cpp.html" title=" " alt="" coords="793,155,963,181"/>
 </map>
 </div>
 </div>
@@ -107,7 +125,7 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a63a18a31ab7815ab0d4eb5c133e5d1a5"><td class="memItemLeft" align="right" valign="top">const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a> (0)</td></tr>
-<tr class="memdesc:a63a18a31ab7815ab0d4eb5c133e5d1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">couleur par défaut du terminal  <a href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a63a18a31ab7815ab0d4eb5c133e5d1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">code pour afficher la couleur par défaut du terminal  <a href="cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a63a18a31ab7815ab0d4eb5c133e5d1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ce1342a3c5061b4504256f7ac7cfda6"><td class="memItemLeft" align="right" valign="top">const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6">KNoir</a> (30)</td></tr>
 <tr class="memdesc:a2ce1342a3c5061b4504256f7ac7cfda6"><td class="mdescLeft">&#160;</td><td class="mdescRight">code pour afficher la couleur noir dans le terminal  <a href="cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6">Plus de détails...</a><br /></td></tr>
@@ -161,17 +179,19 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>code pour afficher la couleur gris clair dans l'arrière plan du terminal </p>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="cst_8h_af81c8f45a494c8b75bb2623c7a57737f_icgraph.png" border="0" usemap="#acst_8h_af81c8f45a494c8b75bb2623c7a57737f_icgraph" alt=""/></div>
 <map name="acst_8h_af81c8f45a494c8b75bb2623c7a57737f_icgraph" id="acst_8h_af81c8f45a494c8b75bb2623c7a57737f_icgraph">
-<area shape="rect" title="code pour afficher la couleur gris clair dans l&#39;arrière plan du terminal" alt="" coords="385,81,492,108"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,81,337,108"/>
+<area shape="rect" title="code pour afficher la couleur gris clair dans l&#39;arrière plan du terminal" alt="" coords="385,107,492,133"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,107,337,133"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
 <area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,56,144,83"/>
 <area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,107,148,133"/>
 <area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,157,157,184"/>
+<area shape="rect" href="tp_8cpp.html#aee862f9d90140261900a2a815288f9f1" title="gère une parti de number crush dans le terminal" alt="" coords="11,208,152,235"/>
 </map>
 </div>
 
@@ -194,21 +214,29 @@ Voici le graphe des appelants de cette fonction :</div>
 </div><div class="memdoc">
 
 <p>code pour afficher la couleur bleu dans le terminal </p>
+<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="cst_8h_a587a099b5228e39c74a525cb4ac5d786_icgraph.png" border="0" usemap="#acst_8h_a587a099b5228e39c74a525cb4ac5d786_icgraph" alt=""/></div>
 <map name="acst_8h_a587a099b5228e39c74a525cb4ac5d786_icgraph" id="acst_8h_a587a099b5228e39c74a525cb4ac5d786_icgraph">
-<area shape="rect" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="385,81,445,108"/>
-<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="205,5,337,32"/>
-<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="205,56,337,83"/>
-<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,107,337,133"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,183,337,209"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,81,152,108"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,132,146,159"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,183,144,209"/>
-<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,233,148,260"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,284,157,311"/>
+<area shape="rect" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="649,288,709,315"/>
+<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="469,56,601,83"/>
+<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="469,368,601,395"/>
+<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="469,544,601,571"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="469,183,601,209"/>
+<area shape="rect" href="tp_8cpp.html#a8470d32123dff01350e8023b58aec437" title="l&#39;exercice 1 du TP" alt="" coords="263,5,353,32"/>
+<area shape="rect" href="tp_8cpp.html#a18b5dcac7e2a41b6b06e9c8a1fd3ebce" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="195,361,421,402"/>
+<area shape="rect" href="tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="31,339,121,365"/>
+<area shape="rect" href="tp_8cpp.html#a0acbde41cd7464a445d8c5adec237847" title="l&#39;exercice 3 du TP" alt="" coords="31,423,121,449"/>
+<area shape="rect" href="tp_8cpp.html#a13cbf1bb613e280eea9cff3269c1d4ba" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="195,478,421,519"/>
+<area shape="rect" href="tp_8cpp.html#aee862f9d90140261900a2a815288f9f1" title="gère une parti de number crush dans le terminal" alt="" coords="5,183,147,209"/>
+<area shape="rect" href="tp_8cpp.html#abf4c7f37019ca794033d59caaf040c79" title="l&#39;exercice 4 du TP" alt="" coords="31,507,121,533"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="237,595,379,621"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="243,157,373,184"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="245,208,371,235"/>
+<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="241,259,375,285"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="232,56,384,83"/>
 </map>
 </div>
 
@@ -231,22 +259,30 @@ Voici le graphe des appelants de cette fonction :</div>
 </div><div class="memdoc">
 
 <p>code pour afficher la couleur cyan dans le terminal </p>
+<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="cst_8h_aed31d4db92c112edda1291acad69dd00_icgraph.png" border="0" usemap="#acst_8h_aed31d4db92c112edda1291acad69dd00_icgraph" alt=""/></div>
 <map name="acst_8h_aed31d4db92c112edda1291acad69dd00_icgraph" id="acst_8h_aed31d4db92c112edda1291acad69dd00_icgraph">
-<area shape="rect" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="404,107,467,133"/>
-<area shape="rect" href="affichagemingl_8cpp.html#a9aa1b945f36803846a1a6e0162e23989" title="affichage de la matrice avec des cercles de couleurs différentes, représentant le contenu des cases" alt="" coords="205,157,356,184"/>
-<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="215,56,347,83"/>
-<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="215,107,347,133"/>
-<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="215,5,347,32"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="215,208,347,235"/>
-<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,157,148,184"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,5,152,32"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,309,146,336"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,208,144,235"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,259,157,285"/>
+<area shape="rect" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="668,323,731,350"/>
+<area shape="rect" href="affichagemingl_8cpp.html#a9aa1b945f36803846a1a6e0162e23989" title="affichage de la matrice avec des cercles de couleurs différentes, représentant le contenu des cases" alt="" coords="469,247,620,274"/>
+<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="479,551,611,578"/>
+<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="479,104,611,131"/>
+<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="479,475,611,502"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="479,323,611,350"/>
+<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="241,222,375,248"/>
+<area shape="rect" href="tp_8cpp.html#a8470d32123dff01350e8023b58aec437" title="l&#39;exercice 1 du TP" alt="" coords="263,576,353,603"/>
+<area shape="rect" href="tp_8cpp.html#a18b5dcac7e2a41b6b06e9c8a1fd3ebce" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="195,156,421,197"/>
+<area shape="rect" href="tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="31,134,121,160"/>
+<area shape="rect" href="tp_8cpp.html#a0acbde41cd7464a445d8c5adec237847" title="l&#39;exercice 3 du TP" alt="" coords="31,20,121,47"/>
+<area shape="rect" href="tp_8cpp.html#a13cbf1bb613e280eea9cff3269c1d4ba" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="195,38,421,80"/>
+<area shape="rect" href="tp_8cpp.html#aee862f9d90140261900a2a815288f9f1" title="gère une parti de number crush dans le terminal" alt="" coords="5,243,147,270"/>
+<area shape="rect" href="tp_8cpp.html#abf4c7f37019ca794033d59caaf040c79" title="l&#39;exercice 4 du TP" alt="" coords="31,370,121,396"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="237,526,379,552"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="243,374,373,400"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="245,424,371,451"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="232,323,384,350"/>
 </map>
 </div>
 
@@ -269,21 +305,29 @@ Voici le graphe des appelants de cette fonction :</div>
 </div><div class="memdoc">
 
 <p>code pour afficher la couleur jaune dans le terminal </p>
+<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="cst_8h_a1b010b9694f3acc35b02b0a667d99094_icgraph.png" border="0" usemap="#acst_8h_a1b010b9694f3acc35b02b0a667d99094_icgraph" alt=""/></div>
 <map name="acst_8h_a1b010b9694f3acc35b02b0a667d99094_icgraph" id="acst_8h_a1b010b9694f3acc35b02b0a667d99094_icgraph">
-<area shape="rect" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="385,81,452,108"/>
-<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="205,5,337,32"/>
-<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="205,56,337,83"/>
-<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,107,337,133"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,183,337,209"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,81,152,108"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,132,146,159"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,183,144,209"/>
-<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,233,148,260"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,284,157,311"/>
+<area shape="rect" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="649,288,716,315"/>
+<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="469,56,601,83"/>
+<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="469,368,601,395"/>
+<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="469,544,601,571"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="469,183,601,209"/>
+<area shape="rect" href="tp_8cpp.html#a8470d32123dff01350e8023b58aec437" title="l&#39;exercice 1 du TP" alt="" coords="263,5,353,32"/>
+<area shape="rect" href="tp_8cpp.html#a18b5dcac7e2a41b6b06e9c8a1fd3ebce" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="195,361,421,402"/>
+<area shape="rect" href="tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="31,339,121,365"/>
+<area shape="rect" href="tp_8cpp.html#a0acbde41cd7464a445d8c5adec237847" title="l&#39;exercice 3 du TP" alt="" coords="31,423,121,449"/>
+<area shape="rect" href="tp_8cpp.html#a13cbf1bb613e280eea9cff3269c1d4ba" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="195,478,421,519"/>
+<area shape="rect" href="tp_8cpp.html#aee862f9d90140261900a2a815288f9f1" title="gère une parti de number crush dans le terminal" alt="" coords="5,183,147,209"/>
+<area shape="rect" href="tp_8cpp.html#abf4c7f37019ca794033d59caaf040c79" title="l&#39;exercice 4 du TP" alt="" coords="31,507,121,533"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="237,595,379,621"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="243,157,373,184"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="245,208,371,235"/>
+<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="241,259,375,285"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="232,56,384,83"/>
 </map>
 </div>
 
@@ -306,22 +350,30 @@ Voici le graphe des appelants de cette fonction :</div>
 </div><div class="memdoc">
 
 <p>code pour afficher la couleur magenta dans le terminal </p>
+<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="cst_8h_a72fc9faf461c582bffc7491eb12ddb9a_icgraph.png" border="0" usemap="#acst_8h_a72fc9faf461c582bffc7491eb12ddb9a_icgraph" alt=""/></div>
 <map name="acst_8h_a72fc9faf461c582bffc7491eb12ddb9a_icgraph" id="acst_8h_a72fc9faf461c582bffc7491eb12ddb9a_icgraph">
-<area shape="rect" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="404,107,492,133"/>
-<area shape="rect" href="affichagemingl_8cpp.html#a9aa1b945f36803846a1a6e0162e23989" title="affichage de la matrice avec des cercles de couleurs différentes, représentant le contenu des cases" alt="" coords="205,157,356,184"/>
-<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="215,56,347,83"/>
-<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="215,107,347,133"/>
-<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="215,5,347,32"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="215,208,347,235"/>
-<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,157,148,184"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,5,152,32"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,309,146,336"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,208,144,235"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,259,157,285"/>
+<area shape="rect" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="668,323,756,350"/>
+<area shape="rect" href="affichagemingl_8cpp.html#a9aa1b945f36803846a1a6e0162e23989" title="affichage de la matrice avec des cercles de couleurs différentes, représentant le contenu des cases" alt="" coords="469,247,620,274"/>
+<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="479,551,611,578"/>
+<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="479,104,611,131"/>
+<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="479,475,611,502"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="479,323,611,350"/>
+<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="241,222,375,248"/>
+<area shape="rect" href="tp_8cpp.html#a8470d32123dff01350e8023b58aec437" title="l&#39;exercice 1 du TP" alt="" coords="263,576,353,603"/>
+<area shape="rect" href="tp_8cpp.html#a18b5dcac7e2a41b6b06e9c8a1fd3ebce" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="195,156,421,197"/>
+<area shape="rect" href="tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="31,134,121,160"/>
+<area shape="rect" href="tp_8cpp.html#a0acbde41cd7464a445d8c5adec237847" title="l&#39;exercice 3 du TP" alt="" coords="31,20,121,47"/>
+<area shape="rect" href="tp_8cpp.html#a13cbf1bb613e280eea9cff3269c1d4ba" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="195,38,421,80"/>
+<area shape="rect" href="tp_8cpp.html#aee862f9d90140261900a2a815288f9f1" title="gère une parti de number crush dans le terminal" alt="" coords="5,243,147,270"/>
+<area shape="rect" href="tp_8cpp.html#abf4c7f37019ca794033d59caaf040c79" title="l&#39;exercice 4 du TP" alt="" coords="31,370,121,396"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="237,526,379,552"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="243,374,373,400"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="245,424,371,451"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="232,323,384,350"/>
 </map>
 </div>
 
@@ -344,21 +396,29 @@ Voici le graphe des appelants de cette fonction :</div>
 </div><div class="memdoc">
 
 <p>code pour afficher la couleur noir dans le terminal </p>
+<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="cst_8h_a2ce1342a3c5061b4504256f7ac7cfda6_icgraph.png" border="0" usemap="#acst_8h_a2ce1342a3c5061b4504256f7ac7cfda6_icgraph" alt=""/></div>
 <map name="acst_8h_a2ce1342a3c5061b4504256f7ac7cfda6_icgraph" id="acst_8h_a2ce1342a3c5061b4504256f7ac7cfda6_icgraph">
-<area shape="rect" title="code pour afficher la couleur noir dans le terminal" alt="" coords="385,81,444,108"/>
-<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="205,5,337,32"/>
-<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="205,56,337,83"/>
-<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,107,337,133"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,183,337,209"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,81,152,108"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,132,146,159"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,183,144,209"/>
-<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,233,148,260"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,284,157,311"/>
+<area shape="rect" title="code pour afficher la couleur noir dans le terminal" alt="" coords="649,288,708,315"/>
+<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="469,56,601,83"/>
+<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="469,368,601,395"/>
+<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="469,544,601,571"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="469,183,601,209"/>
+<area shape="rect" href="tp_8cpp.html#a8470d32123dff01350e8023b58aec437" title="l&#39;exercice 1 du TP" alt="" coords="263,5,353,32"/>
+<area shape="rect" href="tp_8cpp.html#a18b5dcac7e2a41b6b06e9c8a1fd3ebce" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="195,361,421,402"/>
+<area shape="rect" href="tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="31,339,121,365"/>
+<area shape="rect" href="tp_8cpp.html#a0acbde41cd7464a445d8c5adec237847" title="l&#39;exercice 3 du TP" alt="" coords="31,423,121,449"/>
+<area shape="rect" href="tp_8cpp.html#a13cbf1bb613e280eea9cff3269c1d4ba" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="195,478,421,519"/>
+<area shape="rect" href="tp_8cpp.html#aee862f9d90140261900a2a815288f9f1" title="gère une parti de number crush dans le terminal" alt="" coords="5,183,147,209"/>
+<area shape="rect" href="tp_8cpp.html#abf4c7f37019ca794033d59caaf040c79" title="l&#39;exercice 4 du TP" alt="" coords="31,507,121,533"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="237,595,379,621"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="243,157,373,184"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="245,208,371,235"/>
+<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="241,259,375,285"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="232,56,384,83"/>
 </map>
 </div>
 
@@ -380,22 +440,30 @@ Voici le graphe des appelants de cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p>couleur par défaut du terminal </p>
+<p>code pour afficher la couleur par défaut du terminal </p>
+<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="cst_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5_icgraph.png" border="0" usemap="#acst_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5_icgraph" alt=""/></div>
 <map name="acst_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5_icgraph" id="acst_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5_icgraph">
-<area shape="rect" title="couleur par défaut du terminal" alt="" coords="385,81,453,108"/>
-<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="205,5,337,32"/>
-<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="205,56,337,83"/>
-<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,107,337,133"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,183,337,209"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,81,152,108"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,132,146,159"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,183,144,209"/>
-<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,233,148,260"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,284,157,311"/>
+<area shape="rect" title="code pour afficher la couleur par défaut du terminal" alt="" coords="649,288,717,315"/>
+<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="469,56,601,83"/>
+<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="469,368,601,395"/>
+<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="469,544,601,571"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="469,183,601,209"/>
+<area shape="rect" href="tp_8cpp.html#a8470d32123dff01350e8023b58aec437" title="l&#39;exercice 1 du TP" alt="" coords="263,5,353,32"/>
+<area shape="rect" href="tp_8cpp.html#a18b5dcac7e2a41b6b06e9c8a1fd3ebce" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="195,361,421,402"/>
+<area shape="rect" href="tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="31,339,121,365"/>
+<area shape="rect" href="tp_8cpp.html#a0acbde41cd7464a445d8c5adec237847" title="l&#39;exercice 3 du TP" alt="" coords="31,423,121,449"/>
+<area shape="rect" href="tp_8cpp.html#a13cbf1bb613e280eea9cff3269c1d4ba" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="195,478,421,519"/>
+<area shape="rect" href="tp_8cpp.html#aee862f9d90140261900a2a815288f9f1" title="gère une parti de number crush dans le terminal" alt="" coords="5,183,147,209"/>
+<area shape="rect" href="tp_8cpp.html#abf4c7f37019ca794033d59caaf040c79" title="l&#39;exercice 4 du TP" alt="" coords="31,507,121,533"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="237,595,379,621"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="243,157,373,184"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="245,208,371,235"/>
+<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="241,259,375,285"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="232,56,384,83"/>
 </map>
 </div>
 
@@ -418,21 +486,29 @@ Voici le graphe des appelants de cette fonction :</div>
 </div><div class="memdoc">
 
 <p>code pour afficher la couleur rouge dans le terminal </p>
+<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="cst_8h_a87aab004c1c22814beb8db1ddaa9f628_icgraph.png" border="0" usemap="#acst_8h_a87aab004c1c22814beb8db1ddaa9f628_icgraph" alt=""/></div>
 <map name="acst_8h_a87aab004c1c22814beb8db1ddaa9f628_icgraph" id="acst_8h_a87aab004c1c22814beb8db1ddaa9f628_icgraph">
-<area shape="rect" title="code pour afficher la couleur rouge dans le terminal" alt="" coords="385,81,457,108"/>
-<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="205,5,337,32"/>
-<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="205,56,337,83"/>
-<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,107,337,133"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,183,337,209"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,81,152,108"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,132,146,159"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,183,144,209"/>
-<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,233,148,260"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,284,157,311"/>
+<area shape="rect" title="code pour afficher la couleur rouge dans le terminal" alt="" coords="649,288,721,315"/>
+<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="469,56,601,83"/>
+<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="469,368,601,395"/>
+<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="469,544,601,571"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="469,183,601,209"/>
+<area shape="rect" href="tp_8cpp.html#a8470d32123dff01350e8023b58aec437" title="l&#39;exercice 1 du TP" alt="" coords="263,5,353,32"/>
+<area shape="rect" href="tp_8cpp.html#a18b5dcac7e2a41b6b06e9c8a1fd3ebce" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="195,361,421,402"/>
+<area shape="rect" href="tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="31,339,121,365"/>
+<area shape="rect" href="tp_8cpp.html#a0acbde41cd7464a445d8c5adec237847" title="l&#39;exercice 3 du TP" alt="" coords="31,423,121,449"/>
+<area shape="rect" href="tp_8cpp.html#a13cbf1bb613e280eea9cff3269c1d4ba" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="195,478,421,519"/>
+<area shape="rect" href="tp_8cpp.html#aee862f9d90140261900a2a815288f9f1" title="gère une parti de number crush dans le terminal" alt="" coords="5,183,147,209"/>
+<area shape="rect" href="tp_8cpp.html#abf4c7f37019ca794033d59caaf040c79" title="l&#39;exercice 4 du TP" alt="" coords="31,507,121,533"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="237,595,379,621"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="243,157,373,184"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="245,208,371,235"/>
+<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="241,259,375,285"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="232,56,384,83"/>
 </map>
 </div>
 
@@ -455,21 +531,29 @@ Voici le graphe des appelants de cette fonction :</div>
 </div><div class="memdoc">
 
 <p>code pour afficher la couleur vert dans le terminal </p>
+<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="cst_8h_a72260f87613d24d0cd1e7c8f646ca5f5_icgraph.png" border="0" usemap="#acst_8h_a72260f87613d24d0cd1e7c8f646ca5f5_icgraph" alt=""/></div>
 <map name="acst_8h_a72260f87613d24d0cd1e7c8f646ca5f5_icgraph" id="acst_8h_a72260f87613d24d0cd1e7c8f646ca5f5_icgraph">
-<area shape="rect" title="code pour afficher la couleur vert dans le terminal" alt="" coords="385,81,443,108"/>
-<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="205,5,337,32"/>
-<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="205,56,337,83"/>
-<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,107,337,133"/>
-<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="205,183,337,209"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,81,152,108"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,132,146,159"/>
-<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,183,144,209"/>
-<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,233,148,260"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,284,157,311"/>
+<area shape="rect" title="code pour afficher la couleur vert dans le terminal" alt="" coords="649,288,707,315"/>
+<area shape="rect" href="affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="469,56,601,83"/>
+<area shape="rect" href="affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="469,368,601,395"/>
+<area shape="rect" href="affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="469,544,601,571"/>
+<area shape="rect" href="affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="469,183,601,209"/>
+<area shape="rect" href="tp_8cpp.html#a8470d32123dff01350e8023b58aec437" title="l&#39;exercice 1 du TP" alt="" coords="263,5,353,32"/>
+<area shape="rect" href="tp_8cpp.html#a18b5dcac7e2a41b6b06e9c8a1fd3ebce" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="195,361,421,402"/>
+<area shape="rect" href="tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="31,339,121,365"/>
+<area shape="rect" href="tp_8cpp.html#a0acbde41cd7464a445d8c5adec237847" title="l&#39;exercice 3 du TP" alt="" coords="31,423,121,449"/>
+<area shape="rect" href="tp_8cpp.html#a13cbf1bb613e280eea9cff3269c1d4ba" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="195,478,421,519"/>
+<area shape="rect" href="tp_8cpp.html#aee862f9d90140261900a2a815288f9f1" title="gère une parti de number crush dans le terminal" alt="" coords="5,183,147,209"/>
+<area shape="rect" href="tp_8cpp.html#abf4c7f37019ca794033d59caaf040c79" title="l&#39;exercice 4 du TP" alt="" coords="31,507,121,533"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="237,595,379,621"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="243,157,373,184"/>
+<area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="245,208,371,235"/>
+<area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="241,259,375,285"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="232,56,384,83"/>
 </map>
 </div>
 
@@ -489,8 +573,9 @@ Voici le graphe des appelants de cette fonction :</div>
 </div><div class="memdoc">
 
 <p>contenu d'un case vide </p>
+<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="cst_8h_source.html#l00055">55</a> du fichier <a class="el" href="cst_8h_source.html">cst.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="cst_8h_source.html#l00065">65</a> du fichier <a class="el" href="cst_8h_source.html">cst.h</a>.</p>
 
 </div>
 </div>
@@ -507,15 +592,20 @@ Voici le graphe des appelants de cette fonction :</div>
 </div><div class="memdoc">
 
 <p>valeur maximal que peut prendre le contenu d'un case </p>
+<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="cst_8h_source.html#l00060">60</a> du fichier <a class="el" href="cst_8h_source.html">cst.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="cst_8h_source.html#l00071">71</a> du fichier <a class="el" href="cst_8h_source.html">cst.h</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e37bb96bd9fccb878c1d62062fc8f7a5.html">SAECandyCrush</a></li><li class="navelem"><a class="el" href="cst_8h.html">cst.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

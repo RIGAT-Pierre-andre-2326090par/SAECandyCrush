@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SAECandyCrush:  Fichier source de SAECandyCrush/tp.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SAECandyCrush
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('tp_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">tp.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="tp_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TP_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TP_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="cst_8h.html">cst.h</a>&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">unsigned</span> <a class="code" href="tp_8h.html#a138eb63008d4dfb577b4f989ff5fa06f">nouvRdm</a>(<span class="keywordtype">unsigned</span> &amp; nb, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; nbMax = <a class="code" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a>);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="tp_8h.html#a69b1c7be084381ade2044cab29998caa">initMatV2</a> (<a class="code" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp; mat, <span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp; nbLignes = 10,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp; nbColonnes = 10,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; nbMax = <a class="code" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="tp_8h.html#a18b5dcac7e2a41b6b06e9c8a1fd3ebce">detectionExplositionUneBombeHorizontale</a> (<a class="code" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp; mat);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="tp_8h.html#a13cbf1bb613e280eea9cff3269c1d4ba">detectionExplositionUneBombeVertical</a> (<a class="code" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp; mat);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> <a class="code" href="tp_8h.html#a65812ac24495d4fe16373a9760344759">detectionExplositionBombe</a> (<a class="code" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp; mat);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="tp_8h.html#a95ae5c4b2659efb4b51d7764384c9a5d">faitUnMouvement</a> (<a class="code" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp; mat, <span class="keyword">const</span> <span class="keywordtype">char</span> &amp; deplacment, <span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp; numLigne,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                     <span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp; numCol);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">void</span> <a class="code" href="tp_8h.html#a8f92bfd50403b72837d13c807965dce9">faitUnMouvementV2</a> (<a class="code" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp; mat, <span class="keyword">const</span> <span class="keywordtype">char</span> &amp; deplacment, <span class="keywordtype">size_t</span> &amp; numLigne,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                       <span class="keywordtype">size_t</span> &amp; numCol);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tp_8h.html#a8470d32123dff01350e8023b58aec437">ppalExo01</a> ();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tp_8h.html#ac708bb351d226e55aefc761764cfb632">ppalExo02</a> ();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tp_8h.html#a0acbde41cd7464a445d8c5adec237847">ppalExo03</a> ();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tp_8h.html#abf4c7f37019ca794033d59caaf040c79">ppalExo04</a> ();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tp_8h.html#aee862f9d90140261900a2a815288f9f1">partiNumberCrush</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keywordtype">void</span> <a class="code" href="tp_8h.html#a4113f16936f7695becf160a8dd5d8566">affichePave</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tp_8h.html#ac112972a185fb734d2dc8080ad336cce">tp</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// TP_H</span></div>
+<div class="ttc" id="acst_8h_html"><div class="ttname"><a href="cst_8h.html">cst.h</a></div></div>
+<div class="ttc" id="acst_8h_html_a7d0c8ee42c07e97113818539b3aa8f49"><div class="ttname"><a href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a></div><div class="ttdeci">const contenueDUneCase KPlusGrandNombreDansLaMatrice</div><div class="ttdoc">valeur maximal que peut prendre le contenu d'un case</div><div class="ttdef"><b>Definition:</b> <a href="cst_8h_source.html#l00071">cst.h:71</a></div></div>
+<div class="ttc" id="atp_8h_html_a0acbde41cd7464a445d8c5adec237847"><div class="ttname"><a href="tp_8h.html#a0acbde41cd7464a445d8c5adec237847">ppalExo03</a></div><div class="ttdeci">int ppalExo03()</div><div class="ttdoc">l'exercice 3 du TP</div><div class="ttdef"><b>Definition:</b> <a href="tp_8cpp_source.html#l00267">tp.cpp:267</a></div></div>
+<div class="ttc" id="atp_8h_html_a138eb63008d4dfb577b4f989ff5fa06f"><div class="ttname"><a href="tp_8h.html#a138eb63008d4dfb577b4f989ff5fa06f">nouvRdm</a></div><div class="ttdeci">unsigned nouvRdm(unsigned &amp;nb, const unsigned &amp;nbMax=KPlusGrandNombreDansLaMatrice)</div><div class="ttdoc">génère un nombre aléatoire entre 1 et nbMax et différent de nb</div><div class="ttdef"><b>Definition:</b> <a href="tp_8cpp_source.html#l00016">tp.cpp:16</a></div></div>
+<div class="ttc" id="atp_8h_html_a13cbf1bb613e280eea9cff3269c1d4ba"><div class="ttname"><a href="tp_8h.html#a13cbf1bb613e280eea9cff3269c1d4ba">detectionExplositionUneBombeVertical</a></div><div class="ttdeci">bool detectionExplositionUneBombeVertical(CMatrice &amp;mat)</div><div class="ttdoc">fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice</div><div class="ttdef"><b>Definition:</b> <a href="tp_8cpp_source.html#l00083">tp.cpp:83</a></div></div>
+<div class="ttc" id="atp_8h_html_a18b5dcac7e2a41b6b06e9c8a1fd3ebce"><div class="ttname"><a href="tp_8h.html#a18b5dcac7e2a41b6b06e9c8a1fd3ebce">detectionExplositionUneBombeHorizontale</a></div><div class="ttdeci">bool detectionExplositionUneBombeHorizontale(CMatrice &amp;mat)</div><div class="ttdoc">fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice</div><div class="ttdef"><b>Definition:</b> <a href="tp_8cpp_source.html#l00051">tp.cpp:51</a></div></div>
+<div class="ttc" id="atp_8h_html_a4113f16936f7695becf160a8dd5d8566"><div class="ttname"><a href="tp_8h.html#a4113f16936f7695becf160a8dd5d8566">affichePave</a></div><div class="ttdeci">void affichePave()</div><div class="ttdoc">affiche un pavé qui explique que choisir</div><div class="ttdef"><b>Definition:</b> <a href="tp_8cpp_source.html#l00335">tp.cpp:335</a></div></div>
+<div class="ttc" id="atp_8h_html_a65812ac24495d4fe16373a9760344759"><div class="ttname"><a href="tp_8h.html#a65812ac24495d4fe16373a9760344759">detectionExplositionBombe</a></div><div class="ttdeci">void detectionExplositionBombe(CMatrice &amp;mat)</div><div class="ttdoc">fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l'aide de...</div><div class="ttdef"><b>Definition:</b> <a href="tp_8cpp_source.html#l00115">tp.cpp:115</a></div></div>
+<div class="ttc" id="atp_8h_html_a69b1c7be084381ade2044cab29998caa"><div class="ttname"><a href="tp_8h.html#a69b1c7be084381ade2044cab29998caa">initMatV2</a></div><div class="ttdeci">void initMatV2(CMatrice &amp;mat, const size_t &amp;nbLignes=10, const size_t &amp;nbColonnes=10, const unsigned &amp;nbMax=KPlusGrandNombreDansLaMatrice)</div><div class="ttdoc">génère une matrice mat de dimension nbLignes x nbColonnes rempli de nombre aléatoire entre 1 et nbMax...</div><div class="ttdef"><b>Definition:</b> <a href="tp_8cpp_source.html#l00029">tp.cpp:29</a></div></div>
+<div class="ttc" id="atp_8h_html_a8470d32123dff01350e8023b58aec437"><div class="ttname"><a href="tp_8h.html#a8470d32123dff01350e8023b58aec437">ppalExo01</a></div><div class="ttdeci">int ppalExo01()</div><div class="ttdoc">l'exercice 1 du TP</div><div class="ttdef"><b>Definition:</b> <a href="tp_8cpp_source.html#l00240">tp.cpp:240</a></div></div>
+<div class="ttc" id="atp_8h_html_a8f92bfd50403b72837d13c807965dce9"><div class="ttname"><a href="tp_8h.html#a8f92bfd50403b72837d13c807965dce9">faitUnMouvementV2</a></div><div class="ttdeci">void faitUnMouvementV2(CMatrice &amp;mat, const char &amp;deplacment, size_t &amp;numLigne, size_t &amp;numCol)</div><div class="ttdoc">procédure permettant au joueur de se déplacer dans la grille et de déplacer l'élément qu'il a sélécti...</div><div class="ttdef"><b>Definition:</b> <a href="tp_8cpp_source.html#l00174">tp.cpp:174</a></div></div>
+<div class="ttc" id="atp_8h_html_a95ae5c4b2659efb4b51d7764384c9a5d"><div class="ttname"><a href="tp_8h.html#a95ae5c4b2659efb4b51d7764384c9a5d">faitUnMouvement</a></div><div class="ttdeci">void faitUnMouvement(CMatrice &amp;mat, const char &amp;deplacment, const size_t &amp;numLigne, const size_t &amp;numCol)</div><div class="ttdoc">procédure permettant au joueur d'échanger 2 éléments dans la grille</div><div class="ttdef"><b>Definition:</b> <a href="tp_8cpp_source.html#l00127">tp.cpp:127</a></div></div>
+<div class="ttc" id="atp_8h_html_abf4c7f37019ca794033d59caaf040c79"><div class="ttname"><a href="tp_8h.html#abf4c7f37019ca794033d59caaf040c79">ppalExo04</a></div><div class="ttdeci">int ppalExo04()</div><div class="ttdoc">l'exercice 4 du TP</div><div class="ttdef"><b>Definition:</b> <a href="tp_8cpp_source.html#l00282">tp.cpp:282</a></div></div>
+<div class="ttc" id="atp_8h_html_ac112972a185fb734d2dc8080ad336cce"><div class="ttname"><a href="tp_8h.html#ac112972a185fb734d2dc8080ad336cce">tp</a></div><div class="ttdeci">int tp()</div><div class="ttdoc">permet de tester les exos et une version primitive de number crush</div><div class="ttdef"><b>Definition:</b> <a href="tp_8cpp_source.html#l00352">tp.cpp:352</a></div></div>
+<div class="ttc" id="atp_8h_html_ac708bb351d226e55aefc761764cfb632"><div class="ttname"><a href="tp_8h.html#ac708bb351d226e55aefc761764cfb632">ppalExo02</a></div><div class="ttdeci">int ppalExo02()</div><div class="ttdoc">l'exercice 2 du TP</div><div class="ttdef"><b>Definition:</b> <a href="tp_8cpp_source.html#l00253">tp.cpp:253</a></div></div>
+<div class="ttc" id="atp_8h_html_aee862f9d90140261900a2a815288f9f1"><div class="ttname"><a href="tp_8h.html#aee862f9d90140261900a2a815288f9f1">partiNumberCrush</a></div><div class="ttdeci">int partiNumberCrush()</div><div class="ttdoc">gère une parti de number crush dans le terminal</div><div class="ttdef"><b>Definition:</b> <a href="tp_8cpp_source.html#l00311">tp.cpp:311</a></div></div>
+<div class="ttc" id="atype_8h_html_a37304a67fccb047666efd38e9c84d9bf"><div class="ttname"><a href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a></div><div class="ttdeci">std::vector&lt; CVLigne &gt; CMatrice</div><div class="ttdoc">définition d'une grille</div><div class="ttdef"><b>Definition:</b> <a href="type_8h_source.html#l00037">type.h:37</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e37bb96bd9fccb878c1d62062fc8f7a5.html">SAECandyCrush</a></li><li class="navelem"><a class="el" href="tp_8h.html">tp.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

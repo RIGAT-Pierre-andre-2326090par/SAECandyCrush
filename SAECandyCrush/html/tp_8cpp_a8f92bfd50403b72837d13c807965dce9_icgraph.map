@@ -1,0 +1,5 @@
+<map id="faitUnMouvementV2" name="faitUnMouvementV2">
+<area shape="rect" id="node1" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="281,5,439,32"/>
+<area shape="rect" id="node2" href="$tp_8cpp.html#aee862f9d90140261900a2a815288f9f1" title="gère une parti de number crush dans le terminal" alt="" coords="92,5,233,32"/>
+<area shape="rect" id="node3" href="$tp_8cpp.html#ac112972a185fb734d2dc8080ad336cce" title="permet de tester les exos et une version primitive de number crush" alt="" coords="5,5,44,32"/>
+</map>

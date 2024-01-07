@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('gestionpartie_8cpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_e37bb96bd9fccb878c1d62062fc8f7a5.html">SAECandyCrush</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Fonctions</a>  </div>
@@ -74,23 +90,17 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
-<code>#include &lt;<a class="el" href="type_8h_source.html">type.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="cst_8h_source.html">cst.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="affichage_8h_source.html">affichage.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de gestionpartie.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="gestionpartie_8cpp__incl.png" border="0" usemap="#a_s_a_e_candy_crush_2gestionpartie_8cpp" alt=""/></div>
 <map name="a_s_a_e_candy_crush_2gestionpartie_8cpp" id="a_s_a_e_candy_crush_2gestionpartie_8cpp">
-<area shape="rect" title=" " alt="" coords="100,5,343,32"/>
+<area shape="rect" title=" " alt="" coords="25,5,268,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,85,107"/>
 <area shape="rect" title=" " alt="" coords="110,80,183,107"/>
-<area shape="rect" href="type_8h.html" title=" " alt="" coords="258,229,321,256"/>
-<area shape="rect" href="cst_8h.html" title=" " alt="" coords="263,155,316,181"/>
-<area shape="rect" href="affichage_8h.html" title=" " alt="" coords="310,80,405,107"/>
-<area shape="rect" title=" " alt="" coords="175,304,233,331"/>
-<area shape="rect" title=" " alt="" coords="258,304,321,331"/>
-<area shape="rect" title=" " alt="" coords="345,304,396,331"/>
+<area shape="rect" href="affichage_8h.html" title=" " alt="" coords="207,80,302,107"/>
+<area shape="rect" href="cst_8h.html" title=" " alt="" coords="228,155,281,181"/>
 </map>
 </div>
 </div>
@@ -101,6 +111,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a04499e810295a8506131a7b912017990"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestionpartie_8cpp.html#a04499e810295a8506131a7b912017990">initParams</a> (<a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;param)</td></tr>
 <tr class="memdesc:a04499e810295a8506131a7b912017990"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure initialisant les paramètres du joueur au sein du jeu  <a href="gestionpartie_8cpp.html#a04499e810295a8506131a7b912017990">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a04499e810295a8506131a7b912017990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a295bf4a9119ccb6bfe2aac2f0a463563"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestionpartie_8cpp.html#a295bf4a9119ccb6bfe2aac2f0a463563">strSansDeuxPts</a> (const string &amp;str)</td></tr>
+<tr class="memdesc:a295bf4a9119ccb6bfe2aac2f0a463563"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure permettande d'enlever le caractère ':' d'une chaine de caractère passer en paramètre  <a href="gestionpartie_8cpp.html#a295bf4a9119ccb6bfe2aac2f0a463563">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a295bf4a9119ccb6bfe2aac2f0a463563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84f6ce81485253e1ddad16d51f965f62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestionpartie_8cpp.html#a84f6ce81485253e1ddad16d51f965f62">chargerParametre</a> (<a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;params, const string &amp;fichier)</td></tr>
 <tr class="memdesc:a84f6ce81485253e1ddad16d51f965f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml  <a href="gestionpartie_8cpp.html#a84f6ce81485253e1ddad16d51f965f62">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a84f6ce81485253e1ddad16d51f965f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,9 +183,27 @@ Fonctions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
+<dl class="section author"><dt>Auteurs</dt><dd>A.Casali, P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00056">56</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00058">58</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="gestionpartie_8cpp_a84f6ce81485253e1ddad16d51f965f62_cgraph.png" border="0" usemap="#agestionpartie_8cpp_a84f6ce81485253e1ddad16d51f965f62_cgraph" alt=""/></div>
+<map name="agestionpartie_8cpp_a84f6ce81485253e1ddad16d51f965f62_cgraph" id="agestionpartie_8cpp_a84f6ce81485253e1ddad16d51f965f62_cgraph">
+<area shape="rect" title="procédure permettant de charger les paramètres de jeu d&#39;un joueur depuis un fichier yaml" alt="" coords="5,5,144,32"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a295bf4a9119ccb6bfe2aac2f0a463563" title="procédure permettande d&#39;enlever le caractère &#39;:&#39; d&#39;une chaine de caractère passer en paramètre" alt="" coords="192,5,316,32"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="gestionpartie_8cpp_a84f6ce81485253e1ddad16d51f965f62_icgraph.png" border="0" usemap="#agestionpartie_8cpp_a84f6ce81485253e1ddad16d51f965f62_icgraph" alt=""/></div>
+<map name="agestionpartie_8cpp_a84f6ce81485253e1ddad16d51f965f62_icgraph" id="agestionpartie_8cpp_a84f6ce81485253e1ddad16d51f965f62_icgraph">
+<area shape="rect" title="procédure permettant de charger les paramètres de jeu d&#39;un joueur depuis un fichier yaml" alt="" coords="108,5,247,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -227,7 +258,7 @@ Fonctions</h2></td></tr>
 <dl class="section return"><dt>Renvoie</dt><dd>true si il y a eu au moins une explosion vertical ou horizontal, false sinon </dd></dl>
 <dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00273">273</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00290">290</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -296,7 +327,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <dl class="section return"><dt>Renvoie</dt><dd>true si il y a au moins une explosion, false sinon </dd></dl>
 <dl class="section author"><dt>Auteurs</dt><dd>A.Casali, P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00148">148</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00165">165</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -360,7 +391,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <dl class="section return"><dt>Renvoie</dt><dd>true si il y a au moins un explosion, false sinon </dd></dl>
 <dl class="section author"><dt>Auteurs</dt><dd>P-A.Rigat, A.Nurdin </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00198">198</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00215">215</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -437,7 +468,7 @@ Voici le graphe des appelants de cette fonction :</div>
 </dl>
 <dl class="section author"><dt>Auteur</dt><dd>A.Casali </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00131">131</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00148">148</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -501,15 +532,17 @@ Voici le graphe des appelants de cette fonction :</div>
 </dl>
 <dl class="section author"><dt>Auteurs</dt><dd>P-A.Rigat, A.Nurdin </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00183">183</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00200">200</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="gestionpartie_8cpp_a8bd751d220569d601afc2200b0378423_icgraph.png" border="0" usemap="#agestionpartie_8cpp_a8bd751d220569d601afc2200b0378423_icgraph" alt=""/></div>
 <map name="agestionpartie_8cpp_a8bd751d220569d601afc2200b0378423_icgraph" id="agestionpartie_8cpp_a8bd751d220569d601afc2200b0378423_icgraph">
-<area shape="rect" title="procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre..." alt="" coords="529,13,752,39"/>
-<area shape="rect" href="gestionpartie_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="255,5,481,47"/>
-<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,13,207,39"/>
+<area shape="rect" title="procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre..." alt="" coords="529,46,752,73"/>
+<area shape="rect" href="tp_8cpp.html#a13cbf1bb613e280eea9cff3269c1d4ba" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="255,5,481,47"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="255,71,481,112"/>
+<area shape="rect" href="tp_8cpp.html#a65812ac24495d4fe16373a9760344759" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,13,207,39"/>
+<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,78,207,105"/>
 </map>
 </div>
 
@@ -577,7 +610,7 @@ Voici le graphe des appelants de cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00293">293</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00308">308</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -642,7 +675,7 @@ Voici le graphe des appelants de cette fonction :</div>
 </dl>
 <dl class="section author"><dt>Auteurs</dt><dd>A.Casali, P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00105">105</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00122">122</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -657,13 +690,18 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="gestionpartie_8cpp_a97e00921cf09bf25414e22954db96866_icgraph.png" border="0" usemap="#agestionpartie_8cpp_a97e00921cf09bf25414e22954db96866_icgraph" alt=""/></div>
 <map name="agestionpartie_8cpp_a97e00921cf09bf25414e22954db96866_icgraph" id="agestionpartie_8cpp_a97e00921cf09bf25414e22954db96866_icgraph">
-<area shape="rect" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="308,107,376,133"/>
+<area shape="rect" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="497,208,565,235"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,5,249,32"/>
 <area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,56,247,83"/>
 <area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,107,251,133"/>
 <area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,157,260,184"/>
-<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,208,255,235"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,107,60,133"/>
+<area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="308,208,449,235"/>
+<area shape="rect" href="tp_8cpp.html#a8470d32123dff01350e8023b58aec437" title="l&#39;exercice 1 du TP" alt="" coords="334,259,423,285"/>
+<area shape="rect" href="tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="334,309,423,336"/>
+<area shape="rect" href="tp_8cpp.html#a0acbde41cd7464a445d8c5adec237847" title="l&#39;exercice 3 du TP" alt="" coords="334,360,423,387"/>
+<area shape="rect" href="tp_8cpp.html#abf4c7f37019ca794033d59caaf040c79" title="l&#39;exercice 4 du TP" alt="" coords="334,411,423,437"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,132,60,159"/>
+<area shape="rect" href="tp_8cpp.html#ac112972a185fb734d2dc8080ad336cce" title="permet de tester les exos et une version primitive de number crush" alt="" coords="165,309,203,336"/>
 </map>
 </div>
 
@@ -694,7 +732,7 @@ Voici le graphe des appelants de cette fonction :</div>
 </dl>
 <dl class="section author"><dt>Auteurs</dt><dd>A.Casali, P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00015">15</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00013">13</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -751,19 +789,23 @@ Voici le graphe des appelants de cette fonction :</div>
 <dl class="section return"><dt>Renvoie</dt><dd>rdm: nombre aléatoire entre 1 et nbMax différent de nb1 et nb2 </dd></dl>
 <dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00090">90</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00107">107</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="gestionpartie_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph.png" border="0" usemap="#agestionpartie_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph" alt=""/></div>
 <map name="agestionpartie_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph" id="agestionpartie_8cpp_a3ee2be2606da0dfc9951f36b245a88b8_icgraph">
-<area shape="rect" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="321,107,405,133"/>
-<area shape="rect" href="gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="205,107,273,133"/>
+<area shape="rect" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="321,208,405,235"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="205,208,273,235"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
 <area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,56,144,83"/>
 <area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,107,148,133"/>
 <area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,157,157,184"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,208,152,235"/>
+<area shape="rect" href="tp_8cpp.html#a8470d32123dff01350e8023b58aec437" title="l&#39;exercice 1 du TP" alt="" coords="37,259,126,285"/>
+<area shape="rect" href="tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="37,309,126,336"/>
+<area shape="rect" href="tp_8cpp.html#a0acbde41cd7464a445d8c5adec237847" title="l&#39;exercice 3 du TP" alt="" coords="37,360,126,387"/>
+<area shape="rect" href="tp_8cpp.html#abf4c7f37019ca794033d59caaf040c79" title="l&#39;exercice 4 du TP" alt="" coords="37,411,126,437"/>
 </map>
 </div>
 
@@ -812,7 +854,7 @@ Voici le graphe des appelants de cette fonction :</div>
 </dl>
 <dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00232">232</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00249">249</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -825,6 +867,46 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,107,148,133"/>
 <area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,157,157,184"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,208,152,235"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a295bf4a9119ccb6bfe2aac2f0a463563"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a295bf4a9119ccb6bfe2aac2f0a463563">&#9670;&nbsp;</a></span>strSansDeuxPts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string strSansDeuxPts </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>procédure permettande d'enlever le caractère ':' d'une chaine de caractère passer en paramètre </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>chaine de caractère à traiter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>la chaine de caractère sans le caractère ':' </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00045">45</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="gestionpartie_8cpp_a295bf4a9119ccb6bfe2aac2f0a463563_icgraph.png" border="0" usemap="#agestionpartie_8cpp_a295bf4a9119ccb6bfe2aac2f0a463563_icgraph" alt=""/></div>
+<map name="agestionpartie_8cpp_a295bf4a9119ccb6bfe2aac2f0a463563_icgraph" id="agestionpartie_8cpp_a295bf4a9119ccb6bfe2aac2f0a463563_icgraph">
+<area shape="rect" title="procédure permettande d&#39;enlever le caractère &#39;:&#39; d&#39;une chaine de caractère passer en paramètre" alt="" coords="295,5,419,32"/>
+<area shape="rect" href="gestionpartie_8cpp.html#a84f6ce81485253e1ddad16d51f965f62" title="procédure permettant de charger les paramètres de jeu d&#39;un joueur depuis un fichier yaml" alt="" coords="108,5,247,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -867,16 +949,16 @@ Voici le graphe des appelants de cette fonction :</div>
 <dl class="section return"><dt>Renvoie</dt><dd>true si un ou plusieurs élément on été déplacé, false sinon </dd></dl>
 <dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00251">251</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00268">268</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="gestionpartie_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph.png" border="0" usemap="#agestionpartie_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph" alt=""/></div>
 <map name="agestionpartie_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph" id="agestionpartie_8cpp_ae3c472825f8e1704d249cae90b350d54_icgraph">
-<area shape="rect" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="455,107,575,133"/>
-<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,107,407,133"/>
-<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
+<area shape="rect" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="455,157,575,184"/>
+<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,120,407,147"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,208,152,235"/>
+<area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
 <area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,56,144,83"/>
 <area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,107,148,133"/>
 <area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,157,157,184"/>
@@ -886,9 +968,13 @@ Voici le graphe des appelants de cette fonction :</div>
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e37bb96bd9fccb878c1d62062fc8f7a5.html">SAECandyCrush</a></li><li class="navelem"><a class="el" href="gestionpartie_8cpp.html">gestionpartie.cpp</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

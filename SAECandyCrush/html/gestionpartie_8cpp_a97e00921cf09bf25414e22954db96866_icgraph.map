@@ -1,9 +1,14 @@
 <map id="initMat" name="initMat">
-<area shape="rect" id="node1" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="308,107,376,133"/>
+<area shape="rect" id="node1" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="497,208,565,235"/>
 <area shape="rect" id="node2" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,5,249,32"/>
 <area shape="rect" id="node4" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,56,247,83"/>
 <area shape="rect" id="node5" href="$main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,107,251,133"/>
 <area shape="rect" id="node6" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,157,260,184"/>
-<area shape="rect" id="node7" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,208,255,235"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,107,60,133"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="308,208,449,235"/>
+<area shape="rect" id="node8" href="$tp_8cpp.html#a8470d32123dff01350e8023b58aec437" title="l&#39;exercice 1 du TP" alt="" coords="334,259,423,285"/>
+<area shape="rect" id="node10" href="$tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="334,309,423,336"/>
+<area shape="rect" id="node11" href="$tp_8cpp.html#a0acbde41cd7464a445d8c5adec237847" title="l&#39;exercice 3 du TP" alt="" coords="334,360,423,387"/>
+<area shape="rect" id="node12" href="$tp_8cpp.html#abf4c7f37019ca794033d59caaf040c79" title="l&#39;exercice 4 du TP" alt="" coords="334,411,423,437"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,132,60,159"/>
+<area shape="rect" id="node9" href="$tp_8cpp.html#ac112972a185fb734d2dc8080ad336cce" title="permet de tester les exos et une version primitive de number crush" alt="" coords="165,309,203,336"/>
 </map>

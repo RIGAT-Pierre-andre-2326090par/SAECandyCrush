@@ -1,0 +1,4 @@
+<map id="initMatV2" name="initMatV2">
+<area shape="rect" id="node1" title="génère une matrice mat de dimension nbLignes x nbColonnes rempli de nombre aléatoire entre 1 et nbMax..." alt="" coords="5,5,91,32"/>
+<area shape="rect" id="node2" href="$tp_8cpp.html#a138eb63008d4dfb577b4f989ff5fa06f" title="génère un nombre aléatoire entre 1 et nbMax et différent de nb" alt="" coords="139,5,223,32"/>
+</map>
