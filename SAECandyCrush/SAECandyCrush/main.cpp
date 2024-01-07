@@ -533,30 +533,13 @@ int main() {
     while (true) {
         cin >> select;
         if (select == -1) break;
-        else if (select == 0) {
-            partiNumberCrush();
-            clearScreen();
-        }
-        else if (select == 1) {
-            ppalExo01();
-            clearScreen();
-        }
-        else if (select == 2) {
-            ppalExo02();
-            clearScreen();
-        }
-        else if (select == 3) {
-            ppalExo03();
-            clearScreen();
-        }
-        else if (select == 4) {
-            ppalExo04();
-            clearScreen();
-        }
-        else {
-            clearScreen();
-            cout << "oops" << endl;
-        }
+        else if (select == 0) partiNumberCrush();
+        else if (select == 1) ppalExo01();
+        else if (select == 2) ppalExo02();
+        else if (select == 3) ppalExo03();
+        else if (select == 4) ppalExo04();
+        else cout << "oops" << endl;
+        //clearScreen();
         affichePave();
     }
     return 0;
