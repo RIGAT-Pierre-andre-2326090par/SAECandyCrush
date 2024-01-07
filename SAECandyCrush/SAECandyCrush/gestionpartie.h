@@ -12,10 +12,18 @@
 void initParams (CMyParam & param);
 
 /**
+ * @brief procédure permettande d'enlever le caractère ':' d'une chaine de caractère passer en paramètre
+ * @param str: chaine de caractère à traiter
+ * @return la chaine de caractère sans le caractère ':'
+ * @author P-A.Rigat
+ */
+std::string strSansDeuxPts (const std::string & str);
+
+/**
  * @brief procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml
  * @param params: structure de variable gérer par la fonction main
  * @param fichier: chemin du fichier yaml cible
- * @author A.Casali
+ * @authors A.Casali, P-A.Rigat
  */
 void chargerParametre(CMyParam & params, const std::string & fichier);
 

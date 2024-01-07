@@ -25,56 +25,75 @@ void initParams (CMyParam & param)
     param.mapParamChar["toucheDroiteHaut"] = 'e';
     param.mapParamChar["toucheSelect"] = 's';
 
-    //taille de la grille - on suppose que c'est un rectangle
-    param.mapParamUnsigned["nbColonnes"] = 10;
-    param.mapParamUnsigned["nbLignes"] = 10;
-
-    //quelque variable utile
-    param.mapParamUnsigned["nbMax"] = 5;
-    param.mapParamUnsigned["scoreMax"] = 150;
-    param.mapParamUnsigned["deplacementMax"] = 15;
-
     // variable limitant le nombre de niveaux
     param.mapParamUnsigned["nbNiveaux"] = 16;
 
     //taille de la grille pour chaque niveau
-    param.mapParamVecUnsigned["nbColonnes"] = {10, 8, 10, 8, 9, 7, 9, 7, 6, 5, 6, 6, 4, 3, 4, 3};
-    param.mapParamVecUnsigned["nbLignes"] = {10, 10, 8, 8, 9, 9, 7, 7, 6, 6, 5, 5, 4, 4, 3, 3};
+    param.mapParamVecUnsigned["nbColonnesV"] = {10, 8, 10, 8, 9, 7, 9, 7, 6, 5, 6, 6, 4, 3, 4, 3};
+    param.mapParamVecUnsigned["nbLignesV"] = {10, 10, 8, 8, 9, 9, 7, 7, 6, 6, 5, 5, 4, 4, 3, 3};
 
     //des variables utiles pour chaque niveau
-    param.mapParamVecUnsigned["nbMax"] = {5, 4, 3, 2, 5, 4, 3, 2, 5, 4, 3, 2, 5, 4, 3, 2};
-    param.mapParamVecUnsigned["scoreMax"] = {150, 200, 200, 250, 250, 300, 300, 350, 350, 400, 400, 450, 450, 500, 500, 550, 550, 600};
-    param.mapParamVecUnsigned["deplacementMax"] = {15, 14, 12, 13, 11, 10, 8, 9, 7, 7, 6, 6, 6, 5, 5, 4};
+    param.mapParamVecUnsigned["nbMaxV"] = {5, 4, 3, 2, 5, 4, 3, 2, 5, 4, 3, 2, 5, 4, 3, 2};
+    param.mapParamVecUnsigned["scoreMaxV"] = {150, 200, 200, 250, 250, 300, 300, 350, 350, 400, 400, 450, 450, 500, 500, 550, 550, 600};
+    param.mapParamVecUnsigned["deplacementMaxV"] = {15, 14, 12, 13, 11, 10, 8, 9, 7, 7, 6, 6, 6, 5, 5, 4};
+}
+
+/**
+ * @brief procédure permettande d'enlever le caractère ':' d'une chaine de caractère passer en paramètre
+ * @param str: chaine de caractère à traiter
+ * @return la chaine de caractère sans le caractère ':'
+ * @author P-A.Rigat
+ */
+string strSansDeuxPts(const string & str) {
+    string tmp;
+    for (unsigned i = 0 ; i < str.size() ; ++i)
+        if (str[i] != ':') tmp.push_back(str[i]);
+    return tmp;
 }
 
 /**
  * @brief procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml
  * @param params: structure de variable gérer par la fonction main
  * @param fichier: chemin du fichier yaml cible
- * @author A.Casali
+ * @authors A.Casali, P-A.Rigat
  */
 void chargerParametre(CMyParam & params, const string & fichier){
     ifstream ifs (fichier);
     if (!ifs) return;
     string cle;
     while (ifs>>cle){
+        cle = strSansDeuxPts(cle);
         if(params.mapParamUnsigned.find(cle) != params.mapParamUnsigned.end()){
-            char deuxPts;
-            ifs >> deuxPts;
             unsigned val;
             ifs >> val;
             params.mapParamUnsigned[cle]=val;
+            cout << cle << ": " << val << endl;
         }
         else if (params.mapParamChar.find(cle) != params.mapParamChar.end()){
-            char deuxPts;
-            ifs >> deuxPts;
             char val;
             ifs >> val;
             params.mapParamChar[cle]=val;
+            cout << cle << ": " << val << endl;
+        }
+        else if (params.mapParamVecUnsigned.find(cle) != params.mapParamVecUnsigned.end()){
+            vector <unsigned> val;
+            string valTmp;
+            string tmp;
+            getline(ifs,tmp);
+            for (unsigned i = 0; i < tmp.size(); ++i){
+                if (tmp[i] >= 48 && tmp[i] <= 57) valTmp.push_back(tmp[i]);
+                else if (tmp[i] == ',') {
+                    val.push_back(stoul(valTmp));
+                    valTmp = "";
+                }
+            }
+            params.mapParamVecUnsigned[cle] = val;
+            cout << cle << ": " << val[0] << "...(vec)" << endl;
         }
         else {
             string tmp;
             getline(ifs, tmp);
+            cout << tmp << "(marche pas)" << endl;
         }
     }
 }

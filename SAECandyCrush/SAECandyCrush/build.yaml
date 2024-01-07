@@ -8,9 +8,11 @@ toucheBasDroite: c
 toucheDroiteHaut: e
 toucheSelect: s
 
-nbLignes: 10
-nbColonnes: 10
+nbNiveaux: 16
 
-nbMax: 5
-scoreMax: 400
-deplacementMax: 15
+nbColonnesV: {9, 8, 10, 8, 9, 7, 9, 7, 6, 5, 6, 6, 4, 3, 4, 3}
+nbLignesV: {9, 10, 8, 8, 9, 9, 7, 7, 6, 6, 5, 5, 4, 4, 3, 3}
+
+nbMaxV: {5, 4, 3, 5, 4, 3, 5, 4, 3, 5, 4, 3, 5, 4, 3, 5}
+scoreMaxV: {100, 200, 200, 250, 250, 300, 300, 350, 350, 400, 400, 450, 450, 500, 500, 550, 550, 600}
+deplacementMaxV: {20, 14, 12, 13, 11, 10, 8, 9, 7, 7, 6, 6, 6, 5, 5, 4}
