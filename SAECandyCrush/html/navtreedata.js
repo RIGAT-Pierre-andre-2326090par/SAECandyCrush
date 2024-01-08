@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "SAECandyCrush", "index.html", [
+    [ "Liste des bogues", "bug.html", null ],
     [ "Classes", "annotated.html", [
       [ "Liste des classes", "annotated.html", "annotated_dup" ],
       [ "Index des classes", "classes.html", null ],

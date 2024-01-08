@@ -1,5 +1,5 @@
 <map id="afficheMatriceV1" name="afficheMatriceV1">
-<area shape="rect" id="node1" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="529,128,661,155"/>
+<area shape="rect" id="node1" title="Affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="529,128,661,155"/>
 <area shape="rect" id="node2" href="$tp_8cpp.html#a18b5dcac7e2a41b6b06e9c8a1fd3ebce" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="255,91,481,133"/>
 <area shape="rect" id="node5" href="$tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="61,157,151,184"/>
 <area shape="rect" id="node6" href="$tp_8cpp.html#a0acbde41cd7464a445d8c5adec237847" title="l&#39;exercice 3 du TP" alt="" coords="61,208,151,235"/>

@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,57,207,84"/>
 <area shape="rect" id="node2" href="$tp_8cpp.html#a18b5dcac7e2a41b6b06e9c8a1fd3ebce" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="255,17,481,58"/>
 <area shape="rect" id="node5" href="$tp_8cpp.html#a13cbf1bb613e280eea9cff3269c1d4ba" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="255,82,481,123"/>
-<area shape="rect" id="node3" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="584,56,716,83"/>
+<area shape="rect" id="node3" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="Affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="584,56,716,83"/>
 <area shape="rect" id="node4" href="$gestionpartie_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3" title="procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nomb..." alt="" coords="529,5,771,32"/>
 <area shape="rect" id="node6" href="$gestionpartie_8cpp.html#a8bd751d220569d601afc2200b0378423" title="procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre..." alt="" coords="539,107,761,133"/>
 </map>

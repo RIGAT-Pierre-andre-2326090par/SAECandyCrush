@@ -1,5 +1,5 @@
 <map id="afficheMatriceV0" name="afficheMatriceV0">
-<area shape="rect" id="node1" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="229,5,361,32"/>
+<area shape="rect" id="node1" title="Affichage de la matrice avec une couleur différente pour chaque nombre." alt="" coords="229,5,361,32"/>
 <area shape="rect" id="node2" href="$tp_8cpp.html#a8470d32123dff01350e8023b58aec437" title="l&#39;exercice 1 du TP" alt="" coords="92,5,181,32"/>
 <area shape="rect" id="node3" href="$tp_8cpp.html#ac112972a185fb734d2dc8080ad336cce" title="permet de tester les exos et une version primitive de number crush" alt="" coords="5,5,44,32"/>
 </map>

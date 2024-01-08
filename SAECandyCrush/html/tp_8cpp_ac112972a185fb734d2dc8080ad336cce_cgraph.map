@@ -6,13 +6,13 @@
 <area shape="rect" id="node12" href="$tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="118,273,207,300"/>
 <area shape="rect" id="node13" href="$tp_8cpp.html#a0acbde41cd7464a445d8c5adec237847" title="l&#39;exercice 3 du TP" alt="" coords="118,219,207,245"/>
 <area shape="rect" id="node14" href="$tp_8cpp.html#abf4c7f37019ca794033d59caaf040c79" title="l&#39;exercice 4 du TP" alt="" coords="118,376,207,403"/>
-<area shape="rect" id="node4" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="329,5,461,32"/>
+<area shape="rect" id="node4" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="Affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="329,5,461,32"/>
 <area shape="rect" id="node5" href="$tp_8cpp.html#a18b5dcac7e2a41b6b06e9c8a1fd3ebce" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="281,209,508,250"/>
 <area shape="rect" id="node7" href="$tp_8cpp.html#a8f92bfd50403b72837d13c807965dce9" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="316,56,473,83"/>
 <area shape="rect" id="node8" href="$tp_8cpp.html#a69b1c7be084381ade2044cab29998caa" title="génère une matrice mat de dimension nbLignes x nbColonnes rempli de nombre aléatoire entre 1 et nbMax..." alt="" coords="352,107,437,133"/>
-<area shape="rect" id="node6" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="556,216,688,243"/>
-<area shape="rect" id="node10" href="$affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="329,376,461,403"/>
+<area shape="rect" id="node6" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="Affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="556,216,688,243"/>
+<area shape="rect" id="node10" href="$affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="Affichage de la matrice avec une couleur différente pour chaque nombre." alt="" coords="329,376,461,403"/>
 <area shape="rect" id="node11" href="$gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="361,325,429,352"/>
-<area shape="rect" id="node15" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="329,427,461,453"/>
+<area shape="rect" id="node15" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="Affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="329,427,461,453"/>
 <area shape="rect" id="node16" href="$tp_8cpp.html#a95ae5c4b2659efb4b51d7764384c9a5d" title="procédure permettant au joueur d&#39;échanger 2 éléments dans la grille" alt="" coords="325,477,465,504"/>
 </map>

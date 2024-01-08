@@ -1,12 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "_acdefgikmnprstz",
+  0: "_acdefgiklmnprstz",
   1: "cp",
   2: "acgmt",
   3: "acdefikmnprstz",
   4: "_km",
   5: "c",
-  6: "f"
+  6: "f",
+  7: "l"
 };
 
 var indexSectionNames =
@@ -17,7 +18,8 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "typedefs",
-  6: "defines"
+  6: "defines",
+  7: "pages"
 };
 
 var indexSectionLabels =
@@ -28,6 +30,7 @@ var indexSectionLabels =
   3: "Fonctions",
   4: "Variables",
   5: "Définitions de type",
-  6: "Macros"
+  6: "Macros",
+  7: "Pages"
 };
 

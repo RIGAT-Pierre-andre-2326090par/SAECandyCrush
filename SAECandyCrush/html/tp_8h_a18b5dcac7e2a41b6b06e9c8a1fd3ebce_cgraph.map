@@ -1,9 +1,9 @@
 <map id="detectionExplositionUneBombeHorizontale" name="detectionExplositionUneBombeHorizontale">
 <area shape="rect" id="node1" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="5,251,232,293"/>
-<area shape="rect" id="node2" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="335,233,467,260"/>
+<area shape="rect" id="node2" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="Affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="335,233,467,260"/>
 <area shape="rect" id="node13" href="$gestionpartie_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3" title="procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nomb..." alt="" coords="280,284,521,311"/>
-<area shape="rect" id="node3" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="569,5,668,32"/>
-<area shape="rect" id="node4" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="applique la couleur donné à une partie du terminal" alt="" coords="583,56,654,83"/>
+<area shape="rect" id="node3" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="Remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ait été effacé" alt="" coords="569,5,668,32"/>
+<area shape="rect" id="node4" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="Applique la couleur donnée à une partie du terminal." alt="" coords="583,56,654,83"/>
 <area shape="rect" id="node5" href="$cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="589,107,649,133"/>
 <area shape="rect" id="node6" href="$cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="587,157,650,184"/>
 <area shape="rect" id="node7" href="$cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="585,208,652,235"/>

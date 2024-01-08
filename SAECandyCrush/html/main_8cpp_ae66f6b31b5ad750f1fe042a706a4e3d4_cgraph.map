@@ -1,22 +1,22 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,259,60,285"/>
-<area shape="rect" id="node2" href="$gestionpartie_8cpp.html#a84f6ce81485253e1ddad16d51f965f62" title="procédure permettant de charger les paramètres de jeu d&#39;un joueur depuis un fichier yaml" alt="" coords="115,31,253,57"/>
-<area shape="rect" id="node4" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="557,360,656,387"/>
-<area shape="rect" id="node5" href="$gestionpartie_8cpp.html#a04499e810295a8506131a7b912017990" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="139,563,229,589"/>
+<area shape="rect" id="node1" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,309,60,336"/>
+<area shape="rect" id="node2" href="$gestionpartie_8cpp.html#a84f6ce81485253e1ddad16d51f965f62" title="procédure permettant de charger les paramètres de jeu d&#39;un joueur depuis un fichier yaml" alt="" coords="115,56,253,83"/>
+<area shape="rect" id="node4" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="Remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ait été effacé" alt="" coords="557,411,656,437"/>
+<area shape="rect" id="node5" href="$gestionpartie_8cpp.html#a04499e810295a8506131a7b912017990" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="139,715,229,741"/>
 <area shape="rect" id="node6" href="$main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,157,249,184"/>
-<area shape="rect" id="node11" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,309,247,336"/>
-<area shape="rect" id="node17" href="$main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,208,251,235"/>
-<area shape="rect" id="node18" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,259,260,285"/>
-<area shape="rect" id="node19" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,107,255,133"/>
-<area shape="rect" id="node20" href="$tp_8cpp.html#ac112972a185fb734d2dc8080ad336cce" title="permet de tester les exos et une version primitive de number crush" alt="" coords="165,613,203,640"/>
+<area shape="rect" id="node11" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,360,247,387"/>
+<area shape="rect" id="node17" href="$main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,259,251,285"/>
+<area shape="rect" id="node18" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,309,260,336"/>
+<area shape="rect" id="node19" href="$main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,208,255,235"/>
+<area shape="rect" id="node20" href="$tp_8cpp.html#ac112972a185fb734d2dc8080ad336cce" title="permet de tester les exos et une version primitive de number crush" alt="" coords="165,765,203,792"/>
 <area shape="rect" id="node3" href="$gestionpartie_8cpp.html#a295bf4a9119ccb6bfe2aac2f0a463563" title="procédure permettande d&#39;enlever le caractère &#39;:&#39; d&#39;une chaine de caractère passer en paramètre" alt="" coords="347,5,471,32"/>
-<area shape="rect" id="node7" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="343,208,475,235"/>
+<area shape="rect" id="node7" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="Affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="343,56,475,83"/>
 <area shape="rect" id="node8" href="$gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="308,157,509,184"/>
-<area shape="rect" id="node9" href="$gestionpartie_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="339,56,479,83"/>
-<area shape="rect" id="node10" href="$gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="375,107,443,133"/>
+<area shape="rect" id="node9" href="$gestionpartie_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="339,107,479,133"/>
+<area shape="rect" id="node10" href="$gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="375,208,443,235"/>
 <area shape="rect" id="node12" href="$affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="362,309,455,336"/>
-<area shape="rect" id="node13" href="$affichagemingl_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6" title="dessine un cercle de couleur rouge avec comme origine x, y" alt="" coords="349,360,468,387"/>
-<area shape="rect" id="node14" href="$affichagemingl_8cpp.html#ac46cbc355388b953335699211b70d29f" title="dessine une croix de couleur jaune avec comme origine x, y" alt="" coords="353,411,464,437"/>
-<area shape="rect" id="node15" href="$affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="345,259,472,285"/>
-<area shape="rect" id="node16" href="$affichagemingl_8cpp.html#aa3e6cb35e5e996580a5dac2320fdb09d" title="dessine une étoile de couleur violette avec comme origine x, y" alt="" coords="351,461,466,488"/>
+<area shape="rect" id="node13" href="$affichagemingl_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6" title="dessine un cercle de couleur rouge avec comme origine x, y" alt="" coords="349,512,468,539"/>
+<area shape="rect" id="node14" href="$affichagemingl_8cpp.html#ac46cbc355388b953335699211b70d29f" title="dessine une croix de couleur jaune avec comme origine x, y" alt="" coords="353,563,464,589"/>
+<area shape="rect" id="node15" href="$affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="345,360,472,387"/>
+<area shape="rect" id="node16" href="$affichagemingl_8cpp.html#aa3e6cb35e5e996580a5dac2320fdb09d" title="dessine une étoile de couleur violette avec comme origine x, y" alt="" coords="351,613,466,640"/>
 </map>

@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['tp_80',['tp',['../tp_8cpp.html#ac112972a185fb734d2dc8080ad336cce',1,'tp():&#160;tp.cpp'],['../tp_8h.html#ac112972a185fb734d2dc8080ad336cce',1,'tp():&#160;tp.cpp']]],
-  ['tp_2ecpp_81',['tp.cpp',['../tp_8cpp.html',1,'']]],
-  ['tp_2eh_82',['tp.h',['../tp_8h.html',1,'']]],
-  ['type_2eh_83',['type.h',['../type_8h.html',1,'']]]
+  ['strsansdeuxpts_80',['strSansDeuxPts',['../gestionpartie_8cpp.html#a295bf4a9119ccb6bfe2aac2f0a463563',1,'strSansDeuxPts(const string &amp;str):&#160;gestionpartie.cpp'],['../gestionpartie_8h.html#a8e4bcf8c7a4d63fc88672f51022baeba',1,'strSansDeuxPts(const std::string &amp;str):&#160;gestionpartie.h']]]
 ];

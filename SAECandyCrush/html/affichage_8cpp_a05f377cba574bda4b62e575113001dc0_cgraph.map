@@ -1,7 +1,7 @@
 <map id="afficheMatriceV0" name="afficheMatriceV0">
-<area shape="rect" id="node1" title="affichage de la matrice avec une couleur différente pour chaque nombre" alt="" coords="5,233,137,260"/>
-<area shape="rect" id="node2" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="185,5,284,32"/>
-<area shape="rect" id="node3" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="applique la couleur donné à une partie du terminal" alt="" coords="199,56,270,83"/>
+<area shape="rect" id="node1" title="Affichage de la matrice avec une couleur différente pour chaque nombre." alt="" coords="5,233,137,260"/>
+<area shape="rect" id="node2" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="Remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ait été effacé" alt="" coords="185,5,284,32"/>
+<area shape="rect" id="node3" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="Applique la couleur donnée à une partie du terminal." alt="" coords="199,56,270,83"/>
 <area shape="rect" id="node4" href="$cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="205,107,265,133"/>
 <area shape="rect" id="node5" href="$cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="203,157,266,184"/>
 <area shape="rect" id="node6" href="$cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="201,208,268,235"/>

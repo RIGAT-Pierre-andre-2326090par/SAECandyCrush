@@ -38,7 +38,6 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
                  << "Deplacement Restant = " << nbDeplacement << endl
                  << "Niveaux " << i + 1 << endl;
             if (score >= param.mapParamVecUnsigned["scoreMaxV"][0]){
-                cout << "Tu as gagné !" << endl;
                     break;
             }
             if (nbDeplacement ==0){
@@ -59,7 +58,7 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
                 faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
             }
         }
-        if (nbDeplacement == 0 || score >= param.mapParamVecUnsigned["scoreMaxV"][i]) {
+        if (nbDeplacement == 0) {
             cout << "tu as perdu..." << endl;
             break;
         }
@@ -110,7 +109,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
             cin >> deplacement;
             faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
         }
-        if (nbDeplacement == 0 || score >= param.mapParamVecUnsigned["scoreMaxV"][i]) {
+        if (nbDeplacement == 0) {
             cout << "tu as perdu..." << endl;
             break;
         }
@@ -327,7 +326,7 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
  * @param nbDeplacement: nombre de déplacement restant, gérer par la fonction main
  * @param param: structure de variable gérer par la fonction main
  * @return 0
- * @bug jeu très laggy, déplacement quasi impossible
+ * @bug mode de jeu très laggy, déplacement quasi impossible
  * @authors A.Goncalves, P-A.Rigat
  */
 int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & param) {

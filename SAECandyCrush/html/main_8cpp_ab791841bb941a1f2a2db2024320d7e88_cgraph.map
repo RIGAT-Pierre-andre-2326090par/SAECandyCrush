@@ -1,12 +1,12 @@
 <map id="partiNumberCrush" name="partiNumberCrush">
 <area shape="rect" id="node1" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="5,669,147,696"/>
-<area shape="rect" id="node2" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="229,259,361,285"/>
+<area shape="rect" id="node2" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="Affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="229,259,361,285"/>
 <area shape="rect" id="node13" href="$gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="195,619,396,645"/>
 <area shape="rect" id="node17" href="$gestionpartie_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="497,695,617,721"/>
 <area shape="rect" id="node18" href="$gestionpartie_8cpp.html#a57ec81d127d4e7a2924c033bf3ddc617" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="225,720,365,747"/>
 <area shape="rect" id="node19" href="$gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="261,771,329,797"/>
-<area shape="rect" id="node3" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="508,5,607,32"/>
-<area shape="rect" id="node4" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="applique la couleur donné à une partie du terminal" alt="" coords="522,56,593,83"/>
+<area shape="rect" id="node3" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="Remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ait été effacé" alt="" coords="508,5,607,32"/>
+<area shape="rect" id="node4" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="Applique la couleur donnée à une partie du terminal." alt="" coords="522,56,593,83"/>
 <area shape="rect" id="node5" href="$cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="527,107,587,133"/>
 <area shape="rect" id="node6" href="$cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="526,157,589,184"/>
 <area shape="rect" id="node7" href="$cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="524,208,591,235"/>

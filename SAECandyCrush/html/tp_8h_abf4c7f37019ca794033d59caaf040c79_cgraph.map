@@ -1,11 +1,11 @@
 <map id="ppalExo04" name="ppalExo04">
 <area shape="rect" id="node1" title="l&#39;exercice 4 du TP" alt="" coords="5,296,95,323"/>
-<area shape="rect" id="node2" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="472,208,604,235"/>
+<area shape="rect" id="node2" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="Affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="472,208,604,235"/>
 <area shape="rect" id="node13" href="$tp_8cpp.html#a18b5dcac7e2a41b6b06e9c8a1fd3ebce" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="143,259,369,301"/>
 <area shape="rect" id="node16" href="$tp_8cpp.html#a95ae5c4b2659efb4b51d7764384c9a5d" title="procédure permettant au joueur d&#39;échanger 2 éléments dans la grille" alt="" coords="186,325,326,352"/>
 <area shape="rect" id="node17" href="$gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="222,376,290,403"/>
-<area shape="rect" id="node3" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ai été effacé" alt="" coords="707,309,805,336"/>
-<area shape="rect" id="node4" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="applique la couleur donné à une partie du terminal" alt="" coords="721,360,791,387"/>
+<area shape="rect" id="node3" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="Remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ait été effacé" alt="" coords="707,309,805,336"/>
+<area shape="rect" id="node4" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="Applique la couleur donnée à une partie du terminal." alt="" coords="721,360,791,387"/>
 <area shape="rect" id="node5" href="$cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="726,411,786,437"/>
 <area shape="rect" id="node6" href="$cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="725,461,787,488"/>
 <area shape="rect" id="node7" href="$cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="723,5,789,32"/>
@@ -14,7 +14,7 @@
 <area shape="rect" id="node10" href="$cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title="code pour afficher la couleur par défaut du terminal" alt="" coords="722,157,790,184"/>
 <area shape="rect" id="node11" href="$cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title="code pour afficher la couleur rouge dans le terminal" alt="" coords="720,208,792,235"/>
 <area shape="rect" id="node12" href="$cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title="code pour afficher la couleur vert dans le terminal" alt="" coords="727,259,785,285"/>
-<area shape="rect" id="node14" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="472,259,604,285"/>
+<area shape="rect" id="node14" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="Affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="472,259,604,285"/>
 <area shape="rect" id="node15" href="$gestionpartie_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3" title="procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nomb..." alt="" coords="417,309,659,336"/>
 <area shape="rect" id="node18" href="$gestionpartie_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="496,376,580,403"/>
 </map>

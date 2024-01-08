@@ -118,10 +118,8 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a04499e810295a8506131a7b912017990"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure initialisant les paramètres du joueur au sein du jeu  <a href="gestionpartie_8h.html#a04499e810295a8506131a7b912017990">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a04499e810295a8506131a7b912017990"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e4bcf8c7a4d63fc88672f51022baeba"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestionpartie_8h.html#a8e4bcf8c7a4d63fc88672f51022baeba">strSansDeuxPts</a> (const std::string &amp;str)</td></tr>
-<tr class="memdesc:a8e4bcf8c7a4d63fc88672f51022baeba"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure permettande d'enlever le caractère ':' d'une chaine de caractère passer en paramètre  <a href="gestionpartie_8h.html#a8e4bcf8c7a4d63fc88672f51022baeba">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8e4bcf8c7a4d63fc88672f51022baeba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba3a479f631b9b5534296778f03fde44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestionpartie_8h.html#aba3a479f631b9b5534296778f03fde44">chargerParametre</a> (<a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;params, const std::string &amp;fichier)</td></tr>
-<tr class="memdesc:aba3a479f631b9b5534296778f03fde44"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml  <a href="gestionpartie_8h.html#aba3a479f631b9b5534296778f03fde44">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aba3a479f631b9b5534296778f03fde44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ee2be2606da0dfc9951f36b245a88b8"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestionpartie_8h.html#a3ee2be2606da0dfc9951f36b245a88b8">nouvRdm</a> (unsigned &amp;nb1, unsigned &amp;nb2, const unsigned &amp;nbMax)</td></tr>
 <tr class="memdesc:a3ee2be2606da0dfc9951f36b245a88b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2  <a href="gestionpartie_8h.html#a3ee2be2606da0dfc9951f36b245a88b8">Plus de détails...</a><br /></td></tr>
@@ -180,16 +178,6 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>procédure permettant de charger les paramètres de jeu d'un joueur depuis un fichier yaml </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">params</td><td>structure de variable gérer par la fonction main </td></tr>
-    <tr><td class="paramname">fichier</td><td>chemin du fichier yaml cible </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section author"><dt>Auteurs</dt><dd>A.Casali, P-A.Rigat </dd></dl>
 
 </div>
 </div>
@@ -595,8 +583,10 @@ Voici le graphe des appelants de cette fonction :</div>
   </table>
   </dd>
 </dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000002">Bogue:</a></b></dt><dd>certaines détections sont mal placées </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00308">308</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00310">310</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -873,16 +863,6 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>procédure permettande d'enlever le caractère ':' d'une chaine de caractère passer en paramètre </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>chaine de caractère à traiter </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>la chaine de caractère sans le caractère ':' </dd></dl>
-<dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
 </div>
 </div>
