@@ -126,7 +126,7 @@ bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned
  * @param numLigne: absisse du curseur
  * @param numCol: ordonnée du curseur
  * @param nbDeplacement: nombre de déplacement restant, gérer par la fonction main
- * @bug certaines détections sont mal placé
+ * @bug certaines détections sont mal placées
  * @author P-A.Rigat
  */
 void faitUnMouvement (CMatrice & mat, const char & deplacment, size_t & numLigne,
