@@ -167,12 +167,12 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
             if (time > 0) continue;
 
             // On affiche la grille puis le curseur dans le terminal
-            afficheMatriceV3(mat, numLigne, numCol);
+            //afficheMatriceV3(mat, numLigne, numCol);
 
             // on affiche le score et le nombre de déplacement restant dans le terminal
-            cout << "Score = " << score << endl
+            /*cout << "Score = " << score << endl
                  << "Deplacement Restant = " << nbDeplacement << endl
-                 << "Niveaux " << i + 1 << endl;
+                 << "Niveaux " << i + 1 << endl;*/
 
             // On affiche la grille puis le curseur dans une interface MinGl
             for (unsigned i = 0 ; i < mat.size() ; ++i) {
@@ -275,16 +275,16 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
             if (time > 0) continue;
 
             // On affiche la grille puis le curseur dans le terminal
-            afficheMatriceV3(mat, numLigne, numCol);
+            //afficheMatriceV3(mat, numLigne, numCol);
 
             // On affiche la grille puis le curseur dans une interface MinGl
             afficheMatriceMingl(mat, window);
             dessinerCurseur(window, numCol * 50, numLigne * 50);
 
             // on affiche le score et le nombre de déplacement restant dans le terminal
-            cout << "Score = " << score << endl
+            /*cout << "Score = " << score << endl
                  << "Deplacement Restant = " << nbDeplacement << endl
-                 << "Niveaux " << i + 1 << endl;
+                 << "Niveaux " << i + 1 << endl;*/
 
             // on affiche le score, le nombre de déplacement le niveau en cours restant dans une interface MinGl
             string strScore = "Score = ";
@@ -461,7 +461,7 @@ int main() {
             cout << "Ce mode de jeu n'existe pas rééssayez !" << endl;
         }
     }
-    if (mode == 1) return partiMinglCrush(score, nbDeplacement, param);
+    if (mode == 1) return partiMinglCrush(score, nbDeplacement, param); //Lance une partie avec un affichage MinGL
     else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance la partie sur le terminal
     else if (mode == 3) return tp(); //lance le programme du tp
     else if (mode == 4) return partiMinglTeteCrush(score, nbDeplacement, param);
