@@ -67,8 +67,7 @@ void  afficheMatriceV1 (const CMatrice & Mat) {
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
-        if (i + 1 < 10) cout << ' ' << i + 1;
-        else cout << i + 1;
+        cout << "  ";
         for ( size_t j = 0 ; j < Mat[i].size() ; ++j){
             couleur(KReset); // Enlève la couleur bleue pour l'affiche d'un élément
             if (Mat[i][j]==KAIgnorer) couleur(KNoir); //  Si l'élément = 0, alors la couleur sera la couleur noire, permettant de cacher le 0
@@ -100,7 +99,7 @@ void  afficheMatriceV2 (const CMatrice & Mat) {
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
-        if (i + 1 < 10) cout << ' ' << i + 1;
+        if (i + 1 != Mat.size()) cout << ' ' << i + 1;
         else cout << i + 1;
         couleur(KReset);
         cout << " | ";
@@ -138,7 +137,7 @@ void  afficheMatriceV3 (const CMatrice & Mat, const size_t numLigne, const size_
     for (size_t i = 0 ; i < Mat.size() ; ++i)
     {
         couleur(44);
-        if (i + 1 < 10) cout << ' ' << i + 1;
+        if (i + 1 != Mat.size()) cout << ' ' << i + 1;
         else cout << i + 1;
         couleur(KReset);
         cout << ' ';
