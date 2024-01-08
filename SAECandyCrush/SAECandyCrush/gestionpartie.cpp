@@ -12,7 +12,7 @@ using namespace std;
  */
 void initParams (CMyParam & param)
 {
-    //touche du joueur
+    // Touche du joueur
     param.mapParamChar["toucheHaut"] = 'z';
     param.mapParamChar["toucheGauche"] = 'q';
     param.mapParamChar["toucheBas"] = 'x';
@@ -23,14 +23,14 @@ void initParams (CMyParam & param)
     param.mapParamChar["toucheDroiteHaut"] = 'e';
     param.mapParamChar["toucheSelect"] = 's';
 
-    // variable limitant le nombre de niveaux
+    // Variable limitant le nombre de niveaux
     param.mapParamUnsigned["nbNiveaux"] = 16;
 
-    //taille de la grille pour chaque niveau
+    // Taille de la grille pour chaque niveau
     param.mapParamVecUnsigned["nbColonnesV"] = {10, 8, 10, 8, 9, 7, 9, 7, 6, 5, 6, 6, 4, 3, 4, 3};
     param.mapParamVecUnsigned["nbLignesV"] = {10, 10, 8, 8, 9, 9, 7, 7, 6, 6, 5, 5, 4, 4, 3, 3};
 
-    //des variables utiles pour chaque niveau
+    // Des variables utiles pour chaque niveau, telle que le score, le nombre de déplacement...
     param.mapParamVecUnsigned["nbMaxV"] = {5, 4, 3, 2, 5, 4, 3, 2, 5, 4, 3, 2, 5, 4, 3, 2};
     param.mapParamVecUnsigned["scoreMaxV"] = {150, 200, 200, 250, 250, 300, 300, 350, 350, 400, 400, 450, 450, 500, 500, 550, 550, 600};
     param.mapParamVecUnsigned["deplacementMaxV"] = {15, 14, 12, 13, 11, 10, 8, 9, 7, 7, 6, 6, 6, 5, 5, 4};
