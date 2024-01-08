@@ -50,7 +50,7 @@ void initMatV2 (CMatrice & mat, const size_t & nbLignes = 10,
  */
 bool detectionExplositionUneBombeHorizontale (CMatrice & mat){
     bool auMoinsUneExplosion (false);
-    //analyse case par case
+    //Analyse case par case
     for (unsigned numLigne = 1 ; numLigne < mat.size() ; ++numLigne){
         for (unsigned numCol = 0 ; numCol < mat[numLigne].size() ; ++numCol){
             size_t combienALaSuite (1);
@@ -240,7 +240,7 @@ void faitUnMouvementV2 (CMatrice & mat, const char & deplacment, size_t & numLig
 int ppalExo01 (){
     CMatrice mat;
     initMat(mat);
-    // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
+    // Affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
     afficheMatriceV0 (mat);
     //detectionExplositionUneBombeHorizontale (mat);
     return 0;
@@ -253,7 +253,7 @@ int ppalExo01 (){
 int ppalExo02 (){
     CMatrice mat;
     initMat(mat);
-    // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
+    // Affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
     afficheMatriceV1 (mat);
     detectionExplositionUneBombeHorizontale (mat);
     afficheMatriceV1 (mat);
@@ -267,7 +267,7 @@ int ppalExo02 (){
 int ppalExo03 (){
     CMatrice mat;
     initMat(mat);
-    // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
+    // Affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
     afficheMatriceV1 (mat);
     while (detectionExplositionUneBombeHorizontale (mat)) {
         afficheMatriceV1 (mat);
@@ -282,16 +282,16 @@ int ppalExo03 (){
 int ppalExo04 (){
     CMatrice mat;
     initMat(mat);
-    // affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
+    // Affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche
     detectionExplositionUneBombeHorizontale (mat);
     afficheMatriceV2 (mat);
     //condition de victoire a trouver
     while (true) {
         cout << "Fait un mouvement ";
-        cout << "numero de ligne : ";
+        cout << "Numéro de ligne : ";
         size_t numLigne = 0;
         cout << numLigne;
-        cout << ", numero de colonne : ";
+        cout << ", Numéro de colonne : ";
         size_t numCol = 0;
         cout << numCol;
         cout << ", Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
@@ -317,9 +317,9 @@ int partiNumberCrush(){
         detectionExplositionUneBombeHorizontale (mat);
         afficheMatriceV3 (mat, numLigne, numCol);
         cout << "Fait un mouvement ";
-        cout << "numero de ligne : ";
+        cout << "Numéro de ligne : ";
         cout << numLigne + 1;
-        cout << ", numero de colonne : ";
+        cout << ", Numéro de colonne : ";
         cout << numCol + 1 << endl;
         cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
         char deplacement;
@@ -333,16 +333,16 @@ int partiNumberCrush(){
  * @brief affiche un pavé qui explique que choisir
  */
 void affichePave() {
-    cout << "quel exercice voulez vous voir ?" << endl
-         << "1: exercice 1, génère et affiche une matrice rempli de nombre aléatoire entre 1 et " << KPlusGrandNombreDansLaMatrice << '.' << endl
-         << "2: exercice 2, génère et affiche une matrice rempli de nombre aléatoire entre 1 et " << KPlusGrandNombreDansLaMatrice
-         << " et détecte si il y a plus de 3 nombres alignés horizontalement." << endl
-         << "3: exercice 3, génère et affiche une matrice rempli de nombre aléatoire entre 1 et " << KPlusGrandNombreDansLaMatrice
-         << " et détecte si il y a plus de 3 nombres alignés horizontalement. si il y a détection, il enleve les nombres alignés et fait tomber les nombres au dessus."
-         << "4: exercice 4, génère et affiche une matrice rempli de nombre aléatoire entre 1 et " << KPlusGrandNombreDansLaMatrice
-         << " et détecte si il y a plus de 3 nombres alignés horizontalement. si il y a détection, il enleve les nombres alignés et fait tomber les nombres au dessus. fait un mouvement et répète indéfiniment le déplacement." << endl
-         << "0: une petite partie ?" << endl
-         << "-1: sortie du programme";
+    cout << "Quel exercice voulez-vous voir ? " << endl
+         << "1: Exercice 1, génère et affiche une matrice remplie de nombres aléatoires entre 1 et " << KPlusGrandNombreDansLaMatrice << '.' << endl
+         << "2: Exercice 2, génère et affiche une matrice remplie de nombres aléatoires entre 1 et " << KPlusGrandNombreDansLaMatrice
+         << " et détecte s'il y a plus de 3 nombres alignés horizontalement." << endl
+         << "3: Exercice 3, génère et affiche une matrice remplie de nombres aléatoires entre 1 et " << KPlusGrandNombreDansLaMatrice
+         << " et détecte s'il y a plus de 3 nombres alignés horizontalement. S'il y a détection, le jeu enlève les nombres alignés et fait tomber les nombres au dessus." << endl
+         << "4: Exercice 4, génère et affiche une matrice remplie de nombres aléatoires entre 1 et " << KPlusGrandNombreDansLaMatrice
+         << " et détecte si il y a plus de 3 nombres alignés horizontalement. S'il y a détection, le jeu enlève les nombres alignés et fait tomber les nombres au dessus. Fait un mouvement et répète indéfiniment le déplacement." << endl
+         << "0: Une petite partie ?" << endl
+         << "-1: Sortie du programme." << endl;
 }
 
 /**
