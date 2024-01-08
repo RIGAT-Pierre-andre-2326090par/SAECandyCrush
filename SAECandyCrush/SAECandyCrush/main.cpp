@@ -325,7 +325,7 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
  * @param nbDeplacement: nombre de déplacements restants, géré par la fonction main
  * @param param: structure de variable géré par la fonction main
  * @return 0
- * @bug mode de jeu très laggy, déplacement quasi impossible
+ * @bug mode de jeu très laggy, on dirait que le curseur est sur un savon(ou un online sur un serveur océanien)
  * @authors A.Goncalves, P-A.Rigat
  */
 int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & param) {
