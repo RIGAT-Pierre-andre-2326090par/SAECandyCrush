@@ -20,7 +20,8 @@ using namespace std;
  * @authors A.Nurdin, A.Goncalves, P-A.Rigat, C.Tamine, B.Gaston
  */
 int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & param){
-    for (unsigned i = 0 ; i < param.mapParamUnsigned["nbNiveaux"] ; ++i) {
+    unsigned i = 0 ;
+    while (i < param.mapParamUnsigned["nbNiveaux"]) {
         CMatrice mat;
         initMat(mat, param.mapParamVecUnsigned["nbMaxV"][i],
                 param.mapParamVecUnsigned["nbLignesV"][i],
@@ -58,6 +59,11 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
                 faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
             }
         }
+        if (nbDeplacement == 0 || score >= param.mapParamVecUnsigned["scoreMaxV"][i]) {
+            cout << "tu as perdu..." << endl;
+            break;
+        }
+        else ++i;
     }
     return 0;
 }
@@ -70,7 +76,8 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
  * @authors A.Nurdin, A.Goncalves, P-A.Rigat, C.Tamine, B.Gaston
  */
 int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & param){
-    for (unsigned i = 0 ; i < param.mapParamUnsigned["nbNiveaux"] ; ++i) {
+    unsigned i = 0 ;
+    while (i < param.mapParamUnsigned["nbNiveaux"]) {
         CMatrice mat;
         initMat(mat, param.mapParamVecUnsigned["nbMaxV"][i],
                 param.mapParamVecUnsigned["nbLignesV"][i],
@@ -103,6 +110,11 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
             cin >> deplacement;
             faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
         }
+        if (nbDeplacement == 0 || score >= param.mapParamVecUnsigned["scoreMaxV"][i]) {
+            cout << "tu as perdu..." << endl;
+            break;
+        }
+        else ++i;
     }
     return 0;
 }
@@ -125,7 +137,8 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
     chrono::microseconds frameTime = chrono::microseconds::zero();
 
     // Pour chaque niveau
-    for (unsigned i = 0 ; i < param.mapParamUnsigned["nbNiveaux"] ; ++i) {
+    unsigned i = 0 ;
+    while (i < param.mapParamUnsigned["nbNiveaux"]) {
 
         //On initialise la partie de Number Crush
         CMatrice mat;
@@ -205,6 +218,11 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
             // On récupère le temps de frame
             frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
         }
+        if (nbDeplacement == 0 || score >= param.mapParamVecUnsigned["scoreMaxV"][i]) {
+            cout << "tu as perdu..." << endl;
+            break;
+        }
+        else ++i;
     }
     return 0;
 }
@@ -227,7 +245,8 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
     chrono::microseconds frameTime = chrono::microseconds::zero();
 
     // Pour chaque niveau
-    for (unsigned i = 0 ; i < param.mapParamUnsigned["nbNiveaux"] ; ++i) {
+    unsigned i = 0 ;
+    while (i < param.mapParamUnsigned["nbNiveaux"]) {
 
         //On initialise la partie de Number Crush
         CMatrice mat;
@@ -299,6 +318,11 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
             // On récupère le temps de frame
             frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
         }
+        if (nbDeplacement == 0 || score >= param.mapParamVecUnsigned["scoreMaxV"][i]) {
+            cout << "tu as perdu..." << endl;
+            break;
+        }
+        else ++i;
     }
     return 0;
 }
@@ -321,7 +345,8 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
     chrono::microseconds frameTime = chrono::microseconds::zero();
 
     // Pour chaque niveau
-    for (unsigned i = 0 ; i < param.mapParamUnsigned["nbNiveaux"] ; ++i) {
+    unsigned i = 0 ;
+    while (i < param.mapParamUnsigned["nbNiveaux"]) {
 
         //On initialise la partie de Number Crush
         CMatrice mat;
@@ -400,6 +425,11 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
             // On récupère le temps de frame
             frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
         }
+        if (nbDeplacement == 0 || score >= param.mapParamVecUnsigned["scoreMaxV"][i]) {
+            cout << "tu as perdu..." << endl;
+            break;
+        }
+        else ++i;
     }
     return 0;
 }
