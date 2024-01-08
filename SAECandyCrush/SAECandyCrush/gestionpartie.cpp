@@ -65,13 +65,13 @@ void chargerParametre(CMyParam & params, const string & fichier){
             unsigned val;
             ifs >> val;
             params.mapParamUnsigned[cle]=val;
-            cout << cle << ": " << val << endl;
+            //cout << cle << ": " << val << endl;
         }
         else if (params.mapParamChar.find(cle) != params.mapParamChar.end()){
             char val;
             ifs >> val;
             params.mapParamChar[cle]=val;
-            cout << cle << ": " << val << endl;
+            //cout << cle << ": " << val << endl;
         }
         else if (params.mapParamVecUnsigned.find(cle) != params.mapParamVecUnsigned.end()){
             vector <unsigned> val;
@@ -86,12 +86,12 @@ void chargerParametre(CMyParam & params, const string & fichier){
                 }
             }
             params.mapParamVecUnsigned[cle] = val;
-            cout << cle << ": " << val[0] << "...(vec)" << endl;
+            //cout << cle << ": " << val[0] << "...(vec)" << endl;
         }
         else {
             string tmp;
             getline(ifs, tmp);
-            cout << tmp << "(marche pas)" << endl;
+            //cout << tmp << "(marche pas)" << endl;
         }
     }
 }

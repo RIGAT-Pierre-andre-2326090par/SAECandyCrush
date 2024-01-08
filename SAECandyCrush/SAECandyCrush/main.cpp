@@ -33,8 +33,9 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
             while (detectionExplositionBombe(mat, score, KAIgnorer, param.mapParamVecUnsigned["nbMax"][i]) || zeroVidSousNb(mat))
                 continue;
             afficheMatriceV2 (mat);
-            cout << "Score : " << score << endl;
-            cout << "Nombre de déplacement restant : " <<  nbDeplacement << endl;
+            cout << "Score = " << score << endl
+                 << "Deplacement Restant = " << nbDeplacement << endl
+                 << "Niveaux " << i + 1 << endl;
             if (score >= param.mapParamVecUnsigned["scoreMaxV"][0]){
                 cout << "Tu as gagné !" << endl;
                     break;
@@ -80,8 +81,10 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
         score=0;
         while(true){
             afficheMatriceV3 (mat, numLigne, numCol);
-            cout << "Score : " << score << endl;
-           cout << "Nombre de déplacement restant : " <<  nbDeplacement << endl;
+            if (detectionExplositionBombe(mat,score, KAIgnorer, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
+            cout << "Score : " << score << endl
+                 << "Nombre de déplacement restant : " <<  nbDeplacement << endl
+                 << "Niveau " << i + 1 << endl;
             if (score >= param.mapParamVecUnsigned["scoreMaxV"][i]){
                 cout << "Tu as gagné !" << endl;
                     break;
@@ -98,12 +101,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
             cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
             char deplacement;
             cin >> deplacement;
-            if (detectionExplositionBombe(mat,score, KAIgnorer, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
-            else {
-                // On gère les déplacements du curseur et les mouvements dans la grille
-                faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
-            }
-
+            faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
         }
     }
     return 0;
@@ -160,7 +158,8 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
 
             // on affiche le score et le nombre de déplacement restant dans le terminal
             cout << "Score = " << score << endl
-                 << "Deplacement Restant = " << nbDeplacement << endl;
+                 << "Deplacement Restant = " << nbDeplacement << endl
+                 << "Niveaux " << i + 1 << endl;
 
             // On affiche la grille puis le curseur dans une interface MinGl
             for (unsigned i = 0 ; i < mat.size() ; ++i) {
@@ -174,7 +173,7 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
             }
             dessinerCurseur(window, numCol * 50, numLigne * 50);
 
-            // on affiche le score et le nombre de déplacement restant dans une interface MinGl
+            // on affiche le score, le nombre de déplacement le niveau en cours restant dans une interface MinGl
             string strScore = "Score = ";
             strScore += to_string(score);
             afficheText(window, strScore, 10, 520);
@@ -182,6 +181,10 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
             string strDeplacement = "Deplacement restant = ";
             strDeplacement += to_string(nbDeplacement);
             afficheText(window, strDeplacement, 10, 540);
+
+            string strNiveau = "Niveaux ";
+            strNiveau += to_string(i+1);
+            afficheText(window, strNiveau, 10, 560);
 
             // si il y a des combos, on supprime les combos et on continue
                 if (detectionExplositionBombe(mat,score, KAIgnorer, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
@@ -261,9 +264,10 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
 
             // on affiche le score et le nombre de déplacement restant dans le terminal
             cout << "Score = " << score << endl
-                 << "Deplacement Restant = " << nbDeplacement << endl;
+                 << "Deplacement Restant = " << nbDeplacement << endl
+                 << "Niveaux " << i + 1 << endl;
 
-            // on affiche le score et le nombre de déplacement restant dans une interface MinGl
+            // on affiche le score, le nombre de déplacement le niveau en cours restant dans une interface MinGl
             string strScore = "Score = ";
             strScore += to_string(score);
             afficheText(window, strScore, 10, 520);
@@ -271,6 +275,10 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
             string strDeplacement = "Deplacement restant = ";
             strDeplacement += to_string(nbDeplacement);
             afficheText(window, strDeplacement, 10, 540);
+
+            string strNiveau = "Niveaux ";
+            strNiveau += to_string(i+1);
+            afficheText(window, strNiveau, 10, 560);
 
             // si il y a des combos, on supprime les combos et on continue
             if (detectionExplositionBombe(mat,score, KAIgnorer, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
@@ -344,7 +352,8 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
             // on affiche la grille, le score et le nombre de déplacement restant dans le terminal
             afficheMatriceV3(mat,numLigne,numCol);
             cout << "Score = " << score << endl
-                 << "Deplacement Restant = " << nbDeplacement << endl;
+                 << "Deplacement Restant = " << nbDeplacement << endl
+                 << "Niveaux " << i + 1 << endl;
 
             // On affiche la grille puis le curseur dans une interface MinGL
             for (unsigned i = 0 ; i < mat.size() ; ++i) {
@@ -359,7 +368,7 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
             }
             dessinerCurseur(window, numCol * 50, numLigne * 50);
 
-            // on affiche le score et le nombre de déplacement restant dans une interface MinGl
+            // on affiche le score, le nombre de déplacement le niveau en cours restant dans une interface MinGl
             string strScore = "Score = ";
             strScore += to_string(score);
             afficheText(window, strScore, 10, 520);
@@ -367,6 +376,10 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
             string strDeplacement = "Deplacement restant = ";
             strDeplacement += to_string(nbDeplacement);
             afficheText(window, strDeplacement, 10, 540);
+
+            string strNiveau = "Niveaux ";
+            strNiveau += to_string(i+1);
+            afficheText(window, strNiveau, 10, 560);
 
             // si il y a des combos, on supprime les combos et on continue
             if (detectionExplositionBombe(mat,score, KAIgnorer, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
@@ -407,21 +420,22 @@ int main() {
     unsigned nbDeplacement=param.mapParamUnsigned["deplacementMax"];
     unsigned mode ; // Initialisation du mode de jeu, soit avec MinGl, soit avec le terminal
     bool test = false;
-    while (test == false)
-    {
-        cout <<" Sur quel mode de jeu voulez vous jouer ? :" << endl << endl << "1 : mode avec MinGl" << '\t' << "2 : mode avec les nombres" << endl ;
+    while (test == false) {
+        cout <<" Sur quel mode de jeu voulez vous jouer ? :" << endl << endl
+             << "1 : mode avec MinGl" << '\t' << "2 : mode avec les nombres" << endl  << endl
+             << "3 : test des exercices du tp" << '\t' << "4 à 6 : petit bonus..." << endl;
         cin >> mode ;
-        if (mode >= 1 && mode <= 5) test = true ;
+        if (mode >= 1 && mode <= 6) test = true ;
         else {
             clearScreen();
             cout << "Ce mode de jeu n'existe pas rééssayez !" << endl;
         }
     }
-    if (mode == 1) return partiMinglCrush2(score, nbDeplacement, param);
+    if (mode == 1) return partiMinglCrush(score, nbDeplacement, param);
     else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance la partie sur le terminal
     else if (mode == 3) return tp(); //lance le programme du tp
     else if (mode == 4) return partiMinglTeteCrush(score, nbDeplacement, param);
-    else if (mode == 5) return partiMinglCrush(score, nbDeplacement, param);
+    else if (mode == 5) return partiMinglCrush2(score, nbDeplacement, param);
     else if (mode == 6) return partiNumberCrush(score, nbDeplacement, param);
     else return 0;
 }

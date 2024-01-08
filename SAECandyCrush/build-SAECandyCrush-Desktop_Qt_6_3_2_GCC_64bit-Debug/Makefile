@@ -56,6 +56,7 @@ SOURCES       = ../SAECandyCrush/affichage.cpp \
 		../SAECandyCrush/affichagemingl.cpp \
 		../SAECandyCrush/gestionpartie.cpp \
 		../SAECandyCrush/main.cpp \
+		../SAECandyCrush/tp.cpp \
 		../MinGL2_IUT_AIX-master/src/audio/audioengine.cpp \
 		../MinGL2_IUT_AIX-master/src/exception/cexception.cpp \
 		../MinGL2_IUT_AIX-master/src/mingl.cpp \
@@ -77,6 +78,7 @@ OBJECTS       = affichage.o \
 		affichagemingl.o \
 		gestionpartie.o \
 		main.o \
+		tp.o \
 		audioengine.o \
 		cexception.o \
 		mingl.o \
@@ -363,6 +365,7 @@ DIST          = ../../../../Qt/6.3.2/gcc_64/mkspecs/features/spec_pre.prf \
 		affichagemingl.h \
 		cst.h \
 		gestionpartie.h \
+		tp.h \
 		type.h \
 		/home/m24/cpp/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/audio/audioengine.h \
 		/home/m24/cpp/SAECandyCrush/SAECandyCrush/MinGL2_IUT_AIX-master/include/mingl/exception/cexception.h \
@@ -394,6 +397,7 @@ DIST          = ../../../../Qt/6.3.2/gcc_64/mkspecs/features/spec_pre.prf \
 		../SAECandyCrush/affichagemingl.cpp \
 		../SAECandyCrush/gestionpartie.cpp \
 		../SAECandyCrush/main.cpp \
+		../SAECandyCrush/tp.cpp \
 		../MinGL2_IUT_AIX-master/src/audio/audioengine.cpp \
 		../MinGL2_IUT_AIX-master/src/exception/cexception.cpp \
 		../MinGL2_IUT_AIX-master/src/mingl.cpp \
@@ -998,14 +1002,14 @@ compiler_clean:
 
 ####### Compile
 
-affichage.o: ../SAECandyCrush/affichage.cpp ../SAECandyCrush/type.h \
+affichage.o: ../SAECandyCrush/affichage.cpp ../SAECandyCrush/affichage.h \
 		../SAECandyCrush/cst.h \
-		../SAECandyCrush/affichage.h
+		../SAECandyCrush/type.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o affichage.o ../SAECandyCrush/affichage.cpp
 
-affichagemingl.o: ../SAECandyCrush/affichagemingl.cpp ../SAECandyCrush/type.h \
+affichagemingl.o: ../SAECandyCrush/affichagemingl.cpp ../SAECandyCrush/affichage.h \
 		../SAECandyCrush/cst.h \
-		../SAECandyCrush/affichage.h \
+		../SAECandyCrush/type.h \
 		../MinGL2_IUT_AIX-master/include/mingl/mingl.h \
 		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
 		../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
@@ -1025,23 +1029,14 @@ affichagemingl.o: ../SAECandyCrush/affichagemingl.cpp ../SAECandyCrush/type.h \
 		../MinGL2_IUT_AIX-master/include/mingl/gui/sprite.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o affichagemingl.o ../SAECandyCrush/affichagemingl.cpp
 
-gestionpartie.o: ../SAECandyCrush/gestionpartie.cpp ../SAECandyCrush/affichagemingl.h \
-		../SAECandyCrush/type.h \
+gestionpartie.o: ../SAECandyCrush/gestionpartie.cpp ../SAECandyCrush/affichage.h \
 		../SAECandyCrush/cst.h \
-		../MinGL2_IUT_AIX-master/include/mingl/mingl.h \
-		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
-		../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
-		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.h \
-		../MinGL2_IUT_AIX-master/include/mingl/tools/ieditable.hpp \
-		../MinGL2_IUT_AIX-master/include/mingl/graphics/vec2d.h \
-		../MinGL2_IUT_AIX-master/include/mingl/event/event_manager.h \
-		../MinGL2_IUT_AIX-master/include/mingl/event/event.hpp \
-		../SAECandyCrush/affichage.h
+		../SAECandyCrush/type.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gestionpartie.o ../SAECandyCrush/gestionpartie.cpp
 
 main.o: ../SAECandyCrush/main.cpp ../SAECandyCrush/affichagemingl.h \
-		../SAECandyCrush/type.h \
 		../SAECandyCrush/cst.h \
+		../SAECandyCrush/type.h \
 		../MinGL2_IUT_AIX-master/include/mingl/mingl.h \
 		../MinGL2_IUT_AIX-master/include/mingl/graphics/idrawable.h \
 		../MinGL2_IUT_AIX-master/include/mingl/graphics/rgbacolor.h \
@@ -1052,9 +1047,16 @@ main.o: ../SAECandyCrush/main.cpp ../SAECandyCrush/affichagemingl.h \
 		../MinGL2_IUT_AIX-master/include/mingl/event/event.hpp \
 		../SAECandyCrush/affichage.h \
 		../SAECandyCrush/gestionpartie.h \
+		../SAECandyCrush/tp.h \
 		../MinGL2_IUT_AIX-master/include/mingl/gui/sprite.h \
 		../MinGL2_IUT_AIX-master/include/mingl/transition/itransitionable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../SAECandyCrush/main.cpp
+
+tp.o: ../SAECandyCrush/tp.cpp ../SAECandyCrush/gestionpartie.h \
+		../SAECandyCrush/cst.h \
+		../SAECandyCrush/type.h \
+		../SAECandyCrush/affichage.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tp.o ../SAECandyCrush/tp.cpp
 
 audioengine.o: ../MinGL2_IUT_AIX-master/src/audio/audioengine.cpp ../MinGL2_IUT_AIX-master/include/mingl/audio/audioengine.h \
 		../MinGL2_IUT_AIX-master/include/mingl/exception/cexception.h \
