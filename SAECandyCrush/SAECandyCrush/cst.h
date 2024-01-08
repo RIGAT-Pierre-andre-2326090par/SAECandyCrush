@@ -11,7 +11,7 @@
 const unsigned KReset   (0);
 
 /**
- * @brief code pour afficher la couleur noir dans le terminal
+ * @brief code pour afficher la couleur noire dans le terminal
  * @author A.Casali
  */
 const unsigned KNoir    (30);
@@ -23,7 +23,7 @@ const unsigned KNoir    (30);
 const unsigned KRouge   (31);
 
 /**
- * @brief code pour afficher la couleur vert dans le terminal
+ * @brief code pour afficher la couleur verte dans le terminal
  * @author A.Casali
  */
 const unsigned KVert    (32);
@@ -35,7 +35,7 @@ const unsigned KVert    (32);
 const unsigned KJaune   (33);
 
 /**
- * @brief code pour afficher la couleur bleu dans le terminal
+ * @brief code pour afficher la couleur bleue dans le terminal
  * @author A.Casali
  */
 const unsigned KBleu    (34);
@@ -65,7 +65,7 @@ const unsigned KBGGrisClair(47);
 const contenueDUneCase KAIgnorer = 0;
 
 /**
- * @brief valeur maximal que peut prendre le contenu d'un case
+ * @brief valeur maximale que peut prendre le contenu d'un case
  * @author A.Casali
  */
 const contenueDUneCase KPlusGrandNombreDansLaMatrice = 4;

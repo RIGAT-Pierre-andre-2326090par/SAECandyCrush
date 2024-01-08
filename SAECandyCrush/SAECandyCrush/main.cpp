@@ -14,8 +14,8 @@ using namespace std;
 
 /**
  * @brief fonction lançant une version lite du candy crush pour les tests
- * @param score: entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main
- * @param nbDeplacement: nombre de déplacement restant, gérer par la fonction main
+ * @param score: entier naturel permettant de savoir si le joueur a gagné, géré par la fonction main
+ * @param nbDeplacement: nombre de déplacements restants, géré par la fonction main
  * @return 0
  * @authors A.Nurdin, A.Goncalves, P-A.Rigat, C.Tamine, B.Gaston
  */
@@ -69,8 +69,8 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
 
 /**
  * @brief fonction de lancement du jeu du candy crush
- * @param score: entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main
- * @param nbDeplacement: nombre de déplacement restant, gérer par la fonction main
+ * @param score: entier naturel permettant de savoir si le joueur a gagné, géré par la fonction main
+ * @param nbDeplacement: nombre de déplacements restants, géré par la fonction main
  * @return 0
  * @authors A.Nurdin, A.Goncalves, P-A.Rigat, C.Tamine, B.Gaston
  */
@@ -96,7 +96,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
                     break;
             }
             if (nbDeplacement ==0){
-                cout << "Tu n'as plus de déplacements, payer 5€ pour 5 déplacements supplémentaires ?(signé EA)" << endl;
+                cout << "Tu n'as plus de déplacements, payer 5€ pour 5 déplacements supplémentaires ? (signé EA)" << endl;
                     break;
             }
             cout << "Fait un mouvement ";
@@ -120,9 +120,9 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
 
 /**
  * @brief gère une fenêtre MinGL ainsi qu'une partie de NumberCrush avec un affichage de forme
- * @param score: entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main
- * @param nbDeplacement: nombre de déplacement restant, gérer par la fonction main
- * @param param: structure de variable gérer par la fonction main
+ * @param score: entier naturel permettant de savoir si le joueur a gagné, géré par la fonction main
+ * @param nbDeplacement: nombre de déplacements restants, géré par la fonction main
+ * @param param: structure de variable géré par la fonction main
  * @return 0
  * @authors A.Goncalves, P-A.Rigat
  */
@@ -149,7 +149,7 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
         nbDeplacement = param.mapParamVecUnsigned["deplacementMaxV"][i];
         score=0;
 
-        //quelque variable utile
+        // Un booléen utile
         bool curs2 = false;
 
         // On fait tourner la boucle tant que la fenêtre est ouverte
@@ -215,7 +215,7 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
             frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
         }
         if (nbDeplacement == 0) {
-            cout << "tu as perdu..." << endl;
+            cout << "Tu as perdu..." << endl;
             break;
         }
         else ++i;
@@ -225,9 +225,9 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
 
 /**
  * @brief gère une fenêtre MinGL ainsi qu'une partie de NumberCrush avec un affichage de forme
- * @param score: entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main
- * @param nbDeplacement: nombre de déplacement restant, gérer par la fonction main
- * @param param: structure de variable gérer par la fonction main
+ * @param score: entier naturel permettant de savoir si le joueur a gagné, géré par la fonction main
+ * @param nbDeplacement: nombre de déplacements restants, géré par la fonction main
+ * @param param: structure de variable géré par la fonction main
  * @return 0
  * @authors A.Goncalves, P-A.Rigat
  */
@@ -273,13 +273,13 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
             afficheMatriceMingl(mat, window);
             dessinerCurseur(window, numCol * 50, numLigne * 50);
 
-            // on affiche le score et le nombre de déplacement restant dans le terminal
+            // On affiche le score et le nombre de déplacements restants dans le terminal
             /*cout << "Score = " << score << endl
                  << "Deplacement Restant = " << nbDeplacement << endl
                  << "Niveaux " << i + 1 << endl;*/
             clearScreen();
 
-            // on affiche le score, le nombre de déplacement le niveau en cours restant dans une interface MinGl
+            // on affiche le score, le nombre de déplacements restants, le niveau en cours dans une interface MinGl
             string strScore = "Score = ";
             strScore += to_string(score);
             afficheText(window, strScore, 10, 520);
@@ -321,10 +321,10 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
 }
 
 /**
- * @brief gère une fenêtre ainsi qu'une partie de NumberCrush avec les têtes de l'équipes et de A.Casali
- * @param score: entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main
- * @param nbDeplacement: nombre de déplacement restant, gérer par la fonction main
- * @param param: structure de variable gérer par la fonction main
+ * @brief gère une fenêtre ainsi qu'une partie de NumberCrush avec les têtes de l'équipe et de A.Casali
+ * @param score: entier naturel permettant de savoir si le joueur a gagner, géré par la fonction main
+ * @param nbDeplacement: nombre de déplacements restants, géré par la fonction main
+ * @param param: structure de variable géré par la fonction main
  * @return 0
  * @bug mode de jeu très laggy, déplacement quasi impossible
  * @authors A.Goncalves, P-A.Rigat
@@ -429,7 +429,7 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
 }
 
 /**
- * @brief la fonction main permettant de choisir le mode de jeux
+ * @brief la fonction main permettant de choisir le mode de jeu
  * @return 0
  * @authors A.Nurdin, P-A.Rigat, C.Tamine
  */
@@ -447,7 +447,7 @@ int main() {
     while (test == false) {
         cout <<" Sur quel mode de jeu voulez vous jouer ? :" << endl << endl
              << "1 : Mode avec MinGl" << '\t' << "2 : Mode avec les nombres" << endl  << endl
-             << "3 : Test des exercices du tp" << '\t' << "4 à 6 : Petit bonus..." << endl;
+             << "3 : Test des exercices du TP" << '\t' << "4 à 6 : Petit bonus..." << endl;
         cin >> mode ;
         if (mode >= 1 && mode <= 6) test = true ;
         else {
@@ -457,9 +457,9 @@ int main() {
     }
     if (mode == 1) return partiMinglCrush(score, nbDeplacement, param); //Lance une partie avec un affichage MinGL
     else if (mode == 2) return partiCasaliCrush(score, nbDeplacement, param); //Lance la partie sur le terminal
-    else if (mode == 3) return tp(); //lance le programme du tp
-    else if (mode == 4) return partiMinglTeteCrush(score, nbDeplacement, param);
-    else if (mode == 5) return partiMinglCrush2(score, nbDeplacement, param);
-    else if (mode == 6) return partiNumberCrush(score, nbDeplacement, param);
+    else if (mode == 3) return tp(); // Lance le programme du tp
+    else if (mode == 4) return partiMinglTeteCrush(score, nbDeplacement, param); // Lance la partie avec un affichage MinGL et les têtes de l'équipe
+    else if (mode == 5) return partiMinglCrush2(score, nbDeplacement, param); // Lance la beta du jeu sur MinGL
+    else if (mode == 6) return partiNumberCrush(score, nbDeplacement, param); // Lance la beta du jeu
     else return 0;
 }
