@@ -31,7 +31,7 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
         nbDeplacement = param.mapParamVecUnsigned["deplacementMaxV"][i];
         score=0;
         while(true){
-            while (detectionExplositionBombe(mat, score, KAIgnorer, param.mapParamVecUnsigned["nbMax"][i]) || zeroVidSousNb(mat))
+            while (detectionExplositionBombe(mat, score, param.mapParamVecUnsigned["nbMax"][i]) || zeroVidSousNb(mat))
                 continue;
             afficheMatriceV2 (mat);
             cout << "Score = " << score << endl
@@ -52,7 +52,7 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
             cout << "Sens du deplacement : (A|Z|E|Q|D|W|X|C) : " << endl;
             char deplacement;
             cin >> deplacement;
-            if (detectionExplositionBombe(mat,score, KAIgnorer, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
+            if (detectionExplositionBombe(mat,score, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
             else {
                 // On gère les déplacements du curseur et les mouvements dans la grille
                 faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
@@ -87,7 +87,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
         score=0;
         while(true){
             afficheMatriceV3 (mat, numLigne, numCol);
-            if (detectionExplositionBombe(mat,score, KAIgnorer, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
+            if (detectionExplositionBombe(mat,score, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
             cout << "Score : " << score << endl
                  << "Nombre de déplacement restant : " <<  nbDeplacement << endl
                  << "Niveau " << i + 1 << endl;
@@ -196,7 +196,7 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
             afficheText(window, strNiveau, 10, 560);
 
             // si il y a des combos, on supprime les combos et on continue
-                if (detectionExplositionBombe(mat,score, KAIgnorer, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
+                if (detectionExplositionBombe(mat,score, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
             else {
                 // On gère les déplacements du curseur et les mouvements dans la grille
                 faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2);
@@ -293,7 +293,7 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
             afficheText(window, strNiveau, 10, 560);
 
             // si il y a des combos, on supprime les combos et on continue
-            if (detectionExplositionBombe(mat,score, KAIgnorer, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
+            if (detectionExplositionBombe(mat,score, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
             else {
                 // On gère les déplacements du curseur et les mouvements dans la grille
                 faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2);
@@ -401,7 +401,7 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
             afficheText(window, strNiveau, 10, 560);
 
             // si il y a des combos, on supprime les combos et on continue
-            if (detectionExplositionBombe(mat,score, KAIgnorer, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
+            if (detectionExplositionBombe(mat,score, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
             else {
             // On gère les déplacements du curseur et les mouvements dans la grille
             faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2);

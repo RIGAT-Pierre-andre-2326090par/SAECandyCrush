@@ -25,12 +25,12 @@ void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
 
 bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score);
 
-void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
-                        const unsigned & nbMax = KPlusGrandNombreDansLaMatrice);
+void remplaceVideParRdm(CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice,
+                        const unsigned & vid = KAIgnorer);
 
 bool zeroVidSousNb (CMatrice & mat, const unsigned & vid = KAIgnorer);
 
-bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
+bool detectionExplositionBombe (CMatrice & mat, unsigned & score,
                                const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice);
 
 void faitUnMouvement (CMatrice & mat, const char & deplacment, size_t & numLigne,

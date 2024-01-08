@@ -20,7 +20,6 @@ typedef std::vector <CVLine> CMatrix; // un type représentant la grille
  */
 typedef std::pair   <unsigned, unsigned> CPosition; // un type représentant une coordonnée dans la grille
 
-
 /**
  * @brief définition d'un case
  */

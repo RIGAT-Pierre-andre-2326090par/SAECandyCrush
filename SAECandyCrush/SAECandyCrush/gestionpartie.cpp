@@ -200,9 +200,11 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
 void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
                                   const size_t & numColonne, const size_t & combien){
     for (size_t j (numLigne); j < numLigne + combien; ++j){
-        for (size_t i (numLigne); i > 0; --i){
-            mat [i][j] = mat[i][j-1];}
-        mat [j][numColonne] =  KAIgnorer;}
+        for (size_t i (numColonne); i > 0; --i){
+            mat [i][j] = mat[i][j-1];
+        }
+        mat [j][numColonne] =  KAIgnorer;
+    }
 }
 
 /**
@@ -214,8 +216,8 @@ void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
  */
 bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
     bool auMoinsUneExplosion (false);
-    for (size_t numCol (0); numCol < mat[0].size(); ++numCol) {
-        for (size_t numLigne (0); numLigne < mat.size(); ++numLigne) {
+    for (size_t numCol (0); numCol < mat[0].size() - 1; ++numCol) {
+        for (size_t numLigne (0); numLigne < mat.size() - 1; ++numLigne) {
             if (KAIgnorer == mat [numLigne][numCol]) continue;
             size_t combienALaSuite (1);
             while (numLigne + combienALaSuite < mat.size() &&
@@ -246,8 +248,8 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
  * @param nbMax: les nombres aléatoires sont compris entre 1 et nbMax (par défaut 4)
  * @author P-A.Rigat
  */
-void remplaceVideParRdm(CMatrice & mat, const unsigned & vid = KAIgnorer,
-                        const unsigned & nbMax = KPlusGrandNombreDansLaMatrice){
+void remplaceVideParRdm(CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice,
+                        const unsigned & vid = KAIgnorer ){
 
     for (unsigned i = 0 ; i < mat.size() - 1 ; ++i){
         for (unsigned j = 0 ; j < mat[i].size() - 1; ++j){ // pour chaque case de chaque ligne de la matrice
@@ -287,12 +289,12 @@ bool zeroVidSousNb (CMatrice & mat, const unsigned & vid = KAIgnorer) {
  * @return true s'il y a eu au moins une explosion verticale ou horizontale, false sinon
  * @author P-A.Rigat
  */
-bool detectionExplositionBombe (CMatrice & mat, unsigned & score, const unsigned & vid = KAIgnorer,
+bool detectionExplositionBombe (CMatrice & mat, unsigned & score,
                                const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
 
-    bool act (detectionExplositionUneBombeVerticale(mat, score) or
+    bool act (detectionExplositionUneBombeVerticale(mat, score) ||
              detectionExplositionUneBombeHorizontale(mat, score));
-    if (act) remplaceVideParRdm(mat, vid, plusGrandNb);
+    if (act) remplaceVideParRdm(mat, plusGrandNb);
     zeroVidSousNb(mat);
     return act;
 }
