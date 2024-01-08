@@ -1,6 +1,5 @@
 #define FPS_LIMIT 10
 
-#include <iostream>
 #include <thread>
 
 #include <affichagemingl.h>

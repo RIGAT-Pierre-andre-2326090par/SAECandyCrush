@@ -248,16 +248,19 @@ bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
  * @param nbMax: les nombres aléatoires sont compris entre 1 et nbMax (par défaut 4)
  * @author P-A.Rigat
  */
-void remplaceVideParRdm(CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice,
+bool remplaceVideParRdm(CMatrice & mat, const unsigned & nbMax = KPlusGrandNombreDansLaMatrice,
                         const unsigned & vid = KAIgnorer ){
 
+    bool yAvaitDuVide = false;
     for (unsigned i = 0 ; i < mat.size() - 1 ; ++i){
         for (unsigned j = 0 ; j < mat[i].size() - 1; ++j){ // pour chaque case de chaque ligne de la matrice
             if (mat[i][j] == vid) { // si la case est vide,
                 mat[i][j] = (rand()%nbMax)+1; //la case a un nouveau contenu
+                yAvaitDuVide = true;
             }
         }
     }
+    return yAvaitDuVide;
 }
 
 /**
@@ -293,9 +296,9 @@ bool detectionExplositionBombe (CMatrice & mat, unsigned & score,
                                const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
 
     bool act (detectionExplositionUneBombeVerticale(mat, score) ||
-             detectionExplositionUneBombeHorizontale(mat, score));
-    if (act) remplaceVideParRdm(mat, plusGrandNb);
-    zeroVidSousNb(mat);
+             detectionExplositionUneBombeHorizontale(mat, score) ||
+             remplaceVideParRdm(mat, plusGrandNb));
+    if (act) zeroVidSousNb(mat);
     return act;
 }
 
