@@ -131,6 +131,7 @@ void afficheText(MinGL & window, const string & txt, const unsigned & x, const u
  * @param nbDeplacement: nombre de déplacement restant, gérer par la fonction main
  * @param param: structure de variable gérer par la fonction main
  * @param curs2: booléen permettant de savoir si il y a une case sélectionné ou non
+ * @bug certaines détections sont mal placées
  * @authors A.Casali, P-A.Rigat
  */
 void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
@@ -187,7 +188,7 @@ void faitUnMouvementMinGL (CMatrice & mat, MinGL & window, size_t & numLigne,
         }
     }
     else if (window.isPressed({param.mapParamChar["toucheSelect"], false})) {
-        curs2 = !curs2;
+        curs2 = true;
     }
     else afficheText(window, "Tu dois choisir entre A ou Z ou E ou Q ou D ou X ou C ou W ou S pour déplacer le curseur", 510, 0);
 

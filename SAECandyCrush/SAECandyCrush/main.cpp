@@ -1,4 +1,4 @@
-#define FPS_LIMIT 10
+#define FPS_LIMIT 60
 
 #include <iostream>
 #include <thread>
@@ -152,7 +152,6 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
 
         //quelque variable utile
         bool curs2 = false;
-        unsigned time = 0;
 
         // On fait tourner la boucle tant que la fenêtre est ouverte
         while (nbDeplacement > 0 && score <= param.mapParamVecUnsigned["scoreMaxV"][i] && window.isOpen() )
@@ -163,9 +162,6 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
             // On efface la fenêtre
             window.clearScreen();
 
-            // si le timer est suppérieur à 0, continue
-            if (time > 0) continue;
-
             // On affiche la grille puis le curseur dans le terminal
             //afficheMatriceV3(mat, numLigne, numCol);
 
@@ -173,6 +169,7 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
             /*cout << "Score = " << score << endl
                  << "Deplacement Restant = " << nbDeplacement << endl
                  << "Niveaux " << i + 1 << endl;*/
+            clearScreen();
 
             // On affiche la grille puis le curseur dans une interface MinGl
             for (unsigned i = 0 ; i < mat.size() ; ++i) {
@@ -218,7 +215,7 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
             // On récupère le temps de frame
             frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
         }
-        if (nbDeplacement == 0 || score >= param.mapParamVecUnsigned["scoreMaxV"][i]) {
+        if (nbDeplacement == 0) {
             cout << "tu as perdu..." << endl;
             break;
         }
@@ -260,7 +257,6 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
 
         //quelque variable utile
         bool curs2 = false;
-        unsigned time = 0;
 
         // On fait tourner la boucle tant que la fenêtre est ouverte
         while (nbDeplacement > 0 && score <= param.mapParamVecUnsigned["scoreMaxV"][i] && window.isOpen() )
@@ -270,9 +266,6 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
 
             // On efface la fenêtre
             window.clearScreen();
-
-            // si le timer est suppérieur à 0, continue
-            if (time > 0) continue;
 
             // On affiche la grille puis le curseur dans le terminal
             //afficheMatriceV3(mat, numLigne, numCol);
@@ -285,6 +278,7 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
             /*cout << "Score = " << score << endl
                  << "Deplacement Restant = " << nbDeplacement << endl
                  << "Niveaux " << i + 1 << endl;*/
+            clearScreen();
 
             // on affiche le score, le nombre de déplacement le niveau en cours restant dans une interface MinGl
             string strScore = "Score = ";
@@ -318,7 +312,7 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
             // On récupère le temps de frame
             frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
         }
-        if (nbDeplacement == 0 || score >= param.mapParamVecUnsigned["scoreMaxV"][i]) {
+        if (nbDeplacement == 0) {
             cout << "tu as perdu..." << endl;
             break;
         }
@@ -360,7 +354,6 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
 
         // Quelque variable utile
         bool curs2 = false;
-        //unsigned time = 0;
 
         // On fait tourner la boucle tant que la fenêtre est ouverte ou que le joueur n'a pas gagné ni perdu
         while (nbDeplacement > 0 && score <= param.mapParamVecUnsigned["scoreMaxV"][i] && window.isOpen())
@@ -375,10 +368,11 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
             window << nsGui::Sprite ("../SAECandyCrush/im/fond.si2", nsGraphics::Vec2D(0, 0));
 
             // on affiche la grille, le score et le nombre de déplacement restant dans le terminal
-            afficheMatriceV3(mat,numLigne,numCol);
+            /*afficheMatriceV3(mat,numLigne,numCol);
             cout << "Score = " << score << endl
                  << "Deplacement Restant = " << nbDeplacement << endl
-                 << "Niveaux " << i + 1 << endl;
+                 << "Niveaux " << i + 1 << endl;*/
+            clearScreen();
 
             // On affiche la grille puis le curseur dans une interface MinGL
             for (unsigned i = 0 ; i < mat.size() ; ++i) {
@@ -425,7 +419,7 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
             // On récupère le temps de frame
             frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
         }
-        if (nbDeplacement == 0 || score >= param.mapParamVecUnsigned["scoreMaxV"][i]) {
+        if (nbDeplacement == 0) {
             cout << "tu as perdu..." << endl;
             break;
         }
