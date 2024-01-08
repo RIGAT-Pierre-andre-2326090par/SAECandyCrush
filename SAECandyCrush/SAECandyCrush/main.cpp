@@ -452,13 +452,13 @@ int main() {
     bool test = false;
     while (test == false) {
         cout <<" Sur quel mode de jeu voulez vous jouer ? :" << endl << endl
-             << "1 : mode avec MinGl" << '\t' << "2 : mode avec les nombres" << endl  << endl
-             << "3 : test des exercices du tp" << '\t' << "4 à 6 : petit bonus..." << endl;
+             << "1 : Mode avec MinGl" << '\t' << "2 : Mode avec les nombres" << endl  << endl
+             << "3 : Test des exercices du tp" << '\t' << "4 à 6 : Petit bonus..." << endl;
         cin >> mode ;
         if (mode >= 1 && mode <= 6) test = true ;
         else {
             clearScreen();
-            cout << "Ce mode de jeu n'existe pas rééssayez !" << endl;
+            cout << "Ce mode de jeu n'existe pas, veuillez rééssayez !" << endl;
         }
     }
     if (mode == 1) return partiMinglCrush(score, nbDeplacement, param); //Lance une partie avec un affichage MinGL
