@@ -32,6 +32,7 @@ int partiNumberCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
         while(true){
             while (detectionExplositionBombe(mat, score, param.mapParamVecUnsigned["nbMax"][i]) || zeroVidSousNb(mat))
                 continue;
+            remplaceVideParRdm(mat, param.mapParamVecUnsigned["nbMaxV"][i]);
             afficheMatriceV2 (mat);
             cout << "Score = " << score << endl
                  << "Deplacement Restant = " << nbDeplacement << endl
@@ -87,6 +88,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
         while(true){
             afficheMatriceV3 (mat, numLigne, numCol);
             if (detectionExplositionBombe(mat,score, param.mapParamVecUnsigned["nbMaxV"][i])) continue;
+            remplaceVideParRdm(mat, param.mapParamVecUnsigned["nbMaxV"][i]);
             cout << "Score : " << score << endl
                  << "Nombre de déplacement restant : " <<  nbDeplacement << endl
                  << "Niveau " << i + 1 << endl;
@@ -107,6 +109,7 @@ int partiCasaliCrush(unsigned & score, unsigned & nbDeplacement, CMyParam & para
             char deplacement;
             cin >> deplacement;
             faitUnMouvement (mat, deplacement, numLigne, numCol, nbDeplacement, param);
+
         }
         if (nbDeplacement == 0) {
             cout << "tu as perdu..." << endl;
@@ -177,6 +180,7 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
                     if (mat[i][j] == 3) dessinerTriangle(window, j * 50, i * 50);
                     if (mat[i][j] == 4) dessinerCroix(window, j * 50, i * 50);
                     if (mat[i][j] == 5) dessinerEtoile(window, j * 50, i * 50);
+                    if (mat[i][j] == 6) dessineCasali(window, j * 50, i * 50);
                 }
             }
             dessinerCurseur(window, numCol * 50, numLigne * 50);
@@ -200,6 +204,7 @@ int partiMinglCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & para
                 // On gère les déplacements du curseur et les mouvements dans la grille
                 faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2);
             }
+            remplaceVideParRdm(mat, param.mapParamVecUnsigned["nbMaxV"][i]);
 
             // On finit la frame en cours
             window.finishFrame();
@@ -297,6 +302,7 @@ int partiMinglCrush2 (unsigned & score, unsigned & nbDeplacement, CMyParam & par
                 // On gère les déplacements du curseur et les mouvements dans la grille
                 faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2);
             }
+            remplaceVideParRdm(mat, param.mapParamVecUnsigned["nbMaxV"][i]);
 
             // On finit la frame en cours
             window.finishFrame();
@@ -405,6 +411,7 @@ int partiMinglTeteCrush (unsigned & score, unsigned & nbDeplacement, CMyParam & 
             // On gère les déplacements du curseur et les mouvements dans la grille
             faitUnMouvementMinGL(mat, window, numLigne, numCol, nbDeplacement, param, curs2);
             }
+            remplaceVideParRdm(mat, param.mapParamVecUnsigned["nbMaxV"][i]);
 
             // On finit la frame en cours
             window.finishFrame();

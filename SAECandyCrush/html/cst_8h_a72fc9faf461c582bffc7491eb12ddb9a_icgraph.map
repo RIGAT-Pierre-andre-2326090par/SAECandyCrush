@@ -1,6 +1,6 @@
 <map id="KMagenta" name="KMagenta">
 <area shape="rect" id="node1" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="668,151,756,177"/>
-<area shape="rect" id="node2" href="$affichagemingl_8cpp.html#a9aa1b945f36803846a1a6e0162e23989" title="affichage de la matrice avec des cercles de couleurs différentes, représentant le contenu des cases" alt="" coords="469,12,620,39"/>
+<area shape="rect" id="node2" href="$affichagemingl_8cpp.html#a9aa1b945f36803846a1a6e0162e23989" title="Affichage de la matrice avec des cercles de couleurs différentes, représentant le contenu des cases." alt="" coords="469,12,620,39"/>
 <area shape="rect" id="node4" href="$affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="Affichage de la matrice avec une couleur différente pour chaque nombre." alt="" coords="479,75,611,101"/>
 <area shape="rect" id="node6" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="Affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="479,267,611,293"/>
 <area shape="rect" id="node13" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="Affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="479,441,611,468"/>

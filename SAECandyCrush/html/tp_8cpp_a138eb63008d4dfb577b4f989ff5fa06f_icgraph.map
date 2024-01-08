@@ -1,5 +1,5 @@
 <map id="nouvRdm" name="nouvRdm">
 <area shape="rect" id="node1" title="génère un nombre aléatoire entre 1 et nbMax et différent de nb" alt="" coords="328,5,412,32"/>
-<area shape="rect" id="node2" href="$tp_8cpp.html#a69b1c7be084381ade2044cab29998caa" title="génère une matrice mat de dimension nbLignes x nbColonnes rempli de nombre aléatoire entre 1 et nbMax..." alt="" coords="195,5,280,32"/>
+<area shape="rect" id="node2" href="$tp_8cpp.html#a69b1c7be084381ade2044cab29998caa" title="génère une matrice mat de dimension nbLignes x nbColonnes remplie de nombres aléatoires entre 1 et nb..." alt="" coords="195,5,280,32"/>
 <area shape="rect" id="node3" href="$tp_8cpp.html#aee862f9d90140261900a2a815288f9f1" title="gère une parti de number crush dans le terminal" alt="" coords="5,5,147,32"/>
 </map>

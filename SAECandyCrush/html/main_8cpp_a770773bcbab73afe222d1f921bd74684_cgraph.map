@@ -1,19 +1,19 @@
 <map id="partiMinglCrush" name="partiMinglCrush">
 <area shape="rect" id="node1" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="5,249,131,275"/>
-<area shape="rect" id="node2" href="$affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc au coordonné x, y" alt="" coords="495,133,588,159"/>
+<area shape="rect" id="node2" href="$affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc aux coordonnées x, y" alt="" coords="495,133,588,159"/>
 <area shape="rect" id="node3" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="Remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ait été effacé" alt="" coords="230,46,329,73"/>
-<area shape="rect" id="node4" href="$affichagemingl_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6" title="dessine un cercle de couleur rouge avec comme origine x, y" alt="" coords="220,97,339,123"/>
-<area shape="rect" id="node5" href="$affichagemingl_8cpp.html#ac46cbc355388b953335699211b70d29f" title="dessine une croix de couleur jaune avec comme origine x, y" alt="" coords="224,147,335,174"/>
-<area shape="rect" id="node6" href="$affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="dessine un curseur(composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="216,198,343,225"/>
-<area shape="rect" id="node7" href="$affichagemingl_8cpp.html#aa3e6cb35e5e996580a5dac2320fdb09d" title="dessine une étoile de couleur violette avec comme origine x, y" alt="" coords="222,249,337,275"/>
-<area shape="rect" id="node8" href="$affichagemingl_8cpp.html#a7e881b244e62e74617783fc4aa6bdf06" title="dessine un rectangle de couleur bleu avec comme origine x, y" alt="" coords="208,299,351,326"/>
-<area shape="rect" id="node9" href="$affichagemingl_8cpp.html#abd33c630339924d862adfb0af2f61405" title="dessine un triangle de couleur verte avec comme origine x, y" alt="" coords="215,350,343,377"/>
-<area shape="rect" id="node10" href="$gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="179,451,380,478"/>
-<area shape="rect" id="node15" href="$affichagemingl_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="permet de déplacer le curseur dans la fenêtre mingl" alt="" coords="189,401,370,427"/>
+<area shape="rect" id="node4" href="$affichagemingl_8cpp.html#ad920d50dadc4a1dd91aace872ef1d4d6" title="Dessine un cercle de couleur rouge avec comme origine x, y." alt="" coords="220,97,339,123"/>
+<area shape="rect" id="node5" href="$affichagemingl_8cpp.html#ac46cbc355388b953335699211b70d29f" title="Dessine une croix de couleur jaune avec comme origine x, y." alt="" coords="224,147,335,174"/>
+<area shape="rect" id="node6" href="$affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="Dessine un curseur (composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="216,198,343,225"/>
+<area shape="rect" id="node7" href="$affichagemingl_8cpp.html#aa3e6cb35e5e996580a5dac2320fdb09d" title="Dessine une étoile de couleur violette avec comme origine x, y." alt="" coords="222,249,337,275"/>
+<area shape="rect" id="node8" href="$affichagemingl_8cpp.html#a7e881b244e62e74617783fc4aa6bdf06" title="Dessine un rectangle de couleur bleue avec comme origine x, y." alt="" coords="208,299,351,326"/>
+<area shape="rect" id="node9" href="$affichagemingl_8cpp.html#abd33c630339924d862adfb0af2f61405" title="Dessine un triangle de couleur verte avec comme origine x, y." alt="" coords="215,350,343,377"/>
+<area shape="rect" id="node10" href="$gestionpartie_8cpp.html#ae4549448cabaffd95f11673915f4155f" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="179,451,380,478"/>
+<area shape="rect" id="node15" href="$affichagemingl_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="Permet de déplacer le curseur dans la fenêtre mingl." alt="" coords="189,401,370,427"/>
 <area shape="rect" id="node16" href="$gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="245,527,313,554"/>
 <area shape="rect" id="node11" href="$gestionpartie_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="428,320,655,361"/>
 <area shape="rect" id="node12" href="$gestionpartie_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="428,385,655,427"/>
-<area shape="rect" id="node13" href="$gestionpartie_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="460,451,623,478"/>
+<area shape="rect" id="node13" href="$gestionpartie_8cpp.html#ae9989ffafb62123db4a2ba4c59f1936d" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="460,451,623,478"/>
 <area shape="rect" id="node14" href="$gestionpartie_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="481,502,601,529"/>
 <area shape="rect" id="node17" href="$gestionpartie_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="499,553,583,579"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="detectionExplositionUneBombeHorizontale" name="detectionExplositionUneBombeHorizontale">
 <area shape="rect" id="node1" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="341,99,568,141"/>
-<area shape="rect" id="node2" href="$tp_8cpp.html#a65812ac24495d4fe16373a9760344759" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="92,5,293,32"/>
+<area shape="rect" id="node2" href="$tp_8cpp.html#a65812ac24495d4fe16373a9760344759" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrice à l&#39;aide de..." alt="" coords="92,5,293,32"/>
 <area shape="rect" id="node3" href="$tp_8cpp.html#aee862f9d90140261900a2a815288f9f1" title="gère une parti de number crush dans le terminal" alt="" coords="122,56,263,83"/>
 <area shape="rect" id="node5" href="$tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="148,107,237,133"/>
 <area shape="rect" id="node6" href="$tp_8cpp.html#a0acbde41cd7464a445d8c5adec237847" title="l&#39;exercice 3 du TP" alt="" coords="148,157,237,184"/>

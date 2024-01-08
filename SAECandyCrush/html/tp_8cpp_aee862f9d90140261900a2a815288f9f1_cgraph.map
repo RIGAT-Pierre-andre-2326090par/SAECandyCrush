@@ -3,18 +3,18 @@
 <area shape="rect" id="node2" href="$affichage_8cpp.html#ac12230328cd907d48a41036c9faff9c9" title="Affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="524,208,656,235"/>
 <area shape="rect" id="node14" href="$tp_8cpp.html#a18b5dcac7e2a41b6b06e9c8a1fd3ebce" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="195,259,421,301"/>
 <area shape="rect" id="node17" href="$tp_8cpp.html#a8f92bfd50403b72837d13c807965dce9" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="229,325,387,352"/>
-<area shape="rect" id="node18" href="$tp_8cpp.html#a69b1c7be084381ade2044cab29998caa" title="génère une matrice mat de dimension nbLignes x nbColonnes rempli de nombre aléatoire entre 1 et nbMax..." alt="" coords="265,376,351,403"/>
+<area shape="rect" id="node18" href="$tp_8cpp.html#a69b1c7be084381ade2044cab29998caa" title="génère une matrice mat de dimension nbLignes x nbColonnes remplie de nombres aléatoires entre 1 et nb..." alt="" coords="265,376,351,403"/>
 <area shape="rect" id="node3" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="Remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ait été effacé" alt="" coords="763,461,861,488"/>
 <area shape="rect" id="node4" href="$affichage_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="Applique la couleur donnée à une partie du terminal." alt="" coords="777,512,847,539"/>
 <area shape="rect" id="node5" href="$cst_8h.html#af81c8f45a494c8b75bb2623c7a57737f" title="code pour afficher la couleur gris clair dans l&#39;arrière plan du terminal" alt="" coords="759,5,865,32"/>
-<area shape="rect" id="node6" href="$cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleu dans le terminal" alt="" coords="782,56,842,83"/>
+<area shape="rect" id="node6" href="$cst_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="code pour afficher la couleur bleue dans le terminal" alt="" coords="782,56,842,83"/>
 <area shape="rect" id="node7" href="$cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="781,107,843,133"/>
 <area shape="rect" id="node8" href="$cst_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="code pour afficher la couleur jaune dans le terminal" alt="" coords="779,157,845,184"/>
 <area shape="rect" id="node9" href="$cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="768,208,856,235"/>
-<area shape="rect" id="node10" href="$cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title="code pour afficher la couleur noir dans le terminal" alt="" coords="783,259,841,285"/>
+<area shape="rect" id="node10" href="$cst_8h.html#a2ce1342a3c5061b4504256f7ac7cfda6" title="code pour afficher la couleur noire dans le terminal" alt="" coords="783,259,841,285"/>
 <area shape="rect" id="node11" href="$cst_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title="code pour afficher la couleur par défaut du terminal" alt="" coords="778,309,846,336"/>
 <area shape="rect" id="node12" href="$cst_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title="code pour afficher la couleur rouge dans le terminal" alt="" coords="776,360,848,387"/>
-<area shape="rect" id="node13" href="$cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title="code pour afficher la couleur vert dans le terminal" alt="" coords="783,411,841,437"/>
+<area shape="rect" id="node13" href="$cst_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title="code pour afficher la couleur verte dans le terminal" alt="" coords="783,411,841,437"/>
 <area shape="rect" id="node15" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="Affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="524,309,656,336"/>
 <area shape="rect" id="node16" href="$gestionpartie_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3" title="procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nomb..." alt="" coords="469,259,711,285"/>
 <area shape="rect" id="node19" href="$tp_8cpp.html#a138eb63008d4dfb577b4f989ff5fa06f" title="génère un nombre aléatoire entre 1 et nbMax et différent de nb" alt="" coords="548,376,632,403"/>

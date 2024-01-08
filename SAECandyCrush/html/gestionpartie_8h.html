@@ -139,15 +139,15 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a48f37957843802008c092eaff0851068"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestionpartie_8h.html#a48f37957843802008c092eaff0851068">detectionExplositionUneBombeVerticale</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, unsigned &amp;score)</td></tr>
 <tr class="memdesc:a48f37957843802008c092eaff0851068"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice  <a href="gestionpartie_8h.html#a48f37957843802008c092eaff0851068">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a48f37957843802008c092eaff0851068"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65a5b8aff7e4e8f0899bd278f28d97b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestionpartie_8h.html#a65a5b8aff7e4e8f0899bd278f28d97b4">remplaceVideParRdm</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const unsigned &amp;vid=<a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a>, const unsigned &amp;nbMax=<a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a>)</td></tr>
-<tr class="memdesc:a65a5b8aff7e4e8f0899bd278f28d97b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">remplace toutes les cases vides par des nombres aléatoires  <a href="gestionpartie_8h.html#a65a5b8aff7e4e8f0899bd278f28d97b4">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a65a5b8aff7e4e8f0899bd278f28d97b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c7c145e162a193aa361789c741a740c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestionpartie_8h.html#a0c7c145e162a193aa361789c741a740c">remplaceVideParRdm</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const unsigned &amp;nbMax=<a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a>, const unsigned &amp;vid=<a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a>)</td></tr>
+<tr class="memdesc:a0c7c145e162a193aa361789c741a740c"><td class="mdescLeft">&#160;</td><td class="mdescRight">remplace toutes les cases vides par des nombres aléatoires  <a href="gestionpartie_8h.html#a0c7c145e162a193aa361789c741a740c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0c7c145e162a193aa361789c741a740c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3c472825f8e1704d249cae90b350d54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestionpartie_8h.html#ae3c472825f8e1704d249cae90b350d54">zeroVidSousNb</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const unsigned &amp;vid=<a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a>)</td></tr>
 <tr class="memdesc:ae3c472825f8e1704d249cae90b350d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu'à être côte à côte d'un élément juste en dessous d'eux ou au fond de la matrice si il n'y a pas d'éléments en dessous  <a href="gestionpartie_8h.html#ae3c472825f8e1704d249cae90b350d54">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae3c472825f8e1704d249cae90b350d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afce4f4bfde0cf1054c79ad05ac81abec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestionpartie_8h.html#afce4f4bfde0cf1054c79ad05ac81abec">detectionExplositionBombe</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, unsigned &amp;score, const unsigned &amp;vid=<a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a>, const unsigned &amp;plusGrandNb=<a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a>)</td></tr>
-<tr class="memdesc:afce4f4bfde0cf1054c79ad05ac81abec"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l'aide des deux autres fonctions de détection  <a href="gestionpartie_8h.html#afce4f4bfde0cf1054c79ad05ac81abec">Plus de détails...</a><br /></td></tr>
-<tr class="separator:afce4f4bfde0cf1054c79ad05ac81abec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4549448cabaffd95f11673915f4155f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestionpartie_8h.html#ae4549448cabaffd95f11673915f4155f">detectionExplositionBombe</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, unsigned &amp;score, const unsigned &amp;plusGrandNb=<a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a>)</td></tr>
+<tr class="memdesc:ae4549448cabaffd95f11673915f4155f"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l'aide des deux autres fonctions de détection  <a href="gestionpartie_8h.html#ae4549448cabaffd95f11673915f4155f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae4549448cabaffd95f11673915f4155f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57ec81d127d4e7a2924c033bf3ddc617"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestionpartie_8h.html#a57ec81d127d4e7a2924c033bf3ddc617">faitUnMouvement</a> (<a class="el" href="type_8h.html#a37304a67fccb047666efd38e9c84d9bf">CMatrice</a> &amp;mat, const char &amp;deplacment, size_t &amp;numLigne, size_t &amp;numCol, unsigned &amp;nbDeplacement, <a class="el" href="struct_c_my_param.html">CMyParam</a> &amp;param)</td></tr>
 <tr class="memdesc:a57ec81d127d4e7a2924c033bf3ddc617"><td class="mdescLeft">&#160;</td><td class="mdescRight">procédure permettant au joueur de se déplacer dans la grille et de déplacer l'élément qu'il a séléctionné  <a href="gestionpartie_8h.html#a57ec81d127d4e7a2924c033bf3ddc617">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a57ec81d127d4e7a2924c033bf3ddc617"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,8 +181,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="afce4f4bfde0cf1054c79ad05ac81abec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afce4f4bfde0cf1054c79ad05ac81abec">&#9670;&nbsp;</a></span>detectionExplositionBombe()</h2>
+<a id="ae4549448cabaffd95f11673915f4155f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4549448cabaffd95f11673915f4155f">&#9670;&nbsp;</a></span>detectionExplositionBombe()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -203,12 +203,6 @@ Fonctions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>vid</em> = <code><a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a></code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
           <td class="paramname"><em>plusGrandNb</em> = <code><a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a></code>&#160;</td>
         </tr>
         <tr>
@@ -222,26 +216,27 @@ Fonctions</h2></td></tr>
 <p>fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l'aide des deux autres fonctions de détection </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main </td></tr>
-    <tr><td class="paramname">vid</td><td>valeur d'une case vide(par défaut 0) </td></tr>
-    <tr><td class="paramname">plusGrandNb</td><td>les nombres aléatoire sont compris entre 1 et plusGrandNb(par défaut 4) </td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérée par une fonction appelée par la fonction main </td></tr>
+    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagné, géré par la fonction main </td></tr>
+    <tr><td class="paramname">vid</td><td>valeur d'une case vide (par défaut 0) </td></tr>
+    <tr><td class="paramname">plusGrandNb</td><td>les nombres aléatoires sont compris entre 1 et plusGrandNb (par défaut 4) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>true si il y a eu au moins une explosion vertical ou horizontal, false sinon </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true s'il y a eu au moins une explosion verticale ou horizontale, false sinon </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000002">Bogue:</a></b></dt><dd>l'explosion vertical rajoute du vid qui n'est pas remplacer </dd></dl>
 <dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00290">290</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00296">296</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="gestionpartie_8h_afce4f4bfde0cf1054c79ad05ac81abec_cgraph.png" border="0" usemap="#agestionpartie_8h_afce4f4bfde0cf1054c79ad05ac81abec_cgraph" alt=""/></div>
-<map name="agestionpartie_8h_afce4f4bfde0cf1054c79ad05ac81abec_cgraph" id="agestionpartie_8h_afce4f4bfde0cf1054c79ad05ac81abec_cgraph">
+<div class="center"><img src="gestionpartie_8h_ae4549448cabaffd95f11673915f4155f_cgraph.png" border="0" usemap="#agestionpartie_8h_ae4549448cabaffd95f11673915f4155f_cgraph" alt=""/></div>
+<map name="agestionpartie_8h_ae4549448cabaffd95f11673915f4155f_cgraph" id="agestionpartie_8h_ae4549448cabaffd95f11673915f4155f_cgraph">
 <area shape="rect" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,107,207,134"/>
 <area shape="rect" href="gestionpartie_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="255,5,481,47"/>
 <area shape="rect" href="gestionpartie_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="255,71,481,112"/>
-<area shape="rect" href="gestionpartie_8cpp.html#a65a5b8aff7e4e8f0899bd278f28d97b4" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="287,137,449,163"/>
+<area shape="rect" href="gestionpartie_8cpp.html#ae9989ffafb62123db4a2ba4c59f1936d" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="287,137,449,163"/>
 <area shape="rect" href="gestionpartie_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="308,187,428,214"/>
 <area shape="rect" href="gestionpartie_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3" title="procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nomb..." alt="" coords="529,13,771,39"/>
 <area shape="rect" href="gestionpartie_8cpp.html#a8bd751d220569d601afc2200b0378423" title="procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre..." alt="" coords="539,78,761,105"/>
@@ -250,15 +245,15 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="gestionpartie_8h_afce4f4bfde0cf1054c79ad05ac81abec_icgraph.png" border="0" usemap="#agestionpartie_8h_afce4f4bfde0cf1054c79ad05ac81abec_icgraph" alt=""/></div>
-<map name="agestionpartie_8h_afce4f4bfde0cf1054c79ad05ac81abec_icgraph" id="agestionpartie_8h_afce4f4bfde0cf1054c79ad05ac81abec_icgraph">
+<div class="center"><img src="gestionpartie_8h_ae4549448cabaffd95f11673915f4155f_icgraph.png" border="0" usemap="#agestionpartie_8h_ae4549448cabaffd95f11673915f4155f_icgraph" alt=""/></div>
+<map name="agestionpartie_8h_ae4549448cabaffd95f11673915f4155f_icgraph" id="agestionpartie_8h_ae4549448cabaffd95f11673915f4155f_icgraph">
 <area shape="rect" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="308,107,509,133"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,5,249,32"/>
 <area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,56,247,83"/>
 <area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,107,251,133"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,157,260,184"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipe et de A...." alt="" coords="108,157,260,184"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="113,208,255,235"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,107,60,133"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeu" alt="" coords="5,107,60,133"/>
 </map>
 </div>
 
@@ -293,12 +288,12 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main </td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérée par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagné, géré par la fonction main, est initialisé à 0 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>true si il y a au moins une explosion, false sinon </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true s'il y a au moins une explosion, false sinon </dd></dl>
 <dl class="section author"><dt>Auteurs</dt><dd>A.Casali, P-A.Rigat </dd></dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00165">165</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
@@ -317,11 +312,11 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="center"><img src="gestionpartie_8h_a455e37b8945ae908caeee9bd5744c9b5_icgraph.png" border="0" usemap="#agestionpartie_8h_a455e37b8945ae908caeee9bd5744c9b5_icgraph" alt=""/></div>
 <map name="agestionpartie_8h_a455e37b8945ae908caeee9bd5744c9b5_icgraph" id="agestionpartie_8h_a455e37b8945ae908caeee9bd5744c9b5_icgraph">
 <area shape="rect" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="455,99,681,141"/>
-<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,107,407,133"/>
+<area shape="rect" href="gestionpartie_8cpp.html#ae4549448cabaffd95f11673915f4155f" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,107,407,133"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
 <area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,56,144,83"/>
 <area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,107,148,133"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,157,157,184"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipe et de A...." alt="" coords="5,157,157,184"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,208,152,235"/>
 </map>
 </div>
@@ -357,15 +352,15 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagner, gérer par la fonction main </td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérée par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">score</td><td>entier naturel permettant de savoir si le joueur a gagné, géré par la fonction main, initialisé à 0 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>true si il y a au moins un explosion, false sinon </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true s'il y a au moins un explosion, false sinon </dd></dl>
 <dl class="section author"><dt>Auteurs</dt><dd>P-A.Rigat, A.Nurdin </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00215">215</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00217">217</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -381,11 +376,11 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="center"><img src="gestionpartie_8h_a48f37957843802008c092eaff0851068_icgraph.png" border="0" usemap="#agestionpartie_8h_a48f37957843802008c092eaff0851068_icgraph" alt=""/></div>
 <map name="agestionpartie_8h_a48f37957843802008c092eaff0851068_icgraph" id="agestionpartie_8h_a48f37957843802008c092eaff0851068_icgraph">
 <area shape="rect" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="455,99,681,141"/>
-<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,107,407,133"/>
+<area shape="rect" href="gestionpartie_8cpp.html#ae4549448cabaffd95f11673915f4155f" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,107,407,133"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
 <area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,56,144,83"/>
 <area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,107,148,133"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,157,157,184"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipe et de A...." alt="" coords="5,157,157,184"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,208,152,235"/>
 </map>
 </div>
@@ -433,10 +428,10 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nombre de 3 à 5 </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">numLigne</td><td>absisse du premier nombre servant de repère pour l'explosion de la bombe </td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérée par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">numLigne</td><td>abscisse du premier nombre servant de repère pour l'explosion de la bombe </td></tr>
     <tr><td class="paramname">numColonne</td><td>ordonnée du premier nombre servant de repère pour l'explosion de la bombe </td></tr>
-    <tr><td class="paramname">combien</td><td>nombre de chiffre aligné horizontalement </td></tr>
+    <tr><td class="paramname">combien</td><td>nombre de chiffres alignés horizontalement </td></tr>
   </table>
   </dd>
 </dl>
@@ -450,7 +445,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <map name="agestionpartie_8h_a5ca5a1d2987f121b68d2e209aff2d5f3_icgraph" id="agestionpartie_8h_a5ca5a1d2987f121b68d2e209aff2d5f3_icgraph">
 <area shape="rect" title="procédure modifiant la matrice en supprimant des éléments identiques alignés horizontalement par nomb..." alt="" coords="529,13,771,39"/>
 <area shape="rect" href="gestionpartie_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="255,5,481,47"/>
-<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,13,207,39"/>
+<area shape="rect" href="gestionpartie_8cpp.html#ae4549448cabaffd95f11673915f4155f" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,13,207,39"/>
 </map>
 </div>
 
@@ -497,10 +492,10 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre de 3 à 5 </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">numLigne</td><td>absisse du premier nombre servant de repère pour l'explosion de la bombe </td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérée par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">numLigne</td><td>abscisse du premier nombre servant de repère pour l'explosion de la bombe </td></tr>
     <tr><td class="paramname">numColonne</td><td>ordonnée du premier nombre servant de repère pour l'explosion de la bombe </td></tr>
-    <tr><td class="paramname">combien</td><td>nombre de chiffre aligné verticalement </td></tr>
+    <tr><td class="paramname">combien</td><td>nombre de chiffres alignés verticalement </td></tr>
   </table>
   </dd>
 </dl>
@@ -515,8 +510,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" title="procédure modifiant la matrice en supprimant des éléments identiques alignés verticalement par nombre..." alt="" coords="529,46,752,73"/>
 <area shape="rect" href="tp_8cpp.html#a13cbf1bb613e280eea9cff3269c1d4ba" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="255,5,481,47"/>
 <area shape="rect" href="gestionpartie_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="255,71,481,112"/>
-<area shape="rect" href="tp_8cpp.html#a65812ac24495d4fe16373a9760344759" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,13,207,39"/>
-<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,78,207,105"/>
+<area shape="rect" href="tp_8cpp.html#a65812ac24495d4fe16373a9760344759" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrice à l&#39;aide de..." alt="" coords="5,13,207,39"/>
+<area shape="rect" href="gestionpartie_8cpp.html#ae4549448cabaffd95f11673915f4155f" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="5,78,207,105"/>
 </map>
 </div>
 
@@ -575,18 +570,18 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>procédure permettant au joueur de se déplacer dans la grille et de déplacer l'élément qu'il a séléctionné </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">deplacment</td><td>caractère indiquant l'action choisi </td></tr>
-    <tr><td class="paramname">numLigne</td><td>absisse du curseur </td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérée par une fonction appelée par la fonction main </td></tr>
+    <tr><td class="paramname">deplacment</td><td>caractère indiquant l'action choisie </td></tr>
+    <tr><td class="paramname">numLigne</td><td>abscisse du curseur </td></tr>
     <tr><td class="paramname">numCol</td><td>ordonnée du curseur </td></tr>
-    <tr><td class="paramname">nbDeplacement</td><td>nombre de déplacement restant, gérer par la fonction main </td></tr>
+    <tr><td class="paramname">nbDeplacement</td><td>nombre de déplacements restants, géré par la fonction main </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000002">Bogue:</a></b></dt><dd>certaines détections sont mal placées </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000003">Bogue:</a></b></dt><dd>certaines détections sont mal placées </dd></dl>
 <dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00310">310</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00318">318</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
@@ -595,7 +590,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" title="procédure permettant au joueur de se déplacer dans la grille et de déplacer l&#39;élément qu&#39;il a sélécti..." alt="" coords="297,31,437,57"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="114,5,243,32"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="108,56,249,83"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,31,60,57"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeu" alt="" coords="5,31,60,57"/>
 </map>
 </div>
 
@@ -642,10 +637,10 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">nbMax</td><td>les nombres aléatoire sont compris entre 1 et nbMax(par défaut 4) </td></tr>
-    <tr><td class="paramname">nbLignes</td><td>nombre de ligne de la matrice mat </td></tr>
-    <tr><td class="paramname">nbColonnes</td><td>nombre de colonne de la matrice mat </td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérée par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">nbMax</td><td>les nombres aléatoires sont compris entre 1 et nbMax (par défaut 4) </td></tr>
+    <tr><td class="paramname">nbLignes</td><td>nombre de lignes de la matrice mat </td></tr>
+    <tr><td class="paramname">nbColonnes</td><td>nombre de colonnes de la matrice mat </td></tr>
   </table>
   </dd>
 </dl>
@@ -670,13 +665,13 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="119,5,249,32"/>
 <area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,56,247,83"/>
 <area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,107,251,133"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,157,260,184"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipe et de A...." alt="" coords="108,157,260,184"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="308,208,449,235"/>
 <area shape="rect" href="tp_8cpp.html#a8470d32123dff01350e8023b58aec437" title="l&#39;exercice 1 du TP" alt="" coords="334,259,423,285"/>
 <area shape="rect" href="tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="334,309,423,336"/>
 <area shape="rect" href="tp_8cpp.html#a0acbde41cd7464a445d8c5adec237847" title="l&#39;exercice 3 du TP" alt="" coords="334,360,423,387"/>
 <area shape="rect" href="tp_8cpp.html#abf4c7f37019ca794033d59caaf040c79" title="l&#39;exercice 4 du TP" alt="" coords="334,411,423,437"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,132,60,159"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeu" alt="" coords="5,132,60,159"/>
 <area shape="rect" href="tp_8cpp.html#ac112972a185fb734d2dc8080ad336cce" title="permet de tester les exos et une version primitive de number crush" alt="" coords="165,309,203,336"/>
 </map>
 </div>
@@ -702,7 +697,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>procédure initialisant les paramètres du joueur au sein du jeu </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">param</td><td>structure de variable gérer par la fonction main </td></tr>
+    <tr><td class="paramname">param</td><td>structure de variable géré par la fonction main </td></tr>
   </table>
   </dd>
 </dl>
@@ -715,7 +710,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="center"><img src="gestionpartie_8h_a04499e810295a8506131a7b912017990_icgraph.png" border="0" usemap="#agestionpartie_8h_a04499e810295a8506131a7b912017990_icgraph" alt=""/></div>
 <map name="agestionpartie_8h_a04499e810295a8506131a7b912017990_icgraph" id="agestionpartie_8h_a04499e810295a8506131a7b912017990_icgraph">
 <area shape="rect" title="procédure initialisant les paramètres du joueur au sein du jeu" alt="" coords="108,5,199,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeu" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -756,9 +751,9 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2 </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nb1</td><td>premier nombre dont le nouveaux nombre aléatoire doit être différent </td></tr>
-    <tr><td class="paramname">nb2</td><td>second nombre dont le nouveaux nombre aléatoire doit être différent </td></tr>
-    <tr><td class="paramname">nbMax</td><td>le nouveaux nombre aléatoire doit être inclut entre 1 et nbMax </td></tr>
+    <tr><td class="paramname">nb1</td><td>premier nombre dont le nouveau nombre aléatoire doit être différent </td></tr>
+    <tr><td class="paramname">nb2</td><td>second nombre dont le nouveau nombre aléatoire doit être différent </td></tr>
+    <tr><td class="paramname">nbMax</td><td>le nouveau nombre aléatoire doit être compris entre 1 et nbMax </td></tr>
   </table>
   </dd>
 </dl>
@@ -776,7 +771,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
 <area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,56,144,83"/>
 <area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,107,148,133"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,157,157,184"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipe et de A...." alt="" coords="5,157,157,184"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,208,152,235"/>
 <area shape="rect" href="tp_8cpp.html#a8470d32123dff01350e8023b58aec437" title="l&#39;exercice 1 du TP" alt="" coords="37,259,126,285"/>
 <area shape="rect" href="tp_8cpp.html#ac708bb351d226e55aefc761764cfb632" title="l&#39;exercice 2 du TP" alt="" coords="37,309,126,336"/>
@@ -787,8 +782,8 @@ Voici le graphe des appelants de cette fonction :</div>
 
 </div>
 </div>
-<a id="a65a5b8aff7e4e8f0899bd278f28d97b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65a5b8aff7e4e8f0899bd278f28d97b4">&#9670;&nbsp;</a></span>remplaceVideParRdm()</h2>
+<a id="a0c7c145e162a193aa361789c741a740c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c7c145e162a193aa361789c741a740c">&#9670;&nbsp;</a></span>remplaceVideParRdm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -803,13 +798,13 @@ Voici le graphe des appelants de cette fonction :</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>vid</em> = <code><a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a></code>, </td>
+          <td class="paramname"><em>nbMax</em> = <code><a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>nbMax</em> = <code><a class="el" href="cst_8h.html#a7d0c8ee42c07e97113818539b3aa8f49">KPlusGrandNombreDansLaMatrice</a></code>&#160;</td>
+          <td class="paramname"><em>vid</em> = <code><a class="el" href="cst_8h.html#a98ebad7cd9225daac3ac6ac00900ac0a">KAIgnorer</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -822,26 +817,26 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>remplace toutes les cases vides par des nombres aléatoires </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">vid</td><td>valeur d'une case vide(par défaut 0) </td></tr>
-    <tr><td class="paramname">nbMax</td><td>les nombres aléatoire sont compris entre 1 et nbMax(par défaut 4) </td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérée par une fonction appelée par la fonction main </td></tr>
+    <tr><td class="paramname">vid</td><td>valeur d'une case vide (par défaut 0) </td></tr>
+    <tr><td class="paramname">nbMax</td><td>les nombres aléatoires sont compris entre 1 et nbMax (par défaut 4) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00249">249</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00251">251</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="gestionpartie_8h_a65a5b8aff7e4e8f0899bd278f28d97b4_icgraph.png" border="0" usemap="#agestionpartie_8h_a65a5b8aff7e4e8f0899bd278f28d97b4_icgraph" alt=""/></div>
-<map name="agestionpartie_8h_a65a5b8aff7e4e8f0899bd278f28d97b4_icgraph" id="agestionpartie_8h_a65a5b8aff7e4e8f0899bd278f28d97b4_icgraph">
+<div class="center"><img src="gestionpartie_8h_a0c7c145e162a193aa361789c741a740c_icgraph.png" border="0" usemap="#agestionpartie_8h_a0c7c145e162a193aa361789c741a740c_icgraph" alt=""/></div>
+<map name="agestionpartie_8h_a0c7c145e162a193aa361789c741a740c_icgraph" id="agestionpartie_8h_a0c7c145e162a193aa361789c741a740c_icgraph">
 <area shape="rect" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="455,107,617,133"/>
-<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,107,407,133"/>
+<area shape="rect" href="gestionpartie_8cpp.html#ae4549448cabaffd95f11673915f4155f" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,107,407,133"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
 <area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,56,144,83"/>
 <area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,107,148,133"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,157,157,184"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipe et de A...." alt="" coords="5,157,157,184"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,208,152,235"/>
 </map>
 </div>
@@ -895,27 +890,27 @@ Voici le graphe des appelants de cette fonction :</div>
 <p>fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu'à être côte à côte d'un élément juste en dessous d'eux ou au fond de la matrice si il n'y a pas d'éléments en dessous </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td>matrice gérer par une fonction appelé par la fonction main </td></tr>
-    <tr><td class="paramname">vid</td><td>valeur d'une case vide(par défaut 0) </td></tr>
+    <tr><td class="paramname">mat</td><td>matrice gérée par une fonction appelé par la fonction main </td></tr>
+    <tr><td class="paramname">vid</td><td>valeur d'une case vide (par défaut 0) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>true si un ou plusieurs élément on été déplacé, false sinon </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true si un ou plusieurs éléments ont été déplacés, false sinon </dd></dl>
 <dl class="section author"><dt>Auteur</dt><dd>P-A.Rigat </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00268">268</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gestionpartie_8cpp_source.html#l00273">273</a> du fichier <a class="el" href="gestionpartie_8cpp_source.html">gestionpartie.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="gestionpartie_8h_ae3c472825f8e1704d249cae90b350d54_icgraph.png" border="0" usemap="#agestionpartie_8h_ae3c472825f8e1704d249cae90b350d54_icgraph" alt=""/></div>
 <map name="agestionpartie_8h_ae3c472825f8e1704d249cae90b350d54_icgraph" id="agestionpartie_8h_ae3c472825f8e1704d249cae90b350d54_icgraph">
 <area shape="rect" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="455,157,575,184"/>
-<area shape="rect" href="gestionpartie_8cpp.html#afce4f4bfde0cf1054c79ad05ac81abec" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,120,407,147"/>
+<area shape="rect" href="gestionpartie_8cpp.html#ae4549448cabaffd95f11673915f4155f" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="205,120,407,147"/>
 <area shape="rect" href="main_8cpp.html#ab791841bb941a1f2a2db2024320d7e88" title="fonction lançant une version lite du candy crush pour les tests" alt="" coords="11,208,152,235"/>
 <area shape="rect" href="main_8cpp.html#a61b26d531ca03853cb6daa7fa9982d18" title="fonction de lancement du jeu du candy crush" alt="" coords="17,5,146,32"/>
 <area shape="rect" href="main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="19,56,144,83"/>
 <area shape="rect" href="main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="15,107,148,133"/>
-<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="5,157,157,184"/>
+<area shape="rect" href="main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipe et de A...." alt="" coords="5,157,157,184"/>
 </map>
 </div>
 

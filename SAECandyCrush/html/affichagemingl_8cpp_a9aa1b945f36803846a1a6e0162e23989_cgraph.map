@@ -1,5 +1,5 @@
 <map id="afficheMatriceMingl" name="afficheMatriceMingl">
-<area shape="rect" id="node1" title="affichage de la matrice avec des cercles de couleurs différentes, représentant le contenu des cases" alt="" coords="5,31,156,57"/>
+<area shape="rect" id="node1" title="Affichage de la matrice avec des cercles de couleurs différentes, représentant le contenu des cases." alt="" coords="5,31,156,57"/>
 <area shape="rect" id="node2" href="$cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="217,5,279,32"/>
 <area shape="rect" id="node3" href="$cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="204,56,292,83"/>
 </map>

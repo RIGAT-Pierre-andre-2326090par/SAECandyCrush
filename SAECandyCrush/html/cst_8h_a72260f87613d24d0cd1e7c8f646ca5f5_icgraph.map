@@ -1,5 +1,5 @@
 <map id="KVert" name="KVert">
-<area shape="rect" id="node1" title="code pour afficher la couleur vert dans le terminal" alt="" coords="649,161,707,188"/>
+<area shape="rect" id="node1" title="code pour afficher la couleur verte dans le terminal" alt="" coords="649,161,707,188"/>
 <area shape="rect" id="node2" href="$affichage_8cpp.html#a05f377cba574bda4b62e575113001dc0" title="Affichage de la matrice avec une couleur différente pour chaque nombre." alt="" coords="469,31,601,57"/>
 <area shape="rect" id="node4" href="$affichage_8cpp.html#a582a33cfd726b8d8e367401130d55285" title="Affichage de la matrice sans les numéros de lignes / colonnes en haut / à gauche, mais avec un fond d..." alt="" coords="469,216,601,243"/>
 <area shape="rect" id="node11" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="Affichage de la matrice avec les numéros de lignes / colonnes en haut / à gauche et avec un fond de c..." alt="" coords="469,391,601,417"/>

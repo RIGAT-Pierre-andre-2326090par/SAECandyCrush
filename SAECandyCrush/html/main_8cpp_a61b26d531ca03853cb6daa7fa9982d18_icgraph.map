@@ -1,4 +1,4 @@
 <map id="partiCasaliCrush" name="partiCasaliCrush">
 <area shape="rect" id="node1" title="fonction de lancement du jeu du candy crush" alt="" coords="108,5,237,32"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,5,60,32"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeu" alt="" coords="5,5,60,32"/>
 </map>

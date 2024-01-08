@@ -171,15 +171,8 @@ bool detectionExplositionUneBombeHorizontale (CMatrice & mat, unsigned & score){
             while (numCol < mat[numLigne].size() &&
                    mat[numLigne][numCol] == mat[numLigne][numCol + combienALaSuite])
                 ++combienALaSuite;
-            // si on a 5 chiffres identiques à la suite, on créer un 6 et on fait pété
-            if (combienALaSuite >= 5) {
-                auMoinsUneExplosion = true;
-                explositionUneBombeHorizontale(mat, numLigne, numCol, combienALaSuite);
-                mat[numLigne][numCol] = 6;
-                score += 10 * (combienALaSuite - 2);
-            }
             //si on a au moins 3 chiffres identiques a la suite
-            if (combienALaSuite >= 3){
+            if (combienALaSuite >= 3 && mat[numLigne][numCol] != 6){
                 auMoinsUneExplosion = true;
                 explositionUneBombeHorizontale (mat, numLigne, numCol, combienALaSuite);
                 score += 10 * (combienALaSuite - 2);
@@ -216,22 +209,15 @@ void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
  */
 bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
     bool auMoinsUneExplosion (false);
-    for (size_t numCol (0); numCol < mat[0].size() - 1; ++numCol) {
+    for (size_t numCol (0); numCol < mat[0].size(); ++numCol) {
         for (size_t numLigne (0); numLigne < mat.size() - 1; ++numLigne) {
             if (KAIgnorer == mat [numLigne][numCol]) continue;
             size_t combienALaSuite (1);
             while (numLigne + combienALaSuite < mat.size() &&
                    mat[numLigne][numCol] == mat[numLigne + combienALaSuite][numCol])
                 ++combienALaSuite;
-            // si on a 5 chiffres identiques à la suite, on crée un 6 et on fait exploser
-            if (combienALaSuite >= 5) {
-                auMoinsUneExplosion = true;
-                explositionUneBombeVerticale (mat, numLigne, numCol, combienALaSuite);
-                mat[numLigne][numCol] = 6;
-                score += 10 * (combienALaSuite - 2);
-            }
             //si on a au moins 3 chiffres identiques a la suite
-            if (combienALaSuite >= 3){
+            if (combienALaSuite >= 3 && mat[numLigne][numCol] != 6){
                 auMoinsUneExplosion = true;
                 explositionUneBombeVerticale (mat, numLigne, numCol, combienALaSuite);
                 score += 10 * (combienALaSuite - 2);
@@ -290,15 +276,18 @@ bool zeroVidSousNb (CMatrice & mat, const unsigned & vid = KAIgnorer) {
  * @param vid: valeur d'une case vide (par défaut 0)
  * @param plusGrandNb: les nombres aléatoires sont compris entre 1 et plusGrandNb (par défaut 4)
  * @return true s'il y a eu au moins une explosion verticale ou horizontale, false sinon
+ * @bug l'explosion vertical rajoute du vid qui n'est pas remplacer
  * @author P-A.Rigat
  */
 bool detectionExplositionBombe (CMatrice & mat, unsigned & score,
                                const unsigned & plusGrandNb = KPlusGrandNombreDansLaMatrice){
 
     bool act (detectionExplositionUneBombeVerticale(mat, score) ||
-             detectionExplositionUneBombeHorizontale(mat, score) ||
-             remplaceVideParRdm(mat, plusGrandNb));
-    if (act) zeroVidSousNb(mat);
+             detectionExplositionUneBombeHorizontale(mat, score));
+    if (act) {
+        remplaceVideParRdm(mat, plusGrandNb);
+        zeroVidSousNb(mat);
+    }
     return act;
 }
 
