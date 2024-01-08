@@ -209,8 +209,8 @@ void explositionUneBombeVerticale (CMatrice & mat, const size_t & numLigne,
  */
 bool detectionExplositionUneBombeVerticale (CMatrice & mat, unsigned & score){
     bool auMoinsUneExplosion (false);
-    for (size_t numCol (0); numCol < mat[0].size(); ++numCol) {
-        for (size_t numLigne (0); numLigne < mat.size() - 1; ++numLigne) {
+    for (size_t numCol (0); numCol < mat[0].size() - 1; ++numCol) {
+        for (size_t numLigne (0); numLigne < mat.size(); ++numLigne) {
             if (KAIgnorer == mat [numLigne][numCol]) continue;
             size_t combienALaSuite (1);
             while (numLigne + combienALaSuite < mat.size() &&
