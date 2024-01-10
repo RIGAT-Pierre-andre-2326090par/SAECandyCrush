@@ -1,8 +1,0 @@
-<map id="detectionExplositionBombe" name="detectionExplositionBombe">
-<area shape="rect" id="node1" title="detectionExplositionBombe" alt="" coords="5,46,207,73"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="detectionExplositionUneBombeHorizontale" alt="" coords="255,5,481,47"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a48f37957843802008c092eaff0851068" title="detectionExplositionUneBombeVerticale" alt="" coords="255,71,481,112"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a5ca5a1d2987f121b68d2e209aff2d5f3" title="explositionUneBombeHorizontale" alt="" coords="529,13,771,39"/>
-<area shape="rect" id="node5" href="$affichage_8cpp.html#adc444f3102a22c73b9a55c140303305d" title="afficheMatriceV2" alt="" coords="584,70,716,97"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#a8bd751d220569d601afc2200b0378423" title="explositionUneBombeVerticale" alt="" coords="539,121,761,147"/>
-</map>

@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "SAECandyCrush", "index.html", [
+  [ "G4_Gaston_Goncalves-Rodrigues_Nurdin_Rigat_Tamine", "index.html", [
     [ "Liste des bogues", "bug.html", null ],
     [ "Classes", "annotated.html", [
       [ "Liste des classes", "annotated.html", "annotated_dup" ],

@@ -1,17 +1,17 @@
 <map id="partiMinglCrush2" name="partiMinglCrush2">
-<area shape="rect" id="node1" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="5,208,139,235"/>
-<area shape="rect" id="node2" href="$affichagemingl_8cpp.html#a9aa1b945f36803846a1a6e0162e23989" title="Affichage de la matrice avec des cercles de couleurs différentes, représentant le contenu des cases." alt="" coords="212,56,363,83"/>
-<area shape="rect" id="node5" href="$affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc aux coordonnées x, y" alt="" coords="503,116,596,143"/>
-<area shape="rect" id="node6" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="Remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ait été effacé" alt="" coords="238,157,337,184"/>
-<area shape="rect" id="node7" href="$affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="Dessine un curseur (composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="224,208,351,235"/>
-<area shape="rect" id="node8" href="$gestionpartie_8cpp.html#ae4549448cabaffd95f11673915f4155f" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="187,309,388,336"/>
-<area shape="rect" id="node13" href="$affichagemingl_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="Permet de déplacer le curseur dans la fenêtre mingl." alt="" coords="197,259,378,285"/>
-<area shape="rect" id="node14" href="$gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="253,385,321,412"/>
+<area shape="rect" id="node1" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="5,228,139,255"/>
+<area shape="rect" id="node2" href="$affichagemingl_8cpp.html#a9aa1b945f36803846a1a6e0162e23989" title="Affichage de la matrice avec des cercles de couleurs différentes, représentant le contenu des cases." alt="" coords="212,51,363,77"/>
+<area shape="rect" id="node5" href="$affichagemingl_8cpp.html#ae1a8fa20652284fd681b7e13967f5f70" title="affiche le texte txt en blanc aux coordonnées x, y" alt="" coords="503,112,596,139"/>
+<area shape="rect" id="node6" href="$affichage_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="Remonte l&#39;écran de façon à donner l&#39;impression que l&#39;écran ait été effacé" alt="" coords="238,152,337,179"/>
+<area shape="rect" id="node7" href="$affichagemingl_8cpp.html#a8eb56329f9a6ddaf328249f7b822476d" title="Dessine un curseur (composé de 4 triangles) de couleur blanche avec comme origine x,..." alt="" coords="224,203,351,229"/>
+<area shape="rect" id="node8" href="$gestionpartie_8cpp.html#ae4549448cabaffd95f11673915f4155f" title="fonction détectant si une explosion verticale ou horizontale est présente dans la matrcie à l&#39;aide de..." alt="" coords="187,304,388,331"/>
+<area shape="rect" id="node11" href="$gestionpartie_8cpp.html#ae9989ffafb62123db4a2ba4c59f1936d" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="468,355,631,381"/>
+<area shape="rect" id="node13" href="$affichagemingl_8cpp.html#ab64f2a1fda3b84c374e6961856478e2b" title="Permet de déplacer le curseur dans la fenêtre mingl." alt="" coords="197,253,378,280"/>
+<area shape="rect" id="node14" href="$gestionpartie_8cpp.html#a97e00921cf09bf25414e22954db96866" title="procédure générant une matrice remplie de nombre aléatoire entre 1 et nbMax" alt="" coords="253,405,321,432"/>
 <area shape="rect" id="node3" href="$cst_8h.html#aed31d4db92c112edda1291acad69dd00" title="code pour afficher la couleur cyan dans le terminal" alt="" coords="518,5,581,32"/>
 <area shape="rect" id="node4" href="$cst_8h.html#a72fc9faf461c582bffc7491eb12ddb9a" title="code pour afficher la couleur magenta dans le terminal" alt="" coords="505,56,593,83"/>
-<area shape="rect" id="node9" href="$gestionpartie_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="436,178,663,219"/>
-<area shape="rect" id="node10" href="$gestionpartie_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="436,243,663,285"/>
-<area shape="rect" id="node11" href="$gestionpartie_8cpp.html#ae9989ffafb62123db4a2ba4c59f1936d" title="remplace toutes les cases vides par des nombres aléatoires" alt="" coords="468,309,631,336"/>
-<area shape="rect" id="node12" href="$gestionpartie_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="489,360,609,387"/>
-<area shape="rect" id="node15" href="$gestionpartie_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="507,411,591,437"/>
+<area shape="rect" id="node9" href="$gestionpartie_8cpp.html#a455e37b8945ae908caeee9bd5744c9b5" title="fonction détectant la présence de 3 à 5 éléments identiques alignés horizontalement dans la matrice" alt="" coords="436,173,663,214"/>
+<area shape="rect" id="node10" href="$gestionpartie_8cpp.html#a48f37957843802008c092eaff0851068" title="fonction détectant la présence de 3 à 5 éléments identiques alignés verticalement dans la matrice" alt="" coords="436,238,663,279"/>
+<area shape="rect" id="node12" href="$gestionpartie_8cpp.html#ae3c472825f8e1704d249cae90b350d54" title="fonction permettant de déplacer vers le bas tous les éléments flottant après une explosion jusqu&#39;à êt..." alt="" coords="489,304,609,331"/>
+<area shape="rect" id="node15" href="$gestionpartie_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction qui renvoie un nouveau nombre aléatoire entre 1 et nbMax différent de nb1 et nb2" alt="" coords="507,405,591,432"/>
 </map>

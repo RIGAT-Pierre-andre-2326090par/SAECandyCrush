@@ -1,7 +1,0 @@
-<map id="faitUnMouvementMinGL" name="faitUnMouvementMinGL">
-<area shape="rect" id="node1" title="permet de déplacer le curseur dans la fenêtre mingl" alt="" coords="308,56,489,83"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#a770773bcbab73afe222d1f921bd74684" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="121,5,247,32"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a67f038b3fab66fa8bb64317fe8b51747" title="gère une fenêtre MinGL ainsi qu&#39;une partie de NumberCrush avec un affichage de forme" alt="" coords="117,56,251,83"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#abf3d9b449ed0c8eb96763cfd90b5d76d" title="gère une fenêtre ainsi qu&#39;une partie de NumberCrush avec les têtes de l&#39;équipes et de A...." alt="" coords="108,107,260,133"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="la fonction main permettant de choisir le mode de jeux" alt="" coords="5,56,60,83"/>
-</map>

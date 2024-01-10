@@ -1,4 +1,0 @@
-<map id="initMat" name="initMat">
-<area shape="rect" id="node1" title="procédure générant une matrice carrée remplie de nombre aléatoire" alt="" coords="5,5,73,32"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#a3ee2be2606da0dfc9951f36b245a88b8" title="fonction permettant de génerer un nouveau nombre aléatoire différent de nb1 et nb2" alt="" coords="121,5,205,32"/>
-</map>

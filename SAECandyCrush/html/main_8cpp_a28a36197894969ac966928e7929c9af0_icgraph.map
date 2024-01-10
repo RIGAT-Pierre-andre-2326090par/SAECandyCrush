@@ -1,4 +1,0 @@
-<map id="chargerParametre" name="chargerParametre">
-<area shape="rect" id="node1" title="procédure permettant de charger les paramètres de jeu d&#39;un joueur depuis un fichier yaml" alt="" coords="108,5,247,32"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="fonction principal permetant de choisir le mode de jeu" alt="" coords="5,5,60,32"/>
-</map>
